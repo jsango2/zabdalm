@@ -1,50 +1,226 @@
-import React from "react"
-import styled from "styled-components"
-import Logo from "../images/LogoVelikiBijeli.svg"
-import { Link } from "gatsby"
+import React from "react";
+import styled from "styled-components";
 
-const Wrap = styled.div`
+
+import FooterAnimation from "./footerAnimation";
+
+const Container = styled.div`
   width: 100%;
-  height: 510px;
-  background-color: #b0c7ce;
-  color: white;
-  margin-top: 100px;
-  position: relative;
-  ${"" /* clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%); */}/* @media only screen and (max-width: 520px) {
-    height: 370px;
-    clip-path: polygon(0 0, 100% 14%, 100% 100%, 0 100%);
-    padding-top: 80px;
-  } */
-`
+  max-width: 1152px;
+  margin: 0 auto;
+`;
 
-const FooterText = styled.div`
-  /* justify-content: center; */
-  ${"" /* margin-top: 45px; */}
+const FooterWrap = styled.footer`
+  padding-top: 155px;
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  background: #b0c7ce;
+  color: #fff;
+`;
+
+const FooterContainer = styled.div`
+  margin: 0 auto 0 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  @media (max-width: 999px) {
+    margin: 0 auto 0 60px;
+  }
+  @media (max-width: 658px) {
+    margin: 0 auto 0 40px;
+  }
+  @media (max-width: 588px) {
+    margin: 0 auto 0 30px;
+  }
+`;
+
+const FooterSection = styled.div`
+  width: 33%;
+
+  @media (max-width: 588px) {
+    width: 43%;
+  }
+`;
+
+const FooterTitle = styled.h3`
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 24px;
+`;
+
+const ContactList = styled.ul`
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 20px;
+
+  @media (max-width: 999px) {
+    max-width: 230px;
+  }
+
+  @media (max-width: 750px) {
+    max-width: 173px;
+  }
+
+  @media (max-width: 680px) {
+    max-width: 163px;
+    font-size: 10px;
+  }
+`;
+
+const ContactItem = styled.li`
+  margin-bottom: 0;
+`;
+
+const FooterDescription = styled.p`
   font-weight: 500;
   font-size: 12px;
-  letter-spacing: 0.06em;
-  text-align: center;
-  line-height: 16px;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, -50%);
+  line-height: 17px;
+  max-width: 300px;
+  margin-top: 0;
+  margin-bottom: 25px;
 
-  /* @media only screen and (max-width: 57em) {
-    width: 80%;
+  @media (max-width: 999px) {
+    max-width: 250px;
   }
-  @media only screen and (max-width: 440px) {
-    margin-top: 45px;
-  } */
-`
+  @media (max-width: 750px) {
+    max-width: 192px;
+  }
+  @media (max-width: 680px) {
+    max-width: 163px;
+    font-size: 10px;
+  }
+`;
 
-const Footer = () => (
-  <Wrap>
-    <FooterText>
-      Copyright © 2021 All rights reserved.
-      <br /> Web development by sutra.hr
-    </FooterText>
-  </Wrap>
-)
+const AboutProject = styled.div`
+  @media (max-width: 588px) {
+    display: none;
+  }
+`;
 
-export default Footer
+const FooterSocial = styled.ul`
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  margin-left: 100px;
+  list-style: none;
+  margin-bottom: 16px;
+
+  @media (max-width: 999px) {
+    margin-left: 70px;
+  }
+  @media (max-width: 750px) {
+    margin-left: 50px;
+  }
+  @media (max-width: 680px) {
+    margin-left: 35px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    position: relative;
+    top: 40px;
+  }
+  @media (max-width: 588px) {
+    top: 0;
+  }
+`;
+
+const SocialItem = styled.li`
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+`;
+
+const FooterLine = styled.div`
+  width: 1000px;
+  height: 1.2px;
+  background: #f5f5f5;
+  margin-left: 15px;
+  @media (max-width: 680px) {
+    opacity: 0.55;
+  }
+`;
+
+const FooterMadeBy = styled.p`
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 48px;
+  max-width: 370px;
+  line-height: 17px;
+`;
+
+function Footer() {
+  return (
+    <Container>
+      <FooterAnimation />
+      <FooterWrap>
+        <FooterContainer>
+          <FooterSection>
+            <FooterTitle>Kontakt</FooterTitle>
+            <ContactList>
+              <ContactItem>DALMATIAN STORY  j.d.o.o</ContactItem>
+              <ContactItem>Mosećka  56</ContactItem>
+              <ContactItem>21 000 Split</ContactItem>
+              <ContactItem>Croatia</ContactItem>
+            </ContactList>
+            <ContactList>
+              <ContactItem>Mail: dalmatian.story2020@gmail.com</ContactItem>
+              <ContactItem>Tel: +385916019277</ContactItem>
+            </ContactList>
+          </FooterSection>
+          <FooterSection>
+            <AboutProject>
+              <FooterTitle>O projektu</FooterTitle>
+              <FooterDescription>
+                ˝Zaboravljena Dalmacija˝ priča je o tome kako je nekada bilo,
+                ona podsjeća na to da živimo u jednom od najljepših kutaka
+                svemira, približava vam fotografijom autentične vizure Dalmacije
+                iz vremena od same pojave fotografije sredinom 19. stoljeća pa
+                do 1970.
+              </FooterDescription>
+              <FooterDescription>
+                Knjiga je produkt 15-godišnjeg rada u kolekcionarstvu i traganja
+                za najrjeđim fotografijama Dalmacije.
+              </FooterDescription>
+            </AboutProject>
+          </FooterSection>
+          <FooterSection>
+            <FooterSocial>
+              <SocialItem>
+                Atlas
+                <FooterLine />
+              </SocialItem>
+              <SocialItem>
+                Webshop
+                <FooterLine />
+              </SocialItem>
+              <SocialItem>
+                Blog
+                <FooterLine />
+              </SocialItem>
+              <SocialItem>
+                Instagram
+                <FooterLine />
+              </SocialItem>
+              <SocialItem>
+                Facebook
+                <FooterLine />
+              </SocialItem>
+            </FooterSocial>
+          </FooterSection>
+        </FooterContainer>
+        <FooterMadeBy>
+          Copyright © 2021 All rights reserved. Web development by sutra.hr
+        </FooterMadeBy>
+      </FooterWrap>
+    </Container>
+  );
+}
+
+export default Footer;

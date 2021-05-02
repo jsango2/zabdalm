@@ -39,6 +39,7 @@
     "i18next": "^20.2.1",
     "i18next-browser-languagedetector": "^6.1.0",
     "i18next-http-backend": "^1.2.1",
+    "lottie-react": "^2.1.0",
     "prismjs": "^1.22.0",
     "react": "^16.12.0",
     "react-countup": "^4.3.3",
