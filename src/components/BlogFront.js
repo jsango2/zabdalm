@@ -3,7 +3,7 @@ import styled from "styled-components"
 import BlogCard from "./BlogCard"
 import Button from "./button"
 import { useWindowSize } from "./useWindowSize"
-import { RiArrowDropDownFill } from "react-icons/Ri"
+import { RiArrowDropDownFill } from "react-icons/ri"
 import { useTranslation } from "react-i18next"
 import MeniMobileBlog from "./MeniMobileBlog"
 

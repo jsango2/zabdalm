@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
-import { IoIosClose } from "react-icons/Io"
+import { IoIosClose } from "react-icons/io"
 
 const WrapAll = styled.div`
   position: fixed;
