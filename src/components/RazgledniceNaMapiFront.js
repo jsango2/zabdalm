@@ -16,6 +16,29 @@ const Wrap = styled.div`
   align-items: center;
   cursor: pointer;
 `
+const Naslov = styled.div`
+  font-family: Playfair Display;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 65px;
+  margin-bottom: 31px;
+  color: white;
+  text-align: center;
+  @media only screen and (max-width: 750px) {
+    margin-bottom: 15px;
+
+    font-size: 36px;
+  }
+`
+const Podnaslov = styled.div`
+  font-family: Amiri;
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  @media only screen and (max-width: 750px) {
+    font-size: 18px;
+  }
+`
 
 function RazgledniceNaMapiFront() {
   return (
@@ -24,27 +47,8 @@ function RazgledniceNaMapiFront() {
         backgroundImage: `url(${MapaFront})`,
       }}
     >
-      <div
-        style={{
-          fontFamily: "Playfair Display",
-          fontSize: "54px",
-          fontWeight: "600",
-          marginBottom: "41px",
-          color: "white",
-        }}
-      >
-        Razglednice na mapi
-      </div>
-      <div
-        style={{
-          fontFamily: "Amiri",
-          fontSize: "24px",
-          fontWeight: "400",
-          color: "white",
-        }}
-      >
-        (klikni za ulaz u interaktivnu mapu)
-      </div>
+      <Naslov>Razglednice na mapi</Naslov>
+      <Podnaslov>(klikni za ulaz u interaktivnu mapu)</Podnaslov>
     </Wrap>
   )
 }

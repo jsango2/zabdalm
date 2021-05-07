@@ -293,7 +293,7 @@ fieldset {
 }
 @media only screen and (max-width: 430px) {
   .LinkHeaderProjekti {
-    display: none;
+    /* display: none; */
   }
   .otkrijiDodatak {
     height: 150px !important;
@@ -321,7 +321,7 @@ fieldset {
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.6;
+  opacity: 1;
   z-index: 900;
 }
 .react-reveal {
@@ -332,7 +332,20 @@ fieldset {
   transform: translateX(-200px);
   opacity: 0;
 }
+/* .slick-slide {
+  transition: opacity 8000ms linear 0s, visibility 1000ms linear 0s im !important;
+} */
+/* .slick-slide img {
+  transition: transform 10s linear !important;
 
+  transform: scale(1.05) !important;
+}
+.slick-active img {
+  transform: scale(1.25) !important;
+} */
+/* .slick-slider {
+  height: 600px !important;
+} */
 .show-Link {
   animation: slideRight 0.6s ease-in-out 0.3s forwards;
   font-weight: 700 !important;
@@ -343,7 +356,26 @@ fieldset {
   transition: all 0.3s linear;
   transform: translateX(-100%);
 }
-
+.hide-menu {
+  transition: all 0.3s linear;
+  transform: translateX(-100%);
+  visibility: hidden;
+}
+.show-menu {
+  transform: translateX(0);
+  transition: all 0.3s linear;
+  visibility: show;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  /* display: none; */
+}
 .show-sidebar {
   opacity: 1;
   transform: translateX(0);
@@ -424,6 +456,7 @@ center {
   top: 0;
   left: 0;
 }
+
 .customOverlay {
   max-width: 90%;
   display: inline-block;
@@ -991,16 +1024,36 @@ pre tt:after {
 }
 .primary-nav {
   position: relative;
-  top: 3px;
+  /* top: 3px; */
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   /* margin-right: 175px; */
-  width: 80%;
+  /* justify-content: center; */
+  width: 804px;
+  /* min-width: 804px; */
   margin: 0 auto;
   transition: all 0.8s ease-in-out !important;
 }
+.primary-nav-mobile-meni {
+  position: relative;
+  /* top: 3px; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  /* margin-right: 175px; */
+  /* justify-content: center; */
+  width: 100%;
+  height: 50%;
+  /* min-width: 804px; */
+  margin: 120px auto;
+  transition: all 0.8s ease-in-out !important;
+}
+
 .LinkHeader a {
   transition: all 0.8s ease-in-out !important;
   text-decoration: none;
@@ -1021,36 +1074,60 @@ pre tt:after {
   transform: translateY(-1px);
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 999px) {
   .primary-nav {
-    top: 0;
-    margin-right: 15%;
+    width: 680px;
+    min-width: 680px;
+    /* top: 0; */
+    /* margin-right: 15%; */
   }
   .primary-nav > a {
-    margin-left: 32px !important;
-    position: relative;
-    bottom: 12px;
+    width: 100px;
   }
 }
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 865px) {
   .primary-nav {
-    top: 0;
-    margin-right: 10%;
+    /* width: 800px; */
+    /* top: 0; */
+    /* margin-right: 15%; */
   }
   .primary-nav > a {
+    width: 100px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .header-wrap {
+    display: none;
+  }
+  /* .primary-nav {
+    display: none;
+  } */
+  /* .primary-nav > a {
     margin-left: 22px !important;
     position: relative;
     bottom: 12px;
-  }
+  } */
 }
 
 .primary-nav > a {
   font-size: 14px;
   font-weight: 300;
+  letter-spacing: 1px;
   text-decoration: none;
   color: white;
-  margin: 0 10px;
-  width: 125px;
+  /* margin: 0 10px; */
+  width: 110px;
+  text-align: center;
+  line-height: 16px;
+}
+.primary-nav-mobile-meni > a {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: white;
+  /* margin: 0 10px; */
+  width: 110px;
   text-align: center;
   line-height: 16px;
 }
@@ -1060,8 +1137,20 @@ pre tt:after {
   position: relative;
   font-weight: 700;
 }
+.primary-nav-mobile-meni > a:hover {
+  color: white;
+  position: relative;
+  font-weight: 700;
+}
 
 .primary-nav > .active {
+  color: white;
+  position: relative;
+  font-weight: 700;
+  transition: all 0.8s ease-in-out !important;
+  outline: white solid 1px;
+}
+.primary-nav-mobile-meni > .active {
   color: white;
   position: relative;
   font-weight: 700;

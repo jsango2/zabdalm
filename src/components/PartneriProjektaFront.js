@@ -4,6 +4,9 @@ import CROweek from "../../content/assets/CROweek.png"
 import Jelsa from "../../content/assets/Jelsa.png"
 import Secret from "../../content/assets/secret.png"
 import Linija from "../../content/assets/linijaMont.png"
+import Lottie from "lottie-react"
+
+import animation1152 from "../animations/val/val"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -12,12 +15,46 @@ const Wrap = styled.div`
   position: relative;
   margin: 200px 0 112px 0;
   text-align: center;
-  ${"" /* @media only screen and (max-width: 76em) {
-    height: 450px;
-  } */}
+  @media only screen and (max-width: 750px) {
+    margin: 100px 0 12px 0;
+  }
+`
+const WrapSponzori = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 151px;
+  @media only screen and (max-width: 750px) {
+    margin: 70px 0 70px 0;
+  }
+`
+const Naslov = styled.div`
+  font-family: Playfair Display;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 63px;
+  @media only screen and (max-width: 550px) {
+    font-size: 36px;
+    line-height: 43px;
+  }
 `
 
 function PartneriProjektaFront() {
+  const interactivity = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 0.0],
+        type: "stop",
+        frames: [0],
+      },
+      {
+        visibility: [0.25, 0.6],
+        type: "seek",
+        frames: [0, 152],
+      },
+    ],
+  }
   return (
     <Wrap>
       <div
@@ -31,34 +68,24 @@ function PartneriProjektaFront() {
         <div
           style={{ height: "1px", width: "110px", backgroundColor: "black" }}
         ></div>
-        <div
-          style={{
-            fontFamily: "Playfair Display",
-            fontSize: "54px",
-            fontWeight: "600",
-          }}
-        >
-          Partneri projekta
-        </div>
+        <Naslov>Partneri projekta</Naslov>
         <div
           style={{ height: "1px", width: "110px", backgroundColor: "black" }}
         ></div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-          marginBottom: "151px",
-        }}
-      >
-        <img src={Jelsa} alt="Jelsa" />
-        <img src={CROweek} alt="Cro week" />
-        <img src={Secret} alt="Secret" />
-        <img src={CROweek} alt="Cro week" />
-      </div>
+      <WrapSponzori>
+        <img src={Jelsa} width="23%" alt="Jelsa" />
+        <img src={CROweek} width="23%" alt="Cro week" />
+        <img src={Secret} width="23%" alt="Secret" />
+        <img src={CROweek} width="23%" alt="Cro week" />
+      </WrapSponzori>
       <div>
-        <img src={Linija} width="100%" alt="linija" />
+        <Lottie
+          animationData={animation1152}
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
       </div>
     </Wrap>
   )

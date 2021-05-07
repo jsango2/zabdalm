@@ -32,15 +32,15 @@ const IndexPage = ({ data }) => {
 
   // --------------------------------------
 
-  const [kategorija, setKategorija] = useState("SVI")
-  const [current, setCurrent] = useState(null)
+  // const [kategorija, setKategorija] = useState("SVI")
+  // const [current, setCurrent] = useState(null)
   const [isOpen, setisOpen] = useState(false)
 
-  const handleClick = (e, id) => {
-    setisOpen(false)
-    setKategorija(e.target.innerText)
-    current === id ? setCurrent(null) : setCurrent(id)
-  }
+  // const handleClick = (e, id) => {
+  //   setisOpen(false)
+  //   setKategorija(e.target.innerText)
+  //   current === id ? setCurrent(null) : setCurrent(id)
+  // }
 
   return (
     <Layout isOpen={isOpen}>
@@ -54,7 +54,7 @@ const IndexPage = ({ data }) => {
       <RazgledniceNaMapiFront />
       <OautoruFront />
       <PartneriProjektaFront />
-      <InstagramFront />
+      {/* <InstagramFront />  */}
     </Layout>
   )
 }

@@ -6,95 +6,249 @@ import Potpis from "../../content/assets/potpis.svg"
 import Knjiga from "../../content/assets/knjiga.png"
 import Button from "./button"
 import Cart from "../../content/assets/cart.svg"
+import { useTranslation } from "react-i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
   height: 1775px;
   position: relative;
-  ${"" /* @media only screen and (max-width: 76em) {
-    height: 450px;
-  } */}
+  background-position: center;
+  background-size: cover;
+  padding-top: 461px;
+  @media only screen and (max-width: 750px) {
+    padding-top: 81px;
+    padding-bottom: 100px;
+    height: auto;
+  }
 `
+const GornjiDioWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 906px;
+  height: 507px;
+  position: relative;
+  margin: 0 auto 200px auto;
+  /* top: 40%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  @media only screen and (max-width: 999px) {
+    width: 95%;
+  }
+  @media only screen and (max-width: 750px) {
+    flex-direction: column-reverse;
+    height: auto;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+`
+
+const KnjigaWrap = styled.div`
+  width: 624px;
+  min-width: 574px;
+  height: 770px;
+  position: relative;
+  top: 10px;
+  left: -130px;
+  z-index: 3;
+  /* top: 40%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  @media only screen and (max-width: 999px) {
+  }
+  @media only screen and (max-width: 750px) {
+    min-width: 345px;
+    width: 345px;
+    height: auto;
+    left: 0;
+  }
+  @media only screen and (max-width: 550px) {
+    min-width: 245px;
+    width: 245px;
+    height: auto;
+    left: 0;
+  }
+`
+
+const DonjiDioWrap = styled.div`
+  display: flex;
+  /* flex-direction: row-reverse; */
+  justify-content: space-between;
+  width: 906px;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  @media only screen and (max-width: 999px) {
+    width: 95%;
+  }
+  @media only screen and (max-width: 750px) {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+`
+const DonjiDioTextWrap = styled.div`
+  width: 450px;
+  position: relative;
+  left: -80px;
+  align-items: center;
+  @media only screen and (max-width: 999px) {
+    /* width: 95%; */
+  }
+  @media only screen and (max-width: 750px) {
+    left: 0;
+    width: 95%;
+    /* margin: 0 auto; */
+  }
+`
+
+const TextOknjizi = styled.div`
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  width: 405px;
+  line-height: 23px;
+  @media only screen and (max-width: 750px) {
+    margin: 0 auto;
+    width: 100%;
+  }
+  @media only screen and (max-width: 550px) {
+    margin: 0 auto;
+    width: 100%;
+  }
+`
+
+const TextOautoru = styled.div`
+  font-family: Raleway;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  width: 394px;
+  /* height: 58px; */
+  /* text-align: left; */
+  line-height: 24px;
+  margin-right: 20px;
+  /* margin: 0 15px 16px 0; */
+  @media only screen and (max-width: 550px) {
+    margin: 0 auto;
+    width: 85%;
+  }
+`
+const WrapNaslovCrtaOautoru = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* left: -155px; */
+  @media only screen and (max-width: 750px) {
+    left: 0px;
+  }
+  @media only screen and (max-width: 550px) {
+    margin: 0 auto;
+    text-align: left;
+    width: 85%;
+  }
+`
+const WrapNaslovCrtaOknjizi = styled.div`
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  position: relative;
+  /* left: -125px; */
+  @media only screen and (max-width: 750px) {
+    text-align: left;
+    width: 85%;
+    left: 30px;
+  }
+  @media only screen and (max-width: 550px) {
+    margin: 0 auto;
+    text-align: left;
+    width: 85%;
+    left: 0px;
+  }
+`
+
+const Naslov = styled.div`
+  font-family: Playfair Display;
+  font-size: 54px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: white;
+  padding-top: 30px;
+  /* width: 250px; */
+  @media only screen and (max-width: 750px) {
+    font-size: 36px;
+    width: 150px;
+  }
+`
+const Crta = styled.div`
+  width: 93px;
+  height: 1px;
+  background-color: white;
+  margin-right: 58px;
+  position: absolute;
+  left: -130px;
+  @media only screen and (max-width: 750px) {
+    left: -100px;
+
+    margin-right: 25px;
+  }
+`
+const Crta2 = styled.div`
+  width: 93px;
+  height: 1px;
+  background-color: white;
+  margin-right: 33px;
+  left: -130px;
+
+  /* margin-top: 13px; */
+  position: absolute;
+  @media only screen and (max-width: 750px) {
+    left: -100px;
+
+    /* margin-right: 25px; */
+  }
+`
+const Image = styled.div`
+  width: 452px;
+  height: 507px;
+  background-image: url(${Goles});
+  background-position: left center;
+  background-size: cover;
+  @media only screen and (max-width: 550px) {
+    width: 90%;
+    height: 90vw;
+  }
+`
+const ButtonWrap = styled.div`
+  width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+`
+
 function OautoruFront() {
+  const [t, i18n] = useTranslation()
+
   return (
     <Wrap
       style={{
         backgroundImage: `url(${OautoruPng})`,
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          width: "906px",
-          height: "507px",
-          //   backgroundColor: "grey",
-          position: "absolute",
-          top: "40%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-        }}
-      >
+      <GornjiDioWrap>
         <div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              position: "relative",
-              left: "-125px",
-            }}
-          >
-            <div
-              style={{
-                width: "93px",
-                height: "1px",
-                backgroundColor: "white",
-                marginRight: "33px",
-              }}
-            ></div>
-            <div
-              style={{
-                fontFamily: "Playfair Display",
-                fontSize: "54px",
-                fontWeight: "600",
-                marginBottom: "40px",
-                color: "white",
-                paddingTop: "30px",
-              }}
-            >
-              O autoru
-            </div>
-          </div>
+          <WrapNaslovCrtaOautoru>
+            <Crta />
+            <Naslov>{t("oautoru.1")}</Naslov>
+          </WrapNaslovCrtaOautoru>
 
-          <div
-            style={{
-              fontFamily: "Raleway",
-              fontSize: "15px",
-              fontWeight: "500",
-              //   marginBottom: "41px",
-              color: "white",
-              lineHeight: "23.43px",
-              width: "394px",
-            }}
-          >
-            Igor Goleš kolekcionar je rijetkih, raritetnih razglednica Dalmacije
-            čije fotografije svjedoče bitne detalje, donose na trenutak
-            zaustavljenu povijest toga kraja. U Golešovoj su zbirci kartoline
-            koje pripovijedaju etnografski, socijalno, politički i na ine načine
-            zanimljive priče o Dalmaciji s konca 19. i početka 20. stoljeća, do
-            1940. godine.
+          <TextOautoru>
+            {t("igorgoles1.1")}
             <br />
             <br />
-            Autor je kod odabira razglednica koje će prikazati publici odabirao
-            one najrjeđe i nepoznate javnosti, pa tako u knjigama možete
-            doživjeti kako su izgledala vjenčanja na početku 20. stoljeća,
-            kulturne i sportske događaje, panorame sela i gradova, početke
-            turizma na ovim prostorima, prve hotele i pansione, gostionice,
-            crkve, ljude i običaje… Ovaj serijal je produkt njegovog
-            15-godišnjeg rada u kolekcionarstvu i traganja za najrjeđim
-            fotografijama Dalmacije.
-          </div>
+            {t("igorgoles2.1")}
+          </TextOautoru>
           <div
             style={{ marginTop: "20px", float: "right", position: "relative" }}
           >
@@ -112,102 +266,35 @@ function OautoruFront() {
             </div>
           </div>
         </div>
-        <div>
-          <img src={Goles} alt="autor photo" />
-        </div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row-reverse",
-          justifyContent: "space-between",
-          width: "906px",
-          height: "507px",
-          //   backgroundColor: "grey",
-          position: "relative",
-          top: "1200px",
-          left: "50%",
-          transform: "translate(-50%, -15%)",
-        }}
-      >
-        <div
-          style={{
-            width: "674px",
-            height: "770px",
-            position: "absolute",
-            left: "-180px",
-            backgroundImage: `url(${Knjiga})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover ",
-            zIndex: "3",
-          }}
-        ></div>
-        <div style={{ width: "450px" }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              position: "relative",
-              left: "-125px",
-            }}
-          >
-            <div
-              style={{
-                width: "93px",
-                height: "1px",
-                backgroundColor: "white",
-                marginRight: "33px",
-                marginTop: "13px",
-              }}
-            ></div>
-            <div
-              style={{
-                fontFamily: "Playfair Display",
-                fontSize: "54px",
-                fontWeight: "600",
-                marginBottom: "50px",
-                color: "white",
-                paddingTop: "60px",
-              }}
-            >
-              O atlasu
-            </div>
-          </div>
-          <div
-            style={{
-              fontFamily: "Raleway",
-              fontSize: "15px",
-              fontWeight: "500",
-              //   marginBottom: "41px",
-              color: "white",
-              lineHeight: "23px",
-              width: "405px",
-            }}
-          >
+
+        <Image>{/* <img src={Goles} alt="autor photo" /> */}</Image>
+      </GornjiDioWrap>
+      <DonjiDioWrap>
+        <KnjigaWrap>
+          <img src={Knjiga} width="100%" alt="knjiga" />
+        </KnjigaWrap>
+        <DonjiDioTextWrap>
+          <WrapNaslovCrtaOknjizi>
+            <Crta2 />
+            <Naslov> {t("oatlasu.1")}</Naslov>
+          </WrapNaslovCrtaOknjizi>
+          <TextOknjizi>
             <ul>
-              <li>948 stranica, tvrdi uvez</li>
-              <li>Luksuzna izvedba, atlas format, knjiga ima gotovo 5kg</li>
-              <li>Hrvatsko - engleski prijevod</li>
-              <li>
-                1.646 starih razglednica 300-njak dalmatinskih sela i gradova
-              </li>
-              <li>
-                Tekstove potpisuju Igor Goleš, Jakša Fiamengo, Joško Belamarić,
-                Božo V. Žigo, Ivana Vuković, a naslovnicu i ilustracije jedan od
-                najpoznatijih hrvatskih ilustratora i dizajnera Filipa Peraića
-              </li>
-              <li>
-                De luxe izdanje od 25 primjeraka je obogaćeno originalnim
-                crtežima dalmatinskih motiva u olovci, od najpoznatijeg i
-                najskupljeg hrvatskog slikara današnjice Zvonimira Mihanovića.
-              </li>
+              <li> {t("948stranica.1")}</li>
+              <li>{t("luksuz.1")}</li>
+              <li>{t("hreng.1")}</li>
+              <li>{t("razglednice.1")}</li>
+              <li>{t("potpisnici.1")}</li>
+              <li>{t("deluxe.1")}</li>
             </ul>
-          </div>
+          </TextOknjizi>
           <div style={{ width: "179px", paddingLeft: "25px" }}>
-            <Button text="KUPI KNJIGU" ikona={Cart} color="white" width="179" />
+            <ButtonWrap>
+              <Button text={t("kupiAtlas.2")} ikona={Cart} color="white" />
+            </ButtonWrap>
           </div>
-        </div>
-      </div>
+        </DonjiDioTextWrap>
+      </DonjiDioWrap>
     </Wrap>
   )
 }

@@ -1,7 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import BlogCard from "./BlogCard"
 import Button from "./button"
+import { useWindowSize } from "./useWindowSize"
+import { RiArrowDropDownFill } from "react-icons/Ri"
+import { useTranslation } from "react-i18next"
+import MeniMobileBlog from "./MeniMobileBlog"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -14,102 +18,175 @@ const Wrap = styled.div`
     height: 450px;
   } */}
 `
+const Naslov = styled.div`
+  font-family: Playfair Display;
+  font-size: 54px;
+  font-weight: 600;
+  @media only screen and (max-width: 550px) {
+    font-size: 36px;
+  }
+`
+const Linija = styled.div`
+  height: 1px;
+  width: 110px;
+  background-color: black;
+  @media only screen and (max-width: 550px) {
+    width: 65px;
+  }
+`
+const ButtonWrap = styled.div`
+  width: 180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  @media only screen and (max-width: 350px) {
+    width: 75%;
+  }
+`
 
 function BlogFront() {
-  const [current, setCurrent] = useState(null)
+  const [t, i18n] = useTranslation()
+  const [isOpen, setIsOpen] = useState(false)
 
+  // console.log(isOpen)
+  const handleClickKategorije = () => {
+    setIsOpen(true)
+    console.log("kliknuto")
+  }
+  const handleClickCloseMenu = () => {
+    setIsOpen(false)
+    console.log("kliknuto")
+  }
+
+  const [current, setCurrent] = useState(null)
+  const size = useWindowSize()
   const handleClick = (e, id) => {
     current === id ? setCurrent(null) : setCurrent(id)
   }
 
   return (
-    <Wrap>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div
-          style={{ height: "1px", width: "110px", backgroundColor: "black" }}
-        ></div>
+    <>
+      <MeniMobileBlog
+        handleClickCloseMenu={handleClickCloseMenu}
+        isOpen={isOpen}
+      />
+      <Wrap>
         <div
           style={{
-            fontFamily: "Playfair Display",
-            fontSize: "54px",
-            fontWeight: "600",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "40px",
           }}
         >
-          BLOG
+          <Linija />
+          <Naslov>BLOG</Naslov>
+          <Linija />
         </div>
-        <div
-          style={{ height: "1px", width: "110px", backgroundColor: "black" }}
-        ></div>
-      </div>
+        {size.width > 750 ? (
+          <>
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                fontSize: "15px",
+                justifyContent: "space-around",
+                margin: "51px auto 0 auto",
+                width: "85%",
+                marginBottom: "42px",
+              }}
+            >
+              {/* <div>-</div> */}
 
-      <div
-        style={{
-          display: "flex",
-          fontSize: "15px",
-          justifyContent: "space-around",
-          margin: "51px auto 0 auto",
-          width: "85%",
-          marginBottom: "42px",
-        }}
-      >
-        <div>-</div>
+              <div
+                className={current === 0 ? "blueLink" : ""}
+                onClick={e => handleClick(e, 0)}
+                style={{ cursor: "pointer", margin: "0 10px" }}
+              >
+                {t("sve.1")}
+              </div>
+              <div>-</div>
+              <div
+                className={current === 1 ? "blueLink" : ""}
+                onClick={e => handleClick(e, 1)}
+                style={{ cursor: "pointer", margin: "0 10px" }}
+              >
+                {t("priceizpovijesti.1")}
+              </div>
+              <div>-</div>
+              <div
+                className={current === 2 ? "blueLink" : ""}
+                onClick={e => handleClick(e, 2)}
+                style={{ cursor: "pointer", margin: "0 10px" }}
+              >
+                {t("antiknipredmeti.1")}
+              </div>
+              <div>-</div>
+              <div
+                className={current === 3 ? "blueLink" : ""}
+                onClick={e => handleClick(e, 3)}
+                style={{ cursor: "pointer", margin: "0 10px" }}
+              >
+                {t("zaboravljenadalmacijadanas.1")}
+              </div>
+              {/* <div>-</div> */}
+            </div>{" "}
+          </>
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              marginBottom: "61px",
+            }}
+            onClick={() => handleClickKategorije()}
+          >
+            <div
+              // className={current === 0 ? "blueLink" : ""}
+              // onClick={e => handleClick(e, 0)}
+              style={{ cursor: "pointer" }}
+            >
+              {t("odaberikategoriju.1")}
+            </div>
+            <RiArrowDropDownFill />
+          </div>
+        )}
 
         <div
-          className={current === 0 ? "blueLink" : ""}
-          onClick={e => handleClick(e, 0)}
-          style={{ cursor: "pointer" }}
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            flexWrap: "wrap",
+            marginBottom: "62px",
+          }}
         >
-          SVE
+          {size.width > 750 ? (
+            <>
+              {" "}
+              <BlogCard />
+              <BlogCard />
+              <BlogCard />
+              <BlogCard />
+              <BlogCard />
+              <BlogCard />
+            </>
+          ) : (
+            <>
+              {" "}
+              <BlogCard />
+              <BlogCard />
+              <BlogCard />
+              <BlogCard />
+            </>
+          )}
         </div>
-        <div>-</div>
-        <div
-          className={current === 1 ? "blueLink" : ""}
-          onClick={e => handleClick(e, 1)}
-          style={{ cursor: "pointer" }}
-        >
-          PRIČE IZ DALMATINSKE POVIJESTI
-        </div>
-        <div>-</div>
-        <div
-          className={current === 2 ? "blueLink" : ""}
-          onClick={e => handleClick(e, 2)}
-          style={{ cursor: "pointer" }}
-        >
-          ANTIKNI PREDMETI IZ DALMACIJE
-        </div>
-        <div>-</div>
-        <div
-          className={current === 3 ? "blueLink" : ""}
-          onClick={e => handleClick(e, 3)}
-          style={{ cursor: "pointer" }}
-        >
-          ZABORAVLJENA DALMACIJA DANAS
-        </div>
-        <div>-</div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          flexWrap: "wrap",
-          marginBottom: "62px",
-        }}
-      >
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-      </div>
-      <Button text="ARHIVA PRIČA" color="black" width="137" />
-    </Wrap>
+        <ButtonWrap>
+          <Button text={t("arhivaprica.1")} color="black" width="155" />
+        </ButtonWrap>
+      </Wrap>
+    </>
   )
 }
 

@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
-
-import FooterAnimation from "./footerAnimation";
+import { useTranslation } from "react-i18next"
+import FooterAnimation from "./footerAnimation"
 
 const Container = styled.div`
   width: 100%;
   max-width: 1152px;
   margin: 0 auto;
-`;
+`
 
 const FooterWrap = styled.footer`
   padding-top: 155px;
@@ -17,7 +17,7 @@ const FooterWrap = styled.footer`
   margin: 0 auto;
   background: #b0c7ce;
   color: #fff;
-`;
+`
 
 const FooterContainer = styled.div`
   margin: 0 auto 0 90px;
@@ -34,7 +34,7 @@ const FooterContainer = styled.div`
   @media (max-width: 588px) {
     margin: 0 auto 0 30px;
   }
-`;
+`
 
 const FooterSection = styled.div`
   width: 33%;
@@ -42,13 +42,13 @@ const FooterSection = styled.div`
   @media (max-width: 588px) {
     width: 43%;
   }
-`;
+`
 
 const FooterTitle = styled.h3`
   text-transform: uppercase;
   font-weight: 500;
   font-size: 24px;
-`;
+`
 
 const ContactList = styled.ul`
   font-size: 12px;
@@ -69,11 +69,11 @@ const ContactList = styled.ul`
     max-width: 163px;
     font-size: 10px;
   }
-`;
+`
 
 const ContactItem = styled.li`
   margin-bottom: 0;
-`;
+`
 
 const FooterDescription = styled.p`
   font-weight: 500;
@@ -93,13 +93,13 @@ const FooterDescription = styled.p`
     max-width: 163px;
     font-size: 10px;
   }
-`;
+`
 
 const AboutProject = styled.div`
   @media (max-width: 588px) {
     display: none;
   }
-`;
+`
 
 const FooterSocial = styled.ul`
   font-size: 24px;
@@ -125,13 +125,13 @@ const FooterSocial = styled.ul`
   @media (max-width: 588px) {
     top: 0;
   }
-`;
+`
 
 const SocialItem = styled.li`
   margin-bottom: 16px;
   display: flex;
   align-items: center;
-`;
+`
 
 const FooterLine = styled.div`
   width: 1000px;
@@ -141,7 +141,7 @@ const FooterLine = styled.div`
   @media (max-width: 680px) {
     opacity: 0.55;
   }
-`;
+`
 
 const FooterMadeBy = styled.p`
   color: #fff;
@@ -153,16 +153,18 @@ const FooterMadeBy = styled.p`
   padding: 48px;
   max-width: 370px;
   line-height: 17px;
-`;
+`
 
 function Footer() {
+  const [t, i18n] = useTranslation()
+
   return (
     <Container>
       <FooterAnimation />
       <FooterWrap>
         <FooterContainer>
           <FooterSection>
-            <FooterTitle>Kontakt</FooterTitle>
+            <FooterTitle>{t("kontakt.1")}</FooterTitle>
             <ContactList>
               <ContactItem>DALMATIAN STORY  j.d.o.o</ContactItem>
               <ContactItem>Mosećka  56</ContactItem>
@@ -176,18 +178,9 @@ function Footer() {
           </FooterSection>
           <FooterSection>
             <AboutProject>
-              <FooterTitle>O projektu</FooterTitle>
-              <FooterDescription>
-                ˝Zaboravljena Dalmacija˝ priča je o tome kako je nekada bilo,
-                ona podsjeća na to da živimo u jednom od najljepših kutaka
-                svemira, približava vam fotografijom autentične vizure Dalmacije
-                iz vremena od same pojave fotografije sredinom 19. stoljeća pa
-                do 1970.
-              </FooterDescription>
-              <FooterDescription>
-                Knjiga je produkt 15-godišnjeg rada u kolekcionarstvu i traganja
-                za najrjeđim fotografijama Dalmacije.
-              </FooterDescription>
+              <FooterTitle>{t("oprojektu.1")}</FooterTitle>
+              <FooterDescription>{t("citat.1")}</FooterDescription>
+              <FooterDescription>{t("produkt.1")}</FooterDescription>
             </AboutProject>
           </FooterSection>
           <FooterSection>
@@ -220,7 +213,7 @@ function Footer() {
         </FooterMadeBy>
       </FooterWrap>
     </Container>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

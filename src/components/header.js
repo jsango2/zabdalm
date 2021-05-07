@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import logo from "../images/LogoTopsvg.svg"
 import Headroom from "react-headroom"
+
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 
@@ -11,7 +12,7 @@ const HeaderWrap = styled.div`
   margin: 0 auto;
   max-width: 1280px;
   ${"" /* padding: 1.85rem 0; */}
-  height: 114px;
+  height: 80px;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -19,51 +20,59 @@ const HeaderWrap = styled.div`
   background-color: #b0c7ce;
   color: white;
   position: relative;
-  @media only screen and (max-width: 60em) {
-    display: block;
-    padding: 0 0;
+  @media only screen and (max-width: 999px) {
+    /* display: block;
+    padding: 0 0; */
+    width: 100%;
   }
-`
-const Telefon = styled.div`
-  @media only screen and (max-width: 60em) {
+  @media only screen and (max-width: 750px) {
     display: none;
   }
 `
 
-const Logo = styled.div`
-  ${"" /* display: inline-block; */}
-  margin-bottom: 0;
-  margin-right: 15px;
-  margin-left: 175px;
-  width: 97px;
-  @media only screen and (max-width: 960px) {
-    position: relative;
-    top: 15px;
-    margin-left: 130px;
-  }
+// const Telefon = styled.div`
+//   @media only screen and (max-width: 60em) {
+//     display: none;
+//   }
+// `
 
-  @media only screen and (max-width: 530px) {
-    position: relative;
-    top: 15px;
-    margin-left: 70px;
-    width: 60px;
-  }
-  @media only screen and (max-width: 430px) {
-    margin-left: 40px;
-  }
-`
+// const Logo = styled.div`
+//   ${"" /* display: inline-block; */}
+//   margin-bottom: 0;
+//   margin-right: 15px;
+//   margin-left: 175px;
+//   width: 97px;
+//   @media only screen and (max-width: 960px) {
+//     position: relative;
+//     top: 15px;
+//     margin-left: 130px;
+//   }
+
+//   @media only screen and (max-width: 530px) {
+//     position: relative;
+//     top: 15px;
+//     margin-left: 70px;
+//     width: 60px;
+//   }
+//   @media only screen and (max-width: 430px) {
+//     margin-left: 40px;
+//   }
+// `
 
 const Header = () => {
   const [display, setDisplay] = useState("")
   const [current, setCurrent] = useState(1)
   const [t, i18n] = useTranslation()
+  useEffect(() => {
+    i18n.changeLanguage("hr")
+  }, [])
 
   const handleClick = id => {
     // setKategorija(e.target.innerText)
     current === id ? setCurrent(null) : setCurrent(id)
     let lang = id === 1 ? "hr" : "en"
     i18n.changeLanguage(lang)
-    console.log(i18n)
+    console.log("t", t)
   }
   return (
     // <Headroom
@@ -109,7 +118,7 @@ const Header = () => {
             className="LinkHeader LinkHeaderProjekti"
             activeClassName="active"
           >
-            O KNJIZI
+            {t("oKnjizi.1")}
           </AnchorLink>
           <AnchorLink
             offset={100}
@@ -125,7 +134,7 @@ const Header = () => {
             className="LinkHeader LinkHeaderProjekti"
             activeClassName="active"
           >
-            RAZGLEDNICE NA MAPI
+            {t("razgledniceNaMapi.1")}
           </AnchorLink>
 
           <AnchorLink
@@ -142,7 +151,7 @@ const Header = () => {
             className="LinkHeader"
             activeClassName="active"
           >
-            KONTAKT
+            {t("kontakt.1")}
           </AnchorLink>
         </nav>
         <div

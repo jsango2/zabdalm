@@ -6,40 +6,48 @@ const Wrap = styled.div`
   width: 342px;
   height: 323px;
   margin-bottom: 34px;
-  ${"" /* @media only screen and (max-width: 76em) {
-    height: 450px;
-  } */}
+  @media only screen and (max-width: 350px) {
+    width: 100%;
+  }
+`
+const Kategorija = styled.div`
+  ${"" /* background-color: grey; */}
+  font-family: Amiri;
+  font-size: 10px;
+  color: #676767;
+  text-align: left;
+
+  @media only screen and (max-width: 700px) {
+    text-align: center;
+  }
+`
+const CardText = styled.div`
+  ${"" /* background-color: grey; */}
+  font-family: Raleway;
+  font-size: 15px;
+  line-height: 23px;
+  margin-top: 12px;
+  font-weight: 500;
+  color: #676767;
+  text-align: left;
+
+  @media only screen and (max-width: 700px) {
+    width: 95%;
+    text-align: center;
+  }
 `
 
 function BlogCard() {
   return (
     <Wrap>
-      <div
-        style={{
-          fontFamily: "Amiri",
-          fontSize: "10px",
-          color: "#676767",
-          textAlign: "left",
-        }}
-      >
-        ZABORAVLJENA DALMACIJA DANAS{" "}
-      </div>
+      <Kategorija>ZABORAVLJENA DALMACIJA DANAS </Kategorija>
       <div
         style={{ width: "100%", height: "233px", backgroundColor: "grey" }}
       ></div>
-      <div
-        style={{
-          fontFamily: "Raleway",
-          fontSize: "15px",
-          textAlign: "left",
-          lineHeight: "23px",
-          marginTop: "12px",
-          fontWeight: "500px",
-        }}
-      >
+      <CardText>
         Kako su naši stari na Otoku visu lovili ribu prije masovnog odlaska u
         Ameriku početkom (do 100 znakova)
-      </div>
+      </CardText>
     </Wrap>
   )
 }
