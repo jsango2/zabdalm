@@ -6,7 +6,8 @@ import Potpis from "../../content/assets/potpis.svg"
 import Knjiga from "../../content/assets/knjiga.png"
 import Button from "./button"
 import Cart from "../../content/assets/cart.svg"
-import { useTranslation } from "react-i18next"
+import { graphql } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -240,14 +241,14 @@ function OautoruFront() {
         <div>
           <WrapNaslovCrtaOautoru>
             <Crta />
-            <Naslov>{t("oautoru.1")}</Naslov>
+            <Naslov>{t("oautoru")}</Naslov>
           </WrapNaslovCrtaOautoru>
 
           <TextOautoru>
-            {t("igorgoles1.1")}
+            {t("igorgoles1")}
             <br />
             <br />
-            {t("igorgoles2.1")}
+            {t("igorgoles2")}
           </TextOautoru>
           <div
             style={{ marginTop: "20px", float: "right", position: "relative" }}
@@ -276,16 +277,16 @@ function OautoruFront() {
         <DonjiDioTextWrap>
           <WrapNaslovCrtaOknjizi>
             <Crta2 />
-            <Naslov> {t("oatlasu.1")}</Naslov>
+            <Naslov> {t("oatlasu")}</Naslov>
           </WrapNaslovCrtaOknjizi>
           <TextOknjizi>
             <ul>
-              <li> {t("948stranica.1")}</li>
-              <li>{t("luksuz.1")}</li>
-              <li>{t("hreng.1")}</li>
-              <li>{t("razglednice.1")}</li>
-              <li>{t("potpisnici.1")}</li>
-              <li>{t("deluxe.1")}</li>
+              <li> {t("948stranica")}</li>
+              <li>{t("luksuz")}</li>
+              <li>{t("hreng")}</li>
+              <li>{t("razglednice")}</li>
+              <li>{t("potpisnici")}</li>
+              <li>{t("deluxe")}</li>
             </ul>
           </TextOknjizi>
           <div style={{ width: "179px", paddingLeft: "25px" }}>

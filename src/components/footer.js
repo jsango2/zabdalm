@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-
-import { useTranslation } from "react-i18next"
+import { graphql } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import FooterAnimation from "./footerAnimation"
 
 const Container = styled.div`
@@ -164,7 +164,7 @@ function Footer() {
       <FooterWrap>
         <FooterContainer>
           <FooterSection>
-            <FooterTitle>{t("kontakt.1")}</FooterTitle>
+            <FooterTitle>{t("kontakt")}</FooterTitle>
             <ContactList>
               <ContactItem>DALMATIAN STORY  j.d.o.o</ContactItem>
               <ContactItem>Mosećka  56</ContactItem>
@@ -178,9 +178,9 @@ function Footer() {
           </FooterSection>
           <FooterSection>
             <AboutProject>
-              <FooterTitle>{t("oprojektu.1")}</FooterTitle>
-              <FooterDescription>{t("citat.1")}</FooterDescription>
-              <FooterDescription>{t("produkt.1")}</FooterDescription>
+              <FooterTitle>{t("oprojektu")}</FooterTitle>
+              <FooterDescription>{t("citat")}</FooterDescription>
+              <FooterDescription>{t("produkt")}</FooterDescription>
             </AboutProject>
           </FooterSection>
           <FooterSection>

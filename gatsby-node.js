@@ -26,19 +26,19 @@
 //     `
 //   )
 
-  // if (result.errors) {
-  //   reporter.panicOnBuild(
-  //     `There was an error loading your blog posts`,
-  //     result.errors
-  //   )
-  //   return
-  // }
+// if (result.errors) {
+//   reporter.panicOnBuild(
+//     `There was an error loading your blog posts`,
+//     result.errors
+//   )
+//   return
+// }
 
-  // const posts = result.data.objekt.posts.edges
+// const posts = result.data.objekt.posts.edges
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
+// Create blog posts pages
+// But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
+// `context` is available in the template as a prop and as a variable in GraphQL
 
 //   if (posts.length > 0) {
 //     posts.forEach(post => {

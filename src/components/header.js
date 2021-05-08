@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
@@ -6,7 +6,13 @@ import logo from "../images/LogoTopsvg.svg"
 import Headroom from "react-headroom"
 
 import styled from "styled-components"
-import { useTranslation } from "react-i18next"
+import {
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+  I18nextContext,
+} from "gatsby-plugin-react-i18next"
 
 const HeaderWrap = styled.div`
   margin: 0 auto;
@@ -30,49 +36,21 @@ const HeaderWrap = styled.div`
   }
 `
 
-// const Telefon = styled.div`
-//   @media only screen and (max-width: 60em) {
-//     display: none;
-//   }
-// `
-
-// const Logo = styled.div`
-//   ${"" /* display: inline-block; */}
-//   margin-bottom: 0;
-//   margin-right: 15px;
-//   margin-left: 175px;
-//   width: 97px;
-//   @media only screen and (max-width: 960px) {
-//     position: relative;
-//     top: 15px;
-//     margin-left: 130px;
-//   }
-
-//   @media only screen and (max-width: 530px) {
-//     position: relative;
-//     top: 15px;
-//     margin-left: 70px;
-//     width: 60px;
-//   }
-//   @media only screen and (max-width: 430px) {
-//     margin-left: 40px;
-//   }
-// `
-
 const Header = () => {
   const [display, setDisplay] = useState("")
   const [current, setCurrent] = useState(1)
-  const [t, i18n] = useTranslation()
+  const { languages, changeLanguage } = useI18next()
+  const [t] = useTranslation()
+  const context = React.useContext(I18nextContext)
   useEffect(() => {
-    i18n.changeLanguage("hr")
+    context.language === "hr" ? setCurrent(1) : setCurrent(2)
   }, [])
-
+  console.log("context jezik", context)
   const handleClick = id => {
     // setKategorija(e.target.innerText)
     current === id ? setCurrent(null) : setCurrent(id)
     let lang = id === 1 ? "hr" : "en"
-    i18n.changeLanguage(lang)
-    console.log("t", t)
+    changeLanguage(lang)
   }
   return (
     // <Headroom
@@ -118,7 +96,7 @@ const Header = () => {
             className="LinkHeader LinkHeaderProjekti"
             activeClassName="active"
           >
-            {t("oKnjizi.1")}
+            {t("oKnjizi")}
           </AnchorLink>
           <AnchorLink
             offset={100}
@@ -134,7 +112,7 @@ const Header = () => {
             className="LinkHeader LinkHeaderProjekti"
             activeClassName="active"
           >
-            {t("razgledniceNaMapi.1")}
+            {t("razgledniceNaMapi")}
           </AnchorLink>
 
           <AnchorLink
@@ -151,7 +129,7 @@ const Header = () => {
             className="LinkHeader"
             activeClassName="active"
           >
-            {t("kontakt.1")}
+            {t("kontakt")}
           </AnchorLink>
         </nav>
         <div

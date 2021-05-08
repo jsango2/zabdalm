@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import { useTranslation } from "react-i18next"
+import { graphql } from "gatsby"
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import { IoIosClose } from "react-icons/io"
 
 const WrapAll = styled.div`
@@ -27,9 +28,12 @@ const Wrap = styled.div`
 function MeniMobile({ handleClickCloseMenu, isOpen }) {
   const [t, i18n] = useTranslation()
   const [current, setCurrent] = useState(null)
+  const { languages, changeLanguage } = useI18next()
   //   const size = useWindowSize()
   const handleClick = (e, id) => {
-    current === id ? setCurrent(null) : setCurrent(id)
+    // current === id ? setCurrent(null) : setCurrent(id)
+    // let lang = id === 1 ? "hr" : "en"
+    // changeLanguage(lang)
     handleClickCloseMenu()
   }
   return (
@@ -68,7 +72,7 @@ function MeniMobile({ handleClickCloseMenu, isOpen }) {
             onClick={e => handleClick(e, 0)}
             style={{ cursor: "pointer", margin: "0 10px" }}
           >
-            {t("sve.1")}
+            {t("sve")}
           </div>
 
           <div
@@ -76,7 +80,7 @@ function MeniMobile({ handleClickCloseMenu, isOpen }) {
             onClick={e => handleClick(e, 1)}
             style={{ cursor: "pointer", margin: "0 10px" }}
           >
-            {t("priceizpovijesti.1")}
+            {t("priceizpovijesti")}
           </div>
 
           <div
@@ -84,7 +88,7 @@ function MeniMobile({ handleClickCloseMenu, isOpen }) {
             onClick={e => handleClick(e, 2)}
             style={{ cursor: "pointer", margin: "0 10px" }}
           >
-            {t("antiknipredmeti.1")}
+            {t("antiknipredmeti")}
           </div>
 
           <div
@@ -92,7 +96,7 @@ function MeniMobile({ handleClickCloseMenu, isOpen }) {
             onClick={e => handleClick(e, 3)}
             style={{ cursor: "pointer", margin: "0 10px" }}
           >
-            {t("zaboravljenadalmacijadanas.1")}
+            {t("zaboravljenadalmacijadanas")}
           </div>
           {/* <div>-</div> */}
         </div>

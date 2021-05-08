@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Val from "../../content/assets/valCitat.svg"
-import { useTranslation } from "react-i18next"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -37,7 +37,7 @@ function CitatFront() {
 
   return (
     <Wrap>
-      <Citat>{t("citat.1")}</Citat>
+      <Citat>{t("citat")}</Citat>
       <div
         style={{
           position: "absolute",

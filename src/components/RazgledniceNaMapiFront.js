@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import MapaFront from "../../content/assets/mapaFront.png"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -41,14 +42,16 @@ const Podnaslov = styled.div`
 `
 
 function RazgledniceNaMapiFront() {
+  const [t, i18n] = useTranslation()
+
   return (
     <Wrap
       style={{
         backgroundImage: `url(${MapaFront})`,
       }}
     >
-      <Naslov>Razglednice na mapi</Naslov>
-      <Podnaslov>(klikni za ulaz u interaktivnu mapu)</Podnaslov>
+      <Naslov>{t("razglednicenamapi")}</Naslov>
+      <Podnaslov>{t("kliknizaulaz")}</Podnaslov>
     </Wrap>
   )
 }

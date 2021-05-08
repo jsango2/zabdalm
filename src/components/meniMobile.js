@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import { useTranslation } from "react-i18next"
+import {
+  useTranslation,
+  useI18next,
+  I18nextContext,
+} from "gatsby-plugin-react-i18next"
 import Tovar from "../../content/assets/tovar.png"
 
 import { AnchorLink } from "gatsby-plugin-anchor-links"
@@ -28,13 +32,17 @@ const Wrap = styled.div`
 
 function MeniMobile({ handleClick, isOpen }) {
   const [current, setCurrent] = useState(1)
-
+  const { languages, changeLanguage } = useI18next()
   const [t, i18n] = useTranslation()
+  const context = React.useContext(I18nextContext)
+  useEffect(() => {
+    context.language === "hr" ? setCurrent(1) : setCurrent(2)
+  }, [])
   const handleClickLang = id => {
     // setKategorija(e.target.innerText)
     current === id ? setCurrent(null) : setCurrent(id)
     let lang = id === 1 ? "hr" : "en"
-    i18n.changeLanguage(lang)
+    changeLanguage(lang)
     // console.log("t", t)
   }
   return (
@@ -73,7 +81,7 @@ function MeniMobile({ handleClick, isOpen }) {
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
-              {t("oKnjizi.1")}
+              {t("oKnjizi")}
             </AnchorLink>
             <AnchorLink
               offset={100}
@@ -89,7 +97,7 @@ function MeniMobile({ handleClick, isOpen }) {
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
-              {t("razgledniceNaMapi.1")}
+              {t("razgledniceNaMapi")}
             </AnchorLink>
 
             <AnchorLink
@@ -106,7 +114,7 @@ function MeniMobile({ handleClick, isOpen }) {
               className="LinkHeader"
               activeClassName="active"
             >
-              {t("kontakt.1")}
+              {t("kontakt")}
             </AnchorLink>
           </nav>
           <div

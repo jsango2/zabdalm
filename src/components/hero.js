@@ -11,8 +11,8 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { CgMenuGridR } from "react-icons/cg"
 import { useWindowSize } from "./useWindowSize"
-
-import { useTranslation } from "react-i18next"
+import { graphql } from "gatsby"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import MeniMobile from "./meniMobile"
 
 const Wrap = styled.div`
@@ -198,17 +198,21 @@ const Hero = () => {
             <img src={Knjiga} width="100%" alt="knjiga" />
           </KnjigaWrap>
           <WrapText>
-            <WrapNaslov>{t("pricaKakoJe.1")}</WrapNaslov>
+            <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
             {size.width > 750 ? (
               <ButtonWrap>
-                <Button text={t("kupiAtlas.1")} ikona={Cart} color="white" />
+                <Button text={t("kupiAtlas")} ikona={Cart} color="white" />
               </ButtonWrap>
             ) : (
               <ButtonWrap>
-                <Button text={t("kupiAtlas.2")} ikona={Cart} color="white" />
+                <Button
+                  text={t("kupiatlaskratko")}
+                  ikona={Cart}
+                  color="white"
+                />
               </ButtonWrap>
             )}{" "}
-            <WrapPodaci>{t("podaciOKnjizi.1")}</WrapPodaci>
+            <WrapPodaci>{t("podaciOKnjizi")}</WrapPodaci>
           </WrapText>
         </WrapItems>
         {/* </div> */}

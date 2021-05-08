@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { text } from "./dummyData/textPrice"
-import { useTranslation } from "react-i18next"
-
+import { useTranslation } from "gatsby-plugin-react-i18next"
+import { graphql } from "gatsby"
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
@@ -69,7 +69,7 @@ function NajpopularnijePrice() {
         }}
       >
         <Linija />
-        <Naslov>{t("najpopularnijeprice.1")}</Naslov>
+        <Naslov>{t("najpopularnijeprice")}</Naslov>
         <Linija />
       </div>
       <Clanci>

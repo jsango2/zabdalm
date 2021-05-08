@@ -1,4 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
+import {
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+} from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -10,7 +16,7 @@ import "../../i18next.js"
 // import ProjektiHome from "../components/projekti"
 // import Projekti from "./projekti"
 import SEO from "../components/seo"
-import { useHasBeenVisible } from "./../components/useVisibility"
+// import { useHasBeenVisible } from "./../components/useVisibility"
 import Hero from "../components/hero"
 import CitatFront from "./../components/citatFront"
 import Montaza from "../components/Montaza"
@@ -23,12 +29,15 @@ import PartneriProjektaFront from "../components/PartneriProjektaFront"
 import InstagramFront from "../components/InstagramFront"
 
 const IndexPage = ({ data }) => {
+  const { t } = useTranslation()
+  const { languages, changeLanguage } = useI18next()
+  console.log("index t", t)
   // ------visibility lazy loading------------
 
-  const halfPage = useRef()
-  const preload = useRef()
-  const hasScrolled = useHasBeenVisible(halfPage)
-  const isScrolling = useHasBeenVisible(preload)
+  // const halfPage = useRef()
+  // const preload = useRef()
+  // const hasScrolled = useHasBeenVisible(halfPage)
+  // const isScrolling = useHasBeenVisible(preload)
 
   // --------------------------------------
 
@@ -60,3 +69,17 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

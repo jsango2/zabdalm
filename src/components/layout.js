@@ -10,14 +10,6 @@ import "./layout.css"
 import Footer from "./footer"
 
 const Layout = ({ isOpen, children }) => {
-  // const [offsetY, setOffsetY] = useState(0)
-  // const handleScroll = () => setOffsetY(window.pageYOffset)
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll)
-
-  //   return () => window.removeEventListener("scroll", handleScroll)
-  // }, [])
   return (
     <div style={{ width: "100%", height: "auto", overflow: "hidden" }}>
       <div className={` ${isOpen ? "dark" : ""} `}></div>

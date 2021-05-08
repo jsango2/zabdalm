@@ -4,7 +4,7 @@ import BlogCard from "./BlogCard"
 import Button from "./button"
 import { useWindowSize } from "./useWindowSize"
 import { RiArrowDropDownFill } from "react-icons/ri"
-import { useTranslation } from "react-i18next"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import MeniMobileBlog from "./MeniMobileBlog"
 
 const Wrap = styled.div`
@@ -103,7 +103,7 @@ function BlogFront() {
                 onClick={e => handleClick(e, 0)}
                 style={{ cursor: "pointer", margin: "0 10px" }}
               >
-                {t("sve.1")}
+                {t("sve")}
               </div>
               <div>-</div>
               <div
@@ -111,7 +111,7 @@ function BlogFront() {
                 onClick={e => handleClick(e, 1)}
                 style={{ cursor: "pointer", margin: "0 10px" }}
               >
-                {t("priceizpovijesti.1")}
+                {t("priceizpovijesti")}
               </div>
               <div>-</div>
               <div
@@ -119,7 +119,7 @@ function BlogFront() {
                 onClick={e => handleClick(e, 2)}
                 style={{ cursor: "pointer", margin: "0 10px" }}
               >
-                {t("antiknipredmeti.1")}
+                {t("antiknipredmeti")}
               </div>
               <div>-</div>
               <div
@@ -127,7 +127,7 @@ function BlogFront() {
                 onClick={e => handleClick(e, 3)}
                 style={{ cursor: "pointer", margin: "0 10px" }}
               >
-                {t("zaboravljenadalmacijadanas.1")}
+                {t("zaboravljenadalmacijadanas")}
               </div>
               {/* <div>-</div> */}
             </div>{" "}
@@ -148,7 +148,7 @@ function BlogFront() {
               // onClick={e => handleClick(e, 0)}
               style={{ cursor: "pointer" }}
             >
-              {t("odaberikategoriju.1")}
+              {t("odaberikategoriju")}
             </div>
             <RiArrowDropDownFill />
           </div>
@@ -183,7 +183,7 @@ function BlogFront() {
           )}
         </div>
         <ButtonWrap>
-          <Button text={t("arhivaprica.1")} color="black" width="155" />
+          <Button text={t("arhivaprica")} color="black" width="155" />
         </ButtonWrap>
       </Wrap>
     </>
