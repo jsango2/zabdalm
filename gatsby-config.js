@@ -66,6 +66,7 @@ module.exports = {
         name: `locale`,
       },
     },
+
     {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
@@ -94,6 +95,14 @@ module.exports = {
         //     languages: ["en"],
         //   },
         // ],
+      },
+    },
+
+    {
+      resolve: "@davepwsmith/gatsby-source-flickr",
+      options: {
+        api_key: "64bbf82a0438ce5f4e21bf7286def00b",
+        username: "137852336@N06",
       },
     },
     {

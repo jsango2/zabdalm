@@ -291,7 +291,7 @@ function OautoruFront() {
           </TextOknjizi>
           <div style={{ width: "179px", paddingLeft: "25px" }}>
             <ButtonWrap>
-              <Button text={t("kupiAtlas.2")} ikona={Cart} color="white" />
+              <Button text={t("kupiatlaskratko")} ikona={Cart} color="white" />
             </ButtonWrap>
           </div>
         </DonjiDioTextWrap>

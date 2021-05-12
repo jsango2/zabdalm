@@ -45,7 +45,7 @@ const Header = () => {
   useEffect(() => {
     context.language === "hr" ? setCurrent(1) : setCurrent(2)
   }, [])
-  console.log("context jezik", context)
+  // console.log("context jezik", context)
   const handleClick = id => {
     // setKategorija(e.target.innerText)
     current === id ? setCurrent(null) : setCurrent(id)
@@ -82,55 +82,51 @@ const Header = () => {
           ></div>
         </div>
         <nav className={`primary-nav ${display}`}>
-          <AnchorLink
+          <Link
             offset={100}
             to="/#projekti"
             className="LinkHeader LinkHeaderProjekti"
             activeClassName="active"
           >
             HOME
-          </AnchorLink>
-          <AnchorLink
+          </Link>
+          <Link
             offset={100}
             to="/#projekti"
             className="LinkHeader LinkHeaderProjekti"
             activeClassName="active"
           >
             {t("oKnjizi")}
-          </AnchorLink>
-          <AnchorLink
+          </Link>
+          <Link
             offset={100}
             to="/#projekti"
             className="LinkHeader LinkHeaderProjekti"
             activeClassName="active"
           >
             BLOG
-          </AnchorLink>
-          <AnchorLink
+          </Link>
+          <Link
             offset={100}
-            to="/#projekti"
+            to="/Razglednice"
             className="LinkHeader LinkHeaderProjekti"
             activeClassName="active"
           >
             {t("razgledniceNaMapi")}
-          </AnchorLink>
+          </Link>
 
-          <AnchorLink
+          <Link
             offset={100}
             to="/#projekti"
             className="LinkHeader LinkHeaderProjekti"
             activeClassName="active"
           >
             WEBSHOP
-          </AnchorLink>
+          </Link>
 
-          <AnchorLink
-            to="/#kontakt"
-            className="LinkHeader"
-            activeClassName="active"
-          >
+          <Link to="/#kontakt" className="LinkHeader" activeClassName="active">
             {t("kontakt")}
-          </AnchorLink>
+          </Link>
         </nav>
         <div
           style={{
@@ -163,14 +159,14 @@ const Header = () => {
   )
 }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-  siteDesc: PropTypes.string,
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+//   siteDesc: PropTypes.string,
+// }
 
-Header.defaultProps = {
-  siteTitle: ``,
-  siteDesc: ``,
-}
+// Header.defaultProps = {
+//   siteTitle: ``,
+//   siteDesc: ``,
+// }
 
 export default Header

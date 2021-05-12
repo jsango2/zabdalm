@@ -108,3 +108,12 @@
 //     }
 //   `)
 // }
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        timers: false,
+      },
+    },
+  })
+}
