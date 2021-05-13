@@ -38,7 +38,7 @@ const WrapItems = styled.div`
     width: 760px;
   }
   @media only screen and (max-width: 750px) {
-    transform: translate(-50%, 10%);
+    transform: translate(-50%, 20%);
 
     left: 50%;
     width: 306px;
@@ -73,7 +73,10 @@ const WrapNaslov = styled.div`
     text-align: center;
   }
   @media only screen and (max-width: 550px) {
-    font-size: 28px;
+    font-size: 34px;
+  }
+  @media only screen and (max-width: 330px) {
+    width: 280px;
   }
 `
 const WrapPodaci = styled.div`
@@ -111,15 +114,24 @@ const KnjigaWrap = styled.div`
   }
 `
 const Hamburger = styled.div`
+  display: flex;
+  align-items: center;
   cursor: pointer;
   color: black;
+  background-color: #b0c7ce;
   position: relative;
-  top: 2px;
+  width: 100%;
+  height: 55px;
+  /* top: 2px; */
   margin-right: 30px;
+  padding-left: 48px;
   /* display: none; */
 
   @media screen and (min-width: 750px) {
     display: none;
+  }
+  @media screen and (max-width: 450px) {
+    padding-left: 20px;
   }
 `
 const Img = styled.div`
@@ -161,14 +173,24 @@ const Hero = () => {
             // blockScroll()
           }}
         >
+          <div
+            style={{
+              fontFamily: "Playfair Display",
+              color: "white",
+              fontWeight: "500",
+              fontSize: "24",
+            }}
+          >
+            ZaboravljenaDalmacija.hr
+          </div>
           <CgMenuGridR
             style={{
               color: "white",
               width: "28px",
               height: "28px",
               position: "absolute",
-              top: "25px",
-              right: "0",
+              top: "15px",
+              right: "10px",
               zIndex: "11",
             }}
           />

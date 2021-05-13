@@ -28,6 +28,20 @@ mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
 
+const Hamburger = styled.div`
+  cursor: pointer;
+  color: black;
+  position: relative;
+  top: 2px;
+  z-index: 1000;
+  margin-right: 30px;
+  /* display: none; */
+
+  @media screen and (min-width: 750px) {
+    display: none;
+  }
+`
+
 function Razglednice() {
   const { t } = useTranslation()
   const { languages, changeLanguage } = useI18next()
@@ -55,19 +69,6 @@ function Razglednice() {
 
   var flickrs = new Flickr("64bbf82a0438ce5f4e21bf7286def00b")
 
-  const Hamburger = styled.div`
-    cursor: pointer;
-    color: black;
-    position: relative;
-    top: 2px;
-    z-index: 1000;
-    margin-right: 30px;
-    /* display: none; */
-
-    @media screen and (min-width: 750px) {
-      display: none;
-    }
-  `
   useEffect(() => {
     flickrs.galleries
       .getPhotos({
@@ -376,8 +377,8 @@ function Razglednice() {
               .setLngLat(feature.geometry.coordinates)
               .setText(feature.properties.title_naslov)
               .setHTML(
-                `<div class='popupTitle'><span style="font-weight: bold">${feature.properties.title_naslov},</span> ${feature.properties.datum_uploada}.</div>
-                                    <div class='popupImage'><img src=${feature.properties.image_url}></img></div>`
+                `<div class='wrapPopup'><div class='popupTitle'><span style="font-weight: bold">${feature.properties.title_naslov},</span> ${feature.properties.datum_uploada}.</div>
+                                    <div class='popupImage'><img src=${feature.properties.image_url}></img></div></div>`
               )
               .addTo(map)
           }
