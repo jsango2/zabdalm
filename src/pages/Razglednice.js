@@ -218,6 +218,9 @@ function Razglednice() {
     })
     const popup = new mapboxgl.Popup({
       closeButton: true,
+      anchor: "center",
+      className: "moj-popupMapbox",
+      // offset: size < 750 ? [-170, 0] : [-80, 0],
     })
 
     // console.log(map)
@@ -380,6 +383,7 @@ function Razglednice() {
                 `<div class='wrapPopup'><div class='popupTitle'><span style="font-weight: bold">${feature.properties.title_naslov},</span> ${feature.properties.datum_uploada}.</div>
                                     <div class='popupImage'><img src=${feature.properties.image_url}></img></div></div>`
               )
+
               .addTo(map)
           }
         })
