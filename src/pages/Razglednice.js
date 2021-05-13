@@ -208,12 +208,12 @@ function Razglednice() {
     // var nav = new mapboxgl.NavigationControl();
     // map.addControl(nav, 'top-left');
 
-    map.addControl(
-      new mapboxgl.NavigationControl({
-        visualizePitch: true,
-      }),
-      "top-left"
-    )
+    // map.addControl(
+    //   new mapboxgl.NavigationControl({
+    //     visualizePitch: true,
+    //   }),
+    //   "top-left"
+    // )
     map.addControl(
       new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -357,7 +357,7 @@ function Razglednice() {
               .setText(feature.properties.title_naslov)
               .setHTML(
                 `<div class='popupTitle'>${feature.properties.title_naslov}, ${feature.properties.datum_uploada}.</div>
-                                    <img src=${feature.properties.image_url}></img>`
+                                    <div class='popupImage'><img src=${feature.properties.image_url}></img></div>`
               )
               .addTo(map)
           }

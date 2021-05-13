@@ -1259,7 +1259,14 @@ pre tt:after {
     display: none;
   }
   .mapWrapper {
-    height: 90vh;
+    height: 85vh;
+  }
+  .mapboxgl-ctrl-geocoder {
+    width: 250px !important;
+    min-width: 270px !important;
+  }
+  .mapboxgl-ctrl-geocoder--input {
+    font-size: smaller !important;
   }
   /* .primary-nav {
     display: none;
