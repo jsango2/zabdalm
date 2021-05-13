@@ -1057,7 +1057,8 @@ pre tt:after {
 .MuiSlider-valueLabel {
   font-size: larger !important;
 }
-
+.popupImage {
+}
 .mapboxgl-popup-content {
   position: relative;
   padding: 20px !important;
