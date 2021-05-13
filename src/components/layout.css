@@ -1262,7 +1262,7 @@ pre tt:after {
     display: none;
   }
   .mapWrapper {
-    height: 85vh;
+    height: 100vh;
   }
   .mapboxgl-ctrl-geocoder {
     width: 250px !important;
