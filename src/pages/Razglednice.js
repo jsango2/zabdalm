@@ -10,6 +10,9 @@ import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
 // import Geocoder from "react-mapbox-gl-geocoder"
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"
 import Layout from "../components/layout"
+import styled from "styled-components"
+import { CgMenuGridR } from "react-icons/cg"
+
 import "mapbox-gl/dist/mapbox-gl.css"
 import "@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
@@ -20,6 +23,7 @@ import SliderGodina from "../components/SliderGodina"
 import { useWindowSize } from "../components/useWindowSize"
 import { parse } from "postcss"
 import LoaderSpinner from "./../components/LoaderSpinner"
+import MeniMobile from "../components/meniMobile"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
@@ -47,7 +51,23 @@ function Razglednice() {
   const [geoData, setGeoData] = useState([])
   const [geoData2, setGeoData2] = useState([])
   const [FlickrDataTest, setFlickrDataTest] = useState([])
+  const [isOpen, setIsOpen] = useState(false)
+
   var flickrs = new Flickr("64bbf82a0438ce5f4e21bf7286def00b")
+
+  const Hamburger = styled.div`
+    cursor: pointer;
+    color: black;
+    position: relative;
+    top: 2px;
+    z-index: 1000;
+    margin-right: 30px;
+    /* display: none; */
+
+    @media screen and (min-width: 750px) {
+      display: none;
+    }
+  `
   useEffect(() => {
     flickrs.galleries
       .getPhotos({
@@ -356,7 +376,7 @@ function Razglednice() {
               .setLngLat(feature.geometry.coordinates)
               .setText(feature.properties.title_naslov)
               .setHTML(
-                `<div class='popupTitle'>${feature.properties.title_naslov}, ${feature.properties.datum_uploada}.</div>
+                `<div class='popupTitle'><span style="font-weight: bold">${feature.properties.title_naslov},</span> ${feature.properties.datum_uploada}.</div>
                                     <div class='popupImage'><img src=${feature.properties.image_url}></img></div>`
               )
               .addTo(map)
@@ -476,10 +496,33 @@ function Razglednice() {
   //   )
   //   console.log("filterirana array", YearFilteredFeaturedArr)
   // }, [value])
+  const handleClick = () => {
+    setIsOpen(false)
+    // allowScroll()
+  }
 
   return (
     <Layout>
       {" "}
+      <MeniMobile handleClick={handleClick} isOpen={isOpen} />
+      <Hamburger
+        onClick={() => {
+          setIsOpen(() => !isOpen)
+          // blockScroll()
+        }}
+      >
+        <CgMenuGridR
+          style={{
+            color: "#534227",
+            width: "28px",
+            height: "28px",
+            position: "absolute",
+            top: "15px",
+            left: "10px",
+            zIndex: "11",
+          }}
+        />
+      </Hamburger>{" "}
       <div className="mapWrapper">
         {/* <SliderGodina /> */}
         {/* <div className="sidebar">
@@ -488,7 +531,6 @@ function Razglednice() {
         {!loader && (
           <div className="sidebar2">
             <LoaderSpinner />
-            <div>Loading</div>
           </div>
         )}
         <div className="map-container" ref={mapContainer} />
@@ -536,8 +578,7 @@ function Razglednice() {
           )}
         </div>
         <div className="map-overlay">
-          <div id="feature-listing" className="listing">
-            {/* {console.log("podaci za render", featuresArr)} */}
+          {/* <div id="feature-listing" className="listing">
             {zoom > 10.25
               ? featuresArr.length
                 ? featuresArr.map((item, index) =>
@@ -554,7 +595,6 @@ function Razglednice() {
                         }}
                         onClick={() => handleThumbClick(item)}
                       >
-                        {/* {console.log(item.properties.image_url)} */}
                         <img
                           width="100"
                           height="70"
@@ -571,14 +611,13 @@ function Razglednice() {
                 : null
               : null}
 
-            {/* {console.log(features)} */}
-          </div>
+          </div> */}
+          <SliderGodina
+            handleChangeGodina={handleChangeGodina}
+            handleChangeGodinaDelayed={handleChangeGodinaDelayed}
+            value={value}
+          />{" "}
         </div>{" "}
-        <SliderGodina
-          handleChangeGodina={handleChangeGodina}
-          handleChangeGodinaDelayed={handleChangeGodinaDelayed}
-          value={value}
-        />{" "}
         {/* {flickr.length !== 0
     ? flickr.photos.photo.map((photo) => console.log(photo))
     : console.log('jure')} */}

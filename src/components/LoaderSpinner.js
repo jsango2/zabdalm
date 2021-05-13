@@ -8,7 +8,7 @@ export default class LoaderSpinner extends React.Component {
       <Loader
         type="ThreeDots"
         color="rgba(102, 76, 37, 0.342)"
-        height={80}
+        height={50}
         width={120}
       />
     )

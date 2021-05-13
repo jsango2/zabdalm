@@ -7,13 +7,16 @@ import Slider from "@material-ui/core/Slider"
 const useStyles = makeStyles({
   root: {
     width: 400,
+    height: 100,
     marginLeft: 30,
     "@media (max-width: 750px)": {
       width: "85%",
     },
   },
   title: {
-    marginBottom: 40,
+    textAlign: "center",
+    marginBottom: 10,
+    color: "#664F3E",
   },
   valueLabel: {
     fontSize: "0.8rem",
@@ -33,9 +36,6 @@ export default function SliderGodina({
 
   return (
     <div className={classes.root}>
-      <Typography id="range-slider" className={classes.title}>
-        Godina
-      </Typography>
       <Slider
         value={value}
         onChangeCommitted={handleChangeGodinaDelayed}
@@ -46,6 +46,9 @@ export default function SliderGodina({
         min={1889}
         max={1970}
       />
+      <Typography id="range-slider" className={classes.title}>
+        Godina
+      </Typography>
     </div>
   )
 }
