@@ -7,14 +7,19 @@ import {
 } from "gatsby-plugin-react-i18next"
 import { graphql, withAssetPrefix } from "gatsby"
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
+// import Geocoder from "react-mapbox-gl-geocoder"
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"
 import Layout from "../components/layout"
 import "mapbox-gl/dist/mapbox-gl.css"
+import "@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 import Flickr from "flickr-sdk"
 import flag from "../../content/assets/flag.png"
 import { withTheme } from "styled-components"
 import SliderGodina from "../components/SliderGodina"
+import { useWindowSize } from "../components/useWindowSize"
 import { parse } from "postcss"
+import LoaderSpinner from "./../components/LoaderSpinner"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
@@ -22,18 +27,19 @@ mapboxgl.accessToken =
 function Razglednice() {
   const { t } = useTranslation()
   const { languages, changeLanguage } = useI18next()
-
+  const size = useWindowSize()
   const mapContainer = useRef()
   const [value, setValue] = useState([1889, 1970])
-  const [value2, setValue2] = useState([])
+  const [value2, setValue2] = useState([1890, 1970])
   const [YearFilteredFeaturedArr, setYearFilteredFeaturedArr] = useState([])
-  const [lng, setLng] = useState(16.25)
-  const [lat, setLat] = useState(43.81)
-  const [zoom, setZoom] = useState(6.91)
+  const [lng, setLng] = useState(16.7469)
+  const [lat, setLat] = useState(42.7781)
+  const [zoom, setZoom] = useState(6.26)
   const [pages, setPages] = useState()
   const [airports, setAirports] = useState([])
   const [array, setArray] = useState([])
   const [item, setItem] = useState([])
+  const [loader, setLoader] = useState(false)
   const [featuresArr, setFeaturesArr] = useState([])
   const [show, setShow] = useState(false)
   const [popupFrame, setPopupFrame] = useState(null)
@@ -176,6 +182,7 @@ function Razglednice() {
 
     // console.log("gefiltert XXXXXXXXXXXXXXXXX", objectFiltrirano)
     setGeoData2(objectFiltrirano)
+    console.log("test value")
     // console.log("geodatafićrs", geoData.features)
   }, [geoData, value2])
 
@@ -185,6 +192,7 @@ function Razglednice() {
       container: mapContainer.current,
       style: "mapbox://styles/lovreperaic/ckmq9we780wql17njcxr5mpqk",
       center: [lng, lat],
+      pitch: 40,
       zoom: zoom,
     })
     const popup = new mapboxgl.Popup({
@@ -206,6 +214,19 @@ function Razglednice() {
       }),
       "top-left"
     )
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        countries: "hr",
+        zoom: 20,
+        marker: {
+          color: "#CA8A5D",
+        },
+        placeholder: "Unesi mjesto u Dalmaciji",
+        mapboxgl: mapboxgl,
+      }),
+      "top-right"
+    )
 
     map.on("load", function () {
       map.loadImage(flag, function (error, image) {
@@ -216,16 +237,14 @@ function Razglednice() {
           type: "geojson",
           data: geoData2,
           cluster: true,
-          clusterMaxZoom: 11, // Max zoom to cluster points on
-          clusterRadius: 10, // Radius of each cluster when clustering points (defaults to 50)
+          clusterMaxZoom: 13, // Max zoom to cluster points on
+          clusterRadius: 42, // Radius of each cluster when clustering points (defaults to 50)
           clusterMinPoints: 2,
         })
 
-        // geoData.features.forEach((point) => {
-        // 	new mapboxgl.Marker()
-        // 		.setLngLat(point.geometry.coordinates)
-        // 		.addTo(map);
-        // });
+        // geoData2.features.forEach(point => {
+        //   new mapboxgl.Marker().setLngLat(point.geometry.coordinates).addTo(map)
+        // })
 
         //DODAVANJE POSTCARD IKONA:
 
@@ -235,7 +254,7 @@ function Razglednice() {
           type: "symbol",
           layout: {
             "icon-image": "cat",
-            "icon-size": 0.011,
+            "icon-size": 0.7,
             "icon-padding": 0,
             "icon-allow-overlap": true,
             // 'icon-halo-blur': 0.5,
@@ -256,16 +275,16 @@ function Razglednice() {
               "step",
               ["get", "point_count"],
               "#664F3E",
-              100,
-              "#f1f075",
+              80,
+              "#996f51",
               750,
-              "#f28cb1",
+              "#b1886c",
             ],
             "circle-radius": [
               "step",
               ["get", "point_count"],
               20,
-              100,
+              80,
               30,
               750,
               40,
@@ -281,6 +300,9 @@ function Razglednice() {
             "text-field": "{point_count_abbreviated}",
             "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
             "text-size": 12,
+          },
+          paint: {
+            "text-color": "#e6d2a9",
           },
         })
 
@@ -317,25 +339,25 @@ function Razglednice() {
           // console.log("features", features)
         })
 
-        map.on("mouseover", "city", function (e) {
+        map.on("click", "city", function (e) {
           // Change the cursor style as a UI indicator.
           map.getCanvas().style.cursor = "pointer"
           // Populate the popup and set its coordinates based on the feature.
           var coordinates = e.features[0].geometry.coordinates.slice()
-
+          console.log("koordinate", coordinates)
           var feature = e.features[0]
           // console.log(feature)
           while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360
           }
           // console.log("feature", feature.properties.city)
-          if (feature.properties.city !== undefined) {
+          if (feature.properties.title_naslov !== undefined) {
             popup
               .setLngLat(feature.geometry.coordinates)
-              .setText(feature.properties.city)
+              .setText(feature.properties.title_naslov)
               .setHTML(
-                `<div class='popupTitle'>${feature.properties.city}, 1929.</div>
-                                    <img src=${feature.properties.image} width='300px'></img>`
+                `<div class='popupTitle'>${feature.properties.title_naslov}, ${feature.properties.datum_uploada}.</div>
+                                    <img src=${feature.properties.image_url}></img>`
               )
               .addTo(map)
           }
@@ -343,9 +365,9 @@ function Razglednice() {
 
         map.on("mouseleave", "city", function () {
           map.getCanvas().style.cursor = ""
-          popup.remove()
+          // popup.remove()
         })
-        map.on("mousemove", "city", function () {
+        map.on("mouseenter", "city", function () {
           map.getCanvas().style.cursor = "pointer"
           // popup.remove();
         })
@@ -358,7 +380,15 @@ function Razglednice() {
 
     // Call this function on initialization
     // passing an empty array to render an empty state
-    renderListings([])
+    // renderListings([])
+
+    // Initialize the map
+
+    map.on("sourcedata", function (e) {
+      setLoader(e.isSourceLoaded)
+      // console.log(e)
+    })
+
     return () => map.remove()
   }, [geoData2])
   // const handleFeatureFilter = (e) => {
@@ -428,12 +458,12 @@ function Razglednice() {
     // console.log(item);
   }
 
+  const handleChangeGodinaDelayed = (event, newValue) => {
+    setValue2(newValue)
+    console.log(newValue)
+  }
   const handleChangeGodina = (event, newValue) => {
     setValue(newValue)
-    setTimeout(() => {
-      setValue2(newValue)
-      console.log(newValue)
-    }, 1000)
   }
 
   // useEffect(() => {
@@ -452,6 +482,15 @@ function Razglednice() {
       {" "}
       <div className="mapWrapper">
         {/* <SliderGodina /> */}
+        {/* <div className="sidebar">
+          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+        </div> */}
+        {!loader && (
+          <div className="sidebar2">
+            <LoaderSpinner />
+            <div>Loading</div>
+          </div>
+        )}
         <div className="map-container" ref={mapContainer} />
         <div
           style={{
@@ -472,7 +511,7 @@ function Razglednice() {
                 }}
               >
                 Grad:{" "}
-                <span style={{ fontSize: "1.2re,", fontWeight: "600" }}>
+                <span style={{ fontSize: "1.2rem,", fontWeight: "600" }}>
                   {popupFrame.properties.title_naslov}
                 </span>
               </div>
@@ -499,7 +538,7 @@ function Razglednice() {
         <div className="map-overlay">
           <div id="feature-listing" className="listing">
             {/* {console.log("podaci za render", featuresArr)} */}
-            {zoom > 7.5
+            {zoom > 10.25
               ? featuresArr.length
                 ? featuresArr.map((item, index) =>
                     item.properties.title_naslov !== undefined ? (
@@ -535,12 +574,16 @@ function Razglednice() {
             {/* {console.log(features)} */}
           </div>
         </div>{" "}
-        <SliderGodina handleChangeGodina={handleChangeGodina} value={value} />
+        <SliderGodina
+          handleChangeGodina={handleChangeGodina}
+          handleChangeGodinaDelayed={handleChangeGodinaDelayed}
+          value={value}
+        />{" "}
         {/* {flickr.length !== 0
     ? flickr.photos.photo.map((photo) => console.log(photo))
     : console.log('jure')} */}
         {/* {console.log(flickr)} */}
-      </div>
+      </div>{" "}
     </Layout>
   )
 }

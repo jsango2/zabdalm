@@ -1057,6 +1057,29 @@ pre tt:after {
 .MuiSlider-valueLabel {
   font-size: larger !important;
 }
+
+.mapboxgl-popup-content {
+  position: relative;
+  padding: 20px !important;
+  width: 550px;
+  background-color: #f0e2c8 !important;
+  border-radius: 10px !important;
+
+  /* max-height: 150px; */
+}
+.mapboxgl-popup-content img {
+  max-width: 500px;
+  max-height: 350px;
+}
+.mapboxgl-popup-close-button {
+  top: 6px !important;
+  right: 6px !important;
+  font-size: 20px;
+}
+.popupTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
 /* .makeStyles-title-28 {
   position: relative;
   z-index: 2;
@@ -1082,9 +1105,27 @@ pre tt:after {
   z-index: 1;
   position: absolute;
   top: 0;
-  right: 0%;
+  left: 50%;
   margin: 12px;
   border-radius: 4px;
+}
+.mapboxgl-ctrl-geocoder {
+  min-width: 300px !important;
+}
+.sidebar2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #534227;
+  font-weight: bolder;
+  font-size: large;
+  z-index: 1;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  margin: 12px;
 }
 .map-overlay {
   position: absolute;
@@ -1215,6 +1256,9 @@ pre tt:after {
 @media screen and (max-width: 700px) {
   .header-wrap {
     display: none;
+  }
+  .mapWrapper {
+    height: 90vh;
   }
   /* .primary-nav {
     display: none;

@@ -21,7 +21,11 @@ function valuetext(value) {
   return `${value}year`
 }
 
-export default function SliderGodina({ handleChangeGodina, value }) {
+export default function SliderGodina({
+  handleChangeGodina,
+  value,
+  handleChangeGodinaDelayed,
+}) {
   const classes = useStyles()
 
   return (
@@ -31,6 +35,7 @@ export default function SliderGodina({ handleChangeGodina, value }) {
       </Typography>
       <Slider
         value={value}
+        onChangeCommitted={handleChangeGodinaDelayed}
         onChange={handleChangeGodina}
         valueLabelDisplay="on"
         aria-labelledby="range-slider"

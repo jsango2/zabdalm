@@ -93,7 +93,7 @@ function MeniMobile({ handleClick, isOpen }) {
             </AnchorLink>
             <AnchorLink
               offset={100}
-              to="/#projekti"
+              to="/Razglednice"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
