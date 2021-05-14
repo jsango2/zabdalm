@@ -67,7 +67,7 @@ function Razglednice() {
   const [FlickrDataTest, setFlickrDataTest] = useState([])
   const [isOpen, setIsOpen] = useState(false)
 
-  var flickrs = new Flickr("64bbf82a0438ce5f4e21bf7286def00b")
+  var flickrs = new Flickr("fd4a1bda8ebe5a6c92d2e206c9df0e16")
 
   useEffect(() => {
     flickrs.galleries

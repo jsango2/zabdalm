@@ -40,6 +40,7 @@
     "gatsby-remark-smartypants": "^4.1.0",
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-source-flickr": "0.0.4",
+    "gatsby-source-google-photos": "^2.4.3",
     "gatsby-source-graphql": "^3.4.0",
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
@@ -95,6 +96,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "token": "gatsby-source-google-photos-token"
   }
 }

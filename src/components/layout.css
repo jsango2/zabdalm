@@ -1060,18 +1060,23 @@ pre tt:after {
 }
 .popupImage {
   width: 100%;
+  /* height: 100%; */
 }
 .wrapPopup {
-  width: 550px;
+  position: relative;
+  width: 70vw;
+  max-width: 800px;
+  height: 50vw;
+  max-height: 560px;
   background-color: hsla(39, 20%, 72%, 0.788);
-  padding: 5px;
+  padding-top: 5px;
   border-radius: 7px;
 }
 .moj-popupMapbox {
   position: absolute;
-  top: 50% !important;
+  top: 55% !important;
   left: 0% !important;
-  transform: translate(100%, -80%) !important;
+  transform: translate(60%, -80%) !important;
 }
 /* .mapboxgl-popup {
   width: 95% !important;
@@ -1079,7 +1084,10 @@ pre tt:after {
 .mapboxgl-popup-content {
   position: relative;
   /* padding: 20px !important; */
-  width: 550px;
+  width: 70vw;
+  max-width: 800px;
+  height: 50vw;
+  max-height: 560px;
   /* background-color: #f0e2c8 !important; */
   /* border-radius: 10px !important; */
 
@@ -1088,10 +1096,14 @@ pre tt:after {
   background-color: transparent !important;
 }
 .mapboxgl-popup-content img {
-  width: 100%;
-  max-height: 350px;
+  width: 70vw;
+  max-width: 800px;
+  height: 50vw;
+  max-height: 540px;
+  /* max-height: 100%; */
 }
 .mapboxgl-popup-close-button {
+  position: absolute;
   top: 16px !important;
   right: 26px !important;
   font-size: 20px;
@@ -1115,7 +1127,7 @@ pre tt:after {
 .mapWrapper {
   position: relative;
   width: 100%;
-  height: 800px;
+  height: 90vh;
 }
 /* .mapboxgl-canvas {
   height: 100% !important;
@@ -1290,32 +1302,37 @@ pre tt:after {
   .mapboxgl-ctrl-geocoder--input {
     font-size: smaller !important;
   }
+  .wrapPopup {
+    width: 85vw;
+    height: 57vw;
+  }
   .mapboxgl-popup-content {
     width: 85vw !important;
+    height: 55vw;
+
     padding: 0px !important;
   }
   .mapboxgl-popup-content img {
-    max-width: 100%;
-    max-height: 350px;
+    width: 85vw;
+    max-width: 790px;
+    height: 55vw;
+    max-height: 510px;
   }
   .popupTitle {
     font-size: 1rem;
     margin-bottom: 0.5rem;
   }
-  .wrapPopup {
-    width: 90vw;
-  }
   .mapboxgl-popup-close-button {
-    top: 0px !important;
+    top: 5px !important;
     right: 26px !important;
     font-size: 20px;
     color: #664f3e;
   }
   .moj-popupMapbox {
     position: absolute;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-82%, -50%) !important;
+    top: 0% !important;
+    left: 0% !important;
+    transform: translate(0%, 100%) !important;
   }
   /* .primary-nav {
     display: none;

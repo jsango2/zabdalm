@@ -137,6 +137,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-postcss`,
+    // {
+    //   resolve: "gatsby-source-google-photos",
+    //   options: {
+    //     albumsTitles: ["test1"],
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
