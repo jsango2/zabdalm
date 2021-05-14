@@ -38,7 +38,7 @@ const WrapItems = styled.div`
     width: 760px;
   }
   @media only screen and (max-width: 750px) {
-    transform: translate(-50%, 20%);
+    transform: translate(-50%, 10%);
 
     left: 50%;
     width: 306px;
@@ -71,6 +71,7 @@ const WrapNaslov = styled.div`
     width: 100%;
     font-size: 44px;
     text-align: center;
+    margin: 0;
   }
   @media only screen and (max-width: 550px) {
     font-size: 34px;
@@ -226,13 +227,7 @@ const Hero = () => {
                 <Button text={t("kupiAtlas")} ikona={Cart} color="white" />
               </ButtonWrap>
             ) : (
-              <ButtonWrap>
-                <Button
-                  text={t("kupiatlaskratko")}
-                  ikona={Cart}
-                  color="white"
-                />
-              </ButtonWrap>
+              <div></div>
             )}{" "}
             <WrapPodaci>{t("podaciOKnjizi")}</WrapPodaci>
           </WrapText>
@@ -244,3 +239,17 @@ const Hero = () => {
 }
 
 export default Hero
+
+// {size.width > 750 ? (
+//   <ButtonWrap>
+//     <Button text={t("kupiAtlas")} ikona={Cart} color="white" />
+//   </ButtonWrap>
+// ) : (
+//   <ButtonWrap>
+//     <Button
+//       text={t("kupiatlaskratko")}
+//       ikona={Cart}
+//       color="white"
+//     />
+//   </ButtonWrap>
+// )}{" "}

@@ -386,7 +386,7 @@ function Razglednice() {
                      ${feature.properties.datum_uploada}.
                   </div>
                   <div class='popupImageWrap' style="background-image: url(${feature.properties.image_url}); 
-                background-repeat: no-repeat; background-size: contain; filter: drop-shadow(0 0 4rem black); 
+                background-repeat: no-repeat; background-size: contain; filter: drop-shadow(0 0 4rem rgba(104, 62, 15, 0.61)); 
                 background-position: center">
                   </div>
                 </div>   
@@ -549,7 +549,7 @@ function Razglednice() {
           </div>
         )}
         <div className="map-container" ref={mapContainer} />
-        <div
+        {/* <div
           style={{
             width: "100%",
             height: "100%",
@@ -591,42 +591,8 @@ function Razglednice() {
               ></div>
             </div>
           )}
-        </div>
+        </div> */}
         <div className="map-overlay">
-          {/* <div id="feature-listing" className="listing">
-            {zoom > 10.25
-              ? featuresArr.length
-                ? featuresArr.map((item, index) =>
-                    item.properties.title_naslov !== undefined ? (
-                      <div
-                        key={index}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          cursor: "pointer",
-                          backgroundColor: "white",
-                          margin: "5px",
-                          borderRadius: "7px",
-                        }}
-                        onClick={() => handleThumbClick(item)}
-                      >
-                        <img
-                          width="100"
-                          height="70"
-                          src={item.properties.image_url_thumb}
-                          alt=""
-                        />
-                        <div style={{ marginLeft: "10px", fontSize: "1.2rem" }}>
-                          <h5>{item.properties.title_naslov}</h5>
-                          <h5>{item.properties.datum_uploada}</h5>
-                        </div>
-                      </div>
-                    ) : null
-                  )
-                : null
-              : null}
-
-          </div> */}
           <SliderGodina
             handleChangeGodina={handleChangeGodina}
             handleChangeGodinaDelayed={handleChangeGodinaDelayed}

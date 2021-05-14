@@ -2,16 +2,32 @@ import React from "react"
 import styled from "styled-components"
 import Val from "../../content/assets/valCitat.svg"
 import { useTranslation } from "gatsby-plugin-react-i18next"
+import Cart from "../../content/assets/cartblack.svg"
+import { useWindowSize } from "./useWindowSize"
+
+import Button from "./button"
+
+const ButtonWrap = styled.div`
+  /* height: 100px; */
+  position: relative;
+  width: 390px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  @media only screen and (max-width: 750px) {
+    width: 200px;
+  }
+`
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
-  height: 300px;
+  height: 400px;
   position: relative;
   margin-top: 50px;
 
   @media only screen and (max-width: 750px) {
-    margin-top: 170px;
+    margin-top: 320px;
   }
 `
 const Citat = styled.div`
@@ -34,9 +50,17 @@ const Citat = styled.div`
 `
 function CitatFront() {
   const [t, i18n] = useTranslation()
+  const size = useWindowSize()
 
   return (
     <Wrap>
+      {size.width < 750 ? (
+        <ButtonWrap>
+          <Button text={t("kupiatlaskratko")} ikona={Cart} color="black" />
+        </ButtonWrap>
+      ) : (
+        <div></div>
+      )}
       <Citat>{t("citat")}</Citat>
       <div
         style={{
