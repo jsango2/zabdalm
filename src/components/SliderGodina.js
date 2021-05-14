@@ -8,7 +8,7 @@ const useStyles = makeStyles({
   root: {
     width: 400,
     height: 100,
-    marginLeft: 30,
+    margin: "0 auto",
     "@media (max-width: 750px)": {
       width: "85%",
     },

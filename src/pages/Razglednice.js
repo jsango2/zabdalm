@@ -380,8 +380,18 @@ function Razglednice() {
               .setLngLat(feature.geometry.coordinates)
               .setText(feature.properties.title_naslov)
               .setHTML(
-                `<div class='wrapPopup'><div class='popupTitle'><span style="font-weight: bold">${feature.properties.title_naslov},</span> ${feature.properties.datum_uploada}.</div>
-                                    <div class='popupImage'><img src=${feature.properties.image_url}></img></div></div>`
+                `<div class='wrapPopup'>
+                  <div class='popupTitle'>
+                    <span style="font-weight: bold">${feature.properties.title_naslov},</span>
+                     ${feature.properties.datum_uploada}.
+                  </div>
+                  <div class='popupImageWrap' style="background-image: url(${feature.properties.image_url}); 
+                background-repeat: no-repeat; background-size: contain; filter: drop-shadow(0 0 4rem black); 
+                background-position: center">
+                  </div>
+                </div>   
+                
+                `
               )
 
               .addTo(map)
