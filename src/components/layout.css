@@ -1327,6 +1327,9 @@ pre tt:after {
     height: 57vw; */
     padding-top: 50px !important;
   }
+  .sidebar2 {
+    bottom: 17%;
+  }
   .mapboxgl-popup-content {
     width: 85vw !important;
     height: 55vw;
