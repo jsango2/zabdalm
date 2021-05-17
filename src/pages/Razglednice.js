@@ -12,6 +12,7 @@ import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import { CgMenuGridR } from "react-icons/cg"
+import firebase from "gatsby-plugin-firebase"
 
 import "mapbox-gl/dist/mapbox-gl.css"
 import "@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
@@ -24,6 +25,8 @@ import { useWindowSize } from "../components/useWindowSize"
 import { parse } from "postcss"
 import LoaderSpinner from "./../components/LoaderSpinner"
 import MeniMobile from "../components/meniMobile"
+import GooglePhotos from "../components/testGooglePhotosApi"
+import FirebaseData from "../components/testGooglePhotosApi"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
@@ -42,7 +45,7 @@ const Hamburger = styled.div`
   }
 `
 
-function Razglednice() {
+function Razglednice({ data }) {
   const { t } = useTranslation()
   const { languages, changeLanguage } = useI18next()
   const size = useWindowSize()
@@ -66,32 +69,101 @@ function Razglednice() {
   const [geoData2, setGeoData2] = useState([])
   const [FlickrDataTest, setFlickrDataTest] = useState([])
   const [isOpen, setIsOpen] = useState(false)
+  const [slike, setSlike] = useState([])
+  const [listData, setListData] = useState([])
 
   var flickrs = new Flickr("fd4a1bda8ebe5a6c92d2e206c9df0e16")
 
+  // useEffect(() => {
+  //   var ref = firebase.database().ref("/")
+  //   var listen = ref.on("value", snapshot => {
+  //     var listaPodataka = []
+  //     snapshot.forEach(snap => {
+  //       var key = snap.key
+  //       var data = snap.val()
+  //       // console.log(data)
+
+  //       listaPodataka.push({
+  //         type: "Feature",
+  //         properties: {
+  //           datum_uploada: parseInt(data.DateCreated.substring(0, 4)),
+  //           image_url_thumb: data.Photo200px,
+  //           image_url: data.Photo1000px,
+  //           title_naslov: data.Title,
+  //           longitude: data.GPSLongitude,
+  //           latitude: data.GPSLatitude,
+  //           icon: {
+  //             iconUrl: data.Photo200px,
+  //             iconSize: [50, 50], // size of the icon
+  //             iconAnchor: [25, 25], // point of the icon which will correspond to marker's location
+  //             popupAnchor: [0, -25], // point from which the popup should open relative to the iconAnchor
+  //             className: "dot",
+  //           },
+  //         },
+  //         geometry: {
+  //           type: "Point",
+  //           coordinates: [data.GPSLongitude, data.GPSLatitude],
+  //         },
+  //       })
+  //     })
+  //     const geoJsonedFlickr = {
+  //       type: "FeatureCollection",
+  //       features: listaPodataka,
+  //     }
+  //     setGeoData(geoJsonedFlickr)
+  //     console.log("geo:", geoJsonedFlickr)
+  //   })
+
+  //   return () => ref.off("value", listen)
+  // }, [])
+
   useEffect(() => {
-    flickrs.galleries
-      .getPhotos({
-        gallery_id: "72157718768762512",
-        extras: [
-          "description",
-          "geo",
-          "tags",
-          "url_m",
-          "title",
-          "date_upload",
-          "machine_tags",
-        ],
-        per_page: 500,
+    var docRef = firebase
+      .firestore()
+      .collection("razglednice")
+      .doc("wAAHSiuZbg5A6dZ6DmuA")
+    docRef
+      .get()
+      .then(doc => {
+        if (doc.exists) {
+          console.log("Document data:", doc.data())
+          setGeoData(doc.data().geoData)
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!")
+        }
       })
-      .then(function (res) {
-        // setFlickr(res.body);
-        setPages(res.body.photos.pages)
-      })
-      .catch(function (err) {
-        console.error("bonk", err)
+      .catch(error => {
+        console.log("Error getting document:", error)
       })
   }, [])
+
+  // useEffect(() => {
+  //   firebase.firestore().collection("razglednice").add({ geoData })
+  // }, [geoData])
+  // useEffect(() => {
+  //   flickrs.galleries
+  //     .getPhotos({
+  //       gallery_id: "72157718768762512",
+  //       extras: [
+  //         "description",
+  //         "geo",
+  //         "tags",
+  //         "url_m",
+  //         "title",
+  //         "date_upload",
+  //         "machine_tags",
+  //       ],
+  //       per_page: 500,
+  //     })
+  //     .then(function (res) {
+  //       // setFlickr(res.body);
+  //       setPages(res.body.photos.pages)
+  //     })
+  //     .catch(function (err) {
+  //       console.error("bonk", err)
+  //     })
+  // }, [])
 
   // useEffect(() => {
   //   fetch(
@@ -101,94 +173,79 @@ function Razglednice() {
   //     .then(data => setFlickr(data.photos.photo))
   // }, [])
 
-  useEffect(() => {
-    if (pages !== undefined) {
-      // console.log("pages:", pages)
-      let arrayFlickr = []
-      for (let index = 1; index <= pages; index++) {
-        // console.log("index", index)
-        flickrs.people
-          .getPublicPhotos({
-            user_id: "192971463@N03",
-            extras: [
-              "description",
-              "geo",
-              "tags",
-              "url_t",
-              "url_c",
-              "title",
-              "date_taken",
-              "machine_tags",
-            ],
-            per_page: 500,
-            page: index,
-          })
-          .then(function (res) {
-            // console.log("res:", res)
-            arrayFlickr.push(res.body.photos.photo)
-            setFlickr(arrayFlickr.flat())
-          })
-          .catch(function (err) {
-            console.error("bonk", err)
-          })
-      }
-    }
-  }, [pages])
+  // useEffect(() => {
+  //   if (pages !== undefined) {
+  //     // console.log("pages:", pages)
+  //     let arrayFlickr = []
+  //     for (let index = 1; index <= pages; index++) {
+  //       // console.log("index", index)
+  //       flickrs.people
+  //         .getPublicPhotos({
+  //           user_id: "192971463@N03",
+  //           extras: [
+  //             "description",
+  //             "geo",
+  //             "tags",
+  //             "url_t",
+  //             "url_c",
+  //             "title",
+  //             "date_taken",
+  //             "machine_tags",
+  //           ],
+  //           per_page: 500,
+  //           page: index,
+  //         })
+  //         .then(function (res) {
+  //           // console.log("res:", res)
+  //           arrayFlickr.push(res.body.photos.photo)
+  //           setFlickr(arrayFlickr.flat())
+  //         })
+  //         .catch(function (err) {
+  //           console.error("bonk", err)
+  //         })
+  //     }
+  //   }
+  // }, [pages])
   // console.log('izlaz:::::', array);
 
-  useEffect(() => {
-    // console.log("flickr", flickr)
-    if (flickr.length !== 0 || flickr.length !== undefined) {
-      const geoJsonedFlickr = {
-        type: "FeatureCollection",
-        features: flickr.map(photo => ({
-          type: "Feature",
-          properties: {
-            title_naslov: photo.title,
-            image_url_thumb: photo.url_t,
-            image_url: photo.url_c,
-            description: photo.description,
-            tags: photo.tags,
-            datum_uploada: parseInt(photo.datetaken.substring(0, 4)),
-            machine_tags: photo.machine_tags,
-            coordinates: [photo.longitude, photo.latitude],
-            icon: {
-              iconUrl: photo.url_c,
-              iconSize: [50, 50], // size of the icon
-              iconAnchor: [25, 25], // point of the icon which will correspond to marker's location
-              popupAnchor: [0, -25], // point from which the popup should open relative to the iconAnchor
-              className: "dot",
-            },
-          },
-          geometry: {
-            type: "Point",
-            coordinates: [photo.longitude, photo.latitude],
-          },
-        })),
-      }
-      // console.log("geoed:", geoJsonedFlickr.features)
+  // useEffect(() => {
+  //   console.log("flickr", flickr)
+  //   if (flickr.length !== 0 || flickr.length !== undefined) {
+  //     const geoJsonedFlickr = {
+  //       type: "FeatureCollection",
+  //       features: flickr.map(photo => ({
+  //         type: "Feature",
+  //         properties: {
+  //           title_naslov: photo.title,
+  //           image_url_thumb: photo.photo200px,
+  //           image_url: photo.photo1000px,
+  //           // description: photo.title,
+  //           // tags: photo.tags,
+  //           datum_uploada: photo.godina,
+  //           // machine_tags: photo.machine_tags,
+  //           coordinates: [photo.longitude, photo.latitude],
+  //           icon: {
+  //             iconUrl: photo.photo200px,
+  //             iconSize: [50, 50], // size of the icon
+  //             iconAnchor: [25, 25], // point of the icon which will correspond to marker's location
+  //             popupAnchor: [0, -25], // point from which the popup should open relative to the iconAnchor
+  //             className: "dot",
+  //           },
+  //         },
+  //         geometry: {
+  //           type: "Point",
+  //           coordinates: [photo.longitude, photo.latitude],
+  //         },
+  //       })),
+  //     }
 
-      setGeoData(geoJsonedFlickr)
-      // console.log(
-      //   "filter 1908-1910:",
-      //   geoJsonedFlickr.features.filter(
-      //     razglednica =>
-      //       razglednica.properties.datum_uploada >= value[0] &&
-      //       razglednica.properties.datum_uploada <= value[1]
-      //   )
-      // )
-      // setGeoData(
-      //   geoJsonedFlickr.features.filter(
-      //     razglednica =>
-      //       razglednica.properties.datum_uploada >= 1900 &&
-      //       razglednica.properties.datum_uploada <= 1910
-      //   )
-      // )
-      // setYearFilteredFeaturedArr(geoJsonedFlickr)
-    }
-  }, [flickr])
+  //     setGeoData(geoJsonedFlickr)
+
+  //   }
+  // }, [flickr])
 
   useEffect(() => {
+    // console.log("geodata", geoData)
     if (geoData.length !== 0) {
       var filtrirano = geoData.features.filter(
         razglednica =>
@@ -261,7 +318,7 @@ function Razglednice() {
           type: "geojson",
           data: geoData2,
           cluster: true,
-          clusterMaxZoom: 13, // Max zoom to cluster points on
+          clusterMaxZoom: 11, // Max zoom to cluster points on
           clusterRadius: 42, // Radius of each cluster when clustering points (defaults to 50)
           clusterMinPoints: 2,
         })
@@ -501,16 +558,6 @@ function Razglednice() {
     setValue(newValue)
   }
 
-  // useEffect(() => {
-  //   setYearFilteredFeaturedArr(
-  //     featuresArr.filter(
-  //       razglednica =>
-  //         razglednica.properties.datum_uploada >= value[0] &&
-  //         razglednica.properties.datum_uploada <= value[1]
-  //     )
-  //   )
-  //   console.log("filterirana array", YearFilteredFeaturedArr)
-  // }, [value])
   const handleClick = () => {
     setIsOpen(false)
     // allowScroll()
@@ -543,13 +590,69 @@ function Razglednice() {
         {/* <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div> */}
+        <div className="slides-wrap">
+          {zoom > 11.3
+            ? featuresArr.length
+              ? featuresArr.map((item, index) =>
+                  item.properties.title_naslov !== undefined ? (
+                    <div
+                      key={index}
+                      style={{
+                        display: "flex",
+                        // flexDirection: "column-reverse",
+                        alignItems: "center",
+                        justifyContent: "end",
+                        cursor: "pointer",
+                        width: "150px",
+                        minWidth: "150px",
+                        // backgroundColor: "#d6ccba",
+                        margin: "5px",
+                        borderRadius: "7px",
+                        backgroundImage: `url(${item.properties.image_url_thumb})`,
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center",
+                        // filter: "drop-shadow(0 0 4rem rgba(104, 62, 15, 0.61))",
+                      }}
+                      onClick={() => handleThumbClick(item)}
+                    >
+                      {/* <img
+                        // width="70"
+                        src={item.properties.image_url_thumb}
+                        alt=""
+                      /> */}
+                      <div
+                        style={{
+                          marginLeft: "10px",
+                          marginTop: "50px",
+                          fontSize: "1.2rem",
+                          display: "flex",
+                          textShadow: "2px 2px 2px black",
+                          // flexDirection: "column",
+                          alignItems: "center",
+                          color: "white",
+                        }}
+                      >
+                        <div style={{ fontSize: "10px", fontWeight: "bold" }}>
+                          {item.properties.title_naslov},
+                        </div>
+                        <div style={{ fontSize: "10px" }}>
+                          {item.properties.datum_uploada}
+                        </div>
+                      </div>
+                    </div>
+                  ) : null
+                )
+              : null
+            : null}
+        </div>
         {!loader && (
           <div className="sidebar2">
             <LoaderSpinner />
           </div>
         )}
         <div className="map-container" ref={mapContainer} />
-        {/* <div
+        <div
           style={{
             width: "100%",
             height: "100%",
@@ -567,8 +670,19 @@ function Razglednice() {
                   marginBottom: "10px",
                 }}
               >
-                Grad:{" "}
-                <span style={{ fontSize: "1.2rem,", fontWeight: "600" }}>
+                <span
+                  style={{
+                    fontSize: "1.2rem,",
+                    fontWeight: "600",
+                    marginLeft: "30px",
+                    padding: "10px 20px",
+                    backgroundColor: "wheat",
+                    fontSize: "1rem",
+                    color: " #614d29",
+                    margin: "0.3rem auto 0 0.5rem",
+                    width: "auto",
+                  }}
+                >
                   {popupFrame.properties.title_naslov}
                 </span>
               </div>
@@ -587,11 +701,12 @@ function Razglednice() {
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "contain ",
                   zIndex: "2",
+                  // filter: "drop-shadow(0 0 4rem rgba(104, 62, 15, 0.61))",
                 }}
               ></div>
             </div>
           )}
-        </div> */}
+        </div>
         <div className="map-overlay">
           <SliderGodina
             handleChangeGodina={handleChangeGodina}
@@ -604,6 +719,8 @@ function Razglednice() {
     : console.log('jure')} */}
         {/* {console.log(flickr)} */}
       </div>{" "}
+      {/* <GooglePhotos /> */}
+      {/* <FirebaseData /> */}
     </Layout>
   )
 }

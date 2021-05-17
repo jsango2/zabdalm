@@ -58,7 +58,7 @@ function BlogFront() {
     console.log("kliknuto")
   }
 
-  const [current, setCurrent] = useState(null)
+  const [current, setCurrent] = useState(0)
   const size = useWindowSize()
   const handleClick = (e, id) => {
     current === id ? setCurrent(null) : setCurrent(id)

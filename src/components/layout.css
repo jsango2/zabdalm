@@ -1075,15 +1075,16 @@ pre tt:after {
   border-radius: 7px;
 }
 .popupImageWrap {
-  width: 70vw;
-  max-width: 750px;
-  height: 50vw;
-  max-height: 550px;
+  width: 55vw;
+  max-width: 550px;
+  height: 40vw;
+  max-height: 430px;
+  margin-top: 15px;
 }
 .moj-popupMapbox {
   position: absolute;
   top: 60% !important;
-  left: 0% !important;
+  left: 10% !important;
   transform: translate(60%, -60%) !important;
 }
 /* .mapboxgl-popup {
@@ -1219,13 +1220,13 @@ pre tt:after {
 }
 .popupFrame {
   position: absolute;
-  width: 60%;
-  height: 50%;
+  width: 70vw;
+  height: 57%;
   max-height: 80%;
-  max-width: 80%;
-  background-color: rgb(248, 241, 222);
-  left: 50%;
-  transform: translate(-50%, -20%);
+  max-width: 579px;
+  background-color: transparent;
+  left: 48%;
+  transform: translate(-48%, -80%);
   /* top: 48px; */
   margin: 0 auto;
   /* transform: translate(-50%, -50%); */
@@ -1238,13 +1239,33 @@ pre tt:after {
   padding: 10px 15px 15px 15px;
   border-radius: 10px;
 }
+.slides-wrap {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  /* padding-top: 50px;
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif; */
+  background-color: transparent;
+  max-height: 100%;
+  height: 130px;
+  overflow: auto;
+  z-index: 10;
+  bottom: 150px;
+}
 .x {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 41px;
+  font-size: 13px;
   cursor: pointer;
   z-index: 3;
   color: rgb(32, 32, 32);
+  padding-top: 3px;
+  padding-left: 10px;
+  border-radius: 6px;
+  background-color: wheat;
+  width: 30px;
+  height: 30px;
 }
 .primary-nav-mobile-meni {
   position: relative;
@@ -1306,6 +1327,15 @@ pre tt:after {
   }
 }
 @media screen and (max-width: 700px) {
+  .popupFrame {
+    width: 90vw;
+    height: 60vw;
+    max-height: 80%;
+    max-width: 579px;
+    top: 0;
+    left: 48%;
+    transform: translate(-48%, 50%);
+  }
   .header-wrap {
     display: none;
   }
@@ -1352,11 +1382,15 @@ pre tt:after {
     font-size: 20px;
     color: #664f3e;
   }
+  .popupImageWrap {
+    width: 85vw;
+    height: 55vw;
+  }
   .moj-popupMapbox {
     position: absolute;
     top: 0% !important;
     left: 0% !important;
-    transform: translate(0%, 60%) !important;
+    transform: translate(0%, 40%) !important;
   }
   /* .primary-nav {
     display: none;
@@ -1368,6 +1402,15 @@ pre tt:after {
   } */
 }
 @media screen and (max-width: 430px) {
+  .popupFrame {
+    width: 90vw;
+    height: 70vw;
+    max-height: 80%;
+    max-width: 579px;
+    top: 0;
+    left: 48%;
+    transform: translate(-48%, 50%);
+  }
   .moj-popupMapbox {
     position: absolute;
     top: 0% !important;

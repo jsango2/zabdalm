@@ -71,6 +71,8 @@ const WrapNaslov = styled.div`
     width: 100%;
     font-size: 44px;
     text-align: center;
+    line-height: 43px;
+
     margin: 0;
   }
   @media only screen and (max-width: 550px) {

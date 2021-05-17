@@ -27,7 +27,7 @@ const Wrap = styled.div`
   margin-top: 50px;
 
   @media only screen and (max-width: 750px) {
-    margin-top: 320px;
+    margin-top: 260px;
   }
 `
 const Citat = styled.div`
@@ -44,6 +44,7 @@ const Citat = styled.div`
   margin-bottom: 100px;
   @media only screen and (max-width: 750px) {
     font-size: 18px;
+    padding-top: 55px;
 
     width: 85%;
   }

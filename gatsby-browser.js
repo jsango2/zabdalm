@@ -5,6 +5,7 @@ import "typeface-merriweather"
 import "./src/normalize.css"
 // custom CSS styles
 import "./src/style.css"
-
+import "firebase/database"
+import "firebase/firestore"
 // Highlighting for code blocks
 import "prismjs/themes/prism.css"

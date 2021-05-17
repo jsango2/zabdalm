@@ -110,7 +110,21 @@ module.exports = {
         display: "swap",
       },
     },
-
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: "AIzaSyCYu4q30a3Fc3HulZYfxpQ7j5Q29CKwMZ4",
+          authDomain: "zaboravljena-dalmacija.firebaseapp.com",
+          databaseURL:
+            "https://zaboravljena-dalmacija-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "zaboravljena-dalmacija",
+          storageBucket: "zaboravljena-dalmacija.appspot.com",
+          messagingSenderId: "258716598494",
+          appId: "1:258716598494:web:2a33f92070dd33c7ae424f",
+        },
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -137,12 +151,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-postcss`,
-    // {
-    //   resolve: "gatsby-source-google-photos",
-    //   options: {
-    //     albumsTitles: ["test1"],
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-google-photos",
+      options: {
+        albumsTitles: ["test1"],
+      },
+    },
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
