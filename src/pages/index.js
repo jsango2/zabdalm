@@ -15,7 +15,7 @@ import "../../i18next.js"
 
 // import ProjektiHome from "../components/projekti"
 // import Projekti from "./projekti"
-import SEO from "../components/Seo"
+import SEO from "../components/SEO"
 // import { useHasBeenVisible } from "./../components/useVisibility"
 import Hero from "../components/hero"
 import CitatFront from "./../components/citatFront"
