@@ -15,7 +15,7 @@ import "../../i18next.js"
 
 // import ProjektiHome from "../components/projekti"
 // import Projekti from "./projekti"
-import SEO from "../components/SEO"
+// import SEO from "../components/SEO"
 // import { useHasBeenVisible } from "./../components/useVisibility"
 import Hero from "../components/hero"
 import CitatFront from "./../components/citatFront"
@@ -53,7 +53,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout isOpen={isOpen}>
-      <SEO title="Početna" />
+      {/* <SEO title="Početna" /> */}
       <Hero />
       <CitatFront />
       <Montaza />
