@@ -15,8 +15,10 @@ const useStyles = makeStyles({
     },
   },
   title: {
+    fontSize: "14px",
     textAlign: "center",
-    marginBottom: 10,
+    marginTop: 4,
+    marginBottom: -2,
     color: "#664F3E",
   },
   valueLabel: {
@@ -37,6 +39,9 @@ export default function SliderGodina({
 
   return (
     <div className={classes.root}>
+      <Typography id="range-slider" className={classes.title}>
+        Godina
+      </Typography>
       <Slider
         value={value}
         onChangeCommitted={handleChangeGodinaDelayed}
@@ -47,9 +52,6 @@ export default function SliderGodina({
         min={1889}
         max={1970}
       />
-      <Typography id="range-slider" className={classes.title}>
-        Godina
-      </Typography>
     </div>
   )
 }

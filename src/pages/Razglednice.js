@@ -56,6 +56,7 @@ function Razglednice({ data }) {
   const [lng, setLng] = useState(16.7469)
   const [lat, setLat] = useState(42.7781)
   const [zoom, setZoom] = useState(6.26)
+  const [hasPoints, setHasPoints] = useState(false)
   const [pages, setPages] = useState()
   const [airports, setAirports] = useState([])
   const [array, setArray] = useState([])
@@ -560,40 +561,26 @@ function Razglednice({ data }) {
     setIsOpen(false)
     // allowScroll()
   }
-
+  useEffect(() => {
+    featuresArr.map(item =>
+      item.properties.title_naslov ? setHasPoints(true) : setHasPoints(false)
+    )
+  }, [featuresArr])
   return (
     <Layout>
       {" "}
-      <MeniMobile handleClick={handleClick} isOpen={isOpen} />
-      <Hamburger
-        onClick={() => {
-          setIsOpen(() => !isOpen)
-          // blockScroll()
-        }}
-      >
-        <CgMenuGridR
-          style={{
-            color: "#534227",
-            width: "28px",
-            height: "28px",
-            position: "absolute",
-            top: "15px",
-            left: "10px",
-            zIndex: "11",
-          }}
-        />
-      </Hamburger>{" "}
       <div className="mapWrapper">
         {/* <SliderGodina /> */}
         {/* <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div> */}
-        {zoom > 11.3 ? (
+
+        {hasPoints || zoom > 11.3 ? (
           <div className="slides-wrap">
             {zoom > 11.3
               ? featuresArr.length
                 ? featuresArr.map((item, index) =>
-                    item.properties.title_naslov !== undefined ? (
+                    item.properties.title_naslov ? (
                       <div
                         key={index}
                         className="slides-div"
@@ -695,13 +682,13 @@ function Razglednice({ data }) {
             </div>
           )}
         </div>
-        <div className="map-overlay">
-          <SliderGodina
-            handleChangeGodina={handleChangeGodina}
-            handleChangeGodinaDelayed={handleChangeGodinaDelayed}
-            value={value}
-          />
-        </div>{" "}
+      </div>{" "}
+      <div className="map-overlay">
+        <SliderGodina
+          handleChangeGodina={handleChangeGodina}
+          handleChangeGodinaDelayed={handleChangeGodinaDelayed}
+          value={value}
+        />
       </div>{" "}
       {/* <GooglePhotos /> */}
       {/* <FirebaseData /> */}
