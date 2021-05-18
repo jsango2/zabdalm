@@ -6,8 +6,9 @@ import Slider from "@material-ui/core/Slider"
 
 const useStyles = makeStyles({
   root: {
-    width: 400,
-    height: 100,
+    width: "300px",
+    // top: "100px",
+    // right: "30px",
     margin: "0 auto",
     "@media (max-width: 750px)": {
       width: "85%",

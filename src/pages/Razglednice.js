@@ -22,7 +22,7 @@ import flag from "../../content/assets/flag.png"
 import { withTheme } from "styled-components"
 import SliderGodina from "../components/SliderGodina"
 import { useWindowSize } from "../components/useWindowSize"
-import { parse } from "postcss"
+// import { parse } from "postcss"
 import LoaderSpinner from "./../components/LoaderSpinner"
 import MeniMobile from "../components/meniMobile"
 import GooglePhotos from "../components/testGooglePhotosApi"
@@ -442,10 +442,8 @@ function Razglednice({ data }) {
                     <span style="font-weight: bold">${feature.properties.title_naslov},</span>
                      ${feature.properties.datum_uploada}.
                   </div>
-                  <div class='popupImageWrap' style="background-image: url(${feature.properties.image_url}); 
-                background-repeat: no-repeat; background-size: contain; filter: drop-shadow(0 0 4rem rgba(104, 62, 15, 0.61)); 
-                background-position: center">
-                  </div>
+                  
+                  <div class="imgTest"><img src=${feature.properties.image_url} ></img></div>
                 </div>   
                 
                 `
@@ -590,62 +588,51 @@ function Razglednice({ data }) {
         {/* <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div> */}
-        <div className="slides-wrap">
-          {zoom > 11.3
-            ? featuresArr.length
-              ? featuresArr.map((item, index) =>
-                  item.properties.title_naslov !== undefined ? (
-                    <div
-                      key={index}
-                      style={{
-                        display: "flex",
-                        // flexDirection: "column-reverse",
-                        alignItems: "center",
-                        justifyContent: "end",
-                        cursor: "pointer",
-                        width: "150px",
-                        minWidth: "150px",
-                        // backgroundColor: "#d6ccba",
-                        margin: "5px",
-                        borderRadius: "7px",
-                        backgroundImage: `url(${item.properties.image_url_thumb})`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
-                        // filter: "drop-shadow(0 0 4rem rgba(104, 62, 15, 0.61))",
-                      }}
-                      onClick={() => handleThumbClick(item)}
-                    >
-                      {/* <img
-                        // width="70"
-                        src={item.properties.image_url_thumb}
-                        alt=""
-                      /> */}
+        {zoom > 11.3 ? (
+          <div className="slides-wrap">
+            {zoom > 11.3
+              ? featuresArr.length
+                ? featuresArr.map((item, index) =>
+                    item.properties.title_naslov !== undefined ? (
                       <div
-                        style={{
-                          marginLeft: "10px",
-                          marginTop: "50px",
-                          fontSize: "1.2rem",
-                          display: "flex",
-                          textShadow: "2px 2px 2px black",
-                          // flexDirection: "column",
-                          alignItems: "center",
-                          color: "white",
-                        }}
+                        key={index}
+                        className="slides-div"
+                        onClick={() => handleThumbClick(item)}
                       >
-                        <div style={{ fontSize: "10px", fontWeight: "bold" }}>
-                          {item.properties.title_naslov},
-                        </div>
-                        <div style={{ fontSize: "10px" }}>
-                          {item.properties.datum_uploada}
+                        <img src={item.properties.image_url_thumb} alt="" />
+                        <div
+                          style={{
+                            position: "absolute",
+                            zIndex: "1",
+                            bottom: "5px",
+                            left: "0",
+                            marginLeft: "15px",
+                            marginTop: "0",
+                            fontSize: "1.2rem",
+                            display: "flex",
+                            flexDirection: "row-reverse",
+                            textShadow: "2px 2px 2px black",
+                            // flexDirection: "column",
+                            alignItems: "center",
+                            color: "white",
+                          }}
+                        >
+                          <div style={{ fontSize: "10px", fontWeight: "bold" }}>
+                            ,{item.properties.title_naslov}
+                          </div>
+                          <div style={{ fontSize: "10px" }}>
+                            {item.properties.datum_uploada}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ) : null
-                )
-              : null
-            : null}
-        </div>
+                    ) : null
+                  )
+                : null
+              : null}
+          </div>
+        ) : (
+          <div></div>
+        )}
         {!loader && (
           <div className="sidebar2">
             <LoaderSpinner />
@@ -683,7 +670,8 @@ function Razglednice({ data }) {
                     width: "auto",
                   }}
                 >
-                  {popupFrame.properties.title_naslov}
+                  {popupFrame.properties.title_naslov},{" "}
+                  {popupFrame.properties.datum_uploada}
                 </span>
               </div>
               <div onClick={handleThumbClick} className="x">
@@ -712,12 +700,8 @@ function Razglednice({ data }) {
             handleChangeGodina={handleChangeGodina}
             handleChangeGodinaDelayed={handleChangeGodinaDelayed}
             value={value}
-          />{" "}
+          />
         </div>{" "}
-        {/* {flickr.length !== 0
-    ? flickr.photos.photo.map((photo) => console.log(photo))
-    : console.log('jure')} */}
-        {/* {console.log(flickr)} */}
       </div>{" "}
       {/* <GooglePhotos /> */}
       {/* <FirebaseData /> */}

@@ -161,16 +161,16 @@ const Hero = () => {
 
   const size = useWindowSize()
   // console.log(isOpen)
-  const handleClick = () => {
+  const handleClickMenu = () => {
     setIsOpen(false)
     // allowScroll()
   }
 
   return (
     <>
-      <MeniMobile handleClick={handleClick} isOpen={isOpen} />
+      <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
       <Wrap>
-        <Hamburger
+        {/* <Hamburger
           onClick={() => {
             setIsOpen(() => !isOpen)
             // blockScroll()
@@ -197,7 +197,7 @@ const Hero = () => {
               zIndex: "11",
             }}
           />
-        </Hamburger>{" "}
+        </Hamburger>{" "} */}
         <Slider
           dots={false}
           fade={true}

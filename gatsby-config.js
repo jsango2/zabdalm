@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Građevinski obrt Dom`,
+    title: `Zaboravljena Dalmacija`,
     author: {
       name: `Sutra.hr`,
       summary: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
     },
     description: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
-    siteUrl: `http://www.go-dom.hr`,
+    siteUrl: `http://www.zaboravljenadalmacija.hr`,
     image: "/seoPhoto.png",
     keywords:
       "Građevinski radovi, Ugljan, Pašman, Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi, Građevina na otocima, Izgradnja kuća, Otočki proizvod, Izgradnja, bazen",
@@ -21,7 +21,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "wpgraphql",
         // Url to query from
-        url: "https://cms.go-dom.hr/graphql",
+        url: "https://shop.zaboravljenadalmacija.hr/graphql",
       },
     },
     {
@@ -197,8 +197,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GO-Dom Građevinski obrt`,
-        short_name: `GO-Dom`,
+        name: `Zaboravljena Dalmacija`,
+        short_name: `Zaboravljena Dalmacija`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
@@ -213,7 +213,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `https://www.go-dom.hr`,
+        siteUrl: `https://www.zaboravljenadalmacija.hr`,
       },
     },
   ],
