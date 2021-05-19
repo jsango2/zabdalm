@@ -278,6 +278,7 @@ function Razglednice({ data }) {
       closeButton: true,
       anchor: "center",
       className: "moj-popupMapbox",
+      maxWidth: "100%",
       // offset: size < 750 ? [-170, 0] : [-80, 0],
     })
 
@@ -574,8 +575,14 @@ function Razglednice({ data }) {
         {/* <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div> */}
-
-        {hasPoints || zoom > 11.3 ? (
+        <div className="map-overlay">
+          <SliderGodina
+            handleChangeGodina={handleChangeGodina}
+            handleChangeGodinaDelayed={handleChangeGodinaDelayed}
+            value={value}
+          />
+        </div>{" "}
+        {hasPoints && zoom > 11.3 ? (
           <div className="slides-wrap">
             {zoom > 11.3
               ? featuresArr.length
@@ -682,13 +689,6 @@ function Razglednice({ data }) {
             </div>
           )}
         </div>
-      </div>{" "}
-      <div className="map-overlay">
-        <SliderGodina
-          handleChangeGodina={handleChangeGodina}
-          handleChangeGodinaDelayed={handleChangeGodinaDelayed}
-          value={value}
-        />
       </div>{" "}
       {/* <GooglePhotos /> */}
       {/* <FirebaseData /> */}

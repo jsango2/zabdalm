@@ -1,12 +1,17 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { spacing } from "@material-ui/system"
 import Typography from "@material-ui/core/Typography"
 import Slider from "@material-ui/core/Slider"
+import { useWindowSize } from "../components/useWindowSize"
 
 const useStyles = makeStyles({
   root: {
-    width: "300px",
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    width: "100px",
+    height: "90%",
     // top: "100px",
     // right: "30px",
     margin: "0 auto",
@@ -15,10 +20,12 @@ const useStyles = makeStyles({
     },
   },
   title: {
+    position: "absolute",
     fontSize: "14px",
     textAlign: "center",
-    marginTop: 4,
-    marginBottom: -2,
+    zIndex: "1",
+    top: "-45px",
+    right: "64px",
     color: "#664F3E",
   },
   valueLabel: {
@@ -36,13 +43,21 @@ export default function SliderGodina({
   handleChangeGodinaDelayed,
 }) {
   const classes = useStyles()
-
+  const [orientationSlidera, setOrientationSlidera] = useState("vertical")
+  const size = useWindowSize()
+  useEffect(() => {
+    size.width < 700
+      ? setOrientationSlidera("horizontal")
+      : setOrientationSlidera("vertical")
+    console.log(orientationSlidera, size)
+  }, [size])
   return (
     <div className={classes.root}>
       <Typography id="range-slider" className={classes.title}>
         Godina
       </Typography>
       <Slider
+        orientation={orientationSlidera}
         value={value}
         onChangeCommitted={handleChangeGodinaDelayed}
         onChange={handleChangeGodina}
