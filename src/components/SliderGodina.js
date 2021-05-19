@@ -29,9 +29,6 @@ const useStyles = makeStyles({
     right: "70px",
     color: "#664F3E",
   },
-  valueLabel: {
-    fontSize: "1.2rem",
-  },
 })
 
 function valuetext(value) {

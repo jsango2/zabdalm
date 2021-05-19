@@ -1062,9 +1062,12 @@ pre tt:after {
 }
 .MuiSlider-valueLabel {
   margin-right: 40px;
-  font-size: 12px !important;
+  font-size: 9px !important;
   font-weight: bolder;
-  transform: translate(0px, 18px) !important;
+  transform: translate(3px, 25px) !important;
+}
+.MuiSlider-valueLabel span {
+  border-radius: 30% !important;
 }
 /* .popupImage {
   width: auto;
