@@ -476,10 +476,10 @@ function Razglednice({ data }) {
 
     // Initialize the map
 
-    map.on("sourcedata", function (e) {
-      setLoader(e.isSourceLoaded)
-      // console.log(e)
-    })
+    // map.on("sourcedata", function (e) {
+    //   setLoader(e.isSourceLoaded)
+    //   // console.log(e)
+    // })
 
     return () => map.remove()
   }, [geoData2])
@@ -611,12 +611,12 @@ function Razglednice({ data }) {
                             color: "white",
                           }}
                         >
-                          <div style={{ fontSize: "10px", fontWeight: "bold" }}>
+                          {/* <div style={{ fontSize: "10px", fontWeight: "bold" }}>
                             ,{item.properties.title_naslov}
                           </div>
                           <div style={{ fontSize: "10px" }}>
                             {item.properties.datum_uploada}
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     ) : null
@@ -627,11 +627,11 @@ function Razglednice({ data }) {
         ) : (
           <div></div>
         )}
-        {!loader && (
+        {/* {!loader && (
           <div className="sidebar2">
             <LoaderSpinner />
           </div>
-        )}
+        )} */}
         <div className="map-container" ref={mapContainer} />
         <div
           style={{

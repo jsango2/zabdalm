@@ -15,9 +15,9 @@ const useStyles = makeStyles({
     // top: "100px",
     // right: "30px",
     margin: "0 auto",
-    "@media (max-width: 750px)": {
-      width: "85%",
-    },
+    // "@media (max-width: 750px)": {
+    //   width: "85%",
+    // },
   },
   title: {
     position: "absolute",
@@ -25,8 +25,8 @@ const useStyles = makeStyles({
     fontWeight: "bold",
     textAlign: "center",
     zIndex: "1",
-    top: "-35px",
-    right: "80px",
+    top: "-45px",
+    right: "70px",
     color: "#664F3E",
   },
   valueLabel: {
@@ -46,12 +46,12 @@ export default function SliderGodina({
   const classes = useStyles()
   const [orientationSlidera, setOrientationSlidera] = useState("vertical")
   const size = useWindowSize()
-  useEffect(() => {
-    size.width < 700
-      ? setOrientationSlidera("horizontal")
-      : setOrientationSlidera("vertical")
-    console.log(orientationSlidera, size)
-  }, [size])
+  // useEffect(() => {
+  //   size.width < 700
+  //     ? setOrientationSlidera("horizontal")
+  //     : setOrientationSlidera("vertical")
+  //   console.log(orientationSlidera, size)
+  // }, [size])
   return (
     <div className={classes.root}>
       <Typography id="range-slider" className={classes.title}>
