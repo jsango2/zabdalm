@@ -22,14 +22,15 @@ const useStyles = makeStyles({
   title: {
     position: "absolute",
     fontSize: "14px",
+    fontWeight: "bold",
     textAlign: "center",
     zIndex: "1",
-    top: "-45px",
-    right: "64px",
+    top: "-35px",
+    right: "80px",
     color: "#664F3E",
   },
   valueLabel: {
-    fontSize: "0.8rem",
+    fontSize: "1.2rem",
   },
 })
 
