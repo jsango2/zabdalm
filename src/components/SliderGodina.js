@@ -10,11 +10,11 @@ const useStyles = makeStyles({
     position: "relative",
     display: "flex",
     flexDirection: "column",
-    width: "100px",
+    width: "240px",
     height: "90%",
     // top: "100px",
     // right: "30px",
-    margin: "0 auto",
+    margin: "10px auto 0 auto",
     // "@media (max-width: 750px)": {
     //   width: "85%",
     // },
@@ -55,7 +55,7 @@ export default function SliderGodina({
         Godina
       </Typography>
       <Slider
-        orientation={orientationSlidera}
+        orientation="horizontal"
         value={value}
         onChangeCommitted={handleChangeGodinaDelayed}
         onChange={handleChangeGodina}

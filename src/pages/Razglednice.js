@@ -571,8 +571,7 @@ function Razglednice({ data }) {
 
   useEffect(() => {
     console.log(size.height)
-    const wh = window.innerHeight
-    console.log("innerh", wh)
+    setInnerHeight(window.innerHeight)
   }, [size])
   return (
     <Layout>
@@ -641,7 +640,7 @@ function Razglednice({ data }) {
         )} */}
         <div
           className="map-container"
-          style={{ height: `${size.height - 50}px` }}
+          style={{ height: `${innerHeight - 50}px` }}
           ref={mapContainer}
         />
         <div
