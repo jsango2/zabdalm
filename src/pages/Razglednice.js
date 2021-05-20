@@ -53,6 +53,7 @@ function Razglednice({ data }) {
   const [value, setValue] = useState([1889, 1970])
   const [value2, setValue2] = useState([1890, 1970])
   const [YearFilteredFeaturedArr, setYearFilteredFeaturedArr] = useState([])
+  const [innerHeight, setInnerHeight] = useState(null)
   const [lng, setLng] = useState(16.7469)
   const [lat, setLat] = useState(42.7781)
   const [zoom, setZoom] = useState(6.26)
@@ -567,6 +568,12 @@ function Razglednice({ data }) {
       item.properties.title_naslov ? setHasPoints(true) : setHasPoints(false)
     )
   }, [featuresArr])
+
+  useEffect(() => {
+    console.log(size.height)
+    const wh = window.innerHeight
+    console.log("innerh", wh)
+  }, [size])
   return (
     <Layout>
       {" "}
@@ -632,7 +639,11 @@ function Razglednice({ data }) {
             <LoaderSpinner />
           </div>
         )} */}
-        <div className="map-container" ref={mapContainer} />
+        <div
+          className="map-container"
+          style={{ height: `${size.height - 50}px` }}
+          ref={mapContainer}
+        />
         <div
           style={{
             width: "100%",
