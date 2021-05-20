@@ -1064,10 +1064,16 @@ pre tt:after {
   margin-right: 40px;
   font-size: 9px !important;
   font-weight: bolder;
-  transform: translate(3px, 25px) !important;
+  transform: translate(0px, 9px) !important;
 }
 .MuiSlider-valueLabel span:nth-child(1) {
   border-radius: 50% !important;
+  background: unset;
+  color: #534227;
+  font-weight: bold;
+}
+.MuiSlider-valueLabel span {
+  /* transform: translate(3px, 5px) !important; */
 }
 /* .popupImage {
   width: auto;
@@ -1210,7 +1216,7 @@ pre tt:after {
 
 .map-overlay {
   position: absolute;
-  width: 350px;
+  width: 380px;
   padding-top: 50px;
   padding-left: 25px;
   right: 0px;
@@ -1406,7 +1412,7 @@ pre tt:after {
   .MuiSlider-valueLabel {
     margin-left: 0px;
     font-size: 8px !important;
-    transform: translate(0px, 23px) !important;
+    /* transform: translate(0px, 23px) !important; */
   }
   .slides-wrap {
     display: flex;
@@ -1460,8 +1466,6 @@ pre tt:after {
     height: 100vh;
   } */
   .mapboxgl-ctrl-geocoder {
-    width: 250px !important;
-    min-width: 270px !important;
     height: 40px;
   }
   .mapboxgl-ctrl-geocoder--input {
@@ -1550,10 +1554,20 @@ pre tt:after {
   }
 }
 @media screen and (max-width: 430px) {
-  /* .map-overlay {
+  .mapboxgl-ctrl-top-right {
     width: 95%;
-    margin-right: 10px;
-  } */
+  }
+  .mapboxgl-ctrl-geocoder--input {
+    width: 95%;
+    font-size: smaller !important;
+    height: 40px !important;
+  }
+  .map-overlay {
+    padding-right: 35px;
+    width: 100%;
+    /* margin-right: 10px; */
+    border-radius: unset;
+  }
   .mapWrapper {
     height: 100%;
   }
@@ -1636,7 +1650,7 @@ pre tt:after {
   .MuiSlider-valueLabel {
     font-size: 10px !important;
     margin-bottom: 15px;
-    transform: translate(0px, -11px) !important;
+    /* transform: translate(0px, -11px) !important; */
   }
 }
 
