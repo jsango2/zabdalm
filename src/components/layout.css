@@ -1430,7 +1430,7 @@ pre tt:after {
     z-index: 10;
     padding-top: 7px;
     top: unset;
-    bottom: 50px;
+    bottom: 38px;
     /* border-right: 1px solid #eeebe4; */
     /* overflow: hidden; */
   }
@@ -1604,7 +1604,7 @@ pre tt:after {
     overflow: auto;
     z-index: 10;
     padding-top: 10px;
-    bottom: 58px;
+    bottom: 38px;
     /* border-right: 1px solid #eeebe4; */
   }
 
