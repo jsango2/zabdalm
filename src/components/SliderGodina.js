@@ -10,24 +10,24 @@ const useStyles = makeStyles({
     position: "relative",
     display: "flex",
     flexDirection: "column",
-    paddingRight: "10px",
-    width: "90%",
-    height: "90%",
+    // paddingRight: "10px",
+    width: "95%",
+    height: "84%",
     // top: "100px",
     // right: "30px",
-    margin: "10px auto 0 auto",
+    margin: "5px auto 0 auto",
     // "@media (max-width: 750px)": {
     //   width: "85%",
     // },
   },
   title: {
-    position: "absolute",
+    position: "relative",
     fontSize: "14px",
     fontWeight: "bold",
     textAlign: "center",
     zIndex: "1",
-    top: "-45px",
-    right: "70px",
+    top: "-9px",
+
     color: "#664F3E",
   },
 })
@@ -52,9 +52,6 @@ export default function SliderGodina({
   // }, [size])
   return (
     <div className={classes.root}>
-      <Typography id="range-slider" className={classes.title}>
-        Godina
-      </Typography>
       <Slider
         orientation="horizontal"
         value={value}
@@ -65,7 +62,10 @@ export default function SliderGodina({
         getAriaValueText={valuetext}
         min={1889}
         max={1970}
-      />
+      />{" "}
+      <Typography id="range-slider" className={classes.title}>
+        Godina
+      </Typography>
     </div>
   )
 }
