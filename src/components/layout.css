@@ -1543,7 +1543,6 @@ pre tt:after {
     /* width: auto; */
     border: 28px solid rgba(7, 7, 7, 0.616);
     max-height: 400px;
-    padding-top: 3px;
     max-width: 320px;
   }
   .moj-popupMapbox {
@@ -1582,7 +1581,6 @@ pre tt:after {
     /* width: auto; */
     border: 28px solid rgba(7, 7, 7, 0.616);
     max-height: 350px;
-    padding-top: 3px;
     max-width: 320px;
   }
   .moj-popupMapbox {
@@ -1669,7 +1667,6 @@ pre tt:after {
     /* width: auto; */
     border: 25px solid rgba(7, 7, 7, 0.616);
 
-    padding-top: 3px;
     max-width: 290px;
   }
   .moj-popupMapbox {
@@ -1694,7 +1691,6 @@ pre tt:after {
     /* width: auto; */
     border: 20px solid rgba(7, 7, 7, 0.616);
 
-    padding-top: 3px;
     max-width: 250px;
   }
   .moj-popupMapbox {
