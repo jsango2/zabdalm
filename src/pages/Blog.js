@@ -154,35 +154,7 @@ function Blog({ data }) {
         </div>
       )}
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          flexWrap: "wrap",
-          marginBottom: "62px",
-        }}
-      >
-        {size.width > 750 ? (
-          <>
-            {" "}
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-          </>
-        ) : (
-          <>
-            {" "}
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-          </>
-        )}
-        <BlogPostCards blogovi={data.wp} />
-      </div>
+      <BlogPostCards blogovi={data} />
     </Layout>
   )
 }
@@ -200,7 +172,7 @@ export const query = graphql`
         }
       }
     }
-    wp: wpgraphql {
+    wpgraphql {
       blogovi {
         edges {
           node {
@@ -226,6 +198,7 @@ export const query = graphql`
                 }
               }
             }
+            slug
           }
         }
       }

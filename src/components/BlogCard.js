@@ -1,5 +1,12 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import {
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+  I18nextContext,
+} from "gatsby-plugin-react-i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -37,17 +44,81 @@ const CardText = styled.div`
   }
 `
 
-function BlogCard() {
+function BlogCard({ blogs }) {
+  // console.log(props)
+  const context = React.useContext(I18nextContext)
+  const [lang, setLang] = useState(context.language)
+  const [categorie, setCategorie] = useState("----")
+  console.log(lang)
+  // console.log("blogs", blogs.node.slug)
+  // console.log("blogs", blogs.node.slug)
+
+  useEffect(() => {
+    var cat = ""
+
+    if (blogs !== undefined) {
+      console.log(blogs.node.categories.edges[0].node.name)
+
+      switch (blogs.node.categories.edges[0].node.name) {
+        case "ZABORAVLJENA DALMACIJA DANAS":
+          cat = "FORGOTTEN DALMATIA TODAY"
+          break
+        case "ANTIKNI PREDMETI IZ DALMACIJE":
+          cat = "ANTIQUE OBJECTS FROM DALMATIA"
+          break
+        case "PRIČE IZ DALMATINSKE POVIJESTI":
+          cat = "STORIES FROM DALMATIAN HISTORY"
+          break
+      }
+      setCategorie(cat)
+    }
+  }, [context.language])
+
   return (
     <Wrap>
-      <Kategorija>ZABORAVLJENA DALMACIJA DANAS </Kategorija>
-      <div
-        style={{ width: "100%", height: "233px", backgroundColor: "grey" }}
-      ></div>
-      <CardText>
-        Kako su naši stari na Otoku visu lovili ribu prije masovnog odlaska u
-        Ameriku početkom (do 100 znakova)
-      </CardText>
+      {blogs && (
+        <Link
+          style={{ textDecoration: "none" }}
+          to={`/Blog/${blogs.node.slug}`}
+        >
+          {blogs &&
+            (lang === "hr" ? (
+              <>
+                <Kategorija>
+                  {blogs.node.categories.edges[0].node.name}
+                </Kategorija>
+                <div
+                  style={{
+                    width: "100%",
+                    height: "233px",
+                    backgroundColor: "grey",
+                    backgroundImage: `url(${blogs.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
+                    backgroundPosition: "left",
+                    backgroundSize: "cover ",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
+                <CardText>{blogs.node.blog_graphql.naslovBlogaHr}</CardText>
+              </>
+            ) : (
+              <>
+                <Kategorija>{categorie}</Kategorija>
+                <div
+                  style={{
+                    width: "100%",
+                    height: "233px",
+                    backgroundColor: "grey",
+                    backgroundImage: `url(${blogs.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
+                    backgroundPosition: "left",
+                    backgroundSize: "cover ",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                ></div>
+                <CardText>{blogs.node.blog_graphql.naslovBlogaEng}</CardText>
+              </>
+            ))}
+        </Link>
+      )}
     </Wrap>
   )
 }

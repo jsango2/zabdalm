@@ -1167,7 +1167,7 @@ pre tt:after {
   top: 50px;
 } */
 .mapWrapper {
-  position: relative;
+  position: fixed;
   width: 100%;
   height: auto;
 }
@@ -1430,7 +1430,7 @@ pre tt:after {
     z-index: 10;
     padding-top: 7px;
     top: unset;
-    bottom: 0;
+    bottom: 50px;
     /* border-right: 1px solid #eeebe4; */
     /* overflow: hidden; */
   }
@@ -1600,11 +1600,11 @@ pre tt:after {
     direction: rtl;
     background-color: #c6bcaa;
     max-height: 100%;
-    height: 100px;
+    height: 115px;
     overflow: auto;
     z-index: 10;
     padding-top: 10px;
-    bottom: 0;
+    bottom: 58px;
     /* border-right: 1px solid #eeebe4; */
   }
 

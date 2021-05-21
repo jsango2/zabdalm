@@ -27,6 +27,8 @@ import LoaderSpinner from "./../components/LoaderSpinner"
 import MeniMobile from "../components/meniMobile"
 import GooglePhotos from "../components/testGooglePhotosApi"
 import FirebaseData from "../components/testGooglePhotosApi"
+import Header from "./../components/header"
+import Footer from "./../components/footer"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
@@ -56,7 +58,7 @@ function Razglednice({ data }) {
   const [innerHeight, setInnerHeight] = useState(null)
   const [lng, setLng] = useState(16.7469)
   const [lat, setLat] = useState(42.7781)
-  const [zoom, setZoom] = useState(6.26)
+  const [zoom, setZoom] = useState(6.03)
   const [hasPoints, setHasPoints] = useState(false)
   const [pages, setPages] = useState()
   const [airports, setAirports] = useState([])
@@ -574,8 +576,8 @@ function Razglednice({ data }) {
     setInnerHeight(window.innerHeight)
   }, [size])
   return (
-    <Layout>
-      {" "}
+    <>
+      <Header></Header>
       <div className="mapWrapper">
         {/* <SliderGodina /> */}
         {/* <div className="sidebar">
@@ -640,7 +642,7 @@ function Razglednice({ data }) {
         )} */}
         <div
           className="map-container"
-          style={{ height: `${innerHeight - 50}px` }}
+          style={{ height: `${innerHeight}px` }}
           ref={mapContainer}
         />
         <div
@@ -702,7 +704,8 @@ function Razglednice({ data }) {
       </div>{" "}
       {/* <GooglePhotos /> */}
       {/* <FirebaseData /> */}
-    </Layout>
+      {/* <Footer></Footer> */}
+    </>
   )
 }
 
