@@ -60,6 +60,7 @@ const WrapNaslov = styled.div`
   /* width: 400px; */
   font-family: Playfair Display;
   font-size: 54px;
+  font-weight: 500;
   line-height: 55px;
   color: white;
   margin: 60px 0 30px 0;
@@ -71,7 +72,7 @@ const WrapNaslov = styled.div`
     width: 100%;
     font-size: 44px;
     text-align: center;
-    line-height: 43px;
+    line-height: 46px;
 
     margin: 0;
   }

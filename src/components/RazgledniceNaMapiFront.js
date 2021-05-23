@@ -71,8 +71,6 @@ function RazgledniceNaMapiFront() {
           backgroundImage: `url(${MapaFront})`,
         }}
       >
-        <Naslov>{t("razglednicenamapi")}</Naslov>
-        <Podnaslov>{t("kliknizaulaz")}</Podnaslov>
         <Lottie
           style={{ position: "absolute", top: "0" }}
           animationData={animation1152}
@@ -80,6 +78,8 @@ function RazgledniceNaMapiFront() {
           autoPlay={false}
           loop={false}
         />
+        <Naslov>{t("razglednicenamapi")}</Naslov>
+        <Podnaslov>{t("kliknizaulaz")}</Podnaslov>
       </Wrap>
     </Link>
   )
