@@ -38,7 +38,7 @@ const WrapItems = styled.div`
     width: 760px;
   }
   @media only screen and (max-width: 750px) {
-    transform: translate(-50%, 10%);
+    transform: translate(-50%, -2%);
 
     left: 50%;
     width: 306px;
@@ -111,9 +111,9 @@ const KnjigaWrap = styled.div`
   z-index: 10;
 
   @media only screen and (max-width: 750px) {
-    width: 245px;
-    height: 336px;
-    /* margin-top: 10px; */
+    width: 34vw;
+    min-width: 240px;
+    height: 363px;
   }
 `
 const Hamburger = styled.div`
@@ -142,7 +142,7 @@ const Img = styled.div`
   height: 544px;
 
   @media screen and (max-width: 750px) {
-    height: 559px;
+    height: 70vh;
   }
 `
 const ButtonWrap = styled.div`
@@ -169,7 +169,7 @@ const Hero = () => {
   return (
     <>
       <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
-      <Wrap>
+      <Wrap className="wrapHero">
         {/* <Hamburger
           onClick={() => {
             setIsOpen(() => !isOpen)

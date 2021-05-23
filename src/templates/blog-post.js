@@ -9,6 +9,9 @@ import {
   useI18next,
   I18nextContext,
 } from "gatsby-plugin-react-i18next"
+import Lottie from "lottie-react"
+import animation1152 from "../animations/val/val2"
+
 // import SEO from "../components/seo"
 
 const Wrap = styled.div`
@@ -20,10 +23,26 @@ const Wrap = styled.div`
   height: auto;
 
   @media only screen and (max-width: 570px) {
-    flex-direction: column;
+    /* flex-direction: column;
     height: auto;
     width: 100%;
-    padding-left: 30px;
+    padding-left: 30px; */
+  }
+`
+
+const WrapSponzorHero = styled.div`
+  position: absolute;
+  top: 28px;
+  right: 42px;
+  font-family: "Playfair Display";
+  font-size: 24px;
+  color: white;
+
+  @media only screen and (max-width: 570px) {
+    /* flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding-left: 30px; */
   }
 `
 const Hero = styled.div`
@@ -50,6 +69,22 @@ const Naslov = styled.div`
   /* margin: 0 auto 50px auto; */
 
   @media only screen and (max-width: 60em) {
+  }
+`
+const NaslovBlog = styled.div`
+  font-family: Playfair Display;
+  font-size: 54px;
+  font-weight: 600;
+  @media only screen and (max-width: 550px) {
+    font-size: 36px;
+  }
+`
+const Linija = styled.div`
+  height: 1px;
+  width: 110px;
+  background-color: black;
+  @media only screen and (max-width: 550px) {
+    width: 65px;
   }
 `
 const Kategorija = styled.div`
@@ -82,7 +117,7 @@ const BlogContentWrap = styled.div`
   font-size: 16px;
   position: relative;
   width: 78%;
-  margin: 126px auto 0 auto;
+  margin: 126px auto 81px auto;
   height: auto;
   & > figure > img {
     width: 73vw;
@@ -106,6 +141,22 @@ const BlogPost = ({ data }) => {
   // ------visibility lazy loading------------
   // --------------------------------------
   console.log(data)
+
+  const interactivity = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 0.0],
+        type: "stop",
+        frames: [0],
+      },
+      {
+        visibility: [0.3, 0.8],
+        type: "seek",
+        frames: [0, 152],
+      },
+    ],
+  }
 
   useEffect(() => {
     var cat = ""
@@ -141,7 +192,9 @@ const BlogPost = ({ data }) => {
               }}
             >
               <Crta />
-
+              <WrapSponzorHero>
+                {data.wpgraphql.blog.blog_graphql.tekstSponzorira}
+              </WrapSponzorHero>
               <Wrap>
                 <Kategorija>
                   {data.wpgraphql.blog.categories.edges[0].node.name}
@@ -170,6 +223,9 @@ const BlogPost = ({ data }) => {
               }}
             >
               <Crta />
+              <WrapSponzorHero>
+                {data.wpgraphql.blog.blog_graphql.tekstSponzoriraEng}
+              </WrapSponzorHero>
               <Wrap>
                 <Kategorija>{categorie}</Kategorija>
                 <Naslov>
@@ -191,6 +247,55 @@ const BlogPost = ({ data }) => {
             />
           </>
         )}
+        <div
+          style={{
+            position: "relative",
+            width: "230px",
+            height: "80px",
+            backgroundImage: `url(${data.wpgraphql.blog.blog_graphql.logoSponzora.sourceUrl})`,
+            backgroundPosition: "center",
+            backgroundSize: "contain ",
+            backgroundRepeat: "no-repeat",
+            margin: "0 auto",
+          }}
+        ></div>
+        <div
+          style={{
+            position: "relative",
+            fontFamily: "Playfair Display",
+            fontSize: "24px",
+            fontWeight: "600",
+            color: "#395C67",
+            maxWidth: "430px",
+            // height: "80px",
+            margin: "0 auto",
+            textAlign: "center",
+          }}
+        >
+          {" "}
+          {data.wpgraphql.blog.blog_graphql.tekstSponzorira}
+        </div>
+        <div>
+          <Lottie
+            animationData={animation1152}
+            interactivity={interactivity}
+            autoPlay={false}
+            loop={false}
+          />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: "61px",
+            marginBottom: "40px",
+          }}
+        >
+          <Linija />
+          <NaslovBlog>BLOG</NaslovBlog>
+          <Linija />
+        </div>
       </Layout>
     </>
   )

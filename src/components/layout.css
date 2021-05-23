@@ -82,14 +82,14 @@ a {
 a:hover {
   outline-width: 0;
 }
-a:active {
+/* a:active {
   color: white;
   position: relative;
   font-weight: 700;
-  /* transition: all 0.8s ease-in-out !important; */
+  transition: all 0.8s ease-in-out !important;
   outline: white solid 1px;
   padding: 5px;
-}
+} */
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
@@ -284,7 +284,17 @@ fieldset {
   transition: all 0.4s ease-in-out !important;
   overflow: hidden;
 }
-
+/* .novostiSlider .slick-prev:before {
+  position: relative;
+  top: -50px;
+  color: rgb(185, 184, 184) !important;
+}
+.novostiSlider .slick-next:before {
+  position: relative;
+  top: -50px;
+  right: -8px;
+  color: rgb(185, 184, 184) !important;
+} */
 @media only screen and (max-width: 48em) {
   .mobilne-kategorija {
     display: flex;

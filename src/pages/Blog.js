@@ -1,8 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import { useWindowSize } from "../components/useWindowSize"
 import { RiArrowDropDownFill } from "react-icons/ri"
-import { graphql, withAssetPrefix } from "gatsby"
+import { graphql } from "gatsby"
+import firebase from "gatsby-plugin-firebase"
+import MeniMobileBlog from "../components/MeniMobileBlog"
 
 import BlogHeroPhoto from "../../content/assets/BlogHero.png"
 import {
@@ -59,13 +61,23 @@ function Blog({ data }) {
 
   const handleClickKategorije = () => {
     setIsOpen(true)
-    console.log("kliknuto")
+    console.log("kliknuto kategorije")
   }
   const handleClick = (e, id) => {
     current === id ? setCurrent(null) : setCurrent(id)
   }
+
+  const handleClickCloseMenu = () => {
+    setIsOpen(false)
+    console.log("kliknuto close")
+  }
+
   return (
     <Layout>
+      <MeniMobileBlog
+        handleClickCloseMenu={handleClickCloseMenu}
+        isOpen={isOpen}
+      />
       <WrapHeroPhoto>
         <div
           style={{

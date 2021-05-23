@@ -6,6 +6,7 @@ import { useWindowSize } from "./useWindowSize"
 import { RiArrowDropDownFill } from "react-icons/ri"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import MeniMobileBlog from "./MeniMobileBlog"
+import BlogPostCards from "./BlogPostCards"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -44,11 +45,11 @@ const ButtonWrap = styled.div`
   }
 `
 
-function BlogFront() {
+function BlogFront({ blogovi }) {
   const [t, i18n] = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
 
-  // console.log(isOpen)
+  console.log(blogovi)
   const handleClickKategorije = () => {
     setIsOpen(true)
     console.log("kliknuto")
@@ -162,7 +163,7 @@ function BlogFront() {
             marginBottom: "62px",
           }}
         >
-          {size.width > 750 ? (
+          {/* {size.width > 750 ? (
             <>
               {" "}
               <BlogCard />
@@ -180,7 +181,8 @@ function BlogFront() {
               <BlogCard />
               <BlogCard />
             </>
-          )}
+          )} */}
+          <BlogPostCards blogovi={blogovi} />
         </div>
         <ButtonWrap>
           <Button text={t("arhivaprica")} color="black" width="155" />

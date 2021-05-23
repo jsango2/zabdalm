@@ -57,9 +57,9 @@ const IndexPage = ({ data }) => {
       <Hero />
       <CitatFront />
       <Montaza />
-      <BlogFront />
+      <BlogFront blogovi={data} />
       <Nosnja />
-      <NajpopularnijePrice />
+      <NajpopularnijePrice data={data.wpgraphql} />
       <RazgledniceNaMapiFront />
       <OautoruFront />
       <PartneriProjektaFront />
@@ -78,6 +78,37 @@ export const query = graphql`
           ns
           data
           language
+        }
+      }
+    }
+    wpgraphql {
+      blogovi {
+        edges {
+          node {
+            blog_graphql {
+              istaknutaFotografijaNaBlogu {
+                sourceUrl
+              }
+              naslovBlogaEng
+              naslovBlogaHr
+              tekstBlogaEng
+              tekstBlogaHr
+              tekstSponzorira
+              tekstSponzoriraEng
+              logoSponzora {
+                sourceUrl
+              }
+            }
+
+            categories {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+            slug
+          }
         }
       }
     }

@@ -16,9 +16,11 @@ const WrapAll = styled.div`
 `
 const Wrap = styled.div`
   position: fixed;
-  top: 10%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   height: 299px;
   width: 299px;
   z-index: 99999;

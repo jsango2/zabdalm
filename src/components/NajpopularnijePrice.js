@@ -1,8 +1,16 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { text } from "./dummyData/textPrice"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import {
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+  I18nextContext,
+} from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
+import firebase from "gatsby-plugin-firebase"
+
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
@@ -34,6 +42,7 @@ const Linija = styled.div`
 const Clanci = styled.div`
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
   justify-content: space-around;
   width: 90%;
   margin: 0 auto;
@@ -55,8 +64,45 @@ const TextClanci = styled.div`
   /* } */
 `
 
-function NajpopularnijePrice() {
+function NajpopularnijePrice({ data }) {
+  const context = React.useContext(I18nextContext)
+  const [lang, setLang] = useState(context.language)
+  const [fireData, setFireData] = useState([])
+  const [sortiranePricePoCitanosti, setSortiranePricePoCitanosti] = useState([])
+
   const [t, i18n] = useTranslation()
+
+  //___________________ sljedeća operacija spaja firestore brojač klikova i wpgraphql podatke u jedan array_____________
+  //____sortiraj RESULT i renderiraj za najpročitanije priče poredano po BROJ KLIKOVA-----------------
+
+  //_________________________________________________________________________________________
+
+  useEffect(() => {
+    async function fetch() {
+      const events = await firebase.firestore().collection("broj klikova")
+      events.get().then(querySnapshot => {
+        const tempDoc = querySnapshot.docs.map(doc => {
+          return { slug: doc.id, ...doc.data() }
+        })
+        // console.log("firebase ", tempDoc)
+        setFireData(tempDoc)
+      })
+    }
+    fetch()
+  }, [])
+  useEffect(() => {
+    const wpData = data.blogovi.edges
+    const result = [wpData, fireData].reduce((a, b) =>
+      a.map((c, i) => Object.assign({}, c, b[i]))
+    )
+    const sortiraniRedosljed = result.sort(function (a, b) {
+      return a.broj - b.broj
+    })
+    console.log("sorted", sortiraniRedosljed)
+    setSortiranePricePoCitanosti(sortiraniRedosljed)
+  }, [fireData])
+
+  //------------------------------------------------------------------------ do tu----------------------
 
   return (
     <Wrap>
@@ -72,9 +118,26 @@ function NajpopularnijePrice() {
         <Naslov>{t("najpopularnijeprice")}</Naslov>
         <Linija />
       </div>
+      {/* <Clanci>
+        {lang === "hr"
+          ? data.blogovi.edges.map(clanak => (
+              <TextClanci key={clanak.node.slug}>
+                {clanak.node.blog_graphql.naslovBlogaHr}
+              </TextClanci>
+            ))
+          : data.blogovi.edges.map(clanak => (
+              <TextClanci key={clanak.node.slug}>
+                {clanak.node.blog_graphql.naslovBlogaEng}
+              </TextClanci>
+            ))}
+      </Clanci> */}
       <Clanci>
-        {text.map(clanak => (
-          <TextClanci>{clanak.title}</TextClanci>
+        {sortiranePricePoCitanosti.map(clanak => (
+          <TextClanci key={clanak.node.slug}>
+            {lang === "hr"
+              ? clanak.node.blog_graphql.naslovBlogaHr
+              : clanak.node.blog_graphql.naslovBlogaEng}
+          </TextClanci>
         ))}
       </Clanci>
     </Wrap>

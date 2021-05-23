@@ -7,9 +7,11 @@ import {
   useI18next,
   I18nextContext,
 } from "gatsby-plugin-react-i18next"
+import firebase from "gatsby-plugin-firebase"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
+  position: relative;
   width: 342px;
   height: 323px;
   margin-bottom: 34px;
@@ -49,9 +51,6 @@ function BlogCard({ blogs }) {
   const context = React.useContext(I18nextContext)
   const [lang, setLang] = useState(context.language)
   const [categorie, setCategorie] = useState("----")
-  console.log(lang)
-  // console.log("blogs", blogs.node.slug)
-  // console.log("blogs", blogs.node.slug)
 
   useEffect(() => {
     var cat = ""
@@ -74,52 +73,72 @@ function BlogCard({ blogs }) {
     }
   }, [context.language])
 
+  const handleBlogCardClick = async () => {
+    let document = await firebase
+      .firestore()
+      .collection("broj klikova")
+      .doc(blogs.node.slug)
+      .get()
+    if (document && document.exists) {
+      await firebase
+        .firestore()
+        .collection("broj klikova")
+        .doc(blogs.node.slug)
+        .update({ broj: firebase.firestore.FieldValue.increment(1) })
+    } else {
+      await firebase
+        .firestore()
+        .collection("broj klikova")
+        .doc(blogs.node.slug)
+        .set({ broj: 1 })
+    }
+  }
   return (
-    <Wrap>
-      {blogs && (
-        <Link
-          style={{ textDecoration: "none" }}
-          to={`/Blog/${blogs.node.slug}`}
-        >
-          {blogs &&
-            (lang === "hr" ? (
-              <>
-                <Kategorija>
-                  {blogs.node.categories.edges[0].node.name}
-                </Kategorija>
-                <div
-                  style={{
-                    width: "100%",
-                    height: "233px",
-                    backgroundColor: "grey",
-                    backgroundImage: `url(${blogs.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
-                    backgroundPosition: "left",
-                    backgroundSize: "cover ",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                ></div>
-                <CardText>{blogs.node.blog_graphql.naslovBlogaHr}</CardText>
-              </>
-            ) : (
-              <>
-                <Kategorija>{categorie}</Kategorija>
-                <div
-                  style={{
-                    width: "100%",
-                    height: "233px",
-                    backgroundColor: "grey",
-                    backgroundImage: `url(${blogs.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
-                    backgroundPosition: "left",
-                    backgroundSize: "cover ",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                ></div>
-                <CardText>{blogs.node.blog_graphql.naslovBlogaEng}</CardText>
-              </>
-            ))}
-        </Link>
-      )}
-    </Wrap>
+    <Link
+      style={{ textDecoration: "none" }}
+      to={`/Blog/${blogs.node.slug}`}
+      onClick={handleBlogCardClick}
+    >
+      <Wrap>
+        {blogs &&
+          blogs &&
+          (lang === "hr" ? (
+            <>
+              <Kategorija>
+                {blogs.node.categories.edges[0].node.name}
+              </Kategorija>
+              <div
+                style={{
+                  width: "100%",
+                  height: "233px",
+                  backgroundColor: "grey",
+                  backgroundImage: `url(${blogs.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
+                  backgroundPosition: "left",
+                  backgroundSize: "cover ",
+                  backgroundRepeat: "no-repeat",
+                }}
+              ></div>
+              <CardText>{blogs.node.blog_graphql.naslovBlogaHr}</CardText>
+            </>
+          ) : (
+            <>
+              <Kategorija>{categorie}</Kategorija>
+              <div
+                style={{
+                  width: "100%",
+                  height: "233px",
+                  backgroundColor: "grey",
+                  backgroundImage: `url(${blogs.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
+                  backgroundPosition: "left",
+                  backgroundSize: "cover ",
+                  backgroundRepeat: "no-repeat",
+                }}
+              ></div>
+              <CardText>{blogs.node.blog_graphql.naslovBlogaEng}</CardText>
+            </>
+          ))}
+      </Wrap>
+    </Link>
   )
 }
 

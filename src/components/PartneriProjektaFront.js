@@ -4,9 +4,12 @@ import CROweek from "../../content/assets/CROweek.png"
 import Jelsa from "../../content/assets/Jelsa.png"
 import Secret from "../../content/assets/secret.png"
 import Linija from "../../content/assets/linijaMont.png"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import Lottie from "lottie-react"
 
-import animation1152 from "../animations/val/val"
+import animation1152 from "../animations/val/val2"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -20,10 +23,11 @@ const Wrap = styled.div`
   }
 `
 const WrapSponzori = styled.div`
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 151px;
+  margin-bottom: 151px; */
+
   @media only screen and (max-width: 750px) {
     margin: 70px 0 70px 0;
   }
@@ -40,6 +44,54 @@ const Naslov = styled.div`
 `
 
 function PartneriProjektaFront() {
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 3000,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+    // responsive: [
+    //   {
+    //     breakpoint: 1100,
+    //     settings: {
+    //       slidesToShow: 3,
+    //       slidesToScroll: 1,
+    //       infinite: true,
+    //       lazyLoad: true,
+    //       arrows: true,
+    //       speed: 500,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 780,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 1,
+    //       infinite: true,
+    //       lazyLoad: true,
+    //       arrows: true,
+    //       speed: 500,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 633,
+    //     settings: {
+    //       className: "center",
+    //       centerMode: true,
+    //       centerPadding: "40px",
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //       infinite: true,
+    //       lazyLoad: true,
+    //       arrows: false,
+    //       speed: 500,
+    //     },
+    //   },
+    // ],
+  }
   const interactivity = {
     mode: "scroll",
     actions: [
@@ -49,7 +101,7 @@ function PartneriProjektaFront() {
         frames: [0],
       },
       {
-        visibility: [0.25, 0.6],
+        visibility: [0.3, 0.8],
         type: "seek",
         frames: [0, 152],
       },
@@ -74,10 +126,12 @@ function PartneriProjektaFront() {
         ></div>
       </div>
       <WrapSponzori>
-        <img src={Jelsa} width="23%" alt="Jelsa" />
-        <img src={CROweek} width="23%" alt="Cro week" />
-        <img src={Secret} width="23%" alt="Secret" />
-        <img src={CROweek} width="23%" alt="Cro week" />
+        <Slider {...settings}>
+          <img src={Jelsa} width="23%" alt="Jelsa" />
+          <img src={CROweek} width="23%" alt="Cro week" />
+          <img src={Secret} width="23%" alt="Secret" />
+          <img src={CROweek} width="23%" alt="Cro week" />
+        </Slider>
       </WrapSponzori>
       <div>
         <Lottie
