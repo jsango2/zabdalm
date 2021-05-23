@@ -7,6 +7,8 @@ import Linija from "../../content/assets/linijaMont.png"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useTranslation } from "gatsby-plugin-react-i18next"
+
 import Lottie from "lottie-react"
 
 import animation1152 from "../animations/val/val2"
@@ -44,6 +46,8 @@ const Naslov = styled.div`
 `
 
 function PartneriProjektaFront() {
+  const [t, i18n] = useTranslation()
+
   const settings = {
     dots: false,
     infinite: true,
@@ -120,7 +124,7 @@ function PartneriProjektaFront() {
         <div
           style={{ height: "1px", width: "110px", backgroundColor: "black" }}
         ></div>
-        <Naslov>Partneri projekta</Naslov>
+        <Naslov>{t("partneriProjekta")}</Naslov>
         <div
           style={{ height: "1px", width: "110px", backgroundColor: "black" }}
         ></div>

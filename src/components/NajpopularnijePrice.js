@@ -30,6 +30,9 @@ const Naslov = styled.div`
   @media only screen and (max-width: 750px) {
     font-size: 36px;
   }
+  @media only screen and (max-width: 430px) {
+    font-size: 32px;
+  }
 `
 const Linija = styled.div`
   height: 1px;
@@ -40,6 +43,7 @@ const Linija = styled.div`
   }
 `
 const Clanci = styled.div`
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
@@ -51,6 +55,7 @@ const Clanci = styled.div`
   /* } */
 `
 const TextClanci = styled.div`
+  position: relative;
   font-family: Raleway;
   font-size: 12px;
   font-weight: 500;
@@ -133,11 +138,23 @@ function NajpopularnijePrice({ data }) {
       </Clanci> */}
       <Clanci>
         {sortiranePricePoCitanosti.map(clanak => (
-          <TextClanci key={clanak.node.slug}>
-            {lang === "hr"
-              ? clanak.node.blog_graphql.naslovBlogaHr
-              : clanak.node.blog_graphql.naslovBlogaEng}
-          </TextClanci>
+          <>
+            <TextClanci key={clanak.node.slug}>
+              <div
+                style={{
+                  width: "5px",
+                  height: "5px",
+                  backgroundColor: "#E0E0E0",
+                  position: "absolute",
+                  left: "-13px",
+                  top: "5px",
+                }}
+              ></div>
+              {lang === "hr"
+                ? clanak.node.blog_graphql.naslovBlogaHr
+                : clanak.node.blog_graphql.naslovBlogaEng}
+            </TextClanci>
+          </>
         ))}
       </Clanci>
     </Wrap>

@@ -15,7 +15,7 @@ const ButtonWrap = styled.div`
   display: flex;
   justify-content: center;
   @media only screen and (max-width: 750px) {
-    width: 200px;
+    width: 210px;
   }
 `
 

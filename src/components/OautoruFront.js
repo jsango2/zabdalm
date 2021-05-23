@@ -179,7 +179,11 @@ const Naslov = styled.div`
   /* width: 250px; */
   @media only screen and (max-width: 750px) {
     font-size: 36px;
-    width: 150px;
+    width: 250px;
+  }
+  @media only screen and (max-width: 350px) {
+    font-size: 28px;
+    width: 200px;
   }
 `
 const Crta = styled.div`
@@ -222,7 +226,7 @@ const Image = styled.div`
   }
 `
 const ButtonWrap = styled.div`
-  width: 200px;
+  width: 220px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -237,6 +241,15 @@ function OautoruFront() {
         backgroundImage: `url(${OautoruPng})`,
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.534)",
+          top: "0",
+        }}
+      ></div>
       <GornjiDioWrap>
         <div>
           <WrapNaslovCrtaOautoru>
