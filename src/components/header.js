@@ -154,7 +154,7 @@ const Header = () => {
             </Link>
             <Link
               offset={100}
-              to="/#projekti"
+              to="/About"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
