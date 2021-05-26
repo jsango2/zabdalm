@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Drnis from "../../content/assets/drnis.png"
-import Val from "../../content/assets/valinstagram.svg"
+// import Val from "../../content/assets/valinstagram.svg"
 import Button from "./button"
 
 const Wrap = styled.div`
@@ -91,9 +91,9 @@ function InstagramFront() {
       <ImgWrap className="imgWrapInstagram">
         {" "}
         {/* <img src={Drnis} alt="" srcset="" /> */}
-        <div style={{ position: "absolute", bottom: "18px", width: "100%" }}>
+        {/* <div style={{ position: "absolute", bottom: "18px", width: "100%" }}>
           <img src={Val} alt="" srcset="" />
-        </div>
+        </div> */}
       </ImgWrap>
     </Wrap>
   )
