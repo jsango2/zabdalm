@@ -11,14 +11,16 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     // paddingRight: "10px",
-    width: "95%",
-    height: "84%",
+    width: "45%",
+    height: "51%",
     // top: "100px",
     // right: "30px",
-    margin: "5px auto 0 auto",
-    // "@media (max-width: 750px)": {
-    //   width: "85%",
-    // },
+    margin: "10px auto 0 10px",
+    "@media (max-width: 630px)": {
+      width: "85vw",
+      margin: "64px auto",
+      height: "35%",
+    },
   },
   title: {
     position: "relative",
