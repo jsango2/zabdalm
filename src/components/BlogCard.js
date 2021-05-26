@@ -16,7 +16,7 @@ const Wrap = styled.div`
   height: 323px;
   margin-bottom: 34px;
   @media only screen and (max-width: 350px) {
-    width: 100%;
+    min-width: 300px;
   }
 `
 const Kategorija = styled.div`

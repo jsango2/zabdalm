@@ -34,6 +34,17 @@ const WrapSponzori = styled.div`
     margin: 70px 0 70px 0;
   }
 `
+const WrapSponzorSlider = styled.div`
+  width: 300px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (max-width: 750px) {
+    margin: 70px 0 70px 0;
+  }
+`
 const Naslov = styled.div`
   font-family: Playfair Display;
   font-size: 54px;
@@ -45,9 +56,9 @@ const Naslov = styled.div`
   }
 `
 
-function PartneriProjektaFront() {
+function PartneriProjektaFront({ data }) {
   const [t, i18n] = useTranslation()
-
+  console.log(data)
   const settings = {
     dots: false,
     infinite: true,
@@ -129,12 +140,19 @@ function PartneriProjektaFront() {
           style={{ height: "1px", width: "110px", backgroundColor: "black" }}
         ></div>
       </div>
+
       <WrapSponzori>
         <Slider {...settings}>
-          <img src={Jelsa} width="23%" alt="Jelsa" />
-          <img src={CROweek} width="23%" alt="Cro week" />
-          <img src={Secret} width="23%" alt="Secret" />
-          <img src={CROweek} width="23%" alt="Cro week" />
+          {data.partneriProjekta.edges.map(partner => (
+            <WrapSponzorSlider className="WrapSponzorSlider">
+              {" "}
+              <img
+                width="200px"
+                src={partner.node.featuredImage.node.sourceUrl}
+                alt=""
+              />
+            </WrapSponzorSlider>
+          ))}
         </Slider>
       </WrapSponzori>
       <div>

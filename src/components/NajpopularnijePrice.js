@@ -10,6 +10,7 @@ import {
 } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
 import firebase from "gatsby-plugin-firebase"
+import { ClientHintsMetaTag } from "cloudinary-core"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -50,9 +51,14 @@ const Clanci = styled.div`
   justify-content: space-around;
   width: 90%;
   margin: 0 auto;
-  /* @media only screen and (max-width: 550px) {
-    width: 55px; */
-  /* } */
+  @media only screen and (max-width: 550px) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+  }
 `
 const TextClanci = styled.div`
   position: relative;
@@ -73,41 +79,49 @@ function NajpopularnijePrice({ data }) {
   const context = React.useContext(I18nextContext)
   const [lang, setLang] = useState(context.language)
   const [fireData, setFireData] = useState([])
+  const [result, setResult] = useState([])
   const [sortiranePricePoCitanosti, setSortiranePricePoCitanosti] = useState([])
 
   const [t, i18n] = useTranslation()
-
+  console.log(data)
   //___________________ sljedeća operacija spaja firestore brojač klikova i wpgraphql podatke u jedan array_____________
   //____sortiraj RESULT i renderiraj za najpročitanije priče poredano po BROJ KLIKOVA-----------------
 
   //_________________________________________________________________________________________
 
-  useEffect(() => {
-    async function fetch() {
-      const events = await firebase.firestore().collection("broj klikova")
-      events.get().then(querySnapshot => {
-        const tempDoc = querySnapshot.docs.map(doc => {
-          return { slug: doc.id, ...doc.data() }
-        })
-        // console.log("firebase ", tempDoc)
-        setFireData(tempDoc)
-      })
-    }
-    fetch()
-  }, [])
-  useEffect(() => {
-    const wpData = data.blogovi.edges
-    const result = [wpData, fireData].reduce((a, b) =>
-      a.map((c, i) => Object.assign({}, c, b[i]))
-    )
-    const sortiraniRedosljed = result.sort(function (a, b) {
-      return a.broj - b.broj
-    })
-    console.log("sorted", sortiraniRedosljed)
-    setSortiranePricePoCitanosti(sortiraniRedosljed)
-  }, [fireData])
+  // useEffect(() => {
+  //   async function fetch() {
+  //     const events = await firebase.firestore().collection("broj klikova")
+  //     events.get().then(querySnapshot => {
+  //       const tempDoc = querySnapshot.docs.map(doc => {
+  //         return { slug: doc.id, ...doc.data() }
+  //       })
+  //       // console.log("firebase ", tempDoc)
+  //       setFireData(tempDoc)
+  //     })
+  //   }
+  //   fetch()
+  // }, [])
+  // console.log("firedata", fireData)
+  // useEffect(() => {
+  //   const wpData = data.blogovi.edges
 
-  //------------------------------------------------------------------------ do tu----------------------
+  //   function mergeArrayObjects(arr1, arr2) {
+  //     return arr1.map((item, i) => {
+  //       if (item.broj === arr2[i].broj) {
+  //         //merging two objects
+  //         const spojeno = Object.assign({}, item, arr2[i])
+  //         return spojeno
+  //       }
+  //     })
+  //   }
+  //   const sorted = mergeArrayObjects(fireData, wpData)
+  //     .slice()
+  //     .sort((a, b) => b.broj - a.broj)
+  //   console.log(sorted)
+  //   setResult(sorted)
+
+  // }, [fireData])
 
   return (
     <Wrap>
@@ -123,38 +137,26 @@ function NajpopularnijePrice({ data }) {
         <Naslov>{t("najpopularnijeprice")}</Naslov>
         <Linija />
       </div>
-      {/* <Clanci>
-        {lang === "hr"
-          ? data.blogovi.edges.map(clanak => (
-              <TextClanci key={clanak.node.slug}>
-                {clanak.node.blog_graphql.naslovBlogaHr}
-              </TextClanci>
-            ))
-          : data.blogovi.edges.map(clanak => (
-              <TextClanci key={clanak.node.slug}>
-                {clanak.node.blog_graphql.naslovBlogaEng}
-              </TextClanci>
-            ))}
-      </Clanci> */}
+
       <Clanci>
-        {sortiranePricePoCitanosti.map(clanak => (
-          <>
-            <TextClanci key={clanak.node.slug}>
-              <div
-                style={{
-                  width: "5px",
-                  height: "5px",
-                  backgroundColor: "#E0E0E0",
-                  position: "absolute",
-                  left: "-13px",
-                  top: "5px",
-                }}
-              ></div>
-              {lang === "hr"
-                ? clanak.node.blog_graphql.naslovBlogaHr
-                : clanak.node.blog_graphql.naslovBlogaEng}
-            </TextClanci>
-          </>
+        {/* {console.log("sorted", sortiranePricePoCitanosti)} */}
+        {/* {result} */}
+        {data.blogovi.edges.map(clanak => (
+          <TextClanci key={clanak.node.slug}>
+            <div
+              style={{
+                width: "5px",
+                height: "5px",
+                backgroundColor: "#E0E0E0",
+                position: "absolute",
+                left: "-13px",
+                top: "5px",
+              }}
+            ></div>
+            {lang === "hr"
+              ? clanak.node.blog_graphql.naslovBlogaHr
+              : clanak.node.blog_graphql.naslovBlogaEng}
+          </TextClanci>
         ))}
       </Clanci>
     </Wrap>

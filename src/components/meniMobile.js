@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import {
+  Link,
   useTranslation,
   useI18next,
   I18nextContext,
 } from "gatsby-plugin-react-i18next"
 import Tovar from "../../content/assets/tovar.png"
-
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const WrapAll = styled.div`
   position: fixed;
@@ -67,55 +66,55 @@ function MeniMobile({ handleClick, isOpen }) {
         <Wrap className={`${isOpen ? "show-menu" : "hide-menu"} `}>
           {" "}
           <nav className={"primary-nav-mobile-meni"}>
-            <AnchorLink
+            <Link
               offset={100}
-              to="/#projekti"
+              to="/"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
               HOME
-            </AnchorLink>
-            <AnchorLink
+            </Link>
+            <Link
               offset={100}
               to="/#projekti"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
               {t("oKnjizi")}
-            </AnchorLink>
-            <AnchorLink
+            </Link>
+            <Link
               offset={100}
               to="/Blog"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
               BLOG
-            </AnchorLink>
-            <AnchorLink
+            </Link>
+            <Link
               offset={100}
               to="/Razglednice"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
               {t("razgledniceNaMapi")}
-            </AnchorLink>
+            </Link>
 
-            <AnchorLink
+            <Link
               offset={100}
               to="/#projekti"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
               WEBSHOP
-            </AnchorLink>
+            </Link>
 
-            <AnchorLink
+            <Link
               to="/#kontakt"
               className="LinkHeader"
               activeClassName="active"
             >
               {t("kontakt")}
-            </AnchorLink>
+            </Link>
           </nav>
           <div
             style={{

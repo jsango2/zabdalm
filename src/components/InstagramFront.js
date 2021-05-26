@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Drnis from "../../content/assets/drnis.png"
+import Val from "../../content/assets/valinstagram.svg"
 import Button from "./button"
 
 const Wrap = styled.div`
@@ -36,8 +37,37 @@ const Paragraf = styled.div`
     height: 450px;
   } */}
 `
+const ButtonWrap = styled.div`
+  width: 214px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  @media only screen and (max-width: 750px) {
+    /* width: 200px; */
+  }
+`
+const ImgWrap = styled.div`
+  position: relative;
+  width: 100%;
+  height: 560px;
+  background-image: url(${Drnis});
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+`
 
 function InstagramFront() {
+  const [offset, setOffset] = useState(0)
+  useEffect(() => {
+    function handleScroll() {
+      setOffset(window.pageYOffset)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
   return (
     <Wrap>
       <Title>Pratite nas na Instagramu</Title>
@@ -54,10 +84,17 @@ function InstagramFront() {
         fotografije i razglednice, pisma, dokumente, novac, knjige, grafike i
         mape i ostalo!!!
       </Paragraf>
-      <Button text="KONTAKTIRAJTE NAS" color="black" width="214" />
-      <div>
-        <img src={Drnis} alt="drnis" />
-      </div>
+      <ButtonWrap>
+        <Button text="KONTAKTIRAJTE NAS" color="black" />
+      </ButtonWrap>
+
+      <ImgWrap className="imgWrapInstagram">
+        {" "}
+        {/* <img src={Drnis} alt="" srcset="" /> */}
+        <div style={{ position: "absolute", bottom: "18px", width: "100%" }}>
+          <img src={Val} alt="" srcset="" />
+        </div>
+      </ImgWrap>
     </Wrap>
   )
 }

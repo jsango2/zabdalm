@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import OautoruPng from "../../content/assets/autorPng.png"
 import Goles from "../../content/assets/Goles.png"
@@ -7,6 +7,8 @@ import Knjiga from "../../content/assets/knjiga.png"
 import Button from "./button"
 import Cart from "../../content/assets/cart.svg"
 import { graphql } from "gatsby"
+import { useWindowSize } from "../components/useWindowSize"
+
 import { useTranslation } from "gatsby-plugin-react-i18next"
 
 const Wrap = styled.div`
@@ -17,6 +19,7 @@ const Wrap = styled.div`
   background-position: center;
   background-size: cover;
   padding-top: 461px;
+  overflow: hidden;
   @media only screen and (max-width: 750px) {
     padding-top: 81px;
     padding-bottom: 100px;
@@ -30,6 +33,8 @@ const GornjiDioWrap = styled.div`
   height: 507px;
   position: relative;
   margin: 0 auto 200px auto;
+  z-index: 2;
+
   /* top: 40%;
   left: 50%; */
   /* transform: translate(-50%, -50%); */
@@ -70,6 +75,26 @@ const KnjigaWrap = styled.div`
     left: 0;
   }
 `
+const KnjigaWrapZaDesktop = styled.div`
+  width: 574px;
+  min-width: 574px;
+  height: 0px;
+  position: relative;
+  bottom: 613px;
+  /* top: 10px; */
+  /* left: -130px; */
+  z-index: 3;
+  /* top: 40%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+
+  width: 46vw;
+  min-width: 444px;
+  max-width: 574px;
+
+  @media only screen and (max-width: 999px) {
+  }
+`
 
 const DonjiDioWrap = styled.div`
   display: flex;
@@ -79,6 +104,7 @@ const DonjiDioWrap = styled.div`
   height: auto;
   position: relative;
   margin: 0 auto;
+  z-index: 2;
   @media only screen and (max-width: 999px) {
     width: 95%;
   }
@@ -231,85 +257,212 @@ const ButtonWrap = styled.div`
   display: flex;
   justify-content: center;
 `
+const BGPhoto = styled.div`
+  position: absolute;
+  top: -350px;
+  width: 100%;
+  height: 105%;
+  background-image: url(${OautoruPng});
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+`
 
 function OautoruFront() {
   const [t, i18n] = useTranslation()
+  const size = useWindowSize()
+
+  const [offset, setOffset] = useState(0)
+  useEffect(() => {
+    function handleScroll() {
+      setOffset(window.pageYOffset)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
-    <Wrap
-      style={{
-        backgroundImage: `url(${OautoruPng})`,
-      }}
-    >
-      <div
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.534)",
-          top: "0",
-        }}
-      ></div>
-      <GornjiDioWrap>
-        <div>
-          <WrapNaslovCrtaOautoru>
-            <Crta />
-            <Naslov>{t("oautoru")}</Naslov>
-          </WrapNaslovCrtaOautoru>
-
-          <TextOautoru>
-            {t("igorgoles1")}
-            <br />
-            <br />
-            {t("igorgoles2")}
-          </TextOautoru>
+    <>
+      {size.width < 750 ? (
+        <Wrap>
+          <BGPhoto
+            style={{
+              transform: `translateY(${offset * 0.07}px)`,
+            }}
+          ></BGPhoto>
           <div
-            style={{ marginTop: "20px", float: "right", position: "relative" }}
-          >
-            <img src={Potpis} alt="signature" />
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              backgroundColor: "rgba(0, 0, 0, 0.534)",
+              top: "0",
+              zIndex: "1",
+            }}
+          ></div>
+          <GornjiDioWrap>
+            <div>
+              <WrapNaslovCrtaOautoru>
+                <Crta />
+                <Naslov>{t("oautoru")}</Naslov>
+              </WrapNaslovCrtaOautoru>
+
+              <TextOautoru>
+                {t("igorgoles1")}
+                <br />
+                <br />
+                {t("igorgoles2")}
+              </TextOautoru>
+              <div
+                style={{
+                  marginTop: "20px",
+                  float: "right",
+                  position: "relative",
+                }}
+              >
+                <img src={Potpis} alt="signature" />
+                <div
+                  style={{
+                    fontSize: "16px",
+                    color: "white",
+                    position: "absolute",
+                    right: "10%",
+                    bottom: "10%",
+                  }}
+                >
+                  Igor Goleš
+                </div>
+              </div>
+            </div>
+
+            <Image>{/* <img src={Goles} alt="autor photo" /> */}</Image>
+          </GornjiDioWrap>
+          <DonjiDioWrap>
+            <KnjigaWrap>
+              <img src={Knjiga} width="100%" alt="knjiga" />
+            </KnjigaWrap>
+            <DonjiDioTextWrap>
+              <WrapNaslovCrtaOknjizi>
+                <Crta2 />
+                <Naslov> {t("oatlasu")}</Naslov>
+              </WrapNaslovCrtaOknjizi>
+              <TextOknjizi>
+                <ul>
+                  <li> {t("948stranica")}</li>
+                  <li>{t("luksuz")}</li>
+                  <li>{t("hreng")}</li>
+                  <li>{t("razglednice")}</li>
+                  <li>{t("potpisnici")}</li>
+                  <li>{t("deluxe")}</li>
+                </ul>
+              </TextOknjizi>
+              <div style={{ width: "179px", paddingLeft: "25px" }}>
+                <ButtonWrap>
+                  <Button
+                    text={t("kupiatlaskratko")}
+                    ikona={Cart}
+                    color="white"
+                  />
+                </ButtonWrap>
+              </div>
+            </DonjiDioTextWrap>
+          </DonjiDioWrap>
+        </Wrap>
+      ) : (
+        <>
+          <Wrap>
+            <BGPhoto
+              style={{
+                transform: `translateY(${offset * 0.07}px)`,
+              }}
+            ></BGPhoto>
             <div
               style={{
-                fontSize: "16px",
-                color: "white",
                 position: "absolute",
-                right: "10%",
-                bottom: "10%",
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(0, 0, 0, 0.534)",
+                top: "0",
+                zIndex: "1",
               }}
-            >
-              Igor Goleš
-            </div>
-          </div>
-        </div>
+            ></div>
+            <GornjiDioWrap>
+              <div>
+                <WrapNaslovCrtaOautoru>
+                  <Crta />
+                  <Naslov>{t("oautoru")}</Naslov>
+                </WrapNaslovCrtaOautoru>
 
-        <Image>{/* <img src={Goles} alt="autor photo" /> */}</Image>
-      </GornjiDioWrap>
-      <DonjiDioWrap>
-        <KnjigaWrap>
-          <img src={Knjiga} width="100%" alt="knjiga" />
-        </KnjigaWrap>
-        <DonjiDioTextWrap>
-          <WrapNaslovCrtaOknjizi>
-            <Crta2 />
-            <Naslov> {t("oatlasu")}</Naslov>
-          </WrapNaslovCrtaOknjizi>
-          <TextOknjizi>
-            <ul>
-              <li> {t("948stranica")}</li>
-              <li>{t("luksuz")}</li>
-              <li>{t("hreng")}</li>
-              <li>{t("razglednice")}</li>
-              <li>{t("potpisnici")}</li>
-              <li>{t("deluxe")}</li>
-            </ul>
-          </TextOknjizi>
-          <div style={{ width: "179px", paddingLeft: "25px" }}>
-            <ButtonWrap>
-              <Button text={t("kupiatlaskratko")} ikona={Cart} color="white" />
-            </ButtonWrap>
-          </div>
-        </DonjiDioTextWrap>
-      </DonjiDioWrap>
-    </Wrap>
+                <TextOautoru>
+                  {t("igorgoles1")}
+                  <br />
+                  <br />
+                  {t("igorgoles2")}
+                </TextOautoru>
+                <div
+                  style={{
+                    marginTop: "20px",
+                    float: "right",
+                    position: "relative",
+                  }}
+                >
+                  <img src={Potpis} alt="signature" />
+                  <div
+                    style={{
+                      fontSize: "16px",
+                      color: "white",
+                      position: "absolute",
+                      right: "10%",
+                      bottom: "10%",
+                    }}
+                  >
+                    Igor Goleš
+                  </div>
+                </div>
+              </div>
+
+              <Image>{/* <img src={Goles} alt="autor photo" /> */}</Image>
+            </GornjiDioWrap>
+            <DonjiDioWrap>
+              <KnjigaWrap>
+                {/* <img src={Knjiga} width="100%" alt="knjiga" /> */}
+              </KnjigaWrap>
+              <DonjiDioTextWrap>
+                <WrapNaslovCrtaOknjizi>
+                  <Crta2 />
+                  <Naslov> {t("oatlasu")}</Naslov>
+                </WrapNaslovCrtaOknjizi>
+                <TextOknjizi>
+                  <ul>
+                    <li> {t("948stranica")}</li>
+                    <li>{t("luksuz")}</li>
+                    <li>{t("hreng")}</li>
+                    <li>{t("razglednice")}</li>
+                    <li>{t("potpisnici")}</li>
+                    <li>{t("deluxe")}</li>
+                  </ul>
+                </TextOknjizi>
+                <div style={{ width: "179px", paddingLeft: "25px" }}>
+                  <ButtonWrap>
+                    <Button
+                      text={t("kupiatlaskratko")}
+                      ikona={Cart}
+                      color="white"
+                    />
+                  </ButtonWrap>
+                </div>
+              </DonjiDioTextWrap>
+            </DonjiDioWrap>
+          </Wrap>
+
+          <KnjigaWrapZaDesktop>
+            <img src={Knjiga} width="100%" alt="knjiga" />
+          </KnjigaWrapZaDesktop>
+        </>
+      )}
+    </>
   )
 }
 

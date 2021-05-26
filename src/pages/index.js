@@ -62,8 +62,8 @@ const IndexPage = ({ data }) => {
       <NajpopularnijePrice data={data.wpgraphql} />
       <RazgledniceNaMapiFront />
       <OautoruFront />
-      <PartneriProjektaFront />
-      {/* <InstagramFront />  */}
+      <PartneriProjektaFront data={data.wpgraphql} />
+      <InstagramFront />
     </Layout>
   )
 }
@@ -82,6 +82,19 @@ export const query = graphql`
       }
     }
     wpgraphql {
+      partneriProjekta {
+        edges {
+          node {
+            title
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            content
+          }
+        }
+      }
       blogovi {
         edges {
           node {

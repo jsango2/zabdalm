@@ -36,7 +36,7 @@ function Montaza() {
         frames: [0],
       },
       {
-        visibility: [0.15, 0.6],
+        visibility: [0.25, 0.6],
         type: "seek",
         frames: [0, 152],
       },

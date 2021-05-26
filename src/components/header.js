@@ -19,7 +19,7 @@ import MeniMobile from "./meniMobile"
 
 const HeaderWrap = styled.div`
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1152px;
   ${"" /* padding: 1.85rem 0; */}
   height: 80px;
   display: flex;
@@ -84,145 +84,144 @@ const Header = () => {
     changeLanguage(lang)
   }
   return (
-    // <Headroom
-    //   disableInlineStyles
-    //   onPin={() => setDisplay("animation")}
-    //   onUnpin={() => setDisplay("")}
-    //   style={{
-    //     zIndex: "9999",
-    //   }}
-    // >
-
-    <>
-      <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
-      <Hamburger
-        onClick={() => {
-          setIsOpen(() => !isOpen)
-          // blockScroll()
-        }}
-      >
-        <div
-          style={{
-            fontFamily: "Playfair Display",
-            color: "white",
-            fontWeight: "500",
-            fontSize: "24",
+    <Headroom
+      disableInlineStyles
+      onPin={() => setDisplay("animation")}
+      onUnpin={() => setDisplay("")}
+      style={{
+        zIndex: "9999",
+      }}
+    >
+      <>
+        <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
+        <Hamburger
+          onClick={() => {
+            setIsOpen(() => !isOpen)
+            // blockScroll()
           }}
         >
-          ZaboravljenaDalmacija.hr
-        </div>
-        <CgMenuGridR
-          style={{
-            color: "white",
-            width: "28px",
-            height: "28px",
-            position: "absolute",
-            top: "15px",
-            right: "10px",
-            zIndex: "11",
-          }}
-        />
-      </Hamburger>{" "}
-      <header
-        className="headerShadow"
-        style={{
-          position: "relative",
-          background: `white`,
-          zIndex: "9999",
-        }}
-      >
-        <HeaderWrap className={`header-wrap`}>
-          <div className="logoHeader">
-            <div
-              className="title-group"
-              style={{
-                display: `flex`,
-                flexDirection: `column`,
-                justifyContent: `center`,
-                alignItems: `flex-start`,
-              }}
-            ></div>
-          </div>
-          <nav className={`primary-nav ${display}`}>
-            <Link
-              offset={100}
-              to="/"
-              className="LinkHeader LinkHeaderProjekti"
-              activeClassName="active"
-            >
-              HOME
-            </Link>
-            <Link
-              offset={100}
-              to="/#projekti"
-              className="LinkHeader LinkHeaderProjekti"
-              activeClassName="active"
-            >
-              {t("oKnjizi")}
-            </Link>
-            <Link
-              offset={100}
-              to="/Blog"
-              className="LinkHeader LinkHeaderProjekti"
-              activeClassName="active"
-            >
-              BLOG
-            </Link>
-            <Link
-              offset={100}
-              to="/Razglednice"
-              className="LinkHeader LinkHeaderProjekti"
-              activeClassName="active"
-            >
-              {t("razgledniceNaMapi")}
-            </Link>
-
-            <Link
-              offset={100}
-              to="/#projekti"
-              className="LinkHeader LinkHeaderProjekti"
-              activeClassName="active"
-            >
-              WEBSHOP
-            </Link>
-
-            <Link
-              to="/#kontakt"
-              className="LinkHeader"
-              activeClassName="active"
-            >
-              {t("kontakt")}
-            </Link>
-          </nav>
           <div
             style={{
-              position: "absolute",
-              top: "13px",
-              right: "43px",
-              display: "flex",
-              cursor: "pointer",
-              fontSize: "12px",
+              fontFamily: "Playfair Display",
+              color: "white",
+              fontWeight: "500",
+              fontSize: "24",
             }}
           >
-            <p
-              className={current === 1 ? "blueLink" : ""}
-              onClick={e => handleClick(1)}
-              style={{ margin: "0 3px" }}
-            >
-              HR
-            </p>
-            <p
-              className={current === 2 ? "blueLink" : ""}
-              onClick={e => handleClick(2)}
-              style={{ margin: "0 3px" }}
-            >
-              ENG
-            </p>
+            ZaboravljenaDalmacija.hr
           </div>
-        </HeaderWrap>
-      </header>
-    </>
-    // </Headroom>
+          <CgMenuGridR
+            style={{
+              color: "white",
+              width: "28px",
+              height: "28px",
+              position: "absolute",
+              top: "15px",
+              right: "10px",
+              zIndex: "11",
+            }}
+          />
+        </Hamburger>{" "}
+        <header
+          className="headerShadow2"
+          style={{
+            position: "relative",
+            background: `white`,
+            zIndex: "9999",
+          }}
+        >
+          <HeaderWrap className={`header-wrap`}>
+            <div className="logoHeader">
+              <div
+                className="title-group"
+                style={{
+                  display: `flex`,
+                  flexDirection: `column`,
+                  justifyContent: `center`,
+                  alignItems: `flex-start`,
+                }}
+              ></div>
+            </div>
+            <nav className={`primary-nav ${display}`}>
+              <Link
+                offset={100}
+                to="/"
+                className="LinkHeader LinkHeaderProjekti"
+                activeClassName="active"
+              >
+                HOME
+              </Link>
+              <Link
+                offset={100}
+                to="/#projekti"
+                className="LinkHeader LinkHeaderProjekti"
+                activeClassName="active"
+              >
+                {t("oKnjizi")}
+              </Link>
+              <Link
+                offset={100}
+                to="/Blog"
+                className="LinkHeader LinkHeaderProjekti"
+                activeClassName="active"
+              >
+                BLOG
+              </Link>
+              <Link
+                offset={100}
+                to="/Razglednice"
+                className="LinkHeader LinkHeaderProjekti"
+                activeClassName="active"
+              >
+                {t("razgledniceNaMapi")}
+              </Link>
+
+              <Link
+                offset={100}
+                to="/#projekti"
+                className="LinkHeader LinkHeaderProjekti"
+                activeClassName="active"
+              >
+                WEBSHOP
+              </Link>
+
+              <Link
+                to="/#kontakt"
+                className="LinkHeader"
+                activeClassName="active"
+              >
+                {t("kontakt")}
+              </Link>
+            </nav>
+            <div
+              style={{
+                position: "absolute",
+                top: "13px",
+                right: "43px",
+                display: "flex",
+                cursor: "pointer",
+                fontSize: "12px",
+              }}
+            >
+              <p
+                className={current === 1 ? "blueLink" : ""}
+                onClick={e => handleClick(1)}
+                style={{ margin: "0 3px" }}
+              >
+                HR
+              </p>
+              <p
+                className={current === 2 ? "blueLink" : ""}
+                onClick={e => handleClick(2)}
+                style={{ margin: "0 3px" }}
+              >
+                ENG
+              </p>
+            </div>
+          </HeaderWrap>
+        </header>
+      </>
+    </Headroom>
   )
 }
 

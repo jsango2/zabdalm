@@ -29,6 +29,7 @@ import { useWindowSize } from "../components/useWindowSize"
 // import FirebaseData from "../components/testGooglePhotosApi"
 import Header from "./../components/header"
 import Footer from "./../components/footer"
+import { Popup } from "mapbox-gl"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
@@ -68,6 +69,8 @@ function Razglednice({ data }) {
   const [featuresArr, setFeaturesArr] = useState([])
   const [show, setShow] = useState(false)
   const [popupFrame, setPopupFrame] = useState(null)
+  const [popupOn, setPopupOn] = useState(false)
+  const [thumbOn, setThumbOn] = useState(false)
   const [flickr, setFlickr] = useState([])
   const [geoData, setGeoData] = useState([])
   const [geoData2, setGeoData2] = useState([])
@@ -285,6 +288,15 @@ function Razglednice({ data }) {
       // offset: size < 750 ? [-170, 0] : [-80, 0],
     })
 
+    popup.on("open", function () {
+      setPopupOn(true)
+      console.log("open")
+    })
+    popup.on("close", function () {
+      setPopupOn(false)
+      console.log("closed")
+    })
+
     // console.log(map)
     map.on("move", () => {
       setLng(map.getCenter().lng.toFixed(4))
@@ -427,11 +439,12 @@ function Razglednice({ data }) {
 
         map.on("click", "city", function (e) {
           // Change the cursor style as a UI indicator.
-          map.getCanvas().style.cursor = "pointer"
+          // map.getCanvas().style.cursor = ""
           // Populate the popup and set its coordinates based on the feature.
           var coordinates = e.features[0].geometry.coordinates.slice()
           console.log("koordinate", coordinates)
           var feature = e.features[0]
+          setShow(false)
           // console.log(feature)
           while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
             coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360
@@ -547,12 +560,24 @@ function Razglednice({ data }) {
 
     return uniqueFeatures
   }
+  const handleThumbClickClose = item => {
+    setShow(prev => !prev)
+  }
   const handleThumbClick = item => {
     setShow(prev => !prev)
     setPopupFrame(item)
+    // popup.remove()
     // console.log(item);
+    // const popup = new mapboxgl.Popup({
+    //   closeButton: true,
+    //   anchor: "center",
+    //   className: "moj-popupMapbox",
+    //   maxWidth: "100%",
+    //   // offset: size < 750 ? [-170, 0] : [-80, 0],
+    // })
+    // popup.remove()
   }
-
+  console.log("show", show)
   const handleChangeGodinaDelayed = (event, newValue) => {
     setValue2(newValue)
     console.log(newValue)
@@ -572,7 +597,6 @@ function Razglednice({ data }) {
   }, [featuresArr])
 
   useEffect(() => {
-    console.log(size.height)
     setInnerHeight(window.innerHeight)
   }, [size])
   return (
@@ -590,15 +614,18 @@ function Razglednice({ data }) {
             value={value}
           />
         </div>{" "}
-        {hasPoints && zoom > 11.3 ? (
+        {hasPoints && zoom > 10.3 ? (
           <div className="slides-wrap">
-            {zoom > 11.3
+            {zoom > 10.3
               ? featuresArr.length
                 ? featuresArr.map((item, index) =>
                     item.properties.title_naslov ? (
                       <div
                         key={index}
-                        className="slides-div"
+                        // style={{ pointerEvent: "none" }}
+                        className={`slides-div ${
+                          popupOn ? "active-slides-div" : ""
+                        }`}
                         onClick={() => handleThumbClick(item)}
                       >
                         <img src={item.properties.image_url_thumb} alt="" />
@@ -656,32 +683,14 @@ function Razglednice({ data }) {
         >
           {show && (
             <div className="popupFrame">
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginBottom: "10px",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: "1.2rem,",
-                    fontWeight: "600",
-                    marginLeft: "30px",
-                    padding: "10px 20px",
-                    backgroundColor: "wheat",
-                    fontSize: "1rem",
-                    color: " #614d29",
-                    margin: "0.3rem auto 0 0.5rem",
-                    width: "auto",
-                  }}
-                >
-                  {popupFrame.properties.title_naslov},{" "}
-                  {popupFrame.properties.datum_uploada}
-                </span>
-              </div>
-              <div onClick={handleThumbClick} className="x">
-                X
+              <div className="popupFrameDataWrap">
+                <div>
+                  <b>{popupFrame.properties.title_naslov},</b>
+                  &nbsp;{popupFrame.properties.datum_uploada}
+                </div>
+                <div onClick={handleThumbClickClose} className="x">
+                  X
+                </div>
               </div>
 
               <div
@@ -689,22 +698,17 @@ function Razglednice({ data }) {
                   position: "relative",
                   width: "100%",
                   height: "100%",
-                  backgroundImage: `url(${popupFrame.properties.image_url})`,
-                  top: "0",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "contain ",
+
                   zIndex: "2",
-                  // filter: "drop-shadow(0 0 4rem rgba(104, 62, 15, 0.61))",
                 }}
-              ></div>
+              >
+                {" "}
+                <img src={popupFrame.properties.image_url} alt="postcard" />
+              </div>
             </div>
           )}
         </div>
       </div>{" "}
-      {/* <GooglePhotos /> */}
-      {/* <FirebaseData /> */}
-      {/* <Footer></Footer> */}
     </>
   )
 }

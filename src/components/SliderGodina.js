@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     fontWeight: "bold",
     textAlign: "center",
     zIndex: "1",
-    top: "-9px",
+    top: "-7px",
 
     color: "#664F3E",
   },

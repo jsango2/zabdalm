@@ -155,15 +155,15 @@ function BlogFront({ blogovi }) {
           </div>
         )}
 
-        <div
+        {/* <div
           style={{
             display: "flex",
             justifyContent: "space-around",
             flexWrap: "wrap",
             marginBottom: "62px",
           }}
-        >
-          {/* {size.width > 750 ? (
+        > */}
+        {/* {size.width > 750 ? (
             <>
               {" "}
               <BlogCard />
@@ -182,8 +182,8 @@ function BlogFront({ blogovi }) {
               <BlogCard />
             </>
           )} */}
-          <BlogPostCards blogovi={blogovi} />
-        </div>
+        <BlogPostCards blogovi={blogovi} />
+        {/* </div> */}
         <ButtonWrap>
           <Button text={t("arhivaprica")} color="black" width="155" />
         </ButtonWrap>

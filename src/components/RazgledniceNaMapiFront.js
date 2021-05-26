@@ -25,7 +25,7 @@ const Naslov = styled.div`
   font-size: 54px;
   font-weight: 600;
   line-height: 65px;
-  margin-bottom: 31px;
+  margin-bottom: 15px;
   color: white;
   text-align: center;
   @media only screen and (max-width: 750px) {
