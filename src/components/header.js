@@ -202,6 +202,25 @@ const Header = () => {
                 cursor: "pointer",
                 fontSize: "12px",
               }}
+<<<<<<< HEAD
+=======
+            ></div>
+          </div>
+          <nav className={`primary-nav ${display}`}>
+            <Link
+              offset={100}
+              to="/"
+              className="LinkHeader LinkHeaderProjekti"
+              activeClassName="active"
+            >
+              HOME
+            </Link>
+            <Link
+              offset={100}
+              to="/About"
+              className="LinkHeader LinkHeaderProjekti"
+              activeClassName="active"
+>>>>>>> 4e7c1a379da8c0f699a0dca81959c4a4e15edb48
             >
               <p
                 className={current === 1 ? "blueLink" : ""}
