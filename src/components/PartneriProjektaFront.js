@@ -16,12 +16,17 @@ import animation1152 from "../animations/val/val2"
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
-  height: 520px;
+  height: 545px;
   position: relative;
   margin: 200px 0 112px 0;
   text-align: center;
   @media only screen and (max-width: 750px) {
     margin: 100px 0 12px 0;
+    height: 410px;
+  }
+  @media only screen and (max-width: 550px) {
+    /* margin: 100px 0 12px 0; */
+    height: 265px;
   }
 `
 const WrapSponzori = styled.div`
@@ -31,7 +36,7 @@ const WrapSponzori = styled.div`
   margin-bottom: 151px; */
 
   @media only screen and (max-width: 750px) {
-    margin: 70px 0 70px 0;
+    /* margin: 70px 0 70px 0; */
   }
 `
 const WrapSponzorSlider = styled.div`
@@ -42,7 +47,7 @@ const WrapSponzorSlider = styled.div`
   justify-content: center;
 
   @media only screen and (max-width: 750px) {
-    margin: 70px 0 70px 0;
+    height: 150px;
   }
 `
 const Naslov = styled.div`
@@ -55,6 +60,23 @@ const Naslov = styled.div`
     line-height: 43px;
   }
 `
+const WrapNaslov = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 61px;
+  @media only screen and (max-width: 550px) {
+    margin-bottom: 15px;
+  }
+`
+// const Naslov = styled.div`
+//   font-family: Playfair Display;
+//   font-size: 54px;
+//   font-weight: 600;
+//   @media only screen and (max-width: 550px) {
+//     font-size: 36px;
+//   }
+// `
 
 function PartneriProjektaFront({ data }) {
   const [t, i18n] = useTranslation()
@@ -124,14 +146,7 @@ function PartneriProjektaFront({ data }) {
   }
   return (
     <Wrap>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: "61px",
-        }}
-      >
+      <WrapNaslov>
         <div
           style={{ height: "1px", width: "110px", backgroundColor: "black" }}
         ></div>
@@ -139,7 +154,7 @@ function PartneriProjektaFront({ data }) {
         <div
           style={{ height: "1px", width: "110px", backgroundColor: "black" }}
         ></div>
-      </div>
+      </WrapNaslov>
 
       <WrapSponzori>
         <Slider {...settings}>

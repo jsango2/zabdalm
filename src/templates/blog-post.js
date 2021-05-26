@@ -11,6 +11,7 @@ import {
 } from "gatsby-plugin-react-i18next"
 import Lottie from "lottie-react"
 import animation1152 from "../animations/val/val2"
+import BlogCard from "../components/BlogCard"
 
 // import SEO from "../components/seo"
 
@@ -124,6 +125,11 @@ const BlogContentWrap = styled.div`
     object-fit: cover;
     height: 50vw;
   }
+  & > p > img {
+    width: 73vw;
+    object-fit: cover;
+    height: 50vw;
+  }
   @media only screen and (max-width: 570px) {
     /* flex-direction: column;
     height: auto;
@@ -161,8 +167,6 @@ const BlogPost = ({ data }) => {
   useEffect(() => {
     var cat = ""
     if (data.wpgraphql.blog.categories.edges.length !== undefined) {
-      console.log(data.wpgraphql.blog.categories.edges[0].node.name)
-
       switch (data.wpgraphql.blog.categories.edges[0].node.name) {
         case "ZABORAVLJENA DALMACIJA DANAS":
           cat = "FORGOTTEN DALMATIA TODAY"
@@ -193,7 +197,9 @@ const BlogPost = ({ data }) => {
             >
               <Crta />
               <WrapSponzorHero>
-                {data.wpgraphql.blog.blog_graphql.tekstSponzorira}
+                {data.wpgraphql.blog.blog_graphql.tekstSponzorira !== undefined
+                  ? data.wpgraphql.blog.blog_graphql.tekstSponzorira
+                  : null}
               </WrapSponzorHero>
               <Wrap>
                 <Kategorija>
@@ -224,7 +230,10 @@ const BlogPost = ({ data }) => {
             >
               <Crta />
               <WrapSponzorHero>
-                {data.wpgraphql.blog.blog_graphql.tekstSponzoriraEng}
+                {data.wpgraphql.blog.blog_graphql.tekstSponzoriraEng !==
+                undefined
+                  ? data.wpgraphql.blog.blog_graphql.tekstSponzoriraEng
+                  : null}
               </WrapSponzorHero>
               <Wrap>
                 <Kategorija>{categorie}</Kategorija>
@@ -247,34 +256,42 @@ const BlogPost = ({ data }) => {
             />
           </>
         )}
-        <div
-          style={{
-            position: "relative",
-            width: "230px",
-            height: "80px",
-            backgroundImage: `url(${data.wpgraphql.blog.blog_graphql.logoSponzora.sourceUrl})`,
-            backgroundPosition: "center",
-            backgroundSize: "contain ",
-            backgroundRepeat: "no-repeat",
-            margin: "0 auto",
-          }}
-        ></div>
-        <div
-          style={{
-            position: "relative",
-            fontFamily: "Playfair Display",
-            fontSize: "24px",
-            fontWeight: "600",
-            color: "#395C67",
-            maxWidth: "430px",
-            // height: "80px",
-            margin: "0 auto",
-            textAlign: "center",
-          }}
-        >
-          {" "}
-          {data.wpgraphql.blog.blog_graphql.tekstSponzorira}
-        </div>
+        {data.wpgraphql.blog.blog_graphql.logoSponzora !== null ? (
+          <>
+            {" "}
+            <div
+              style={{
+                position: "relative",
+                width: "230px",
+                height: "80px",
+                backgroundImage: `url(${data.wpgraphql.blog.blog_graphql.logoSponzora.sourceUrl})`,
+                backgroundPosition: "center",
+                backgroundSize: "contain ",
+                backgroundRepeat: "no-repeat",
+                margin: "0 auto",
+              }}
+            ></div>{" "}
+            <div
+              style={{
+                position: "relative",
+                fontFamily: "Playfair Display",
+                fontSize: "24px",
+                fontWeight: "600",
+                color: "#395C67",
+                maxWidth: "430px",
+                // height: "80px",
+                margin: "0 auto",
+                textAlign: "center",
+              }}
+            >
+              {" "}
+              {data.wpgraphql.blog.blog_graphql.tekstSponzorira}
+            </div>
+          </>
+        ) : (
+          <div></div>
+        )}
+
         <div>
           <Lottie
             animationData={animation1152}
@@ -296,6 +313,18 @@ const BlogPost = ({ data }) => {
           <NaslovBlog>BLOG</NaslovBlog>
           <Linija />
         </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            flexWrap: "wrap",
+            marginBottom: "62px",
+          }}
+        >
+          {data.wpgraphql.blogovi.edges.slice(0, 3).map(blog => (
+            <BlogCard blogs={blog} />
+          ))}
+        </div>
       </Layout>
     </>
   )
@@ -313,6 +342,35 @@ export const query = graphql`
       }
     }
     wpgraphql {
+      blogovi {
+        edges {
+          node {
+            blog_graphql {
+              istaknutaFotografijaNaBlogu {
+                sourceUrl
+              }
+              naslovBlogaEng
+              naslovBlogaHr
+              tekstBlogaEng
+              tekstBlogaHr
+              tekstSponzorira
+              tekstSponzoriraEng
+              logoSponzora {
+                sourceUrl
+              }
+            }
+
+            categories {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+            slug
+          }
+        }
+      }
       blog(id: $slug, idType: SLUG) {
         title
         categories {

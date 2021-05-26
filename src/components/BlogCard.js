@@ -105,7 +105,9 @@ function BlogCard({ blogs }) {
           (lang === "hr" ? (
             <>
               <Kategorija>
-                {blogs.node.categories.edges[0].node.name}
+                {blogs.node.categories.edges[0].node.name === "ISTAKNUTA PRIČA"
+                  ? blogs.node.categories.edges[1].node.name
+                  : blogs.node.categories.edges[0].node.name}
               </Kategorija>
               <div
                 style={{

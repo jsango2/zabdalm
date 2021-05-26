@@ -110,8 +110,11 @@ const KnjigaWrap = styled.div`
   /* background-position: center;
   background-size: cover; */
   z-index: 10;
-
+  @media only screen and (max-width: 999px) {
+    top: 20px;
+  }
   @media only screen and (max-width: 750px) {
+    top: unset;
     width: 34vw;
     min-width: 240px;
     height: 363px;

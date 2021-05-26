@@ -24,6 +24,25 @@ const Title = styled.div`
     height: 450px;
   } */}
 `
+const Naslov = styled.div`
+  font-family: Playfair Display;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 54px;
+  @media only screen and (max-width: 550px) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+`
+const WrapNaslov = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 61px;
+  @media only screen and (max-width: 550px) {
+    margin-bottom: 31px;
+  }
+`
 const Paragraf = styled.div`
   font-family: Amiri;
   font-size: 24px;
@@ -33,9 +52,10 @@ const Paragraf = styled.div`
   width: 673px;
   margin: 0 auto 61px;
   text-align: center;
-  ${"" /* @media only screen and (max-width: 76em) {
-    height: 450px;
-  } */}
+  @media only screen and (max-width: 750px) {
+    width: 75%;
+    min-width: 300px;
+  }
 `
 const ButtonWrap = styled.div`
   width: 214px;
@@ -56,6 +76,14 @@ const ImgWrap = styled.div`
   background-repeat: no-repeat;
   z-index: 1;
 `
+const Linija = styled.div`
+  height: 1px;
+  width: 73px;
+  background-color: black;
+  @media only screen and (max-width: 550px) {
+    width: 55px;
+  }
+`
 
 function InstagramFront() {
   const [offset, setOffset] = useState(0)
@@ -70,7 +98,12 @@ function InstagramFront() {
   }, [])
   return (
     <Wrap>
-      <Title>Pratite nas na Instagramu</Title>
+      <WrapNaslov>
+        <Linija />
+        <Naslov>Pratite nas na Instagramu</Naslov>
+        <Linija />
+      </WrapNaslov>
+
       <div
         style={{
           height: "508px",
