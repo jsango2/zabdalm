@@ -11,9 +11,15 @@ const Wrap = styled.div`
   position: relative;
   margin-top: 200px;
   text-align: center;
-  ${"" /* @media only screen and (max-width: 76em) {
-    height: 450px;
-  } */}
+  @media only screen and (max-width: 800px) {
+    height: 1250px;
+  }
+  @media only screen and (max-width: 520px) {
+    height: 1050px;
+  }
+  @media only screen and (max-width: 370px) {
+    height: 1050px;
+  }
 `
 const Title = styled.div`
   font-family: Playfair Display;
@@ -83,12 +89,21 @@ const ImgWrap = styled.div`
   position: relative;
   width: 100%;
   height: 560px;
+  bottom: 915px;
   /* top: -177px;
   background-image: url(${Drnis});
   background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat; */
   z-index: 1;
+  @media only screen and (max-width: 700px) {
+    /* width: 200px; */
+    bottom: 965px;
+  }
+  @media only screen and (max-width: 550px) {
+    /* width: 200px; */
+    bottom: 897px;
+  }
 `
 const Linija = styled.div`
   height: 1px;

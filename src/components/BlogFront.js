@@ -4,7 +4,12 @@ import BlogCard from "./BlogCard"
 import Button from "./button"
 import { useWindowSize } from "./useWindowSize"
 import { RiArrowDropDownFill } from "react-icons/ri"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import {
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+} from "gatsby-plugin-react-i18next"
 import MeniMobileBlog from "./MeniMobileBlog"
 import BlogPostCards from "./BlogPostCards"
 
@@ -188,7 +193,7 @@ function BlogFront({ blogovi }) {
           </div>
         )}
         {size.width < 750 ? (
-          <BlogPostCards blogovi={query.slice(0, 2)} />
+          <BlogPostCards blogovi={query.slice(0, 3)} />
         ) : (
           <BlogPostCards blogovi={query.slice(0, 6)} />
         )}
@@ -196,7 +201,9 @@ function BlogFront({ blogovi }) {
         {console.log(blogovi)}
         {/* </div> */}
         <ButtonWrap>
-          <Button text={t("arhivaprica")} color="black" width="155" />
+          <Link to="/Blog">
+            <Button text={t("arhivaprica")} color="black" width="155" />
+          </Link>
         </ButtonWrap>
       </Wrap>
     </>

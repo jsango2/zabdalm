@@ -1066,11 +1066,13 @@ pre tt:after {
     display: none;
   }
 }
-.imgWrapInstagram img {
+/* .imgWrapInstagram img {
   position: absolute;
   left: 0;
   object-fit: contain;
-}
+  bottom: 930px;
+  width: 100%;
+} */
 .headerShadow2 {
   /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
   clip-path: inset(0px 0px -4px 0px);
@@ -1405,6 +1407,9 @@ pre tt:after {
   cursor: pointer;
   margin: 0 3px;
 }
+.imgWrapInstagram img {
+  width: 100%;
+}
 .active-slides-div {
   pointer-events: none;
 }
@@ -1519,6 +1524,9 @@ pre tt:after {
   }
 }
 @media screen and (max-width: 700px) {
+  /* .imgWrapInstagram img {
+    bottom: 930px;
+  } */
   .MuiSlider-valueLabel {
     margin-left: 0px;
     font-size: 8px !important;

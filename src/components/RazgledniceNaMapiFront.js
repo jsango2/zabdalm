@@ -31,7 +31,7 @@ const Naslov = styled.div`
   text-align: center;
   @media only screen and (max-width: 750px) {
     margin-bottom: 15px;
-
+    line-height: 40px;
     font-size: 36px;
   }
 `
@@ -88,7 +88,12 @@ function RazgledniceNaMapiFront() {
         }}
       >
         <Lottie
-          style={{ position: "absolute", top: "0" }}
+          style={{
+            position: "absolute",
+            top: "0",
+            width: "100%",
+            height: "100%",
+          }}
           animationData={animation1152}
           interactivity={interactivity}
           autoPlay={false}
