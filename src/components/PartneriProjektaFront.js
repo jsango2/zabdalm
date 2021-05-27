@@ -8,10 +8,11 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useTranslation } from "gatsby-plugin-react-i18next"
-
+import { useWindowSize } from "../components/useWindowSize"
 import Lottie from "lottie-react"
 
 import animation1152 from "../animations/val/val2"
+import animation370 from "../animations/val/val370"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -69,6 +70,13 @@ const WrapNaslov = styled.div`
     margin-bottom: 15px;
   }
 `
+const WrapLottie = styled.div`
+  position: relative;
+
+  @media only screen and (max-width: 430px) {
+    top: -80px;
+  }
+`
 // const Naslov = styled.div`
 //   font-family: Playfair Display;
 //   font-size: 54px;
@@ -80,7 +88,8 @@ const WrapNaslov = styled.div`
 
 function PartneriProjektaFront({ data }) {
   const [t, i18n] = useTranslation()
-  console.log(data)
+  const size = useWindowSize()
+
   const settings = {
     dots: false,
     infinite: true,
@@ -170,14 +179,15 @@ function PartneriProjektaFront({ data }) {
           ))}
         </Slider>
       </WrapSponzori>
-      <div>
+
+      <WrapLottie>
         <Lottie
-          animationData={animation1152}
+          animationData={size.width < 430 ? animation370 : animation1152}
           interactivity={interactivity}
           autoPlay={false}
           loop={false}
         />
-      </div>
+      </WrapLottie>
     </Wrap>
   )
 }

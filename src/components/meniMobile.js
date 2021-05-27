@@ -20,7 +20,7 @@ const WrapAll = styled.div`
 `
 const Wrap = styled.div`
   position: fixed;
-  top: 10%;
+  top: 89%;
   left: 50%;
   transform: translate(-50%, 0%);
   height: 80vh;

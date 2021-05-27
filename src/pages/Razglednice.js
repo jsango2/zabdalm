@@ -687,26 +687,24 @@ function Razglednice({ data }) {
         >
           {show && (
             <div className="popupFrame">
-              <div className="popupFrameDataWrap">
-                <div>
-                  <b>{popupFrame.properties.title_naslov},</b>
-                  &nbsp;{popupFrame.properties.datum_uploada}
-                </div>
-                <div onClick={handleThumbClickClose} className="x">
-                  X
-                </div>
-              </div>
-
               <div
                 style={{
                   position: "relative",
-                  width: "100%",
-                  height: "100%",
-
+                  // width: "100%",
+                  // height: "100%",
+                  top: "-55px",
                   zIndex: "2",
                 }}
               >
-                {" "}
+                <div className="popupFrameDataWrap">
+                  <div>
+                    <b>{popupFrame.properties.title_naslov},</b>
+                    &nbsp;{popupFrame.properties.datum_uploada}
+                  </div>
+                  <div onClick={handleThumbClickClose} className="x">
+                    X
+                  </div>
+                </div>{" "}
                 <img src={popupFrame.properties.image_url} alt="postcard" />
               </div>
             </div>
