@@ -27,16 +27,22 @@ const Wrap = styled.div`
   background-color: #b0c7ce;
 `
 
-function MeniMobile({ handleClickCloseMenu, isOpen }) {
+function MeniMobile({
+  handleClickCloseMenu,
+  handleChooseMobileCategory,
+  isOpen,
+}) {
   const [t, i18n] = useTranslation()
   const [current, setCurrent] = useState(null)
   const { languages, changeLanguage } = useI18next()
   //   const size = useWindowSize()
   const handleClick = (e, id) => {
-    // current === id ? setCurrent(null) : setCurrent(id)
+    // current === id ? setCurrent(null) : setKategorija(e.target.innerText)
+
     // let lang = id === 1 ? "hr" : "en"
     // changeLanguage(lang)
     handleClickCloseMenu()
+    handleChooseMobileCategory(e, id)
   }
   return (
     <WrapAll className={`${isOpen ? "dark" : ""} `}>

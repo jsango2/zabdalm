@@ -200,6 +200,26 @@ const Naslov = styled.div`
   font-size: 54px;
   font-weight: 600;
   margin-bottom: 40px;
+  margin-left: 20px;
+  color: white;
+  padding-top: 30px;
+  /* width: 250px; */
+  @media only screen and (max-width: 750px) {
+    font-size: 36px;
+    width: 250px;
+    margin-left: 0px;
+  }
+  @media only screen and (max-width: 350px) {
+    font-size: 28px;
+    width: 200px;
+  }
+`
+const Naslov1 = styled.div`
+  font-family: Playfair Display;
+  font-size: 54px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  /* margin-left: 20px; */
   color: white;
   padding-top: 30px;
   /* width: 250px; */
@@ -213,7 +233,7 @@ const Naslov = styled.div`
   }
 `
 const Crta = styled.div`
-  width: 93px;
+  width: 78px;
   height: 1px;
   background-color: white;
   margin-right: 58px;
@@ -226,7 +246,7 @@ const Crta = styled.div`
   }
 `
 const Crta2 = styled.div`
-  width: 93px;
+  width: 78px;
   height: 1px;
   background-color: white;
   margin-right: 33px;
@@ -306,7 +326,7 @@ function OautoruFront() {
             <div>
               <WrapNaslovCrtaOautoru>
                 <Crta />
-                <Naslov>{t("oautoru")}</Naslov>
+                <Naslov1>{t("oautoru")}</Naslov1>
               </WrapNaslovCrtaOautoru>
 
               <TextOautoru>
@@ -378,7 +398,7 @@ function OautoruFront() {
                 transform: `translateY(${offset * 0.07}px)`,
               }}
             ></BGPhoto>
-            <div
+            {/* <div
               style={{
                 position: "absolute",
                 width: "100%",
@@ -387,12 +407,12 @@ function OautoruFront() {
                 top: "0",
                 zIndex: "1",
               }}
-            ></div>
+            ></div> */}
             <GornjiDioWrap>
               <div>
                 <WrapNaslovCrtaOautoru>
                   <Crta />
-                  <Naslov>{t("oautoru")}</Naslov>
+                  <Naslov1>{t("oautoru")}</Naslov1>
                 </WrapNaslovCrtaOautoru>
 
                 <TextOautoru>

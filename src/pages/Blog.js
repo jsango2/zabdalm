@@ -58,24 +58,48 @@ function Blog({ data }) {
   const size = useWindowSize()
   const [current, setCurrent] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
+  const [kategorija, setKategorija] = useState("SVE")
+  const [query, setQuery] = useState(data.wpgraphql.blogovi.edges)
+  // console.log("data", data)
+  var queryData = data.wpgraphql.blogovi.edges
 
   const handleClickKategorije = () => {
     setIsOpen(true)
     console.log("kliknuto kategorije")
   }
   const handleClick = (e, id) => {
-    current === id ? setCurrent(null) : setCurrent(id)
+    current === id ? setCurrent(null) : setKategorija(e.target.innerText)
+    setCurrent(id)
   }
-
+  console.log("kat", kategorija)
   const handleClickCloseMenu = () => {
     setIsOpen(false)
     console.log("kliknuto close")
   }
+  const handleChooseMobileCategory = (e, id) => {
+    current === id ? setCurrent(null) : setKategorija(e.target.innerText)
+  }
 
+  useEffect(() => {
+    var filteredData = queryData.filter(elem =>
+      elem.node.categories.edges.some(elem => elem.node.name === kategorija)
+    )
+    setQuery(filteredData)
+    if (kategorija === "SVE") {
+      setQuery(data.wpgraphql.blogovi.edges)
+      // setQuery(
+      //   queryData.filter(elem =>
+      //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
+      //   )
+      // )
+    }
+  }, [kategorija])
+  console.log(query)
   return (
     <Layout>
       <MeniMobileBlog
         handleClickCloseMenu={handleClickCloseMenu}
+        handleChooseMobileCategory={handleChooseMobileCategory}
         isOpen={isOpen}
       />
       <WrapHeroPhoto>
@@ -166,7 +190,7 @@ function Blog({ data }) {
         </div>
       )}
 
-      <BlogPostCards blogovi={data} />
+      <BlogPostCards blogovi={query} />
     </Layout>
   )
 }

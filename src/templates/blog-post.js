@@ -121,14 +121,23 @@ const BlogContentWrap = styled.div`
   margin: 126px auto 81px auto;
   height: auto;
   & > figure > img {
-    width: 73vw;
-    object-fit: cover;
-    height: 50vw;
+    width: 54vw;
+    max-width: 900px;
+    min-width: 280px;
+    object-fit: contain;
+    height: 35vw;
+    max-height: 700px;
+    min-height: 280px;
   }
   & > p > img {
-    width: 73vw;
-    object-fit: cover;
-    height: 50vw;
+    width: 54vw;
+    max-width: 900px;
+    object-fit: contain;
+    min-width: 280px;
+
+    height: 35vw;
+    max-height: 700px;
+    min-height: 280px;
   }
   @media only screen and (max-width: 570px) {
     /* flex-direction: column;
@@ -195,6 +204,15 @@ const BlogPost = ({ data }) => {
                 backgroundSize: "cover ",
               }}
             >
+              <div
+                style={{
+                  background:
+                    "linear-gradient(0deg, rgba(81, 70, 58, 0.53), rgba(81, 70, 58, 0.53))",
+                  width: "100%",
+                  height: "100%",
+                  position: "absolute",
+                }}
+              ></div>
               <Crta />
               <WrapSponzorHero>
                 {data.wpgraphql.blog.blog_graphql.tekstSponzorira !== undefined

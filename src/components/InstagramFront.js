@@ -66,14 +66,28 @@ const ButtonWrap = styled.div`
     /* width: 200px; */
   }
 `
+const ButtonWrapInvisible = styled.div`
+  position: relative;
+  top: -44px;
+  z-index: 2;
+  opacity: 0;
+  width: 214px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  @media only screen and (max-width: 750px) {
+    /* width: 200px; */
+  }
+`
 const ImgWrap = styled.div`
   position: relative;
   width: 100%;
   height: 560px;
+  /* top: -177px;
   background-image: url(${Drnis});
   background-position: bottom;
   background-size: contain;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   z-index: 1;
 `
 const Linija = styled.div`
@@ -121,12 +135,19 @@ function InstagramFront() {
         <Button text="KONTAKTIRAJTE NAS" color="black" />
       </ButtonWrap>
 
+      <ButtonWrapInvisible>
+        <Button text="KONTAKTIRAJTE NAS" color="black" />
+      </ButtonWrapInvisible>
+
       <ImgWrap className="imgWrapInstagram">
-        {" "}
-        {/* <img src={Drnis} alt="" srcset="" /> */}
-        {/* <div style={{ position: "absolute", bottom: "18px", width: "100%" }}>
-          <img src={Val} alt="" srcset="" />
-        </div> */}
+        <img
+          style={{
+            transform: `translateY(${offset * 0.11}px)`,
+          }}
+          src={Drnis}
+          alt=""
+          srcset=""
+        />
       </ImgWrap>
     </Wrap>
   )

@@ -11,7 +11,7 @@ function BlogPostCards({ blogovi }) {
         marginBottom: "62px",
       }}
     >
-      {blogovi.wpgraphql.blogovi.edges.map(blog => (
+      {blogovi.map(blog => (
         <BlogCard blogs={blog} />
       ))}
     </div>

@@ -142,21 +142,26 @@ function NajpopularnijePrice({ data }) {
         {/* {console.log("sorted", sortiranePricePoCitanosti)} */}
         {/* {result} */}
         {data.blogovi.edges.map(clanak => (
-          <TextClanci key={clanak.node.slug}>
-            <div
-              style={{
-                width: "5px",
-                height: "5px",
-                backgroundColor: "#E0E0E0",
-                position: "absolute",
-                left: "-13px",
-                top: "5px",
-              }}
-            ></div>
-            {lang === "hr"
-              ? clanak.node.blog_graphql.naslovBlogaHr
-              : clanak.node.blog_graphql.naslovBlogaEng}
-          </TextClanci>
+          <Link
+            style={{ textDecoration: "none", color: "black" }}
+            to={`/Blog/${clanak.node.slug}`}
+          >
+            <TextClanci key={clanak.node.slug}>
+              <div
+                style={{
+                  width: "5px",
+                  height: "5px",
+                  backgroundColor: "#E0E0E0",
+                  position: "absolute",
+                  left: "-13px",
+                  top: "5px",
+                }}
+              ></div>
+              {lang === "hr"
+                ? clanak.node.blog_graphql.naslovBlogaHr
+                : clanak.node.blog_graphql.naslovBlogaEng}
+            </TextClanci>
+          </Link>
         ))}
       </Clanci>
     </Wrap>

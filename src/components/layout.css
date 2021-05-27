@@ -243,9 +243,18 @@ fieldset {
 .MuiSlider-track {
   height: 1px !important;
 }
+.mapboxgl-ctrl-geocoder--icon-search {
+  top: 9px !important;
+}
+.mapboxgl-ctrl-geocoder--icon-close {
+  width: 16px !important;
+
+  margin-top: 2px !important;
+}
 .MuiSlider-thumb {
-  width: 1px !important;
+  width: 4px !important;
   margin-left: 0px !important;
+  border-radius: unset !important;
 }
 .otkrijiDodatak {
   display: flex;
@@ -1078,7 +1087,7 @@ pre tt:after {
   background-color: #664f3e !important;
 }
 .MuiSlider-root {
-  color: #664f3e !important;
+  color: #7b7b7b !important;
   z-index: 2 !important;
   font-size: 0.4rem !important;
   height: 100% !important;
@@ -1115,7 +1124,7 @@ pre tt:after {
   /* background-color: wheat; */
   font-size: 14px;
   color: #eeebe4;
-  margin: 0 auto 0 14px;
+  margin: 10px auto 0 14px;
   width: auto;
   top: 0;
   z-index: 1;
@@ -1310,7 +1319,7 @@ pre tt:after {
   position: absolute;
   /* width: 73vw;
   height: 48vh; */
-  max-height: 48vh;
+  max-height: 58vh;
   max-width: 700px;
   /* background-color: rgba(7, 7, 7, 0.616); */
   left: 50%;
@@ -1330,7 +1339,7 @@ pre tt:after {
 .popupFrame img {
   border: 45px solid rgba(7, 7, 7, 0.616);
   object-fit: contain;
-  max-height: 48vh;
+  max-height: 53vh;
   max-width: 90vw;
 }
 .popupFrameDataWrap {
@@ -1363,7 +1372,7 @@ pre tt:after {
   overflow: auto;
   z-index: 10;
   padding-top: 10px;
-  bottom: 5px;
+  bottom: 82px;
 }
 
 .slides-div {
@@ -1484,7 +1493,7 @@ pre tt:after {
   .map-overlay {
   }
   .mapboxgl-ctrl-top-right {
-    top: 4px !important;
+    top: 0px !important;
   }
 }
 @media screen and (max-width: 700px) {
@@ -1552,7 +1561,7 @@ pre tt:after {
     height: auto;
   } */
   .mapboxgl-ctrl-geocoder {
-    height: 35px;
+    height: 32px;
   }
   .mapboxgl-ctrl-geocoder--input {
     font-size: smaller !important;
@@ -1594,7 +1603,7 @@ pre tt:after {
   .imgTest img {
     border: 38px solid rgba(7, 7, 7, 0.616);
     max-height: 460px;
-    max-width: 82vw;
+    max-width: 89vw;
   }
   /* .popupImageWrap {
 
@@ -1621,7 +1630,7 @@ pre tt:after {
 }
 @media screen and (max-width: 630px) {
   .mapboxgl-ctrl-top-right {
-    margin-top: 10px !important;
+    margin-top: 0px !important;
     right: 0% !important;
   }
   .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
@@ -1633,7 +1642,7 @@ pre tt:after {
   .map-overlay {
     width: 100%;
     /* margin-right: 10px; */
-    height: 115px;
+    height: 90px;
     padding: 10px 25px 0 0px;
   }
 }
@@ -1645,7 +1654,7 @@ pre tt:after {
     transform: scale(1);
   }
   .popupFrame {
-    transform: translate(-49%, -17%);
+    transform: translate(-49%, -2%);
   }
 }
 @media screen and (max-width: 488px) {
@@ -1693,7 +1702,7 @@ pre tt:after {
     height: auto;
     /* width: auto; */
     border: 28px solid rgba(7, 7, 7, 0.616);
-    max-height: 350px;
+    max-height: 53vh;
   }
   .moj-popupMapbox {
     position: absolute;
@@ -1769,7 +1778,7 @@ pre tt:after {
     height: 100%;
   }
   .popupTitle {
-    padding-top: 7px;
+    /* padding-top: 7px; */
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
   }
@@ -1791,7 +1800,7 @@ pre tt:after {
     height: 100%;
   }
   .popupTitle {
-    padding-top: 5px;
+    /* padding-top: 5px; */
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
   }

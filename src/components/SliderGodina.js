@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     margin: "10px auto 0 10px",
     "@media (max-width: 630px)": {
       width: "85vw",
-      margin: "64px auto",
+      margin: "40px auto",
       height: "35%",
     },
   },
@@ -65,9 +65,9 @@ export default function SliderGodina({
         min={1889}
         max={1970}
       />{" "}
-      <Typography id="range-slider" className={classes.title}>
+      {/* <Typography id="range-slider" className={classes.title}>
         Godina
-      </Typography>
+      </Typography> */}
     </div>
   )
 }

@@ -94,12 +94,7 @@ const Header = () => {
     >
       <>
         <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
-        <Hamburger
-          onClick={() => {
-            setIsOpen(() => !isOpen)
-            // blockScroll()
-          }}
-        >
+        <Hamburger>
           <div
             style={{
               fontFamily: "Playfair Display",
@@ -119,6 +114,10 @@ const Header = () => {
               top: "15px",
               right: "10px",
               zIndex: "11",
+            }}
+            onClick={() => {
+              setIsOpen(() => !isOpen)
+              // blockScroll()
             }}
           />
         </Hamburger>{" "}

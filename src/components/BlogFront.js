@@ -12,6 +12,7 @@ const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
   height: auto;
+  min-height: 600px;
   position: relative;
   margin: 50px 0;
   text-align: center;
@@ -48,8 +49,26 @@ const ButtonWrap = styled.div`
 function BlogFront({ blogovi }) {
   const [t, i18n] = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
+  const [kategorija, setKategorija] = useState("SVE")
+  const [query, setQuery] = useState(blogovi.wpgraphql.blogovi.edges)
+  // console.log("data", data)
+  var queryData = blogovi.wpgraphql.blogovi.edges
+  useEffect(() => {
+    var filteredData = queryData.filter(elem =>
+      elem.node.categories.edges.some(elem => elem.node.name === kategorija)
+    )
+    setQuery(filteredData)
+    if (kategorija === "SVE") {
+      setQuery(queryData)
+      // setQuery(
+      //   queryData.filter(elem =>
+      //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
+      //   )
+      // )
+    }
+  }, [kategorija])
 
-  console.log(blogovi)
+  console.log("query", query)
   const handleClickKategorije = () => {
     setIsOpen(true)
     console.log("kliknuto")
@@ -62,13 +81,18 @@ function BlogFront({ blogovi }) {
   const [current, setCurrent] = useState(0)
   const size = useWindowSize()
   const handleClick = (e, id) => {
-    current === id ? setCurrent(null) : setCurrent(id)
+    current === id ? setCurrent(null) : setKategorija(e.target.innerText)
+    setCurrent(id)
+  }
+  const handleChooseMobileCategory = (e, id) => {
+    current === id ? setCurrent(null) : setKategorija(e.target.innerText)
   }
 
   return (
     <>
       <MeniMobileBlog
         handleClickCloseMenu={handleClickCloseMenu}
+        handleChooseMobileCategory={handleChooseMobileCategory}
         isOpen={isOpen}
       />
       <Wrap>
@@ -155,34 +179,8 @@ function BlogFront({ blogovi }) {
           </div>
         )}
 
-        {/* <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            flexWrap: "wrap",
-            marginBottom: "62px",
-          }}
-        > */}
-        {/* {size.width > 750 ? (
-            <>
-              {" "}
-              <BlogCard />
-              <BlogCard />
-              <BlogCard />
-              <BlogCard />
-              <BlogCard />
-              <BlogCard />
-            </>
-          ) : (
-            <>
-              {" "}
-              <BlogCard />
-              <BlogCard />
-              <BlogCard />
-              <BlogCard />
-            </>
-          )} */}
-        <BlogPostCards blogovi={blogovi} />
+        <BlogPostCards blogovi={query} />
+        {console.log(blogovi)}
         {/* </div> */}
         <ButtonWrap>
           <Button text={t("arhivaprica")} color="black" width="155" />
