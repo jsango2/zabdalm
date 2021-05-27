@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import MapaFront from "../../content/assets/mapaFront.png"
 import { useTranslation, Link } from "gatsby-plugin-react-i18next"
@@ -19,6 +19,7 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  overflow: hidden;
 `
 const Naslov = styled.div`
   font-family: Playfair Display;
@@ -46,6 +47,16 @@ const Podnaslov = styled.div`
 
 function RazgledniceNaMapiFront() {
   const [t, i18n] = useTranslation()
+  const [offset, setOffset] = useState(0)
+  useEffect(() => {
+    function handleScroll() {
+      setOffset(window.pageYOffset)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
   const interactivity = {
     mode: "scroll",
 
@@ -68,7 +79,12 @@ function RazgledniceNaMapiFront() {
       <Wrap
         id="container"
         style={{
+          // transform: `translateY(${offset * 0.07}px)`,
+          backgroundSize: `${offset * 0.44}px`,
+          backgroundRepeat: "no-repeat",
           backgroundImage: `url(${MapaFront})`,
+          backgroundPosition: "40% 50%",
+          backgroundOrigin: "content-box",
         }}
       >
         <Lottie

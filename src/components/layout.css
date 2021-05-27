@@ -38,6 +38,12 @@ html {
   max-width: var(--max-width);
   margin: 0 auto;
   background-color: #f8f8f8;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 body {
   max-width: var(--max-width);
@@ -229,7 +235,23 @@ fieldset {
 .arrowIkona {
   transition: all 0.4s cubic-bezier(0.42, 0.71, 0.49, 0.98);
 }
-
+.paginationWrap {
+  color: black;
+  height: 100px;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin-bottom: 60px;
+}
+.page-item a {
+  color: #6d6d6d;
+  font-style: oblique;
+  margin: 5px;
+  text-decoration: none;
+}
 .dodatak {
   font-weight: 400;
   font-size: 16px;

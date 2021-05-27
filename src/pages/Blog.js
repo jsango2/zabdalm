@@ -5,6 +5,7 @@ import { RiArrowDropDownFill } from "react-icons/ri"
 import { graphql } from "gatsby"
 import firebase from "gatsby-plugin-firebase"
 import MeniMobileBlog from "../components/MeniMobileBlog"
+import Pagination from "../components/pagination"
 
 import BlogHeroPhoto from "../../content/assets/BlogHero.png"
 import {
@@ -60,6 +61,10 @@ function Blog({ data }) {
   const [isOpen, setIsOpen] = useState(false)
   const [kategorija, setKategorija] = useState("SVE")
   const [query, setQuery] = useState(data.wpgraphql.blogovi.edges)
+  const [postovi, setPostovi] = useState(data.wpgraphql.blogovi.edges)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage] = useState(12)
+
   // console.log("data", data)
   var queryData = data.wpgraphql.blogovi.edges
 
@@ -76,25 +81,38 @@ function Blog({ data }) {
     setIsOpen(false)
     console.log("kliknuto close")
   }
-  const handleChooseMobileCategory = (e, id) => {
-    current === id ? setCurrent(null) : setKategorija(e.target.innerText)
-  }
 
   useEffect(() => {
-    var filteredData = queryData.filter(elem =>
-      elem.node.categories.edges.some(elem => elem.node.name === kategorija)
-    )
-    setQuery(filteredData)
     if (kategorija === "SVE") {
-      setQuery(data.wpgraphql.blogovi.edges)
+      console.log("query", query)
+
+      setQuery(queryData)
+      // setPostovi(queryData)
       // setQuery(
       //   queryData.filter(elem =>
       //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
       //   )
       // )
+    } else {
+      var filteredData = queryData.filter(elem =>
+        elem.node.categories.edges.some(elem => elem.node.name === kategorija)
+      )
+      console.log("fd", filteredData)
+      setQuery(filteredData)
+      // setPostovi(filteredData)
     }
   }, [kategorija])
-  console.log(query)
+  const handleChooseMobileCategory = (e, id) => {
+    current === id ? setCurrent(null) : setKategorija(e.target.innerText)
+    setKategorija(e.target.innerText)
+  }
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+  const currentPosts = query.slice(indexOfFirstPost, indexOfLastPost)
+  const paginate = pageNumber => setCurrentPage(pageNumber)
+
   return (
     <Layout>
       <MeniMobileBlog
@@ -116,7 +134,7 @@ function Blog({ data }) {
             alignItems: "center",
           }}
         >
-          <WrapNaslov>Dobrodošli na blog Zaboravljene Dalmacije</WrapNaslov>
+          <WrapNaslov>{t("dobroDosliNaBlog")}</WrapNaslov>
         </div>
       </WrapHeroPhoto>
       {size.width > 750 ? (
@@ -190,7 +208,13 @@ function Blog({ data }) {
         </div>
       )}
 
-      <BlogPostCards blogovi={query} />
+      <BlogPostCards blogovi={currentPosts} />
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={query.length}
+        currentPage={currentPage}
+        paginate={paginate}
+      />
     </Layout>
   )
 }

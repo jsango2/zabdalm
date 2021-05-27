@@ -50,25 +50,33 @@ function BlogFront({ blogovi }) {
   const [t, i18n] = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
   const [kategorija, setKategorija] = useState("SVE")
-  const [query, setQuery] = useState(blogovi.wpgraphql.blogovi.edges)
+  const [query, setQuery] = useState([])
+  const size = useWindowSize()
+
   // console.log("data", data)
   var queryData = blogovi.wpgraphql.blogovi.edges
   useEffect(() => {
-    var filteredData = queryData.filter(elem =>
-      elem.node.categories.edges.some(elem => elem.node.name === kategorija)
-    )
-    setQuery(filteredData)
+    size.width < 750
+      ? setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 4))
+      : setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 6))
+  }, [])
+  console.log(size, "query", query)
+  useEffect(() => {
     if (kategorija === "SVE") {
-      setQuery(queryData)
       // setQuery(
       //   queryData.filter(elem =>
       //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
       //   )
       // )
+    } else {
+      var filteredData = query.filter(elem =>
+        elem.node.categories.edges.some(elem => elem.node.name === kategorija)
+      )
+      console.log("fd", filteredData)
+      setQuery(filteredData)
     }
   }, [kategorija])
 
-  console.log("query", query)
   const handleClickKategorije = () => {
     setIsOpen(true)
     console.log("kliknuto")
@@ -79,13 +87,13 @@ function BlogFront({ blogovi }) {
   }
 
   const [current, setCurrent] = useState(0)
-  const size = useWindowSize()
   const handleClick = (e, id) => {
     current === id ? setCurrent(null) : setKategorija(e.target.innerText)
     setCurrent(id)
   }
   const handleChooseMobileCategory = (e, id) => {
     current === id ? setCurrent(null) : setKategorija(e.target.innerText)
+    setKategorija(e.target.innerText)
   }
 
   return (

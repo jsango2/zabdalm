@@ -95,16 +95,20 @@ const Header = () => {
       <>
         <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
         <Hamburger>
-          <div
-            style={{
-              fontFamily: "Playfair Display",
-              color: "white",
-              fontWeight: "500",
-              fontSize: "24",
-            }}
-          >
-            ZaboravljenaDalmacija.hr
-          </div>
+          <Link to="/">
+            {" "}
+            <div
+              style={{
+                fontFamily: "Playfair Display",
+                color: "white",
+                fontWeight: "500",
+                fontSize: "24",
+              }}
+            >
+              ZaboravljenaDalmacija.hr
+            </div>
+          </Link>
+
           <CgMenuGridR
             style={{
               color: "white",
