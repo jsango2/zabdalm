@@ -4,6 +4,7 @@ import {
   Trans,
   useTranslation,
   useI18next,
+  I18nextContext,
 } from "gatsby-plugin-react-i18next"
 import { graphql, withAssetPrefix } from "gatsby"
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
@@ -78,6 +79,8 @@ function Razglednice({ data }) {
   const [isOpen, setIsOpen] = useState(false)
   const [slike, setSlike] = useState([])
   const [listData, setListData] = useState([])
+  const context = React.useContext(I18nextContext)
+  const [lang, setLang] = useState(context.language)
 
   var flickrs = new Flickr("fd4a1bda8ebe5a6c92d2e206c9df0e16")
 
@@ -320,7 +323,8 @@ function Razglednice({ data }) {
         marker: {
           color: "#CA8A5D",
         },
-        placeholder: "Unesi mjesto u Dalmaciji",
+        placeholder:
+          lang === "hr" ? "Unesi mjesto u Dalmaciji" : "Dalmatian location",
         mapboxgl: mapboxgl,
       }),
       "top-right"

@@ -1593,8 +1593,7 @@ pre tt:after {
     padding: 0;
   }
   /* .wrapPopup {
-
-    padding-top: 50px !important;
+    max-height: calc(100vh - 280px);
   } */
   .sidebar2 {
     bottom: 17%;
@@ -1676,7 +1675,8 @@ pre tt:after {
     transform: scale(1);
   }
   .popupFrame {
-    transform: translate(-49%, -2%);
+    transform: translate(-49%, 5%);
+    max-height: calc(100vh - 270px);
   }
 }
 @media screen and (max-width: 488px) {
@@ -1693,6 +1693,8 @@ pre tt:after {
     transform: translate(0%, 0%) !important;
   }
   .popupFrame img {
+    max-height: calc(100vh - 300px);
+
     border: 25px solid rgba(7, 7, 7, 0.616);
   }
 }
@@ -1724,7 +1726,7 @@ pre tt:after {
     height: auto;
     /* width: auto; */
     border: 28px solid rgba(7, 7, 7, 0.616);
-    max-height: 47vh;
+    max-height: calc(100vh - 300px);
   }
   .moj-popupMapbox {
     position: absolute;

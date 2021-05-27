@@ -76,7 +76,7 @@ function MeniMobile({ handleClick, isOpen }) {
             </Link>
             <Link
               offset={100}
-              to="/#projekti"
+              to="/About"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
             >
