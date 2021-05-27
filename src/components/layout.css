@@ -1361,7 +1361,7 @@ pre tt:after {
 .popupFrame img {
   border: 45px solid rgba(7, 7, 7, 0.616);
   object-fit: contain;
-  max-height: 53vh;
+  max-height: 47vh;
   max-width: 90vw;
 }
 .popupFrameDataWrap {
@@ -1724,7 +1724,7 @@ pre tt:after {
     height: auto;
     /* width: auto; */
     border: 28px solid rgba(7, 7, 7, 0.616);
-    max-height: 53vh;
+    max-height: 47vh;
   }
   .moj-popupMapbox {
     position: absolute;
@@ -1836,7 +1836,7 @@ pre tt:after {
     position: absolute;
     top: -60px !important;
     left: -5% !important;
-    transform: translate(0%, 7%) !important;
+    transform: translate(0%, 3%) !important;
   }
 }
 .primary-nav > a {

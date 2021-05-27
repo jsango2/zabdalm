@@ -55,11 +55,11 @@ function BlogFront({ blogovi }) {
 
   // console.log("data", data)
   var queryData = blogovi.wpgraphql.blogovi.edges
-  useEffect(() => {
-    size.width < 750
-      ? setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 4))
-      : setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 6))
-  }, [])
+  // useEffect(() => {
+  //   size.width < 750
+  //     ? setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 4))
+  //     : setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 6))
+  // }, [])
   console.log(size, "query", query)
   useEffect(() => {
     if (kategorija === "SVE") {
@@ -68,6 +68,7 @@ function BlogFront({ blogovi }) {
       //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
       //   )
       // )
+      setQuery(blogovi.wpgraphql.blogovi.edges)
     } else {
       var filteredData = query.filter(elem =>
         elem.node.categories.edges.some(elem => elem.node.name === kategorija)
@@ -186,8 +187,12 @@ function BlogFront({ blogovi }) {
             <RiArrowDropDownFill />
           </div>
         )}
+        {size.width < 750 ? (
+          <BlogPostCards blogovi={query.slice(0, 2)} />
+        ) : (
+          <BlogPostCards blogovi={query.slice(0, 6)} />
+        )}
 
-        <BlogPostCards blogovi={query} />
         {console.log(blogovi)}
         {/* </div> */}
         <ButtonWrap>
