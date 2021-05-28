@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 import Lottie from "lottie-react";
 
-import kolaz1152 from "../animations/kolaz1152";
-import kolaz750 from "../animations/kolaz750";
-import kolaz550 from "../animations/kolaz550";
-import kolaz350 from "../animations/kolaz350";
+import knjiga1152 from "../animations/knjiga1152";
+// import animation750 from "../animations/footer750";
+// import animation550 from "../animations/footer550";
+// import animation350 from "../animations/footer350";
 
 const AnimationWrap = styled.div`
   /* position: relative;
@@ -28,7 +28,7 @@ const AnimationWrap = styled.div`
   } */
 `;
 
-function KolazAnimation() {
+function KnjigaAnimation() {
   const interactivity = {
     mode: "scroll",
     actions: [
@@ -57,46 +57,46 @@ function KolazAnimation() {
   }, []);
 
   function renderAnimation(width) {
-    if (width < 350) {
+    // if (width < 350) {
+    //   return (
+    //     <Lottie
+    //       animationData={animation350}
+    //       interactivity={interactivity}
+    //       autoPlay={false}
+    //       loop={false}
+    //     />
+    //   );
+    // } else if (width < 550) {
+    //   return (
+    //     <Lottie
+    //       animationData={animation550}
+    //       interactivity={interactivity}
+    //       autoPlay={false}
+    //       loop={false}
+    //     />
+    //   );
+    // } else if (width < 750) {
+    //   return (
+    //     <Lottie
+    //       animationData={animation750}
+    //       interactivity={interactivity}
+    //       autoPlay={false}
+    //       loop={false}
+    //     />
+    //   );
+    // } else {
       return (
         <Lottie
-          animationData={kolaz350}
+          animationData={knjiga1152}
           interactivity={interactivity}
           autoPlay={false}
           loop={false}
         />
       );
-    } else if (width < 550) {
-      return (
-        <Lottie
-          animationData={kolaz550}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      );
-    } else if (width < 750) {
-      return (
-        <Lottie
-          animationData={kolaz750}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      );
-    } else {
-      return (
-        <Lottie
-          animationData={kolaz1152}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      );
-    }
+    // }
   }
 
   return <AnimationWrap>{renderAnimation(windowSize.width)}</AnimationWrap>;
 }
 
-export default KolazAnimation;
+export default KnjigaAnimation;
