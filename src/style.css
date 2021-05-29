@@ -334,3 +334,18 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+/*About the book carousel controls*/
+.alice-carousel{
+  max-width: 580px;
+}
+.btn-next,.btn-prev{
+  width: 50px;
+  height: 63px;
+}
+.btn-next:hover,.btn-prev:hover{
+  cursor: pointer;
+}
+.btn-prev{
+  transform: rotate(180deg);
+}

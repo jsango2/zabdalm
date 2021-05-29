@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import FooterAnimation from "./footerAnimation"
 
@@ -8,6 +7,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 1152px;
   margin: 0 auto;
+  margin-top: -115px;
 `
 
 const FooterWrap = styled.footer`
@@ -17,6 +17,7 @@ const FooterWrap = styled.footer`
   margin: 0 auto;
   background: #b0c7ce;
   color: #fff;
+  
 `
 
 const FooterContainer = styled.div`
