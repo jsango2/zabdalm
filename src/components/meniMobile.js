@@ -108,11 +108,7 @@ function MeniMobile({ handleClick, isOpen }) {
               WEBSHOP
             </Link>
 
-            <Link
-              to="/#kontakt"
-              className="LinkHeader"
-              activeClassName="active"
-            >
+            <Link to="/Kontakt" className="LinkHeader" activeClassName="active">
               {t("kontakt")}
             </Link>
           </nav>

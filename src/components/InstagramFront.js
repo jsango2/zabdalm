@@ -7,7 +7,7 @@ import Button from "./button"
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
-  height: 1396px;
+  height: 1330px;
   position: relative;
   margin-top: 200px;
   text-align: center;

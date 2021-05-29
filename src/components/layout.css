@@ -1271,6 +1271,59 @@ pre tt:after {
 .PrivateValueLabel-label-8 {
   transform: rotate(0) !important;
 }
+.formular {
+  width: 100%;
+}
+.formular input {
+  height: 39px;
+}
+.formular label {
+  font-size: 14px;
+  font-family: Roboto;
+  margin-left: 20px;
+  color: white;
+}
+.formular input,
+textarea {
+  width: 100%;
+  background-color: rgb(15 14 12 / 27%);
+  background-blend-mode: multiply;
+  border-radius: 10px;
+  border-color: transparent;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 14px;
+  padding-left: 20px;
+}
+.formular input,
+button,
+textarea:focus {
+  outline: none;
+}
+
+.formular textarea {
+  height: 150px;
+}
+.formular button {
+  height: 25px;
+  color: white;
+  background-color: rgb(49, 41, 17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-family: Raleway;
+  padding: 16px 22px 16px 22px;
+  border-radius: 5px;
+  border-color: transparent;
+  cursor: pointer;
+}
+.formular button:hover {
+  background-color: rgb(37, 31, 13);
+}
+.formular button:active {
+  background-color: rgb(24, 20, 8);
+}
 /* .map-overlay {
   position: absolute;
   width: 380px;
@@ -1332,7 +1385,7 @@ pre tt:after {
   justify-content: center !important;
 }
 .WrapSponzorSlider img {
-  max-width: 38%;
+  max-width: 60%;
   object-fit: cover;
 }
 .map-overlay .listing a:hover {
@@ -1695,13 +1748,13 @@ pre tt:after {
     border: 28px solid rgba(7, 7, 7, 0.616);
     max-width: 90vw;
     height: auto;
-    max-height: 50vh;
+    max-height: 46vh;
   }
   .imgTest img {
     border: 28px solid rgba(7, 7, 7, 0.616);
     max-width: 90vw;
     height: auto;
-    max-height: 50vh;
+    max-height: 46vh;
   }
   .popupTitle {
     padding: 12px 20px;
@@ -1764,7 +1817,7 @@ pre tt:after {
     position: absolute;
     top: -60px !important;
     left: -3% !important;
-    transform: translate(0%, 4%) !important;
+    transform: translate(0%, 2%) !important;
   }
   .slides-wrap {
     display: flex;
@@ -1843,7 +1896,7 @@ pre tt:after {
     position: absolute;
     top: -60px !important;
     left: -3% !important;
-    transform: translate(0%, 4%) !important;
+    transform: translate(0%, 2%) !important;
   }
 }
 @media screen and (max-width: 370px) {
@@ -1860,7 +1913,7 @@ pre tt:after {
     position: absolute;
     top: -60px !important;
     left: -3% !important;
-    transform: translate(0%, 5%) !important;
+    transform: translate(0%, 2%) !important;
   }
 }
 .primary-nav > a {

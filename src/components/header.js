@@ -189,7 +189,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="/#kontakt"
+                to="/Kontakt"
                 className="LinkHeader"
                 activeClassName="active"
               >

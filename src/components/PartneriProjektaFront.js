@@ -89,11 +89,11 @@ const WrapLottie = styled.div`
 function PartneriProjektaFront({ data }) {
   const [t, i18n] = useTranslation()
   const size = useWindowSize()
-
+  console.log(data)
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     speed: 3000,
