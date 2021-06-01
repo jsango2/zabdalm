@@ -7,7 +7,12 @@ import Linija from "../../content/assets/linijaMont.png"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import {
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+} from "gatsby-plugin-react-i18next"
 import { useWindowSize } from "../components/useWindowSize"
 import Lottie from "lottie-react"
 
@@ -168,14 +173,16 @@ function PartneriProjektaFront({ data }) {
       <WrapSponzori>
         <Slider {...settings}>
           {data.partneriProjekta.edges.map(partner => (
-            <WrapSponzorSlider className="WrapSponzorSlider">
-              {" "}
-              <img
-                width="200px"
-                src={partner.node.featuredImage.node.sourceUrl}
-                alt=""
-              />
-            </WrapSponzorSlider>
+            <a href={partner.node.partneriProjekta.weblinkpartnerprojekta}>
+              <WrapSponzorSlider className="WrapSponzorSlider">
+                {" "}
+                <img
+                  width="200px"
+                  src={partner.node.featuredImage.node.sourceUrl}
+                  alt=""
+                />
+              </WrapSponzorSlider>
+            </a>
           ))}
         </Slider>
       </WrapSponzori>

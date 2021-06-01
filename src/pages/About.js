@@ -405,7 +405,7 @@ const About = ({ data }) => {
 
       <PressSection></PressSection>
 
-      <OKnjiziBlogFront blogovi={data} />
+      <OKnjiziBlogFront blogovi={data.wpgraphql.blogovi.edges} />
     </Layout>
   )
 }

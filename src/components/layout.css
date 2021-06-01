@@ -1723,7 +1723,7 @@ textarea:focus {
     bottom: 12px;
   } */
   .WrapSponzorSlider img {
-    max-width: 48%;
+    max-width: 64%;
     object-fit: cover;
   }
 }
