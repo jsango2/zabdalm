@@ -9,7 +9,10 @@ import {
   useTranslation,
   useI18next,
 } from "gatsby-plugin-react-i18next"
+
+import OKnjiziIntro from "../components/oKnjiziIntro"
 import OKnjiziBlogFront from "../components/oKnjiziBlogFront"
+import OMonografiji from "../components/oMonografiji"
 
 import KolazAnimation from "../components/kolazAnimation"
 import AlkarAnimation from "../components/alkarAnimation"
@@ -23,111 +26,89 @@ import Rope from "../../content/assets/rope.png"
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
 
-const WrapNaslov = styled.div`
-  font-family: Playfair Display;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 55px;
-  color: #000;
-  margin: 60px 0 40px 0;
-  max-width: 600px;
-  line-height: 103.3%;
 
-  @media only screen and (max-width: 999px) {
-    width: 350px;
-  }
-  @media only screen and (max-width: 750px) {
-    width: 100%;
-    font-size: 44px;
-    text-align: center;
-    line-height: 46px;
-
-    margin: 0;
-  }
-  @media only screen and (max-width: 550px) {
-    font-size: 34px;
-  }
-  @media only screen and (max-width: 330px) {
-    width: 280px;
-  }
-`
-
-const IntroAbout = styled.div``
-
-const AboutP = styled.p`
-  font-size: 15px;
-  line-height: 23.43px;
-  color: #000000;
-  font-weight: 500;
-`
-const TextContainer = styled.div`
-  max-width: 812px;
-  margin: 0 auto;
-
-  @media only screen and (max-width: 550px) {
-    font-size: 36px;
-  }
-`
-const BreakContainer = styled.div`
-  max-width: 742px;
-`
-const SecBreakContainer = styled.div`
-  max-width: 629px;
-`
-const NaslovSideCrta = styled.div`
-  width: 120px;
-  height: 1.2px;
-  background-color: #292929;
-  position: relative;
-  left: -21%;
-  top: 90px;
-`
 const KolazWrapper = styled.div`
   position: relative;
   top: -1070px;
   margin-bottom: -1110px;
+  @media only screen and (max-width: 1152px) {
+    top: -88vw;
+    margin-bottom: -96vw;
+  }
+  @media only screen and (max-width: 750px) {
+    top: -125vw;
+    margin-bottom: -130vw;
+  }
+  @media only screen and (max-width: 550px) {
+    top: initial;
+    margin: 0;
+  }
 `
-const MonoDiv = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 90px;
+const KnjigeSection = styled.div`
+  display: none;
+  @media only screen and (max-width: 850px) {
+    display: initial;
+  }
+  @media only screen and (max-width: 500px) {
+    height: 500px;
+    display: block;
+  }
 `
-const MonoSection = styled.div`
-  max-width: 550px;
-`
-const MonoNaslovSideCrta = styled.div`
-  background-color: #292929;
-  width: 200px;
-  height: 1.2px;
-  position: relative;
-  top: 33px;
-  left: -225px;
-`
-const MonoNaslov = styled.h2`
-  font-family: Playfair Display;
-  font-size: 54px;
-  font-weight: 600;
-  line-height: 55px;
-  color: #000;
-  margin: 0 0 50px 0;
-  max-width: 600px;
-  line-height: 103.3%;
-`
-const KnjigaWrap = styled.div`
-  width: 544px;
-  position: relative;
-  top: 120px;
-  left: -60px;
-`
-const UlomakWrap = styled.div`
-  width: 150px;
-  height: 150px;
-  position: relative;
-  top: -400px;
-  left: 290px;
-`
-const AlkarWrapper = styled.div``
+const Knjige750 = styled.div`
+  height: 800px;
+  margin: 60px 0;
 
+  @media only screen and (max-width: 850px) {
+    display: flex;
+    justify-content: flex-end;
+  }
+  @media only screen and (max-width: 750px) {
+    justify-content: center;
+  }
+  @media only screen and (max-width: 650px) {
+    justify-content: flex-start;
+  }
+`
+const Knjiga1 = styled.div`
+  width: 45%;
+  transform: rotate(-2deg);
+  @media only screen and (max-width: 550px) {
+    width: 100%;
+    transform: rotate(0);
+  }
+  @media only screen and (max-width: 500px) {
+    & > img {
+      width: 100%;
+    }
+  }
+`
+const Knjiga2 = styled.div`
+  width: 45%;
+  position: relative;
+  left: -200px;
+  top: 45px;
+  transform: rotate(5deg);
+  @media only screen and (max-width: 550px) {
+    display: none;
+  }
+`
+const UlomakKnjige = styled.div`
+  width: 150px;
+  position: relative;
+  top: -560px;
+  left: 65vw;
+  @media only screen and (max-width: 850px) {
+    margin-bottom: -240px;
+  }
+  @media only screen and (max-width: 550px) {
+    left: 65vw;
+  }
+  @media only screen and (max-width: 500px) {
+    top: -700px;
+    left: 50vw;
+    /* margin-bottom: -50vw; */
+  }
+`
 const OthersSection = styled.div`
   margin-top: 90px;
   background-image: url(${Rope});
@@ -139,11 +120,19 @@ const OthersTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 50px;
 `
 const OthersLine = styled.div`
   height: 1.2px;
   width: 120px;
   background-color: #292929;
+
+  @media only screen and (max-width: 750px) {
+   width: 110px;
+  }
+  @media only screen and (max-width: 650px) {
+   width: 65px;
+  }
 `
 const MiddleTitle = styled.h2`
   font-family: Playfair Display;
@@ -151,7 +140,7 @@ const MiddleTitle = styled.h2`
   font-weight: 600;
   color: #3a3a3a;
   line-height: 103.3%;
-  margin-bottom: 50px;
+ 
 `
 const OthersSay = styled.div`
   display: flex;
@@ -176,13 +165,19 @@ const OthersRemark = styled.p`
   padding: 5px;
   color: #000;
 `
-const KnjigaWrapper = styled.div``
+const KnjigaWrapper = styled.div`
+`
 const Ulomak2Wrap = styled.div`
   width: 150px;
   height: 150px;
   position: relative;
   top: -470px;
   left: 189px;
+
+  @media only screen and (max-width: 1152px) {
+    left: 18vw;
+    top: -42vw;
+  }
 `
 const PressSection = styled.div`
   height: 400px;
@@ -322,51 +317,31 @@ const About = ({ data }) => {
 
   return (
     <Layout>
-      <TextContainer>
-        <NaslovSideCrta />
-        <WrapNaslov>{t("mozelidalmacija")}</WrapNaslov>
-        <IntroAbout>
-          <AboutP>{t("oknjizi1")}</AboutP>
-          <AboutP>{t("oknjizi2")}</AboutP>
-          <AboutP>{t("oknjizi3")}</AboutP>
-        </IntroAbout>
-        <BreakContainer>
-          <AboutP>{t("oknjizi4")}</AboutP>
-          <AboutP>{t("oknjizi5")}</AboutP>
-          <AboutP>{t("oknjizi6")}</AboutP>
-        </BreakContainer>
-        <SecBreakContainer>
-          <AboutP>{t("oknjizi7")}</AboutP>
-          <AboutP>{t("oknjizi8")}</AboutP>
-          <AboutP>{t("oknjizi9")}</AboutP>
-          <AboutP>Igor Goleš</AboutP>
-        </SecBreakContainer>
-      </TextContainer>
+
+      <OKnjiziIntro />
 
       <KolazWrapper>
         <KolazAnimation />
       </KolazWrapper>
 
-      <MonoDiv>
-        <KnjigaWrap>
-          <img src={Knjiga} width="100%" alt="knjiga" />
-          <UlomakWrap>
-            <img src={Ulomak} width="100%" alt="ulomak" />
-          </UlomakWrap>
-        </KnjigaWrap>
-        <MonoSection>
-          <MonoNaslovSideCrta />
-          <MonoNaslov>{t("omonografiji")}</MonoNaslov>
-          <AboutP>{t("omonografijitekst1")}</AboutP>
-          <AboutP>{t("omonografijitekst2")}</AboutP>
-          <AboutP>{t("omonografijitekst3")}</AboutP>
-          <AboutP>{t("omonografijitekst4")}</AboutP>
-        </MonoSection>
-      </MonoDiv>
+      <OMonografiji />
 
-      <AlkarWrapper>
+      <KnjigeSection>
+        <Knjige750>
+          <Knjiga1>
+            <img src={Knjiga} alt="knjiga" />
+          </Knjiga1>
+          <Knjiga2>
+            <img src={Knjiga} alt="knjiga" />
+          </Knjiga2>
+        </Knjige750>
+        <UlomakKnjige>
+          <img src={Ulomak} width="100%" alt="ulomak" />
+        </UlomakKnjige>
+      </KnjigeSection>
+
         <AlkarAnimation />
-      </AlkarWrapper>
+
 
       <OthersSection>
         <OthersTitle>
@@ -405,7 +380,7 @@ const About = ({ data }) => {
 
       <PressSection></PressSection>
 
-      <OKnjiziBlogFront blogovi={data} />
+      <OKnjiziBlogFront blogovi={data.wpgraphql.blogovi.edges} />
     </Layout>
   )
 }
