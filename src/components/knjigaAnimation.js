@@ -7,23 +7,9 @@ import knjiga1152 from "../animations/knjiga1152";
 import knjiga370 from "../animations/knjiga370";
 
 const AnimationWrap = styled.div`
-  /* position: relative;
-  top: 140px;
-  @media (max-width: 1500px) {
-    top: 10vw;
+@media only screen and (max-width: 850px) {
+    transform: scale(1.5);
   }
-  @media (max-width: 999px) {
-    top: 15vw;
-  }
-  @media (max-width: 750px) {
-    top: 20vw;
-  }
-  @media (max-width: 588px) {
-    top: 25vw;
-  }
-  @media (max-width: 370px) {
-    top: 30vw;
-  } */
 `;
 
 function KnjigaAnimation() {

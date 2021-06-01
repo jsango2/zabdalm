@@ -9,23 +9,13 @@ import alkar1152 from "../animations/alkar1152";
 // import animation350 from "../animations/footer350";
 
 const AnimationWrap = styled.div`
-  /* position: relative;
-  top: 140px;
-  @media (max-width: 1500px) {
-    top: 10vw;
+
+  @media (max-width: 500px) {
+    margin: 27vw 0 0;
   }
-  @media (max-width: 999px) {
-    top: 15vw;
+  @media (max-width: 400px) {
+    margin: 0;
   }
-  @media (max-width: 750px) {
-    top: 20vw;
-  }
-  @media (max-width: 588px) {
-    top: 25vw;
-  }
-  @media (max-width: 370px) {
-    top: 30vw;
-  } */
 `;
 
 function AlkarAnimation() {

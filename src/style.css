@@ -349,3 +349,19 @@ a:focus {
 .btn-prev{
   transform: rotate(180deg);
 }
+
+.alice-carousel__dots-item {
+  width: 10px!important;
+  height: 10px!important;
+  border-radius: 0%!important;
+  background-color: #d4d4d4!important;
+}
+.alice-carousel__dots .__active {
+  background-color: #b0c7ce!important;
+}
+
+@media (max-width: 950px) {
+  .btn-next,.btn-prev{
+    display: none;
+  }
+}

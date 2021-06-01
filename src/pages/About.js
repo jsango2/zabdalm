@@ -26,7 +26,6 @@ import Rope from "../../content/assets/rope.png"
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
 
-
 const KolazWrapper = styled.div`
   position: relative;
   top: -1070px;
@@ -110,7 +109,7 @@ const UlomakKnjige = styled.div`
   }
 `
 const OthersSection = styled.div`
-  margin-top: 90px;
+  margin: 90px 0 60px;
   background-image: url(${Rope});
   background-size: contain;
   background-repeat: no-repeat;
@@ -121,33 +120,69 @@ const OthersTitle = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
+
+  @media only screen and (max-width: 750px) {
+    padding: 0 80px;
+  }
+  @media only screen and (max-width: 550px) {
+    display: block;
+    padding: 0 50px;
+  }
 `
-const OthersLine = styled.div`
+const OthersLineLeft = styled.div`
   height: 1.2px;
   width: 120px;
   background-color: #292929;
 
   @media only screen and (max-width: 750px) {
-   width: 110px;
+    width: 110px;
   }
   @media only screen and (max-width: 650px) {
-   width: 65px;
+    width: 65px;
+  }
+  @media only screen and (max-width: 550px) {
+    position: relative;
+    top: 35px;
+    left: -80px;
   }
 `
+const OthersLineRight = styled.div`
+  height: 1.2px;
+  width: 120px;
+  background-color: #292929;
+
+  @media only screen and (max-width: 750px) {
+    width: 110px;
+  }
+  @media only screen and (max-width: 650px) {
+    width: 65px;
+  }
+  @media only screen and (max-width: 550px) {
+    display: none;
+  }
+`
+
 const MiddleTitle = styled.h2`
   font-family: Playfair Display;
   font-size: 54px;
   font-weight: 600;
   color: #3a3a3a;
   line-height: 103.3%;
- 
+  margin: 0;
 `
 const OthersSay = styled.div`
   display: flex;
-  max-width: 90%;
+
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: 750px) {
+    padding: 0 80px;
+  }
+  @media only screen and (max-width: 550px) {
+    padding: 0 50px;
+  }
 `
 const OthersBy = styled.p`
   margin-top: 15px;
@@ -166,6 +201,7 @@ const OthersRemark = styled.p`
   color: #000;
 `
 const KnjigaWrapper = styled.div`
+  
 `
 const Ulomak2Wrap = styled.div`
   width: 150px;
@@ -265,6 +301,33 @@ const About = ({ data }) => {
   const { languages, changeLanguage } = useI18next()
   const [current, setCurrent] = useState(0)
 
+  const [dots, setDots] = useState(true)
+
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  })
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+      makeDotsVisible(window.innerWidth)
+    }
+    window.addEventListener("resize", handleResize)
+    handleResize()
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  const makeDotsVisible = width => {
+    if (width < 950) {
+      setDots(false)
+    } else {
+      setDots(true)
+    }
+  }
+
   const handleClick = (e, id) => {
     current === id ? setCurrent(null) : setCurrent(id)
   }
@@ -291,21 +354,6 @@ const About = ({ data }) => {
     }
   }
 
-  const syncMainBeforeChange = e => {
-    setMainAnimation(true)
-  }
-
-  const syncMainAfterChange = e => {
-    setMainAnimation(false)
-
-    if (e.type === "action") {
-      setThumbIndex(e.item)
-      setThumbAnimation(false)
-    } else {
-      setMainIndex(thumbIndex)
-    }
-  }
-
   const syncThumbs = e => {
     setThumbIndex(e.item)
     setThumbAnimation(false)
@@ -317,7 +365,6 @@ const About = ({ data }) => {
 
   return (
     <Layout>
-
       <OKnjiziIntro />
 
       <KolazWrapper>
@@ -340,14 +387,13 @@ const About = ({ data }) => {
         </UlomakKnjige>
       </KnjigeSection>
 
-        <AlkarAnimation />
-
+      <AlkarAnimation />
 
       <OthersSection>
         <OthersTitle>
-          <OthersLine />
+          <OthersLineLeft />
           <MiddleTitle>Drugi o knjizi</MiddleTitle>
-          <OthersLine />
+          <OthersLineRight />
         </OthersTitle>
 
         <OthersSay>
@@ -357,7 +403,7 @@ const About = ({ data }) => {
           <AliceCarousel
             activeIndex={thumbIndex}
             autoWidth
-            disableDotsControls
+            disableDotsControls={dots}
             disableButtonsControls
             items={thumbs}
             mouseTracking={false}
@@ -399,7 +445,7 @@ export const query = graphql`
       }
     }
     wpgraphql {
-      blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
+      blogovi(where: {orderby: {field: DATE, order: DESC}}, first: 3) {
         edges {
           node {
             blog_graphql {
@@ -416,7 +462,6 @@ export const query = graphql`
                 sourceUrl
               }
             }
-
             categories {
               edges {
                 node {
@@ -425,6 +470,29 @@ export const query = graphql`
               }
             }
             slug
+          }
+        }
+      }
+      komentari {
+        edges {
+          node {
+            komentariIRecenzije {
+              autorKomentaraEng
+              autorKomentaraHr
+              komentarIliRecenzijaEng
+              komentarRecenzijaHr
+            }
+          }
+        }
+      }
+      pressObjave {
+        edges {
+          node {
+            pressObjave {
+              poveznicaZaKlik
+              pressObjavaEng
+              pressObjavaHr
+            }
           }
         }
       }
