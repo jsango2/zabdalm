@@ -34,6 +34,7 @@ import Header from "./../components/header"
 import Footer from "./../components/footer"
 import { Popup } from "mapbox-gl"
 import InfoBlock from "../components/InfoBlock"
+import { uniqBy } from "lodash"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
@@ -47,12 +48,20 @@ const InfoWrap = styled.div`
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  left: 20px;
-  top: 20px;
+  right: 26px;
+  top: 95px;
   z-index: 2;
   color: #4e370c;
   cursor: pointer;
-  @media screen and (min-width: 750px) {
+  /* @media screen and (max-width: 1152px) {
+    right: 26px;
+    top: 75px;
+    left: unset;
+  } */
+  @media screen and (max-width: 630px) {
+    right: 26px;
+    top: 95px;
+    left: unset;
   }
 `
 

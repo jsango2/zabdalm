@@ -28,11 +28,15 @@ const Wrap = styled.div`
   text-align: center;
   @media only screen and (max-width: 750px) {
     margin: 100px 0 12px 0;
-    height: 410px;
+    height: 610px;
   }
   @media only screen and (max-width: 550px) {
     /* margin: 100px 0 12px 0; */
-    height: 265px;
+    height: 430px;
+  }
+  @media only screen and (max-width: 430px) {
+    /* margin: 100px 0 12px 0; */
+    height: 300px;
   }
 `
 const WrapSponzori = styled.div`
@@ -54,6 +58,7 @@ const WrapSponzorSlider = styled.div`
 
   @media only screen and (max-width: 750px) {
     height: 150px;
+    width: 100%;
   }
 `
 const Naslov = styled.div`
@@ -79,7 +84,7 @@ const WrapLottie = styled.div`
   position: relative;
 
   @media only screen and (max-width: 430px) {
-    top: -80px;
+    top: -55px;
   }
 `
 // const Naslov = styled.div`
@@ -95,69 +100,62 @@ function PartneriProjektaFront({ data }) {
   const [t, i18n] = useTranslation()
   const size = useWindowSize()
   console.log(data)
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 3000,
-    autoplaySpeed: 3000,
-    cssEase: "linear",
-    // responsive: [
-    //   {
-    //     breakpoint: 1100,
-    //     settings: {
-    //       slidesToShow: 3,
-    //       slidesToScroll: 1,
-    //       infinite: true,
-    //       lazyLoad: true,
-    //       arrows: true,
-    //       speed: 500,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 780,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 1,
-    //       infinite: true,
-    //       lazyLoad: true,
-    //       arrows: true,
-    //       speed: 500,
-    //     },
-    //   },
-    //   {
-    //     breakpoint: 633,
-    //     settings: {
-    //       className: "center",
-    //       centerMode: true,
-    //       centerPadding: "40px",
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1,
-    //       infinite: true,
-    //       lazyLoad: true,
-    //       arrows: false,
-    //       speed: 500,
-    //     },
-    //   },
-    // ],
+  let settings = {}
+  let interactivity = {}
+  if (size.width > 750) {
+    settings = {
+      dots: false,
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 3000,
+      autoplaySpeed: 3000,
+      cssEase: "linear",
+    }
+    interactivity = {
+      mode: "scroll",
+      actions: [
+        {
+          visibility: [0, 0.0],
+          type: "stop",
+          frames: [0],
+        },
+        {
+          visibility: [0.3, 0.8],
+          type: "seek",
+          frames: [0, 152],
+        },
+      ],
+    }
+  } else {
+    settings = {
+      dots: false,
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 3000,
+      autoplaySpeed: 3000,
+      cssEase: "linear",
+    }
+    interactivity = {
+      mode: "scroll",
+      actions: [
+        {
+          visibility: [0, 0.0],
+          type: "stop",
+          frames: [0],
+        },
+        {
+          visibility: [0.1, 0.8],
+          type: "seek",
+          frames: [0, 152],
+        },
+      ],
+    }
   }
-  const interactivity = {
-    mode: "scroll",
-    actions: [
-      {
-        visibility: [0, 0.0],
-        type: "stop",
-        frames: [0],
-      },
-      {
-        visibility: [0.3, 0.8],
-        type: "seek",
-        frames: [0, 152],
-      },
-    ],
-  }
+
   return (
     <Wrap>
       <WrapNaslov>
@@ -189,7 +187,7 @@ function PartneriProjektaFront({ data }) {
 
       <WrapLottie>
         <Lottie
-          animationData={size.width < 430 ? animation370 : animation1152}
+          animationData={size.width < 750 ? animation370 : animation1152}
           interactivity={interactivity}
           autoPlay={false}
           loop={false}

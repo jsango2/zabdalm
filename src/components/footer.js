@@ -7,7 +7,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 1152px;
   margin: 0 auto;
-  margin-top: -115px;
+  margin-top: -26px;
 `
 
 const FooterWrap = styled.footer`
@@ -17,7 +17,6 @@ const FooterWrap = styled.footer`
   margin: 0 auto;
   background: #b0c7ce;
   color: #fff;
-  
 `
 
 const FooterContainer = styled.div`

@@ -4,14 +4,14 @@ import styled from "styled-components"
 const Wrap = styled.div`
   position: absolute;
   width: 300px;
-  height: 300px;
+  height: auto;
   background-color: white;
-  display: flex;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
   border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  left: 40px;
-  top: 40px;
+  top: 110px;
+  right: 53px;
   z-index: 5;
   color: #4e370c;
   cursor: pointer;
@@ -21,7 +21,16 @@ const Wrap = styled.div`
   font-size: 15px;
   line-height: 18px;
 
-  @media screen and (min-width: 750px) {
+  @media screen and (max-width: 1152px) {
+  }
+  @media screen and (max-width: 630px) {
+    top: 110px;
+    right: 53px;
+  }
+  @media screen and (max-width: 380px) {
+    top: 128px;
+    right: 53px;
+    width: 75vw;
   }
 `
 function InfoBlock({ isOpen }) {

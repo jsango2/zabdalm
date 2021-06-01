@@ -77,8 +77,9 @@ const Header = () => {
     context.language === "hr" ? setCurrent(1) : setCurrent(2)
   }, [])
   // console.log("context jezik", context)
-  const handleClick = id => {
+  const handleClick = (e, id) => {
     // setKategorija(e.target.innerText)
+    e.preventDefault()
     current === id ? setCurrent(null) : setCurrent(id)
     let lang = id === 1 ? "hr" : "en"
     changeLanguage(lang)
@@ -208,14 +209,14 @@ const Header = () => {
             >
               <p
                 className={current === 1 ? "blueLink" : ""}
-                onClick={e => handleClick(1)}
+                onClick={e => handleClick(e, 1)}
                 style={{ margin: "0 3px" }}
               >
                 HR
               </p>
               <p
                 className={current === 2 ? "blueLink" : ""}
-                onClick={e => handleClick(2)}
+                onClick={e => handleClick(e, 2)}
                 style={{ margin: "0 3px" }}
               >
                 ENG
