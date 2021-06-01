@@ -16,18 +16,22 @@ import BlogCard from "../components/BlogCard"
 // import SEO from "../components/seo"
 
 const Wrap = styled.div`
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   position: relative;
   width: 78%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 190px;
+  height: 500px;
 
-  height: auto;
-
-  @media only screen and (max-width: 570px) {
-    /* flex-direction: column;
-    height: auto;
-    width: 100%;
-    padding-left: 30px; */
+  @media only screen and (max-width: 750px) {
+    padding-top: 90px;
   }
 `
 
@@ -39,11 +43,19 @@ const WrapSponzorHero = styled.div`
   font-size: 24px;
   color: white;
 
-  @media only screen and (max-width: 570px) {
-    /* flex-direction: column;
-    height: auto;
-    width: 100%;
-    padding-left: 30px; */
+  @media only screen and (max-width: 750px) {
+    font-size: 16px;
+
+    bottom: 44px;
+    top: unset;
+  }
+  @media only screen and (max-width: 450px) {
+    font-size: 16px;
+
+    bottom: 34px;
+    top: unset;
+    right: unset;
+    left: 30px;
   }
 `
 const Hero = styled.div`
@@ -64,12 +76,19 @@ const Naslov = styled.div`
   line-height: 56px;
   color: white;
   font-size: 54px;
-  width: 78%;
+  width: 109%;
   height: auto;
   text-align: left;
+  position: relative;
   /* margin: 0 auto 50px auto; */
 
-  @media only screen and (max-width: 60em) {
+  @media only screen and (max-width: 900px) {
+    font-size: 36px;
+    line-height: 43px;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 28px;
+    line-height: 33px;
   }
 `
 const NaslovBlog = styled.div`
@@ -105,12 +124,13 @@ const Crta = styled.div`
   background-color: white;
   /* margin-right: 58px; */
   position: absolute;
-  left: 0px;
-  top: 53%;
-  @media only screen and (max-width: 750px) {
-    /* left: -100px;
-
-    margin-right: 25px; */
+  left: -130px;
+  top: 33px;
+  @media only screen and (max-width: 900px) {
+    top: 25px;
+  }
+  @media only screen and (max-width: 500px) {
+    top: 17px;
   }
 `
 const BlogContentWrap = styled.div`
@@ -213,7 +233,7 @@ const BlogPost = ({ data }) => {
                   position: "absolute",
                 }}
               ></div>
-              <Crta />
+
               <WrapSponzorHero>
                 {data.wpgraphql.blog.blog_graphql.tekstSponzorira !== undefined
                   ? data.wpgraphql.blog.blog_graphql.tekstSponzorira
@@ -224,6 +244,7 @@ const BlogPost = ({ data }) => {
                   {data.wpgraphql.blog.categories.edges[0].node.name}
                 </Kategorija>
                 <Naslov>
+                  <Crta />
                   {data.wpgraphql.blog.blog_graphql.naslovBlogaHr}
                 </Naslov>
               </Wrap>

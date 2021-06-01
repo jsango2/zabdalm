@@ -2,11 +2,10 @@ import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import Brodi from "../../content/assets/brodi.png"
-import Tovar from "../../content/assets/tovarbaba.png"
+import Tovar from "../../content/assets/tovarBaba.png"
 import HeroPhoto from "../../content/assets/heroPhoto.png"
+import Trogir from "../../content/assets/trogir.jpg"
 import Etno from "../../content/assets/etno.png"
-
-import Pas from "../../content/assets/pas.png"
 import { graphql } from "gatsby"
 import {
   Link,
@@ -17,6 +16,7 @@ import {
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useWindowSize } from "../components/useWindowSize"
 
 const Wrap = styled.div`
   /* background-color: grey; */
@@ -36,6 +36,7 @@ const WrapFormAndText = styled.div`
   height: 358px;
   top: 114px;
   left: 132px;
+  z-index: 1;
   /* background-color: rgba(255, 0, 0, 0.267); */
   display: flex;
   justify-content: space-between;
@@ -133,6 +134,8 @@ const Fotka = styled.div`
 `
 
 function Kontakt() {
+  const size = useWindowSize()
+
   const { t } = useTranslation()
   const { languages, changeLanguage } = useI18next()
 
@@ -146,45 +149,69 @@ function Kontakt() {
             height: "100%",
             backgroundColor: "rgb(51, 31, 6)",
           }}
-        ></div>{" "}
-        <Slider
-          dots={false}
-          fade={true}
-          infinite={true}
-          speed={8000}
-          slidesToShow={1}
-          slidesToScroll={1}
-          autoplay={true}
-          cssEase="cubic-bezier(0,0,0,1.01)"
-        >
-          <Fotka>
-            <img
-              src={Brodi}
-              alt=""
+        ></div>
+        {size.width > 550 ? (
+          <Slider
+            dots={false}
+            fade={true}
+            infinite={true}
+            speed={8000}
+            slidesToShow={1}
+            slidesToScroll={1}
+            autoplay={true}
+            cssEase="cubic-bezier(0,0,0,1.01)"
+          >
+            <Fotka>
+              <img
+                src={Brodi}
+                alt=""
+                style={{
+                  height: "100%",
+                }}
+              />
+            </Fotka>
+            <Fotka>
+              <img
+                src={HeroPhoto}
+                alt=""
+                style={{
+                  height: "100%",
+                }}
+              />
+            </Fotka>
+            <Fotka>
+              <img
+                src={Tovar}
+                alt=""
+                style={{
+                  height: "100%",
+                }}
+              />
+            </Fotka>
+          </Slider>
+        ) : (
+          <>
+            <div
               style={{
+                position: "absolute",
+                width: "100%",
                 height: "100%",
+
+                backgroundColor: "rgb(51 31 6 / 45%)",
+                zIndex: "1",
               }}
-            />
-          </Fotka>
-          <Fotka>
-            <img
-              src={HeroPhoto}
-              alt=""
+            ></div>
+            <div
               style={{
+                position: "absolute",
+                width: "100%",
                 height: "100%",
+                backgroundPosition: "left bottom",
+                backgroundImage: `url(${Trogir})`,
               }}
-            />
-          </Fotka>
-          <Fotka>
-            <img
-              src={Tovar}
-              alt=""
-              style={{
-                height: "100%",
-              }}
-            />
-          </Fotka>
-        </Slider>
+            ></div>
+          </>
+        )}
         <WrapFormAndText>
           <WrapForm>
             <form className="formular">

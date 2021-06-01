@@ -85,6 +85,9 @@ export const query = graphql`
       partneriProjekta {
         edges {
           node {
+            partneriProjekta {
+              weblinkpartnerprojekta
+            }
             title
             featuredImage {
               node {

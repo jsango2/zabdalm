@@ -6,7 +6,8 @@ import {
   useI18next,
   I18nextContext,
 } from "gatsby-plugin-react-i18next"
-import { graphql, withAssetPrefix } from "gatsby"
+import { graphql } from "gatsby"
+import { GoInfo } from "react-icons/go"
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
 // import Geocoder from "react-mapbox-gl-geocoder"
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"
@@ -20,6 +21,7 @@ import "@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 import Flickr from "flickr-sdk"
 import flag from "../../content/assets/flag.png"
+import camera1 from "../../content/assets/camera1.png"
 // import { withTheme } from "styled-components"
 import SliderGodina from "../components/SliderGodina"
 import { useWindowSize } from "../components/useWindowSize"
@@ -31,21 +33,35 @@ import { useWindowSize } from "../components/useWindowSize"
 import Header from "./../components/header"
 import Footer from "./../components/footer"
 import { Popup } from "mapbox-gl"
+import InfoBlock from "../components/InfoBlock"
+import { uniqBy } from "lodash"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
 
-const Hamburger = styled.div`
+const InfoWrap = styled.div`
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  right: 26px;
+  top: 95px;
+  z-index: 2;
+  color: #4e370c;
   cursor: pointer;
-  color: black;
-  position: relative;
-  top: 2px;
-  z-index: 1000;
-  margin-right: 30px;
-  /* display: none; */
-
-  @media screen and (min-width: 750px) {
-    display: none;
+  /* @media screen and (max-width: 1152px) {
+    right: 26px;
+    top: 75px;
+    left: unset;
+  } */
+  @media screen and (max-width: 630px) {
+    right: 26px;
+    top: 95px;
+    left: unset;
   }
 `
 
@@ -331,7 +347,7 @@ function Razglednice({ data }) {
     )
 
     map.on("load", function () {
-      map.loadImage(flag, function (error, image) {
+      map.loadImage(camera1, function (error, image) {
         if (error) throw error
         map.addImage("cat", image)
 
@@ -356,7 +372,7 @@ function Razglednice({ data }) {
           type: "symbol",
           layout: {
             "icon-image": "cat",
-            "icon-size": 0.7,
+            "icon-size": 0.26,
             "icon-padding": 0,
             "icon-allow-overlap": true,
             // 'icon-halo-blur': 0.5,
@@ -607,6 +623,15 @@ function Razglednice({ data }) {
     <>
       <Header></Header>
       <div className="mapWrapper">
+        <InfoBlock isOpen={isOpen} />
+        <InfoWrap>
+          <GoInfo
+            onClick={() => {
+              setIsOpen(() => !isOpen)
+              // blockScroll()
+            }}
+          />
+        </InfoWrap>
         {/* <SliderGodina /> */}
         {/* <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
