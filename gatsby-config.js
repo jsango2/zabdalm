@@ -74,7 +74,7 @@ module.exports = {
         languages: [`en`, `hr`],
         defaultLanguage: `hr`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `http://localhost:8000`,
+        siteUrl: `https://zabdalm.vercel.app`,
         // you can pass any i18next options
         // pass following options to allow message content as a key
         i18nextOptions: {
