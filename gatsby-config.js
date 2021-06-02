@@ -6,7 +6,7 @@ module.exports = {
       summary: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
     },
     description: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
-    siteUrl: `http://www.zaboravljenadalmacija.hr`,
+    siteUrl: "https://zabdalm.vercel.app",
     image: "/seoPhoto.png",
     keywords:
       "Građevinski radovi, Ugljan, Pašman, Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi, Građevina na otocima, Izgradnja kuća, Otočki proizvod, Izgradnja, bazen",
@@ -213,7 +213,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `https://www.zaboravljenadalmacija.hr`,
+        siteUrl: `https://zabdalm.vercel.app`,
       },
     },
   ],
