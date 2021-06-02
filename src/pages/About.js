@@ -200,9 +200,7 @@ const OthersRemark = styled.p`
   padding: 5px;
   color: #000;
 `
-const KnjigaWrapper = styled.div`
-  
-`
+const KnjigaWrapper = styled.div``
 const Ulomak2Wrap = styled.div`
   width: 150px;
   height: 150px;
@@ -445,7 +443,7 @@ export const query = graphql`
       }
     }
     wpgraphql {
-      blogovi(where: {orderby: {field: DATE, order: DESC}}, first: 3) {
+      blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
         edges {
           node {
             blog_graphql {
@@ -473,29 +471,29 @@ export const query = graphql`
           }
         }
       }
-      komentari {
-        edges {
-          node {
-            komentariIRecenzije {
-              autorKomentaraEng
-              autorKomentaraHr
-              komentarIliRecenzijaEng
-              komentarRecenzijaHr
-            }
-          }
-        }
-      }
-      pressObjave {
-        edges {
-          node {
-            pressObjave {
-              poveznicaZaKlik
-              pressObjavaEng
-              pressObjavaHr
-            }
-          }
-        }
-      }
     }
   }
 `
+// komentari {
+//   edges {
+//     node {
+//       komentariIRecenzije {
+//         autorKomentaraEng
+//         autorKomentaraHr
+//         komentarIliRecenzijaEng
+//         komentarRecenzijaHr
+//       }
+//     }
+//   }
+// }
+// pressObjave {
+//   edges {
+//     node {
+//       pressObjave {
+//         poveznicaZaKlik
+//         pressObjavaEng
+//         pressObjavaHr
+//       }
+//     }
+//   }
+// }

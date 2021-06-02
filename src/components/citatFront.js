@@ -28,6 +28,7 @@ const Wrap = styled.div`
 
   @media only screen and (max-width: 750px) {
     margin-top: 193px;
+    height: 300px;
   }
 `
 const Citat = styled.div`
