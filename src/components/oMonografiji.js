@@ -40,6 +40,10 @@ const MonoNaslovSideCrta = styled.div`
   position: relative;
   top: 33px;
   left: -225px;
+
+  @media only screen and (max-width: 550px) {
+    top: 22px;
+  }
 `
 const MonoNaslov = styled.h2`
   font-family: Playfair Display;
@@ -50,6 +54,10 @@ const MonoNaslov = styled.h2`
   margin: 0 0 50px 0;
   max-width: 600px;
   line-height: 103.3%;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 36px;
+  }
 `
 const KnjigaWrap = styled.div`
   width: 45%;
@@ -104,17 +112,3 @@ const OMonografiji = () => {
 }
 
 export default OMonografiji
-
-// export const query = graphql`
-//   query($language: String!) {
-//     locales: allLocale(filter: { language: { eq: $language } }) {
-//       edges {
-//         node {
-//           ns
-//           data
-//           language
-//         }
-//       }
-//     }
-//   }
-// `

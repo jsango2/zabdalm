@@ -13,6 +13,7 @@ import {
 import OKnjiziIntro from "../components/OKnjiziIntro"
 import OKnjiziBlogFront from "../components/oKnjiziBlogFront"
 import OMonografiji from "../components/oMonografiji"
+import Press from "../components/Press"
 
 import KolazAnimation from "../components/kolazAnimation"
 import AlkarAnimation from "../components/alkarAnimation"
@@ -121,12 +122,12 @@ const OthersTitle = styled.div`
   align-items: center;
   margin-bottom: 50px;
 
-  @media only screen and (max-width: 750px) {
+  /* @media only screen and (max-width: 750px) {
     padding: 0 80px;
-  }
+  } */
   @media only screen and (max-width: 550px) {
     display: block;
-    padding: 0 50px;
+    padding: 0 30px;
   }
 `
 const OthersLineLeft = styled.div`
@@ -142,7 +143,7 @@ const OthersLineLeft = styled.div`
   }
   @media only screen and (max-width: 550px) {
     position: relative;
-    top: 35px;
+    top: 27px;
     left: -80px;
   }
 `
@@ -161,7 +162,6 @@ const OthersLineRight = styled.div`
     display: none;
   }
 `
-
 const MiddleTitle = styled.h2`
   font-family: Playfair Display;
   font-size: 54px;
@@ -169,6 +169,10 @@ const MiddleTitle = styled.h2`
   color: #3a3a3a;
   line-height: 103.3%;
   margin: 0;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 46px;
+  }
 `
 const OthersSay = styled.div`
   display: flex;
@@ -181,7 +185,7 @@ const OthersSay = styled.div`
     padding: 0 80px;
   }
   @media only screen and (max-width: 550px) {
-    padding: 0 50px;
+    padding: 0 30px;
   }
 `
 const OthersBy = styled.div`
@@ -217,72 +221,6 @@ const PressSection = styled.div`
   height: 400px;
 `
 
-const items = [
-  <OthersRemark className="OthersSayItem" data-value="1">
-    Riječ je o golemom ikonografskom rezervoaru s nizom dosad neviđenih slika po
-    kojima se ova knjiga ne okreće samo melankoličnim proučavateljima zavičajne
-    prošlosti i baštine, brojnim namjernicima koji sa sve većim zanimanjem žele
-    razumjeti ono što gledaju, nego i specijalistima različitih disciplina.
-    Urednik knjige Igor Goleš poznati je kolekcionar starih razglednica. Isprva
-    koncentriran na motive Šibenika i okolnih mjesta, on je svoja istraživanja
-    tijekom godina značajno proširio kako bi, naposljetku, uvidom u niz drugih,
-    jednako dragocjenih zbirki, sačinio ovu, u pravom smislu antologijsku
-    monografiju, u kojoj se poseban naglasak stavlja ne samo na
-    kulturno-povijesnu baštinu, spomenike, panorame manje razglašenih
-    dalmatinskih mjesta i gradova, nego i na ljude, običaje, događaje, proslave,
-    procesije… Stoga na ovim slikama buja svakodnevni i svečani život, u
-    prizorima koji Dalmaciju od prije stotinu godina ne idealiziraju, ali je
-    otkrivaju u mnogim zaboravljenim sastavnicama.
-    <OthersBy>Joško Belamarić, povjesničar umjetnosti</OthersBy>
-  </OthersRemark>,
-  <OthersRemark className="OthersSayItem" data-value="1">
-    Knjiga Pozdrav iz zaboravljene Dalmacije vrijedan je memento prošlosti
-    Dalmacije za koju često ističemo da je nepovratno izgubljena, a na koju nas,
-    uz fotografije, podsjeća i ovo dragocjeno, ponekad pomalo i zanemareno,
-    kartofilsko gradivo. Riječ je o zaista iznimnoj knjizi koja će biti
-    zanimljiva i korisna ne samo kolekcionarima već i stručnjacima različitih
-    profila i polja istraživanja: povjesničarima, povjesničarima umjetnosti,
-    etnolozima, arheolozima, konzervatorima, povjesničarima fotografije,
-    arhitekture, dizajna i reklamnog oglašavanja. Podjednako, bit će zanimljiva
-    i najširoj publici i svima koje zanima povijest Dalmacije predstavljena
-    slikom, koja često govori više i sugestivnije od riječi.
-    <OthersBy>Sandi Bulimbašić, povjesničarka umjetnosti</OthersBy>
-  </OthersRemark>,
-  <OthersRemark className="OthersSayItem" data-value="1">
-    Pregledavanjem knjige Pozdrav iz zaboravljene Dalmacije bivamo začuđeni kako
-    to da su neka zabitna mjesta još onda imala svoju razglednicu, da su
-    unutrašnjost trgovine mješovite robe, tečaj šivanja ili punjenje konzervi
-    sardina bili zanimljivi motivi za razglednice, ovjekovječena je igra
-    šijavice, gledamo osobe kao što su hajduk Andrija Šimić i galantar Paul
-    Merčep, „prisustvujemo“ brojnim vjerskim i sportskim događajima, pred nama
-    poziraju članovi raznih društava itd. Golešova knjiga izvrstan je izvor
-    mnogima koji se žele upoznati s poviješću Dalmacije, njenom kulturom,
-    urbanizmom, spomenicima, športom, običajima itd. Svatko u njoj može naći
-    nešto zanimljivo, dokumentarno, što će proširiti njegovo znanje i što će ga
-    potaknuti na daljnja istraživanja. Neosporno je da će ona postati
-    nezaobilazna u pisanju tekstova o Dalmaciji i da će naći istaknuto mjesto u
-    mnogim javnim i privatnim knjižnicama.
-    <OthersBy>Arsen Duplančić, povjesničar</OthersBy>
-  </OthersRemark>,
-  <OthersRemark className="OthersSayItem" data-value="1">
-    Bez pisama Cicerona, Plinija Mlađeg, Goethea i brojnih drugih bili bismo
-    mnogo siromašniji za brojne kulturne, umjetničke, povijesne i druge
-    vrijednosti. Ciceron nam je u pismima prenio dramatičnu potjeru za svojim
-    robom Dionizijem koji mu je ukrao dragocjenu biblioteku i pobjegao u Naronu.
-    Plinije Mlađi opisao je kako su izgledali tajni sastanci ranih kršćanskih
-    zajednica. Goethe je pak pisma obogaćivao gotovo transcendentnim crtežima od
-    kojih se koža ježi. Za pismo se podrazumijeva da bude dugo i sadržajno.
-    Naprotiv, bit poštanske razglednice jest prenošenje kratke, nerijetko
-    jednostavne pa i banalne poruke, ali koja je najčešće nabijena emocijama.
-    Duboko sam uvjeren da će razglednice iz velikih zbirka urednika ove
-    monografije Igora Goleša i njegovih kolega kolekcionara pružiti
-    reprezentativnu dijakronijsku sliku Dalmacije. Bit ćemo, ne sumnjam,
-    zadivljeni bogatstvom motiva i podataka. Zato se svrstavam među one koji
-    ovakvu knjigu podupiru i očekuju.
-    <OthersBy>Akademik Nenad Cambi, arheolog</OthersBy>
-  </OthersRemark>,
-]
-
 const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
   return items.map((item, i) => (
     <div
@@ -295,6 +233,34 @@ const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
 }
 
 const About = ({ data }) => {
+
+  const reviews = data.wpgraphql.komentari.edges
+  const items = []
+
+  if (data.locales.edges[0].node.language == "hr") {
+    reviews.forEach(review => {
+      items.push(
+        <OthersRemark className="OthersSayItem" data-value="1">
+          {review.node.komentariIRecenzije.komentarRecenzijaHr}
+          <OthersBy>
+            {review.node.komentariIRecenzije.autorKomentaraHr}
+          </OthersBy>
+        </OthersRemark>
+      )
+    })
+  } else {
+    reviews.forEach(review => {
+      items.push(
+        <OthersRemark className="OthersSayItem" data-value="1">
+          {review.node.komentariIRecenzije.komentarIliRecenzijaEng}
+          <OthersBy>
+            {review.node.komentariIRecenzije.autorKomentaraEng}
+          </OthersBy>
+        </OthersRemark>
+      )
+    })
+  }
+
   const { t } = useTranslation()
   const { languages, changeLanguage } = useI18next()
   const [current, setCurrent] = useState(0)
@@ -422,7 +388,7 @@ const About = ({ data }) => {
         </Ulomak2Wrap>
       </KnjigaWrapper>
 
-      <PressSection></PressSection>
+      <Press data={data}/>
 
       <OKnjiziBlogFront blogovi={data.wpgraphql.blogovi.edges} />
     </Layout>
@@ -443,6 +409,29 @@ export const query = graphql`
       }
     }
     wpgraphql {
+      komentari {
+        edges {
+          node {
+            komentariIRecenzije {
+              autorKomentaraEng
+              autorKomentaraHr
+              komentarIliRecenzijaEng
+              komentarRecenzijaHr
+            }
+          }
+        }
+      }
+      pressObjave {
+        edges {
+          node {
+            pressObjave {
+              poveznicaZaKlik
+              pressObjavaEng
+              pressObjavaHr
+            }
+          }
+        }
+      }
       blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
         edges {
           node {
@@ -474,26 +463,3 @@ export const query = graphql`
     }
   }
 `
-// komentari {
-//   edges {
-//     node {
-//       komentariIRecenzije {
-//         autorKomentaraEng
-//         autorKomentaraHr
-//         komentarIliRecenzijaEng
-//         komentarRecenzijaHr
-//       }
-//     }
-//   }
-// }
-// pressObjave {
-//   edges {
-//     node {
-//       pressObjave {
-//         poveznicaZaKlik
-//         pressObjavaEng
-//         pressObjavaHr
-//       }
-//     }
-//   }
-// }
