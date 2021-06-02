@@ -416,7 +416,6 @@ export const query = graphql`
           edges {
             node {
               name
-              categoryId
             }
           }
         }
