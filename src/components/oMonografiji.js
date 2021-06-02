@@ -2,11 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import {
-    Link,
-    Trans,
-    useTranslation,
-    useI18next,
-  } from "gatsby-plugin-react-i18next"
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+} from "gatsby-plugin-react-i18next"
 
 import Knjiga from "../../content/assets/knjiga.png"
 import Ulomak from "../../content/assets/ulomakStamp.png"
@@ -80,9 +80,8 @@ const AboutP = styled.p`
 `
 
 const OMonografiji = () => {
-
-    const { t } = useTranslation()
-    const { languages, changeLanguage } = useI18next()
+  const { t } = useTranslation()
+  const { languages, changeLanguage } = useI18next()
 
   return (
     <MonoDiv>
@@ -106,16 +105,16 @@ const OMonografiji = () => {
 
 export default OMonografiji
 
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query($language: String!) {
+//     locales: allLocale(filter: { language: { eq: $language } }) {
+//       edges {
+//         node {
+//           ns
+//           data
+//           language
+//         }
+//       }
+//     }
+//   }
+// `

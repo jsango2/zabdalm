@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
 import {
-    Link,
-    Trans,
-    useTranslation,
-    useI18next,
-  } from "gatsby-plugin-react-i18next"
+  Link,
+  Trans,
+  useTranslation,
+  useI18next,
+} from "gatsby-plugin-react-i18next"
 
 const WrapNaslov = styled.div`
   font-family: Playfair Display;
@@ -32,8 +32,7 @@ const WrapNaslov = styled.div`
   @media only screen and (max-width: 330px) {
   }
 `
-const IntroAbout = styled.div`
-`
+const IntroAbout = styled.div``
 const AboutP = styled.p`
   font-size: 15px;
   line-height: 23.43px;
@@ -78,46 +77,45 @@ const NaslovSideCrta = styled.div`
 `
 
 const OKnjiziIntro = () => {
-
-    const { t } = useTranslation()
+  const { t } = useTranslation()
   const { languages, changeLanguage } = useI18next()
 
-    return (
-        <TextContainer>
-        <NaslovSideCrta />
-        <WrapNaslov>{t("mozelidalmacija")}</WrapNaslov>
-        <IntroAbout>
-          <AboutP>{t("oknjizi1")}</AboutP>
-          <AboutP>{t("oknjizi2")}</AboutP>
-          <AboutP>{t("oknjizi3")}</AboutP>
-        </IntroAbout>
-        <BreakContainer>
-          <AboutP>{t("oknjizi4")}</AboutP>
-          <AboutP>{t("oknjizi5")}</AboutP>
-          <AboutP>{t("oknjizi6")}</AboutP>
-        </BreakContainer>
-        <SecBreakContainer>
-          <AboutP>{t("oknjizi7")}</AboutP>
-          <AboutP>{t("oknjizi8")}</AboutP>
-          <AboutP>{t("oknjizi9")}</AboutP>
-          <AboutP>Igor Goleš</AboutP>
-        </SecBreakContainer>
-      </TextContainer>
-    )
+  return (
+    <TextContainer>
+      <NaslovSideCrta />
+      <WrapNaslov>{t("mozelidalmacija")}</WrapNaslov>
+      <IntroAbout>
+        <AboutP>{t("oknjizi1")}</AboutP>
+        <AboutP>{t("oknjizi2")}</AboutP>
+        <AboutP>{t("oknjizi3")}</AboutP>
+      </IntroAbout>
+      <BreakContainer>
+        <AboutP>{t("oknjizi4")}</AboutP>
+        <AboutP>{t("oknjizi5")}</AboutP>
+        <AboutP>{t("oknjizi6")}</AboutP>
+      </BreakContainer>
+      <SecBreakContainer>
+        <AboutP>{t("oknjizi7")}</AboutP>
+        <AboutP>{t("oknjizi8")}</AboutP>
+        <AboutP>{t("oknjizi9")}</AboutP>
+        <AboutP>Igor Goleš</AboutP>
+      </SecBreakContainer>
+    </TextContainer>
+  )
 }
 
 export default OKnjiziIntro
 
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query($language: String!) {
+//     locales: allLocale(filter: { language: { eq: $language } }) {
+//       edges {
+//         node {
+//           ns
+//           data
+//           language
+//         }
+//       }
+//     }
+//   }
+// `
