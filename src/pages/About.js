@@ -10,7 +10,7 @@ import {
   useI18next,
 } from "gatsby-plugin-react-i18next"
 
-import OKnjiziIntro from "../components/oKnjiziIntro"
+import OKnjiziIntro from "../components/OKnjiziIntro"
 import OKnjiziBlogFront from "../components/oKnjiziBlogFront"
 import OMonografiji from "../components/oMonografiji"
 
@@ -184,7 +184,7 @@ const OthersSay = styled.div`
     padding: 0 50px;
   }
 `
-const OthersBy = styled.p`
+const OthersBy = styled.div`
   margin-top: 15px;
   font-family: Roboto;
   font-style: italic;
@@ -193,7 +193,7 @@ const OthersBy = styled.p`
   line-height: 19px;
   text-align: right;
 `
-const OthersRemark = styled.p`
+const OthersRemark = styled.div`
   font-weight: 500;
   font-size: 15px;
   line-height: 23px;
