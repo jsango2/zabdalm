@@ -12,7 +12,7 @@ const Wrap = styled.div`
   margin-bottom: 150px;
   @media only screen and (max-width: 750px) {
     margin-top: 0px;
-
+    width: 120%;
     height: 450px;
   }
   @media only screen and (max-width: 620px) {
