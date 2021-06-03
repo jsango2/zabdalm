@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
 import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import { IoIosClose } from "react-icons/io"
 
@@ -34,7 +33,7 @@ function MeniMobile({
 }) {
   const [t, i18n] = useTranslation()
   const [current, setCurrent] = useState(null)
-  const { languages, changeLanguage } = useI18next()
+  // const { languages, changeLanguage } = useI18next()
   //   const size = useWindowSize()
   const handleClick = (e, id) => {
     // current === id ? setCurrent(null) : setKategorija(e.target.innerText)

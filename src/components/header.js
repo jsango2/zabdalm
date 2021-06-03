@@ -1,12 +1,6 @@
-import { useStaticQuery, graphql } from "gatsby"
-import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
-import logo from "../images/LogoTopsvg.svg"
 import { CgMenuGridR } from "react-icons/cg"
-
 import Headroom from "react-headroom"
-
 import styled from "styled-components"
 import {
   Link,
@@ -15,6 +9,7 @@ import {
   useI18next,
   I18nextContext,
 } from "gatsby-plugin-react-i18next"
+
 import MeniMobile from "./meniMobile"
 
 const HeaderWrap = styled.div`
@@ -80,7 +75,7 @@ const Header = () => {
   const handleClick = (e, id) => {
     // setKategorija(e.target.innerText)
     e.preventDefault()
-    current === id ? setCurrent(null) : setCurrent(id)
+    current === id ? setCurrent(1) : setCurrent(id)
     let lang = id === 1 ? "hr" : "en"
     changeLanguage(lang)
   }
@@ -97,7 +92,6 @@ const Header = () => {
         <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
         <Hamburger>
           <Link to="/">
-            {" "}
             <div
               style={{
                 fontFamily: "Playfair Display",
@@ -109,7 +103,6 @@ const Header = () => {
               ZaboravljenaDalmacija.hr
             </div>
           </Link>
-
           <CgMenuGridR
             style={{
               color: "white",
@@ -134,7 +127,7 @@ const Header = () => {
             zIndex: "9999",
           }}
         >
-          <HeaderWrap className={`header-wrap`}>
+          <HeaderWrap className="header-wrap">
             <div className="logoHeader">
               <div
                 className="title-group"
@@ -146,9 +139,8 @@ const Header = () => {
                 }}
               ></div>
             </div>
-            <nav className={`primary-nav ${display}`}>
+            <div className={`primary-nav ${display}`}>
               <Link
-                offset={100}
                 to="/"
                 className="LinkHeader LinkHeaderProjekti"
                 activeClassName="active"
@@ -156,7 +148,6 @@ const Header = () => {
                 HOME
               </Link>
               <Link
-                offset={100}
                 to="/About"
                 className="LinkHeader LinkHeaderProjekti"
                 activeClassName="active"
@@ -164,7 +155,6 @@ const Header = () => {
                 {t("oKnjizi")}
               </Link>
               <Link
-                offset={100}
                 to="/Blog"
                 className="LinkHeader LinkHeaderProjekti"
                 activeClassName="active"
@@ -172,7 +162,6 @@ const Header = () => {
                 BLOG
               </Link>
               <Link
-                offset={100}
                 to="/Razglednice"
                 className="LinkHeader LinkHeaderProjekti"
                 activeClassName="active"
@@ -180,14 +169,13 @@ const Header = () => {
                 {t("razgledniceNaMapi")}
               </Link>
 
-              <Link
-                offset={100}
-                to="/#projekti"
+              <a
+                style={{ cursor: "pointer" }}
+                href="https://shop.zaboravljenadalmacija.hr"
                 className="LinkHeader LinkHeaderProjekti"
-                activeClassName="active"
               >
                 WEBSHOP
-              </Link>
+              </a>
 
               <Link
                 to="/Kontakt"
@@ -196,7 +184,7 @@ const Header = () => {
               >
                 {t("kontakt")}
               </Link>
-            </nav>
+            </div>
             <div
               style={{
                 position: "absolute",

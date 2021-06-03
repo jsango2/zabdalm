@@ -233,7 +233,6 @@ const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
 }
 
 const About = ({ data }) => {
-
   const reviews = data.wpgraphql.komentari.edges
   const items = []
 
@@ -388,7 +387,7 @@ const About = ({ data }) => {
         </Ulomak2Wrap>
       </KnjigaWrapper>
 
-      <Press data={data}/>
+      <Press data={data} />
 
       <OKnjiziBlogFront blogovi={data.wpgraphql.blogovi.edges} />
     </Layout>

@@ -3,19 +3,12 @@ import Layout from "../components/layout"
 import { useWindowSize } from "../components/useWindowSize"
 import { RiArrowDropDownFill } from "react-icons/ri"
 import { graphql } from "gatsby"
-import firebase from "gatsby-plugin-firebase"
 import MeniMobileBlog from "../components/MeniMobileBlog"
 import Pagination from "../components/pagination"
 
 import BlogHeroPhoto from "../../content/assets/BlogHero.png"
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import styled from "styled-components"
-import BlogCard from "./../components/BlogCard"
 import BlogPostCards from "../components/BlogPostCards"
 
 const WrapHeroPhoto = styled.div`
@@ -55,13 +48,13 @@ const WrapNaslov = styled.div`
 
 function Blog({ data }) {
   const { t } = useTranslation()
-  const { languages, changeLanguage } = useI18next()
+  // const { languages, changeLanguage } = useI18next()
   const size = useWindowSize()
   const [current, setCurrent] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const [kategorija, setKategorija] = useState("SVE")
   const [query, setQuery] = useState(data.wpgraphql.blogovi.edges)
-  const [postovi, setPostovi] = useState(data.wpgraphql.blogovi.edges)
+  // const [postovi, setPostovi] = useState(data.wpgraphql.blogovi.edges)
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(12)
 

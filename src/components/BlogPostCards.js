@@ -12,7 +12,7 @@ function BlogPostCards({ blogovi }) {
       }}
     >
       {blogovi.map(blog => (
-        <BlogCard blogs={blog} />
+        <BlogCard blogs={blog} key={blog.node.slug} />
       ))}
     </div>
   )

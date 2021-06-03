@@ -1,18 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import CROweek from "../../content/assets/CROweek.png"
-import Jelsa from "../../content/assets/Jelsa.png"
-import Secret from "../../content/assets/secret.png"
-import Linija from "../../content/assets/linijaMont.png"
+
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation } from "gatsby-plugin-react-i18next"
 import { useWindowSize } from "../components/useWindowSize"
 import Lottie from "lottie-react"
 
@@ -170,7 +162,10 @@ function PartneriProjektaFront({ data }) {
       <WrapSponzori>
         <Slider {...settings}>
           {data.partneriProjekta.edges.map(partner => (
-            <a href={partner.node.partneriProjekta.weblinkpartnerprojekta}>
+            <a
+              href={partner.node.partneriProjekta.weblinkpartnerprojekta}
+              key={partner.node.title}
+            >
               <WrapSponzorSlider className="WrapSponzorSlider">
                 {" "}
                 <img

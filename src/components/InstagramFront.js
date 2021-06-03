@@ -161,7 +161,6 @@ function InstagramFront() {
           }}
           src={Drnis}
           alt=""
-          srcset=""
         />
       </ImgWrap>
     </Wrap>

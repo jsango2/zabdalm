@@ -7,12 +7,7 @@ import HeroPhoto from "../../content/assets/heroPhoto.png"
 import Trogir from "../../content/assets/trogir.jpg"
 import Etno from "../../content/assets/etno.png"
 import { graphql } from "gatsby"
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -96,14 +91,14 @@ const WrapText = styled.div`
     line-height: 30px;
   }
 `
-const Img = styled.div`
-  width: 100%;
-  height: 635px;
+// const Img = styled.div`
+//   width: 100%;
+//   height: 635px;
 
-  @media screen and (max-width: 750px) {
-    height: 100%;
-  }
-`
+//   @media screen and (max-width: 750px) {
+//     height: 100%;
+//   }
+// `
 const EtnoWrap = styled.div`
   position: absolute;
 

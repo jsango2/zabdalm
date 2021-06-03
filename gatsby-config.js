@@ -6,7 +6,7 @@ module.exports = {
       summary: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
     },
     description: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
-    siteUrl: "https://zabdalm.vercel.app",
+    siteUrl: "https://localhost:8000/",
     image: "/seoPhoto.png",
     keywords:
       "Građevinski radovi, Ugljan, Pašman, Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi, Građevina na otocima, Izgradnja kuća, Otočki proizvod, Izgradnja, bazen",
@@ -89,10 +89,10 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`en`, `hr`],
+        languages: [`hr`, `en`],
         defaultLanguage: `hr`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `https://zabdalm.vercel.app`,
+        siteUrl: `https://localhost:8000/`,
         // you can pass any i18next options
         // pass following options to allow message content as a key
         i18nextOptions: {
@@ -102,17 +102,6 @@ module.exports = {
           keySeparator: false,
           nsSeparator: false,
         },
-        // pages: [
-        //   {
-        //     matchPath: "/:lang?/blog/:uid",
-        //     getLanguageFromPath: true,
-        //     excludeLanguages: ["es"],
-        //   },
-        //   {
-        //     matchPath: "/preview",
-        //     languages: ["en"],
-        //   },
-        // ],
       },
     },
     {
@@ -168,16 +157,17 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-postcss`,
+    "gatsby-plugin-remove-serviceworker",
+    // `gatsby-plugin-postcss`,
 
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://www.go-dom.hr",
-        sitemap: "https://www.go-dom.hr/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-robots-txt",
+    //   options: {
+    //     host: "https://www.go-dom.hr",
+    //     sitemap: "https://www.go-dom.hr/sitemap.xml",
+    //     policy: [{ userAgent: "*", allow: "/" }],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -224,14 +214,14 @@ module.exports = {
         icon: `content/assets/domicon.png`,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    // `gatsby-plugin-react-helmet`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `https://zabdalm.vercel.app`,
+        siteUrl: `https://localhost:8000/`,
       },
     },
   ],

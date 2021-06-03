@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
-import { text } from "./dummyData/textPrice"
 import {
   Link,
-  Trans,
   useTranslation,
-  useI18next,
   I18nextContext,
 } from "gatsby-plugin-react-i18next"
-import { graphql } from "gatsby"
-import firebase from "gatsby-plugin-firebase"
-import { ClientHintsMetaTag } from "cloudinary-core"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -142,6 +136,7 @@ function NajpopularnijePrice({ data }) {
         {/* {result} */}
         {data.blogovi.edges.map(clanak => (
           <Link
+            key={clanak.node.slug}
             style={{ textDecoration: "none", color: "black" }}
             to={`/Blog/${clanak.node.slug}`}
           >

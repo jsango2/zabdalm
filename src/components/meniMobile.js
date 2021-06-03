@@ -39,15 +39,14 @@ function MeniMobile({ handleClick, isOpen }) {
   }, [])
   const handleClickLang = id => {
     // setKategorija(e.target.innerText)
-    current === id ? setCurrent(null) : setCurrent(id)
+    current === id ? setCurrent(1) : setCurrent(id)
     let lang = id === 1 ? "hr" : "en"
     changeLanguage(lang)
     // console.log("t", t)
   }
   return (
     <>
-      <WrapAll className={`${isOpen ? "dark" : ""} `}>
-        {" "}
+      <WrapAll className={`${isOpen ? "dark" : null} `}>
         {isOpen ? (
           <div
             style={{

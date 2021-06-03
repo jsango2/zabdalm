@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import {
-  Link,
-  Trans,
   useTranslation,
   useI18next,
   I18nextContext,

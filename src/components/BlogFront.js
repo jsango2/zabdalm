@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import BlogCard from "./BlogCard"
 import Button from "./button"
 import { useWindowSize } from "./useWindowSize"
 import { RiArrowDropDownFill } from "react-icons/ri"
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-} from "gatsby-plugin-react-i18next"
+import { Link, useTranslation } from "gatsby-plugin-react-i18next"
 import MeniMobileBlog from "./MeniMobileBlog"
 import BlogPostCards from "./BlogPostCards"
 
@@ -59,7 +53,7 @@ function BlogFront({ blogovi }) {
   const size = useWindowSize()
 
   // console.log("data", data)
-  var queryData = blogovi.wpgraphql.blogovi.edges
+  // var queryData = blogovi.wpgraphql.blogovi.edges
   // useEffect(() => {
   //   size.width < 750
   //     ? setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 4))

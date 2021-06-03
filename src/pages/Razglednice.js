@@ -1,17 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-  I18nextContext,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
 import { GoInfo } from "react-icons/go"
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
 // import Geocoder from "react-mapbox-gl-geocoder"
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"
-import Layout from "../components/layout"
 import styled from "styled-components"
 // import { CgMenuGridR } from "react-icons/cg"
 import firebase from "gatsby-plugin-firebase"
@@ -19,8 +12,6 @@ import firebase from "gatsby-plugin-firebase"
 import "mapbox-gl/dist/mapbox-gl.css"
 import "@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
-import Flickr from "flickr-sdk"
-import flag from "../../content/assets/flag.png"
 import camera1 from "../../content/assets/camera1.png"
 // import { withTheme } from "styled-components"
 import SliderGodina from "../components/SliderGodina"
@@ -31,10 +22,8 @@ import { useWindowSize } from "../components/useWindowSize"
 // import GooglePhotos from "../components/testGooglePhotosApi"
 // import FirebaseData from "../components/testGooglePhotosApi"
 import Header from "./../components/header"
-import Footer from "./../components/footer"
-import { Popup } from "mapbox-gl"
+
 import InfoBlock from "../components/InfoBlock"
-import { uniqBy } from "lodash"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
@@ -67,38 +56,38 @@ const InfoWrap = styled.div`
 
 function Razglednice({ data }) {
   const { t } = useTranslation()
-  const { languages, changeLanguage } = useI18next()
+  // const { languages, changeLanguage } = useI18next()
   const size = useWindowSize()
   const mapContainer = useRef()
   const [value, setValue] = useState([1889, 1970])
   const [value2, setValue2] = useState([1890, 1970])
-  const [YearFilteredFeaturedArr, setYearFilteredFeaturedArr] = useState([])
+  // const [YearFilteredFeaturedArr, setYearFilteredFeaturedArr] = useState([])
   const [innerHeight, setInnerHeight] = useState(null)
   const [lng, setLng] = useState(16.7469)
   const [lat, setLat] = useState(42.7781)
   const [zoom, setZoom] = useState(6.03)
   const [hasPoints, setHasPoints] = useState(false)
-  const [pages, setPages] = useState()
-  const [airports, setAirports] = useState([])
-  const [array, setArray] = useState([])
+  // const [pages, setPages] = useState()
+  // const [airports, setAirports] = useState([])
+  // const [array, setArray] = useState([])
   const [item, setItem] = useState([])
-  const [loader, setLoader] = useState(false)
+  // const [loader, setLoader] = useState(false)
   const [featuresArr, setFeaturesArr] = useState([])
   const [show, setShow] = useState(false)
   const [popupFrame, setPopupFrame] = useState(null)
   const [popupOn, setPopupOn] = useState(false)
-  const [thumbOn, setThumbOn] = useState(false)
-  const [flickr, setFlickr] = useState([])
+  // const [thumbOn, setThumbOn] = useState(false)
+  // const [flickr, setFlickr] = useState([])
   const [geoData, setGeoData] = useState([])
   const [geoData2, setGeoData2] = useState([])
-  const [FlickrDataTest, setFlickrDataTest] = useState([])
+  // const [FlickrDataTest, setFlickrDataTest] = useState([])
   const [isOpen, setIsOpen] = useState(false)
-  const [slike, setSlike] = useState([])
-  const [listData, setListData] = useState([])
+  // const [slike, setSlike] = useState([])
+  // const [listData, setListData] = useState([])
   const context = React.useContext(I18nextContext)
   const [lang, setLang] = useState(context.language)
 
-  var flickrs = new Flickr("fd4a1bda8ebe5a6c92d2e206c9df0e16")
+  // var flickrs = new Flickr("fd4a1bda8ebe5a6c92d2e206c9df0e16")
 
   // useEffect(() => {
   //   var ref = firebase.database().ref("/")

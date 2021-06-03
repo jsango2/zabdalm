@@ -52,7 +52,7 @@ const PressLi = styled.div`
   line-height: 17px;
   margin: 10px 5px;
 
-  & > a{
+  & > a {
     color: #000;
   }
 `
@@ -87,7 +87,7 @@ const Press = ({ data }) => {
       return <PressUl>{listItems}</PressUl>
     } else {
       const listItems = data.wpgraphql.pressObjave.edges.map(item => (
-        <PressLi>
+        <PressLi key={item.node.pressObjavaHr}>
           <Dot />
           <a
             href={
@@ -119,7 +119,6 @@ const Press = ({ data }) => {
       </div>
 
       <PressList />
-
     </Wrap>
   )
 }
