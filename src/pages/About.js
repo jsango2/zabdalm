@@ -250,7 +250,32 @@ export const query = graphql`
         }
       }
     }
+
     wpgraphql {
+      komentari {
+        edges {
+          node {
+            komentariIRecenzije {
+              autorKomentaraEng
+              autorKomentaraHr
+              komentarIliRecenzijaEng
+              komentarRecenzijaHr
+            }
+          }
+        }
+      }
+      pressObjave {
+        edges {
+          node {
+            pressObjaveWp {
+              poveznicaZaKlik
+              pressObjavaEng
+              pressObjavaHr
+            }
+            databaseId
+          }
+        }
+      }
       blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
         edges {
           node {
