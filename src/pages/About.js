@@ -233,8 +233,165 @@ const PressSection = styled.div`
 // }
 
 const About = ({ data }) => {
-  //
-  return <div>about test</div>
+  const reviews = data.wpgraphql.komentari.edges
+  const items = []
+
+  if (data.locales.edges[0].node.language == "hr") {
+    reviews.forEach(review => {
+      items.push(
+        <OthersRemark className="OthersSayItem" data-value="1">
+          {review.node.komentariIRecenzije.komentarRecenzijaHr}
+          <OthersBy>
+            {review.node.komentariIRecenzije.autorKomentaraHr}
+          </OthersBy>
+        </OthersRemark>
+      )
+    })
+  } else {
+    reviews.forEach(review => {
+      items.push(
+        <OthersRemark className="OthersSayItem" data-value="1">
+          {review.node.komentariIRecenzije.komentarIliRecenzijaEng}
+          <OthersBy>
+            {review.node.komentariIRecenzije.autorKomentaraEng}
+          </OthersBy>
+        </OthersRemark>
+      )
+    })
+  }
+
+  const { t } = useTranslation()
+  const { languages, changeLanguage } = useI18next()
+  const [current, setCurrent] = useState(0)
+
+  const [dots, setDots] = useState(true)
+
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  })
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+      makeDotsVisible(window.innerWidth)
+    }
+    window.addEventListener("resize", handleResize)
+    handleResize()
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  const makeDotsVisible = width => {
+    if (width < 950) {
+      setDots(false)
+    } else {
+      setDots(true)
+    }
+  }
+
+  const handleClick = (e, id) => {
+    current === id ? setCurrent(null) : setCurrent(id)
+  }
+
+  const [mainIndex, setMainIndex] = useState(0)
+  const [mainAnimation, setMainAnimation] = useState(false)
+  const [thumbIndex, setThumbIndex] = useState(0)
+  const [thumbAnimation, setThumbAnimation] = useState(false)
+  const [thumbs] = useState(
+    thumbItems(items, [setThumbIndex, setThumbAnimation])
+  )
+
+  const slideNext = () => {
+    if (!thumbAnimation && thumbIndex < thumbs.length - 1) {
+      setThumbAnimation(true)
+      setThumbIndex(thumbIndex + 1)
+    }
+  }
+
+  const slidePrev = () => {
+    if (!thumbAnimation && thumbIndex > 0) {
+      setThumbAnimation(true)
+      setThumbIndex(thumbIndex - 1)
+    }
+  }
+
+  const syncThumbs = e => {
+    setThumbIndex(e.item)
+    setThumbAnimation(false)
+
+    if (!mainAnimation) {
+      setMainIndex(e.item)
+    }
+  }
+
+  return (
+    <Layout>
+      <OKnjiziIntro />
+
+      <KolazWrapper>
+        <KolazAnimation />
+      </KolazWrapper>
+
+      <OMonografiji />
+
+      <KnjigeSection>
+        <Knjige750>
+          <Knjiga1>
+            <img src={Knjiga} alt="knjiga" />
+          </Knjiga1>
+          <Knjiga2>
+            <img src={Knjiga} alt="knjiga" />
+          </Knjiga2>
+        </Knjige750>
+        <UlomakKnjige>
+          <img src={Ulomak} width="100%" alt="ulomak" />
+        </UlomakKnjige>
+      </KnjigeSection>
+
+      <AlkarAnimation />
+
+      <OthersSection>
+        <OthersTitle>
+          <OthersLineLeft />
+          <MiddleTitle>Drugi o knjizi</MiddleTitle>
+          <OthersLineRight />
+        </OthersTitle>
+
+        <OthersSay>
+          <div className="btn-prev" onClick={slidePrev}>
+            <img src={Arrow} alt="arrow" />
+          </div>
+          <AliceCarousel
+            activeIndex={thumbIndex}
+            autoWidth
+            disableDotsControls={dots}
+            disableButtonsControls
+            items={thumbs}
+            mouseTracking={false}
+            onSlideChanged={syncThumbs}
+            touchTracking={!mainAnimation}
+          />
+
+          <div className="btn-next" onClick={slideNext}>
+            <img src={Arrow} alt="arrow" />
+          </div>
+        </OthersSay>
+      </OthersSection>
+
+      <KnjigaWrapper>
+        <KnjigaAnimation />
+        <Ulomak2Wrap>
+          <img src={Ulomak} width="100%" alt="ulomak" />
+        </Ulomak2Wrap>
+      </KnjigaWrapper>
+
+      {/* <Press data={data} /> */}
+
+      {/* <OKnjiziBlogFront blogovi={data.wpgraphql.blogovi.edges} /> */}
+    </Layout>
+  )
 }
 
 export default About
@@ -250,7 +407,6 @@ export const query = graphql`
         }
       }
     }
-
     wpgraphql {
       komentari {
         edges {
@@ -276,35 +432,36 @@ export const query = graphql`
           }
         }
       }
-      blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
-        edges {
-          node {
-            blog_graphql {
-              istaknutaFotografijaNaBlogu {
-                sourceUrl
-              }
-              naslovBlogaEng
-              naslovBlogaHr
-              tekstBlogaEng
-              tekstBlogaHr
-              tekstSponzorira
-              tekstSponzoriraEng
-              logoSponzora {
-                sourceUrl
-              }
-            }
-            categories {
-              edges {
-                node {
-                  name
-                }
-              }
-            }
-            slug
-            databaseId
-          }
-        }
-      }
     }
   }
 `
+
+// blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
+//   edges {
+//     node {
+//       blog_graphql {
+//         istaknutaFotografijaNaBlogu {
+//           sourceUrl
+//         }
+//         naslovBlogaEng
+//         naslovBlogaHr
+//         tekstBlogaEng
+//         tekstBlogaHr
+//         tekstSponzorira
+//         tekstSponzoriraEng
+//         logoSponzora {
+//           sourceUrl
+//         }
+//       }
+//       categories {
+//         edges {
+//           node {
+//             name
+//           }
+//         }
+//       }
+//       slug
+//       databaseId
+//     }
+//   }
+// }
