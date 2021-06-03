@@ -72,7 +72,7 @@ const Press = ({ data }) => {
   function PressList() {
     if (data.locales.edges[0].node.language === "hr") {
       const listItems = data.wpgraphql.pressObjave.edges.map(item => (
-        <PressLi key={item.node.pressObjave.pressObjavaHr}>
+        <PressLi key={item.node.databaseId}>
           <Dot />
           <a
             href={
@@ -88,7 +88,7 @@ const Press = ({ data }) => {
       return <PressUl>{listItems}</PressUl>
     } else {
       const listItems = data.wpgraphql.pressObjave.edges.map(item => (
-        <PressLi key={item.node.pressObjavaHr}>
+        <PressLi key={item.node.databaseId}>
           <Dot />
           <a
             href={

@@ -173,7 +173,6 @@ const BlogPost = ({ data }) => {
   const [lang, setLang] = useState(context.language)
   // ------visibility lazy loading------------
   // --------------------------------------
-  console.log(data)
 
   const interactivity = {
     mode: "scroll",
@@ -359,7 +358,7 @@ const BlogPost = ({ data }) => {
           }}
         >
           {data.wpgraphql.blogovi.edges.slice(0, 3).map(blog => (
-            <BlogCard blogs={blog} />
+            <BlogCard key={blog.node.databaseId} blogs={blog} />
           ))}
         </div>
       </Layout>
@@ -405,6 +404,7 @@ export const query = graphql`
               }
             }
             slug
+            databaseId
           }
         }
       }

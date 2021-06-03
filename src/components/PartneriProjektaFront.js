@@ -164,7 +164,7 @@ function PartneriProjektaFront({ data }) {
           {data.partneriProjekta.edges.map(partner => (
             <a
               href={partner.node.partneriProjekta.weblinkpartnerprojekta}
-              key={partner.node.title}
+              key={partner.node.id}
             >
               <WrapSponzorSlider className="WrapSponzorSlider">
                 {" "}

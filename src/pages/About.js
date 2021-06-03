@@ -428,6 +428,7 @@ export const query = graphql`
               pressObjavaEng
               pressObjavaHr
             }
+            databaseId
           }
         }
       }
