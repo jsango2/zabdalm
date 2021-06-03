@@ -77,14 +77,19 @@ module.exports = {
     //     hashtags: true
     //   },
     // },
+    // {
+    //   resolve: `gatsby-source-instagram-all`,
+    //   options: {
+    //     access_token:
+    //       "IGQVJYMk9RZAHZArREtqanNsRGpNRU5iQjEyQjRteVVhbHpqeVA5WW1ZAWjdHZA3pBOGRzQVBlQzE1Y2htVTJ0MWw4bFlOSmppa0VCalRzU29nX2NNTHlEY2xZAeVVlQk9GV3JfeFVLNmw0eGJWZAEh6WTVqdQZDZD",
+    //   },
+    // },
     {
-      resolve: `gatsby-source-instagram-all`,
+      resolve: `gatsby-source-instagram`,
       options: {
-        access_token:
-          "IGQVJYMk9RZAHZArREtqanNsRGpNRU5iQjEyQjRteVVhbHpqeVA5WW1ZAWjdHZA3pBOGRzQVBlQzE1Y2htVTJ0MWw4bFlOSmppa0VCalRzU29nX2NNTHlEY2xZAeVVlQk9GV3JfeFVLNmw0eGJWZAEh6WTVqdQZDZD",
+        username: `15057996446`,
       },
     },
-
     {
       resolve: `gatsby-plugin-react-i18next`,
       options: {

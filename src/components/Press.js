@@ -69,41 +69,41 @@ const Dot = styled.div`
 
 const Press = ({ data }) => {
   console.log(data.wpgraphql.pressObjave.edges)
-  function PressList() {
-    if (data.locales.edges[0].node.language === "hr") {
-      const listItems = data.wpgraphql.pressObjave.edges.map(item => (
-        <PressLi key={item.node.databaseId}>
-          <Dot />
-          <a
-            href={
-              item.node.pressObjaveWp.poveznicaZaKlik !== undefined
-                ? item.node.pressObjaveWp.poveznicaZaKlik
-                : ""
-            }
-          >
-            {item.node.pressObjaveWp.pressObjavaHr}
-          </a>
-        </PressLi>
-      ))
-      return <PressUl>{listItems}</PressUl>
-    } else {
-      const listItems = data.wpgraphql.pressObjave.edges.map(item => (
-        <PressLi key={item.node.databaseId}>
-          <Dot />
-          <a
-            href={
-              item.node.pressObjaveWp.poveznicaZaKlik !== undefined
-                ? item.node.pressObjaveWp.poveznicaZaKlik
-                : ""
-            }
-          >
-            {item.node.pressObjaveWp.pressObjavaEng}
-          </a>
-        </PressLi>
-      ))
-      return <PressUl>{listItems}</PressUl>
-    }
-  }
+  // function PressList() {
+  //   if (data.locales.edges[0].node.language === "hr") {
+  //     const listItems = data.wpgraphql.pressObjave.edges.map(item => (
+  //       <PressLi key={item.node.databaseId}>
+  //         <Dot />
+  //         <a
+  //           href={
+  //             item.node.pressObjaveWp.poveznicaZaKlik !== undefined
+  //               ? item.node.pressObjaveWp.poveznicaZaKlik
+  //               : ""
+  //           }
+  //         >
+  //           {item.node.pressObjaveWp.pressObjavaHr}
+  //         </a>
+  //       </PressLi>
+  //     ))
+  //     return <PressUl>{listItems}</PressUl>
+  //   } else {
+  //     const listItems = data.wpgraphql.pressObjave.edges.map(item => (
+  //       <PressLi key={item.node.databaseId}>
+  //         <Dot />
+  //         <a
+  //           href={
+  //             item.node.pressObjaveWp.poveznicaZaKlik !== undefined
+  //               ? item.node.pressObjaveWp.poveznicaZaKlik
+  //               : ""
+  //           }
+  //         >
+  //           {item.node.pressObjaveWp.pressObjavaEng}
+  //         </a>
+  //       </PressLi>
+  //     ))
+  //     return <PressUl>{listItems}</PressUl>
+  //   }
+  // }
   return (
     <Wrap>
       <div
@@ -119,7 +119,7 @@ const Press = ({ data }) => {
         <Linija />
       </div>
 
-      <PressList />
+      {/* <PressList /> */}
     </Wrap>
   )
 }
