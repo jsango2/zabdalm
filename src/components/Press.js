@@ -68,10 +68,11 @@ const Dot = styled.div`
 `
 
 const Press = ({ data }) => {
+  console.log(data.wpgraphql.pressObjave.edges)
   function PressList() {
-    if (data.locales.edges[0].node.language == "hr") {
+    if (data.locales.edges[0].node.language === "hr") {
       const listItems = data.wpgraphql.pressObjave.edges.map(item => (
-        <PressLi>
+        <PressLi key={item.node.pressObjave.pressObjavaHr}>
           <Dot />
           <a
             href={
