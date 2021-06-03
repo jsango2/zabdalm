@@ -92,8 +92,8 @@ const Press = ({ data }) => {
           <Dot />
           <a
             href={
-              item.node.pressObjaveWp.poveznicaZaKlik
-                ? item.node.pressObjaveWP.poveznicaZaKlik
+              item.node.pressObjaveWp.poveznicaZaKlik !== undefined
+                ? item.node.pressObjaveWp.poveznicaZaKlik
                 : ""
             }
           >

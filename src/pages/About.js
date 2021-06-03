@@ -457,6 +457,7 @@ export const query = graphql`
               }
             }
             slug
+            databaseId
           }
         }
       }
