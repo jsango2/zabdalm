@@ -6,7 +6,7 @@ module.exports = {
       summary: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
     },
     description: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
-    siteUrl: `http://www.zaboravljenadalmacija.hr`,
+    siteUrl: "https://zabdalm.vercel.app",
     image: "/seoPhoto.png",
     keywords:
       "Građevinski radovi, Ugljan, Pašman, Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi, Građevina na otocima, Izgradnja kuća, Otočki proizvod, Izgradnja, bazen",
@@ -92,7 +92,7 @@ module.exports = {
         languages: [`en`, `hr`],
         defaultLanguage: `hr`,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `http://localhost:8000`,
+        siteUrl: `https://zabdalm.vercel.app`,
         // you can pass any i18next options
         // pass following options to allow message content as a key
         i18nextOptions: {
@@ -231,7 +231,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `https://www.zaboravljenadalmacija.hr`,
+        siteUrl: `https://zabdalm.vercel.app`,
       },
     },
   ],
