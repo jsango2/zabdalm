@@ -423,7 +423,7 @@ export const query = graphql`
       pressObjave {
         edges {
           node {
-            pressObjave {
+            pressObjaveWp {
               poveznicaZaKlik
               pressObjavaEng
               pressObjavaHr
