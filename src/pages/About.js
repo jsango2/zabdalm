@@ -251,6 +251,19 @@ export const query = graphql`
       }
     }
     wpgraphql {
+      komentari {
+        edges {
+          node {
+            komentariIRecenzije {
+              autorKomentaraEng
+              autorKomentaraHr
+              komentarIliRecenzijaEng
+              komentarRecenzijaHr
+            }
+          }
+        }
+      }
+
       blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
         edges {
           node {
