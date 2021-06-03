@@ -99,7 +99,6 @@ const WrapLottie = styled.div`
 function PartneriProjektaFront({ data }) {
   const [t, i18n] = useTranslation()
   const size = useWindowSize()
-  console.log(data)
   let settings = {}
   let interactivity = {}
   if (size.width > 750) {

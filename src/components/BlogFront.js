@@ -65,7 +65,6 @@ function BlogFront({ blogovi }) {
   //     ? setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 4))
   //     : setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 6))
   // }, [])
-  console.log(size, "query", query)
   useEffect(() => {
     if (kategorija === "SVE") {
       // setQuery(
@@ -198,7 +197,6 @@ function BlogFront({ blogovi }) {
           <BlogPostCards blogovi={query.slice(0, 6)} />
         )}
 
-        {console.log(blogovi)}
         {/* </div> */}
         <ButtonWrap>
           <Link to="/Blog">

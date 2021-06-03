@@ -66,6 +66,24 @@ module.exports = {
         name: `locale`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     username: `@zaboravljena_dalmacija`,
+    //     access_token: "IGQVJYMk9RZAHZArREtqanNsRGpNRU5iQjEyQjRteVVhbHpqeVA5WW1ZAWjdHZA3pBOGRzQVBlQzE1Y2htVTJ0MWw4bFlOSmppa0VCalRzU29nX2NNTHlEY2xZAeVVlQk9GV3JfeFVLNmw0eGJWZAEh6WTVqdQZDZD",
+    //     instagram_id: "zaboravljena_dalmacija",
+    //     paginate: 100,
+    //     maxPosts: 1000,
+    //     hashtags: true
+    //   },
+    // },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token:
+          "IGQVJYMk9RZAHZArREtqanNsRGpNRU5iQjEyQjRteVVhbHpqeVA5WW1ZAWjdHZA3pBOGRzQVBlQzE1Y2htVTJ0MWw4bFlOSmppa0VCalRzU29nX2NNTHlEY2xZAeVVlQk9GV3JfeFVLNmw0eGJWZAEh6WTVqdQZDZD",
+      },
+    },
 
     {
       resolve: `gatsby-plugin-react-i18next`,

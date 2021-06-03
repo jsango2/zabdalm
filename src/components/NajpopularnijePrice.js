@@ -83,7 +83,6 @@ function NajpopularnijePrice({ data }) {
   const [sortiranePricePoCitanosti, setSortiranePricePoCitanosti] = useState([])
 
   const [t, i18n] = useTranslation()
-  console.log(data)
   //___________________ sljedeća operacija spaja firestore brojač klikova i wpgraphql podatke u jedan array_____________
   //____sortiraj RESULT i renderiraj za najpročitanije priče poredano po BROJ KLIKOVA-----------------
 
