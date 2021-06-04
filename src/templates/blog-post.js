@@ -10,6 +10,7 @@ import {
 import Lottie from "lottie-react"
 import animation1152 from "../animations/val/val2"
 import BlogCard from "../components/BlogCard"
+import BlogPostCards from "../components/BlogPostCards"
 
 // import SEO from "../components/seo"
 
@@ -166,6 +167,7 @@ const BlogContentWrap = styled.div`
 `
 
 const BlogPost = ({ data }) => {
+  console.log(data)
   const { languages, changeLanguage } = useI18next()
   const [t] = useTranslation()
   const [categorie, setCategorie] = useState("")
@@ -349,18 +351,8 @@ const BlogPost = ({ data }) => {
           <NaslovBlog>BLOG</NaslovBlog>
           <Linija />
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            flexWrap: "wrap",
-            marginBottom: "62px",
-          }}
-        >
-          {data.wpgraphql.blogovi.edges.slice(0, 3).map(bloger => (
-            <BlogCard key={bloger.node.databaseId} blogs={bloger} />
-          ))}
-        </div>
+
+        <BlogPostCards blogovi={data.wpgraphql.blogovi.edges.slice(0, 3)} />
       </Layout>
     </>
   )
@@ -404,6 +396,36 @@ export const query = graphql`
           }
           logoSponzora {
             sourceUrl
+          }
+        }
+      }
+      blogovi {
+        edges {
+          node {
+            blog_graphql {
+              istaknutaFotografijaNaBlogu {
+                sourceUrl
+              }
+              naslovBlogaEng
+              naslovBlogaHr
+              tekstBlogaEng
+              tekstBlogaHr
+              tekstSponzorira
+              tekstSponzoriraEng
+              logoSponzora {
+                sourceUrl
+              }
+            }
+
+            categories {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+            slug
+            databaseId
           }
         }
       }

@@ -453,3 +453,15 @@ export const query = graphql`
     }
   }
 `
+// pressObjave {
+//   edges {
+//     node {
+//       pressObjaveWp {
+//         poveznicaZaKlik
+//         pressObjavaEng
+//         pressObjavaHr
+//       }
+//       databaseId
+//     }
+//   }
+// }
