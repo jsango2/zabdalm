@@ -420,6 +420,36 @@ export const query = graphql`
           }
         }
       }
+
+      blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
+        edges {
+          node {
+            blog_graphql {
+              istaknutaFotografijaNaBlogu {
+                sourceUrl
+              }
+              naslovBlogaEng
+              naslovBlogaHr
+              tekstBlogaEng
+              tekstBlogaHr
+              tekstSponzorira
+              tekstSponzoriraEng
+              logoSponzora {
+                sourceUrl
+              }
+            }
+            categories {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+            slug
+            databaseId
+          }
+        }
+      }
     }
   }
 `
