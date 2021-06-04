@@ -221,16 +221,16 @@ const PressSection = styled.div`
   height: 400px;
 `
 
-// const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
-//   return items.map((item, i) => (
-//     <div
-//       className="thumb"
-//       onClick={() => (setThumbIndex(i), setThumbAnimation(true))}
-//     >
-//       {item}
-//     </div>
-//   ))
-// }
+const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
+  return items.map((item, i) => (
+    <div
+      className="thumb"
+      onClick={() => (setThumbIndex(i), setThumbAnimation(true))}
+    >
+      {item}
+    </div>
+  ))
+}
 
 const About = ({ data }) => {
   const reviews = data.wpgraphql.komentari.edges
@@ -387,9 +387,9 @@ const About = ({ data }) => {
         </Ulomak2Wrap>
       </KnjigaWrapper>
 
-      {/* <Press data={data} /> */}
+      <Press data={data} />
 
-      {/* <OKnjiziBlogFront blogovi={data.wpgraphql.blogovi.edges} /> */}
+      <OKnjiziBlogFront blogovi={data.wpgraphql.blogovi.edges} />
     </Layout>
   )
 }
@@ -417,6 +417,18 @@ export const query = graphql`
               komentarIliRecenzijaEng
               komentarRecenzijaHr
             }
+          }
+        }
+      }
+      pressObjave {
+        edges {
+          node {
+            pressObjaveWp {
+              poveznicaZaKlik
+              pressObjavaEng
+              pressObjavaHr
+            }
+            databaseId
           }
         }
       }
@@ -452,5 +464,3 @@ export const query = graphql`
     }
   }
 `
-
-// PROBAJ RJEŠITI DA NEMA ISTIH PAGE QUERIES SA VIŠE STRANICA
