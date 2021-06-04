@@ -349,7 +349,7 @@ const BlogPost = ({ data }) => {
           <NaslovBlog>BLOG</NaslovBlog>
           <Linija />
         </div>
-        <div
+        {/* <div
           style={{
             display: "flex",
             justifyContent: "space-around",
@@ -360,7 +360,7 @@ const BlogPost = ({ data }) => {
           {data.wpgraphql.blogovi.edges.slice(0, 3).map(bloger => (
             <BlogCard key={bloger.node.databaseId} blogs={bloger} />
           ))}
-        </div>
+        </div> */}
       </Layout>
     </>
   )
@@ -378,36 +378,6 @@ export const query = graphql`
       }
     }
     wpgraphql {
-      blogovi {
-        edges {
-          node {
-            blog_graphql {
-              istaknutaFotografijaNaBlogu {
-                sourceUrl
-              }
-              naslovBlogaEng
-              naslovBlogaHr
-              tekstBlogaEng
-              tekstBlogaHr
-              tekstSponzorira
-              tekstSponzoriraEng
-              logoSponzora {
-                sourceUrl
-              }
-            }
-
-            categories {
-              edges {
-                node {
-                  name
-                }
-              }
-            }
-            slug
-            databaseId
-          }
-        }
-      }
       blog(id: $slug, idType: SLUG) {
         title
         categories {
