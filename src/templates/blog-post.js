@@ -357,8 +357,8 @@ const BlogPost = ({ data }) => {
             marginBottom: "62px",
           }}
         >
-          {data.wpgraphql.blogovi.edges.slice(0, 3).map(blog => (
-            <BlogCard key={blog.node.databaseId} blogs={blog} />
+          {data.wpgraphql.blogovi.edges.slice(0, 3).map(bloger => (
+            <BlogCard key={bloger.node.databaseId} blogs={bloger} />
           ))}
         </div>
       </Layout>
