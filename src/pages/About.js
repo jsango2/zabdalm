@@ -389,7 +389,7 @@ const About = ({ data }) => {
 
       <Press data={data} />
 
-      <OKnjiziBlogFront blogovi2={data.wpgraphql.blogovi.edges} />
+      {/* <OKnjiziBlogFront blogovi2={data.wpgraphql.blogovi.edges} /> */}
     </Layout>
   )
 }
@@ -428,35 +428,6 @@ export const query = graphql`
               pressObjavaEng
               pressObjavaHr
             }
-            databaseId
-          }
-        }
-      }
-      blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
-        edges {
-          node {
-            blog_graphql {
-              istaknutaFotografijaNaBlogu {
-                sourceUrl
-              }
-              naslovBlogaEng
-              naslovBlogaHr
-              tekstBlogaEng
-              tekstBlogaHr
-              tekstSponzorira
-              tekstSponzoriraEng
-              logoSponzora {
-                sourceUrl
-              }
-            }
-            categories {
-              edges {
-                node {
-                  name
-                }
-              }
-            }
-            slug
             databaseId
           }
         }
