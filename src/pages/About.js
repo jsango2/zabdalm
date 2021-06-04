@@ -387,7 +387,7 @@ const About = ({ data }) => {
         </Ulomak2Wrap>
       </KnjigaWrapper>
 
-      <Press data={data} />
+      {/* <Press data={data} /> */}
 
       {/* <OKnjiziBlogFront blogovi2={data.wpgraphql.blogovi.edges} /> */}
     </Layout>
@@ -417,18 +417,6 @@ export const query = graphql`
               komentarIliRecenzijaEng
               komentarRecenzijaHr
             }
-          }
-        }
-      }
-      pressObjave {
-        edges {
-          node {
-            pressObjaveWp {
-              poveznicaZaKlik
-              pressObjavaEng
-              pressObjavaHr
-            }
-            databaseId
           }
         }
       }
