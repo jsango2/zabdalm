@@ -389,7 +389,7 @@ const About = ({ data }) => {
 
       <Press data={data} />
 
-      <OKnjiziBlogFront blogovi={data.wpgraphql.blogovi.edges} />
+      <OKnjiziBlogFront blogovi2={data.wpgraphql.blogovi.edges} />
     </Layout>
   )
 }

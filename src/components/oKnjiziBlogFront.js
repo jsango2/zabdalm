@@ -36,11 +36,8 @@ const Linija = styled.div`
   }
 `
 
-function OKnjiziBlogFront({ blogovi }) {
+function OKnjiziBlogFront({ blogovi2 }) {
   const [t, i18n] = useTranslation()
-
-  console.log(blogovi)
-
 
   const [current, setCurrent] = useState(0)
   const size = useWindowSize()
@@ -64,7 +61,7 @@ function OKnjiziBlogFront({ blogovi }) {
           <Linija />
         </div>
 
-        <BlogPostCards blogovi={blogovi} />
+        <BlogPostCards blogovi={blogovi2} />
       </Wrap>
     </>
   )
