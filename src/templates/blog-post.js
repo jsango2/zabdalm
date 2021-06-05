@@ -350,7 +350,7 @@ const BlogPost = ({ data }) => {
           <Linija />
         </div>
 
-        <BlogPostCards blogovi={data.wpgraphql.blogovi.edges.slice(0, 3)} />
+        {/* <BlogPostCards blogovi={data.wpgraphql.blogovi.edges.slice(0, 3)} /> */}
       </Layout>
     </>
   )
