@@ -8,9 +8,45 @@ import animation1152 from "../animations/val/val2"
 import BlogCard from "../components/BlogCard"
 import BlogPostCards from "../components/BlogPostCards"
 import i18next from "i18next"
+import { Link } from "gatsby"
 
 // import SEO from "../components/seo"
+const Wrap2 = styled.div`
+  ${"" /* background-color: grey; */}
+  position: relative;
+  width: 342px;
+  height: 323px;
+  margin-bottom: 34px;
+  @media only screen and (max-width: 350px) {
+    min-width: 300px;
+  }
+`
+const Kategorija2 = styled.div`
+  ${"" /* background-color: grey; */}
+  font-family: Amiri;
+  font-size: 10px;
+  color: #676767;
+  text-align: left;
 
+  @media only screen and (max-width: 700px) {
+    text-align: center;
+  }
+`
+const CardText = styled.div`
+  ${"" /* background-color: grey; */}
+  font-family: Raleway;
+  font-size: 15px;
+  line-height: 23px;
+  margin-top: 12px;
+  font-weight: 500;
+  color: #676767;
+  text-align: left;
+
+  @media only screen and (max-width: 700px) {
+    width: 95%;
+    text-align: center;
+  }
+`
 const Wrap = styled.div`
   display: -webkit-box;
   display: -webkit-flex;
@@ -351,6 +387,71 @@ const BlogPost = ({ data }) => {
         </div>
 
         {/* <BlogPostCards blogovi={data.wpgraphql.blogovi.edges.slice(0, 3)} /> */}
+        {/* <BlogCard blogs={blog} key={blog.node.databaseId} /> */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            flexWrap: "wrap",
+            marginBottom: "62px",
+          }}
+        >
+          {data.wpgraphql.blogovi.edges.slice(0, 3).map(blog => (
+            <>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={`/Blog/${blog.node.slug}`}
+              >
+                <Wrap2>
+                  {blog &&
+                    blog &&
+                    (i18next.language === "hr" ? (
+                      <>
+                        <Kategorija2>
+                          {blog.node.categories.edges[0].node.name ===
+                          "ISTAKNUTA PRIČA"
+                            ? blog.node.categories.edges[1].node.name
+                            : blog.node.categories.edges[0].node.name}
+                        </Kategorija2>
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "233px",
+                            backgroundColor: "grey",
+                            backgroundImage: `url(${blog.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
+                            backgroundPosition: "left",
+                            backgroundSize: "cover ",
+                            backgroundRepeat: "no-repeat",
+                          }}
+                        ></div>
+                        <CardText>
+                          {blog.node.blog_graphql.naslovBlogaHr}
+                        </CardText>
+                      </>
+                    ) : (
+                      <>
+                        <Kategorija2>{categorie}</Kategorija2>
+                        <div
+                          style={{
+                            width: "100%",
+                            height: "233px",
+                            backgroundColor: "grey",
+                            backgroundImage: `url(${blog.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
+                            backgroundPosition: "left",
+                            backgroundSize: "cover ",
+                            backgroundRepeat: "no-repeat",
+                          }}
+                        ></div>
+                        <CardText>
+                          {blog.node.blog_graphql.naslovBlogaEng}
+                        </CardText>
+                      </>
+                    ))}
+                </Wrap2>
+              </Link>
+            </>
+          ))}
+        </div>
       </Layout>
     </>
   )

@@ -77,32 +77,28 @@ function BlogCard({ blogs }) {
     }
   }, [i18next.language])
 
-  const handleBlogCardClick = async () => {
-    let document = await firebase
-      .firestore()
-      .collection("broj klikova")
-      .doc(blogs.node.slug)
-      .get()
-    if (document && document.exists) {
-      await firebase
-        .firestore()
-        .collection("broj klikova")
-        .doc(blogs.node.slug)
-        .update({ broj: firebase.firestore.FieldValue.increment(1) })
-    } else {
-      await firebase
-        .firestore()
-        .collection("broj klikova")
-        .doc(blogs.node.slug)
-        .set({ broj: 1 })
-    }
-  }
+  // const handleBlogCardClick = async () => {
+  //   let document = await firebase
+  //     .firestore()
+  //     .collection("broj klikova")
+  //     .doc(blogs.node.slug)
+  //     .get()
+  //   if (document && document.exists) {
+  //     await firebase
+  //       .firestore()
+  //       .collection("broj klikova")
+  //       .doc(blogs.node.slug)
+  //       .update({ broj: firebase.firestore.FieldValue.increment(1) })
+  //   } else {
+  //     await firebase
+  //       .firestore()
+  //       .collection("broj klikova")
+  //       .doc(blogs.node.slug)
+  //       .set({ broj: 1 })
+  //   }
+  // }
   return (
-    <Link
-      style={{ textDecoration: "none" }}
-      to={`/Blog/${blogs.node.slug}`}
-      onClick={handleBlogCardClick}
-    >
+    <Link style={{ textDecoration: "none" }} to={`/Blog/${blogs.node.slug}`}>
       <Wrap>
         {blogs &&
           blogs &&
