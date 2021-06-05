@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import i18next from "i18next"
+import { useTranslation } from "react-i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -70,7 +72,7 @@ const Dot = styled.div`
 const Press = ({ data }) => {
   console.log(data.wpgraphql.pressObjave.edges)
   function PressList() {
-    if (data.locales.edges[0].node.language === "hr") {
+    if (i18next.language === "hr") {
       const listItems = data.wpgraphql.pressObjave.edges.map(item => (
         <PressLi key={item.node.databaseId}>
           <Dot />

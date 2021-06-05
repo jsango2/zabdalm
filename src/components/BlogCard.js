@@ -11,8 +11,6 @@ import { useTranslation } from "react-i18next"
 import { Link } from "gatsby"
 import i18next from "i18next"
 
-import firebase from "gatsby-plugin-firebase"
-
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   position: relative;
