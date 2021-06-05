@@ -28,6 +28,7 @@ import Rope from "../../content/assets/rope.png"
 
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
+import TriBlogPosta from "../components/TriBlogPosta"
 
 const KolazWrapper = styled.div`
   position: relative;
@@ -109,6 +110,22 @@ const UlomakKnjige = styled.div`
     top: -700px;
     left: 50vw;
     /* margin-bottom: -50vw; */
+  }
+`
+const NaslovBlog = styled.div`
+  font-family: Playfair Display;
+  font-size: 54px;
+  font-weight: 600;
+  @media only screen and (max-width: 550px) {
+    font-size: 36px;
+  }
+`
+const Linija = styled.div`
+  height: 1px;
+  width: 110px;
+  background-color: black;
+  @media only screen and (max-width: 550px) {
+    width: 65px;
   }
 `
 const OthersSection = styled.div`
@@ -391,8 +408,21 @@ const About = ({ data }) => {
       </KnjigaWrapper>
 
       {/* <Press data={data} /> */}
-
-      <OKnjiziBlogFront blogovi2={data.wpgraphql.blogovi.edges} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginTop: "61px",
+          marginBottom: "40px",
+        }}
+      >
+        <Linija />
+        <NaslovBlog>BLOG</NaslovBlog>
+        <Linija />
+      </div>
+      {/* <OKnjiziBlogFront blogovi2={data.wpgraphql.blogovi.edges} /> */}
+      <TriBlogPosta />
     </Layout>
   )
 }
@@ -411,36 +441,6 @@ export const query = graphql`
               komentarIliRecenzijaEng
               komentarRecenzijaHr
             }
-          }
-        }
-      }
-
-      blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 3) {
-        edges {
-          node {
-            blog_graphql {
-              istaknutaFotografijaNaBlogu {
-                sourceUrl
-              }
-              naslovBlogaEng
-              naslovBlogaHr
-              tekstBlogaEng
-              tekstBlogaHr
-              tekstSponzorira
-              tekstSponzoriraEng
-              logoSponzora {
-                sourceUrl
-              }
-            }
-            categories {
-              edges {
-                node {
-                  name
-                }
-              }
-            }
-            slug
-            databaseId
           }
         }
       }

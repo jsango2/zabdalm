@@ -8,6 +8,7 @@ import animation1152 from "../animations/val/val2"
 import BlogCard from "../components/BlogCard"
 import BlogPostCards from "../components/BlogPostCards"
 import i18next from "i18next"
+import TriBlogPosta from "../components/TriBlogPosta"
 
 // import SEO from "../components/seo"
 
@@ -351,18 +352,7 @@ const BlogPost = ({ data }) => {
         </div>
 
         {/* <BlogPostCards blogovi={data.wpgraphql.blogovi.edges.slice(0, 3)} /> */}
-        {/* <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            flexWrap: "wrap",
-            marginBottom: "62px",
-          }}
-        >
-          {data.wpgraphql.blogovi.edges.slice(0, 3).map(blog => (
-            <BlogCard blogs={blog} key={blog.node.databaseId} />
-          ))}
-        </div> */}
+        <TriBlogPosta />
       </Layout>
     </>
   )
@@ -397,36 +387,6 @@ export const query = graphql`
           }
           logoSponzora {
             sourceUrl
-          }
-        }
-      }
-      blogovi {
-        edges {
-          node {
-            blog_graphql {
-              istaknutaFotografijaNaBlogu {
-                sourceUrl
-              }
-              naslovBlogaEng
-              naslovBlogaHr
-              tekstBlogaEng
-              tekstBlogaHr
-              tekstSponzorira
-              tekstSponzoriraEng
-              logoSponzora {
-                sourceUrl
-              }
-            }
-
-            categories {
-              edges {
-                node {
-                  name
-                }
-              }
-            }
-            slug
-            databaseId
           }
         }
       }
