@@ -407,7 +407,7 @@ const About = ({ data }) => {
         </Ulomak2Wrap>
       </KnjigaWrapper>
 
-      {/* <Press data={data} /> */}
+      <Press data={data} />
       <div
         style={{
           display: "flex",
@@ -432,6 +432,18 @@ export default About
 export const query = graphql`
   query {
     wpgraphql {
+      pressObjave {
+        edges {
+          node {
+            pressObjaveWp {
+              poveznicaZaKlik
+              pressObjavaEng
+              pressObjavaHr
+            }
+            databaseId
+          }
+        }
+      }
       komentari {
         edges {
           node {
@@ -447,15 +459,3 @@ export const query = graphql`
     }
   }
 `
-// pressObjave {
-//   edges {
-//     node {
-//       pressObjaveWp {
-//         poveznicaZaKlik
-//         pressObjavaEng
-//         pressObjavaHr
-//       }
-//       databaseId
-//     }
-//   }
-// }
