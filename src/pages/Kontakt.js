@@ -7,7 +7,7 @@ import HeroPhoto from "../../content/assets/heroPhoto.png"
 import Trogir from "../../content/assets/trogir.jpg"
 import Etno from "../../content/assets/etno.png"
 import { graphql } from "gatsby"
-import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -132,7 +132,6 @@ function Kontakt() {
   const size = useWindowSize()
 
   const { t } = useTranslation()
-  const { languages, changeLanguage } = useI18next()
 
   return (
     <Layout>
@@ -261,16 +260,16 @@ function Kontakt() {
 
 export default Kontakt
 
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query($language: String!) {
+//     locales: allLocale(filter: { language: { eq: $language } }) {
+//       edges {
+//         node {
+//           ns
+//           data
+//           language
+//         }
+//       }
+//     }
+//   }
+// `

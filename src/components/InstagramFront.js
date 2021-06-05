@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Drnis from "../../content/assets/drnis.png"
 // import Val from "../../content/assets/valinstagram.svg"
 import Button from "./button"
+import { useTranslation } from "react-i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -115,6 +116,8 @@ const Linija = styled.div`
 `
 
 function InstagramFront() {
+  const [t, i18n] = useTranslation()
+
   const [offset, setOffset] = useState(0)
   useEffect(() => {
     function handleScroll() {
@@ -129,7 +132,7 @@ function InstagramFront() {
     <Wrap>
       <WrapNaslov>
         <Linija />
-        <Naslov>Pratite nas na Instagramu</Naslov>
+        <Naslov>{t("pratiteNasNaInstagramu")}</Naslov>
         <Linija />
       </WrapNaslov>
 
@@ -141,17 +144,13 @@ function InstagramFront() {
           marginBottom: "63px",
         }}
       ></div>
-      <Paragraf>
-        Otkupljujemo sve stare predmete iz dalmatinske povijesti! Stare
-        fotografije i razglednice, pisma, dokumente, novac, knjige, grafike i
-        mape i ostalo!!!
-      </Paragraf>
+      <Paragraf>{t("otkupljujemo")}</Paragraf>
       <ButtonWrap>
-        <Button text="KONTAKTIRAJTE NAS" color="black" />
+        <Button text={t("kontaktirajteNas")} color="black" />
       </ButtonWrap>
 
       <ButtonWrapInvisible>
-        <Button text="KONTAKTIRAJTE NAS" color="black" />
+        <Button text={t("kontaktirajteNas")} color="black" />
       </ButtonWrapInvisible>
 
       <ImgWrap className="imgWrapInstagram">

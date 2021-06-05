@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import {
-  Link,
-  useTranslation,
-  useI18next,
-  I18nextContext,
-} from "gatsby-plugin-react-i18next"
+// import {
+//   Link,
+//   useTranslation,
+//   useI18next,
+//   I18nextContext,
+// } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
+import { Link } from "gatsby"
+import i18next from "i18next"
 import Tovar from "../../content/assets/tovar.png"
 
 const WrapAll = styled.div`
@@ -31,18 +34,18 @@ const Wrap = styled.div`
 
 function MeniMobile({ handleClick, isOpen }) {
   const [current, setCurrent] = useState(1)
-  const { languages, changeLanguage } = useI18next()
+  // const { languages, changeLanguage } = useI18next()
   const [t, i18n] = useTranslation()
-  const context = React.useContext(I18nextContext)
+  // const context = React.useContext(I18nextContext)
   useEffect(() => {
-    context.language === "hr" ? setCurrent(1) : setCurrent(2)
+    i18next.language === "hr" ? setCurrent(1) : setCurrent(2)
   }, [])
   const handleClickLang = id => {
     // setKategorija(e.target.innerText)
     current === id ? setCurrent(1) : setCurrent(id)
     let lang = id === 1 ? "hr" : "en"
-    changeLanguage(lang)
-    // console.log("t", t)
+    i18n.changeLanguage(lang)
+    handleClick()
   }
   return (
     <>
@@ -64,9 +67,8 @@ function MeniMobile({ handleClick, isOpen }) {
         )}
         <Wrap className={`${isOpen ? "show-menu" : "hide-menu"} `}>
           {" "}
-          <nav className={"primary-nav-mobile-meni"}>
+          <div className={"primary-nav-mobile-meni"}>
             <Link
-              offset={100}
               to="/"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
@@ -74,7 +76,6 @@ function MeniMobile({ handleClick, isOpen }) {
               HOME
             </Link>
             <Link
-              offset={100}
               to="/About"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
@@ -82,7 +83,6 @@ function MeniMobile({ handleClick, isOpen }) {
               {t("oKnjizi")}
             </Link>
             <Link
-              offset={100}
               to="/Blog"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
@@ -90,7 +90,6 @@ function MeniMobile({ handleClick, isOpen }) {
               BLOG
             </Link>
             <Link
-              offset={100}
               to="/Razglednice"
               className="LinkHeader LinkHeaderProjekti"
               activeClassName="active"
@@ -98,19 +97,17 @@ function MeniMobile({ handleClick, isOpen }) {
               {t("razgledniceNaMapi")}
             </Link>
 
-            <Link
-              offset={100}
-              to="/#projekti"
+            <a
+              href="https://shop.zaboravljenadalmacija.hr"
               className="LinkHeader LinkHeaderProjekti"
-              activeClassName="active"
             >
               WEBSHOP
-            </Link>
+            </a>
 
             <Link to="/Kontakt" className="LinkHeader" activeClassName="active">
               {t("kontakt")}
             </Link>
-          </nav>
+          </div>
           <div
             style={{
               position: "absolute",

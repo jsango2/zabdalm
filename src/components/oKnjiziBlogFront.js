@@ -4,7 +4,7 @@ import BlogCard from "./BlogCard"
 import Button from "./button"
 import { useWindowSize } from "./useWindowSize"
 import { RiArrowDropDownFill } from "react-icons/ri"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
 import MeniMobileBlog from "./MeniMobileBlog"
 import BlogPostCards from "./BlogPostCards"
 

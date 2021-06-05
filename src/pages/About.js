@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import { graphql } from "gatsby"
+import i18next from "i18next"
 
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-} from "gatsby-plugin-react-i18next"
+// import {
+//   Link,
+//   Trans,
+//   useTranslation,
+//   useI18next,
+// } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
 
 import OKnjiziIntro from "../components/OKnjiziIntro"
 import OKnjiziBlogFront from "../components/oKnjiziBlogFront"
@@ -233,10 +235,11 @@ const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
 }
 
 const About = ({ data }) => {
+  // console.log(i18next.language)
   const reviews = data.wpgraphql.komentari.edges
   const items = []
 
-  if (data.locales.edges[0].node.language == "hr") {
+  if (i18next.language == "hr") {
     reviews.forEach(review => {
       items.push(
         <OthersRemark className="OthersSayItem" data-value="1">
@@ -261,7 +264,7 @@ const About = ({ data }) => {
   }
 
   const { t } = useTranslation()
-  const { languages, changeLanguage } = useI18next()
+  // const { languages, changeLanguage } = useI18next()
   const [current, setCurrent] = useState(0)
 
   const [dots, setDots] = useState(true)
@@ -397,16 +400,7 @@ const About = ({ data }) => {
 export default About
 
 export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
+  query {
     wpgraphql {
       komentari {
         edges {

@@ -2,12 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-} from "gatsby-plugin-react-i18next"
+// import {
+//   Link,
+//   Trans,
+//   useTranslation,
+//   useI18next,
+// } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
 
 const WrapNaslov = styled.div`
   font-family: Playfair Display;
@@ -78,7 +79,7 @@ const NaslovSideCrta = styled.div`
 
 const OKnjiziIntro = () => {
   const { t } = useTranslation()
-  const { languages, changeLanguage } = useI18next()
+  // const { languages, changeLanguage } = useI18next()
 
   return (
     <TextContainer>

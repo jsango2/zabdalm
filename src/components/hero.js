@@ -12,7 +12,8 @@ import "slick-carousel/slick/slick-theme.css"
 import { CgMenuGridR } from "react-icons/cg"
 import { useWindowSize } from "./useWindowSize"
 import { graphql } from "gatsby"
-import { useTranslation } from "gatsby-plugin-react-i18next"
+// import { useTranslation } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
 import MeniMobile from "./meniMobile"
 
 const Wrap = styled.div`

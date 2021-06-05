@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-  I18nextContext,
-} from "gatsby-plugin-react-i18next"
+// import {
+//   Link,
+//   Trans,
+//   useTranslation,
+//   useI18next,
+//   I18nextContext,
+// } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
+import { Link } from "gatsby"
+import i18next from "i18next"
+
 import firebase from "gatsby-plugin-firebase"
 
 const Wrap = styled.div`
@@ -48,15 +52,15 @@ const CardText = styled.div`
 
 function BlogCard({ blogs }) {
   // console.log(props)
-  const context = React.useContext(I18nextContext)
-  const [lang, setLang] = useState(context.language)
+  // const context = React.useContext(I18nextContext)
+  const [lang, setLang] = useState(i18next.language)
   const [categorie, setCategorie] = useState("----")
 
   useEffect(() => {
     var cat = ""
 
     if (blogs !== undefined) {
-      console.log(blogs.node.categories.edges[0].node.name)
+      // console.log(blogs.node.categories.edges[0].node.name)
 
       switch (blogs.node.categories.edges[0].node.name) {
         case "ZABORAVLJENA DALMACIJA DANAS":
@@ -71,7 +75,7 @@ function BlogCard({ blogs }) {
       }
       setCategorie(cat)
     }
-  }, [context.language])
+  }, [i18next.language])
 
   const handleBlogCardClick = async () => {
     let document = await firebase
@@ -102,7 +106,7 @@ function BlogCard({ blogs }) {
       <Wrap>
         {blogs &&
           blogs &&
-          (lang === "hr" ? (
+          (i18next.language === "hr" ? (
             <>
               <Kategorija>
                 {blogs.node.categories.edges[0].node.name === "ISTAKNUTA PRIČA"

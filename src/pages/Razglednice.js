@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-import { useTranslation, I18nextContext } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
 import { graphql } from "gatsby"
 import { GoInfo } from "react-icons/go"
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
@@ -22,6 +22,7 @@ import { useWindowSize } from "../components/useWindowSize"
 // import GooglePhotos from "../components/testGooglePhotosApi"
 // import FirebaseData from "../components/testGooglePhotosApi"
 import Header from "./../components/header"
+import i18next from "i18next"
 
 import InfoBlock from "../components/InfoBlock"
 mapboxgl.workerClass = MapboxWorker
@@ -84,9 +85,13 @@ function Razglednice({ data }) {
   const [isOpen, setIsOpen] = useState(false)
   // const [slike, setSlike] = useState([])
   // const [listData, setListData] = useState([])
-  const context = React.useContext(I18nextContext)
-  const [lang, setLang] = useState(context.language)
+  // const context = React.useContext(I18nextContext)
+  const [lang, setLang] = useState(i18next.language)
 
+  useEffect(() => {
+    setLang(i18next.language)
+    console.log(typeof i18next.language)
+  }, [i18next.language])
   // var flickrs = new Flickr("fd4a1bda8ebe5a6c92d2e206c9df0e16")
 
   // useEffect(() => {
@@ -507,7 +512,7 @@ function Razglednice({ data }) {
     // })
 
     return () => map.remove()
-  }, [geoData2])
+  }, [geoData2, lang])
   // const handleFeatureFilter = (e) => {
   // 	var value = normalize(e.target.value);
 
@@ -731,16 +736,16 @@ function Razglednice({ data }) {
 
 export default Razglednice
 
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query($language: String!) {
+//     locales: allLocale(filter: { language: { eq: $language } }) {
+//       edges {
+//         node {
+//           ns
+//           data
+//           language
+//         }
+//       }
+//     }
+//   }
+// `

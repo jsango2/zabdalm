@@ -13,6 +13,7 @@ import RazgledniceNaMapiFront from "../components/RazgledniceNaMapiFront"
 import OautoruFront from "../components/OautoruFront"
 import PartneriProjektaFront from "../components/PartneriProjektaFront"
 import InstagramFront from "../components/InstagramFront"
+import "../../i18next"
 
 const IndexPage = ({ data }) => {
   // const { t } = useTranslation()
@@ -56,16 +57,7 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
+  query {
     wpgraphql {
       partneriProjekta {
         edges {

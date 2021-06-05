@@ -97,30 +97,30 @@ module.exports = {
       },
     },
 
-    {
-      resolve: `gatsby-plugin-react-i18next`,
-      options: {
-        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`hr`, `en`],
-        defaultLanguage: `hr`,
-        // if you are using Helmet, you must include siteUrl, and make sure you add http:https
-        siteUrl: `https://localhost:8000/`,
-        // you can pass any i18next options
-        // pass following options to allow message content as a key
-        i18nextOptions: {
-          interpolation: {
-            escapeValue: false, // not needed for react as it escapes by default
-          },
-          keySeparator: false,
-          nsSeparator: false,
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-react-i18next`,
+    //   options: {
+    //     localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
+    //     languages: [`hr`, `en`],
+    //     defaultLanguage: `hr`,
+    //     // if you are using Helmet, you must include siteUrl, and make sure you add http:https
+    //     siteUrl: `https://localhost:8000/`,
+    //     // you can pass any i18next options
+    //     // pass following options to allow message content as a key
+    //     i18nextOptions: {
+    //       interpolation: {
+    //         escapeValue: false, // not needed for react as it escapes by default
+    //       },
+    //       keySeparator: false,
+    //       nsSeparator: false,
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Raleway\:300,400,500,700`,
+          `Raleway`,
           `Playfair Display\:300,400,500,700`,
           `Amiri\:400`,
 
@@ -180,20 +180,21 @@ module.exports = {
     //     policy: [{ userAgent: "*", allow: "/" }],
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-186401316-1`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId:// `UA-186401316-1`,*/
+    //     ,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          "G-XFZYT9DVNK", // Google Analytics / GA
-          "AW-CONVERSION_ID", // Google Ads / Adwords / AW
-          "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+          // "G-XFZYT9DVNK", // Google Analytics / GA
+          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
+          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
         // This object gets passed directly to the gtag config command
         // This config will be shared across all trackingIds

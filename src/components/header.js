@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react"
 import { CgMenuGridR } from "react-icons/cg"
 import Headroom from "react-headroom"
 import styled from "styled-components"
-import {
-  Link,
-  Trans,
-  useTranslation,
-  useI18next,
-  I18nextContext,
-} from "gatsby-plugin-react-i18next"
+import { Link } from "gatsby"
+// import {
+//   Link,
+//   Trans,
+//   useTranslation,
+//   useI18next,
+//   I18nextContext,
+// } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
+import i18next from "i18next"
 
 import MeniMobile from "./meniMobile"
 
@@ -59,9 +62,9 @@ const Hamburger = styled.div`
 const Header = () => {
   const [display, setDisplay] = useState("")
   const [current, setCurrent] = useState(1)
-  const { languages, changeLanguage } = useI18next()
-  const [t] = useTranslation()
-  const context = React.useContext(I18nextContext)
+  // const { languages, changeLanguage } = useI18next()
+  const [t, i18n] = useTranslation()
+  // const context = React.useContext(I18nextContext)
   const [isOpen, setIsOpen] = useState(false)
   const handleClickMenu = () => {
     setIsOpen(false)
@@ -69,15 +72,14 @@ const Header = () => {
   }
 
   useEffect(() => {
-    context.language === "hr" ? setCurrent(1) : setCurrent(2)
+    i18next.language === "hr" ? setCurrent(1) : setCurrent(2)
   }, [])
-  // console.log("context jezik", context)
   const handleClick = (e, id) => {
     // setKategorija(e.target.innerText)
     e.preventDefault()
     current === id ? setCurrent(1) : setCurrent(id)
     let lang = id === 1 ? "hr" : "en"
-    changeLanguage(lang)
+    i18n.changeLanguage(lang)
   }
   return (
     <Headroom

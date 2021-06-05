@@ -7,9 +7,11 @@ import MeniMobileBlog from "../components/MeniMobileBlog"
 import Pagination from "../components/pagination"
 
 import BlogHeroPhoto from "../../content/assets/BlogHero.png"
-import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+// import { useTranslation, useI18next } from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 import BlogPostCards from "../components/BlogPostCards"
+import i18next from "i18next"
 
 const WrapHeroPhoto = styled.div`
   /* background-color: grey; */
@@ -53,6 +55,7 @@ function Blog({ data }) {
   const [current, setCurrent] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const [kategorija, setKategorija] = useState("SVE")
+  const [kategorijaEng, setKategorijaEng] = useState("SVE")
   const [query, setQuery] = useState(data.wpgraphql.blogovi.edges)
   // const [postovi, setPostovi] = useState(data.wpgraphql.blogovi.edges)
   const [currentPage, setCurrentPage] = useState(1)
@@ -69,32 +72,73 @@ function Blog({ data }) {
     current === id ? setCurrent(null) : setKategorija(e.target.innerText)
     setCurrent(id)
   }
-  console.log("kat", kategorija)
+  // console.log("kat", kategorija)
   const handleClickCloseMenu = () => {
     setIsOpen(false)
     console.log("kliknuto close")
   }
-
   useEffect(() => {
-    if (kategorija === "SVE") {
-      console.log("query", query)
-
-      setQuery(queryData)
-      // setPostovi(queryData)
-      // setQuery(
-      //   queryData.filter(elem =>
-      //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
-      //   )
-      // )
-    } else {
-      var filteredData = queryData.filter(elem =>
-        elem.node.categories.edges.some(elem => elem.node.name === kategorija)
-      )
-      console.log("fd", filteredData)
-      setQuery(filteredData)
-      // setPostovi(filteredData)
+    if (kategorija === "STORIES FROM DALMATIAN HISTORY") {
+      setKategorijaEng("PRIČE IZ DALMATINSKE POVIJESTI")
+    }
+    if (kategorija === "ANTIQUE OBJECTS FROM DALMATIA") {
+      setKategorijaEng("ANTIKNI PREDMETI IZ DALMACIJE")
+    }
+    if (kategorija === "FORGOTTEN DALMATIA TODAY") {
+      setKategorijaEng("ZABORAVLJENA DALMACIJA DANAS")
+    }
+    if (kategorija === "EVERYTHING") {
+      setKategorijaEng("SVE")
     }
   }, [kategorija])
+
+  useEffect(() => {
+    console.log(i18next.language)
+    console.log("kategorija", kategorija)
+    console.log("kategorijaEng", kategorijaEng)
+    if (i18next.language === "hr") {
+      if (kategorija === "SVE") {
+        console.log("SVE query HR", query)
+
+        setQuery(queryData)
+        // setPostovi(queryData)
+        // setQuery(
+        //   queryData.filter(elem =>
+        //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
+        //   )
+        // )
+      } else {
+        var filteredData = queryData.filter(elem =>
+          elem.node.categories.edges.some(elem => elem.node.name === kategorija)
+        )
+        console.log("fd", filteredData)
+        setQuery(filteredData)
+        // setPostovi(filteredData)
+      }
+    } else {
+      if (kategorija === "EVERYTHING") {
+        console.log("SVE query ENG", query)
+        console.log("kategorijaEng", kategorijaEng)
+
+        setQuery(queryData)
+        // setPostovi(queryData)
+        // setQuery(
+        //   queryData.filter(elem =>
+        //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
+        //   )
+        // )
+      } else {
+        var filteredData = queryData.filter(elem =>
+          elem.node.categories.edges.some(
+            elem => elem.node.name === kategorijaEng
+          )
+        )
+        console.log("fdENG", filteredData)
+        setQuery(filteredData)
+        // setPostovi(filteredData)
+      }
+    }
+  }, [kategorija, kategorijaEng])
   const handleChooseMobileCategory = (e, id) => {
     current === id ? setCurrent(null) : setKategorija(e.target.innerText)
     setKategorija(e.target.innerText)
@@ -215,16 +259,7 @@ function Blog({ data }) {
 export default Blog
 
 export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
+  query {
     wpgraphql {
       blogovi {
         edges {

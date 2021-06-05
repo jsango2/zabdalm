@@ -2,15 +2,12 @@ import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
-import {
-  useTranslation,
-  useI18next,
-  I18nextContext,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
 import Lottie from "lottie-react"
 import animation1152 from "../animations/val/val2"
 import BlogCard from "../components/BlogCard"
 import BlogPostCards from "../components/BlogPostCards"
+import i18next from "i18next"
 
 // import SEO from "../components/seo"
 
@@ -168,11 +165,9 @@ const BlogContentWrap = styled.div`
 
 const BlogPost = ({ data }) => {
   console.log(data)
-  const { languages, changeLanguage } = useI18next()
   const [t] = useTranslation()
   const [categorie, setCategorie] = useState("")
-  const context = React.useContext(I18nextContext)
-  const [lang, setLang] = useState(context.language)
+  const [lang, setLang] = useState(i18next.language)
   // ------visibility lazy loading------------
   // --------------------------------------
 
@@ -191,6 +186,9 @@ const BlogPost = ({ data }) => {
       },
     ],
   }
+  useEffect(() => {
+    setLang(i18next.language)
+  }, [i18next.language])
 
   useEffect(() => {
     var cat = ""
@@ -209,7 +207,7 @@ const BlogPost = ({ data }) => {
       setCategorie(cat)
     }
     console.log("kategorija", cat)
-  }, [context.language])
+  }, [i18next.language])
 
   return (
     <>
@@ -359,16 +357,7 @@ const BlogPost = ({ data }) => {
 }
 
 export const query = graphql`
-  query($language: String!, $slug: ID!) {
-    locales: allLocale(filter: { language: { eq: $language } }) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
+  query($slug: ID!) {
     wpgraphql {
       blog(id: $slug, idType: SLUG) {
         title

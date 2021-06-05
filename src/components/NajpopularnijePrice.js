@@ -1,10 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import {
-  Link,
-  useTranslation,
-  I18nextContext,
-} from "gatsby-plugin-react-i18next"
+import { useTranslation } from "react-i18next"
+import { Link } from "gatsby"
+import i18next from "i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -70,8 +68,7 @@ const TextClanci = styled.div`
 `
 
 function NajpopularnijePrice({ data }) {
-  const context = React.useContext(I18nextContext)
-  const [lang, setLang] = useState(context.language)
+  const [lang, setLang] = useState(i18next.language)
   const [fireData, setFireData] = useState([])
   const [result, setResult] = useState([])
   const [sortiranePricePoCitanosti, setSortiranePricePoCitanosti] = useState([])
@@ -116,6 +113,10 @@ function NajpopularnijePrice({ data }) {
   //   setResult(sorted)
 
   // }, [fireData])
+  useEffect(() => {
+    setLang(i18next.language)
+    console.log(typeof i18next.language)
+  }, [i18next.language])
 
   return (
     <Wrap>
