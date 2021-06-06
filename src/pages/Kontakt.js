@@ -1,4 +1,6 @@
 import React from "react"
+import "../../i18next"
+
 import Layout from "../components/layout"
 import styled from "styled-components"
 import Brodi from "../../content/assets/brodi.png"

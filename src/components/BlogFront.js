@@ -51,12 +51,12 @@ const ButtonWrap = styled.div`
 function BlogFront({ blogovi }) {
   const [t, i18n] = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
+  const size = useWindowSize()
   const [lang, setLang] = useState(i18next.language)
   const [kategorija, setKategorija] = useState("SVE")
   const [query, setQuery] = useState(
     blogovi.wpgraphql.blogovi.edges.slice(0, 6)
   )
-  const size = useWindowSize()
   const [kategorijaEng, setKategorijaEng] = useState("SVE")
 
   var queryData = blogovi.wpgraphql.blogovi.edges.slice(0, 6)

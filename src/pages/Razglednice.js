@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
+import "../../i18next"
+
 import { useTranslation } from "react-i18next"
 import { graphql } from "gatsby"
 import { GoInfo } from "react-icons/go"

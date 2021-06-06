@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import "../../i18next"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import { graphql } from "gatsby"

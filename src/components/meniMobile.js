@@ -12,14 +12,14 @@ import i18next from "i18next"
 import Tovar from "../../content/assets/tovar.png"
 
 const WrapAll = styled.div`
-  position: fixed;
+  /* position: fixed;
   top: 0;
   left: 0;
 
   height: 100vh;
-  width: 100vhvw;
+  width: 100vw;
   z-index: 998;
-  background-color: #0f0f0fbd;
+  background-color: #0f0f0fbd; */
 `
 const Wrap = styled.div`
   position: fixed;
@@ -49,7 +49,7 @@ function MeniMobile({ handleClick, isOpen }) {
   }
   return (
     <>
-      <WrapAll className={`${isOpen ? "dark" : null} `}>
+      <div className={`${isOpen ? "dark" : null} `}>
         {isOpen ? (
           <div
             style={{
@@ -136,7 +136,7 @@ function MeniMobile({ handleClick, isOpen }) {
             </p>
           </div>
         </Wrap>
-      </WrapAll>
+      </div>
     </>
   )
 }
