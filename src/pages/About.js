@@ -223,7 +223,9 @@ const OthersRemark = styled.div`
   padding: 5px;
   color: #000;
 `
-const KnjigaWrapper = styled.div``
+const KnjigaWrapper = styled.div`
+  margin-bottom: -70px;
+`
 const Ulomak2Wrap = styled.div`
   width: 150px;
   height: 150px;
@@ -235,9 +237,6 @@ const Ulomak2Wrap = styled.div`
     left: 18vw;
     top: -42vw;
   }
-`
-const PressSection = styled.div`
-  height: 400px;
 `
 
 const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
@@ -252,9 +251,8 @@ const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
 }
 
 const About = ({ data }) => {
-  // console.log(i18next.language)
   const reviews = data.wpgraphql.komentari.edges
-  const items = []
+  let items = []
 
   if (i18next.language == "hr") {
     reviews.forEach(review => {
@@ -281,7 +279,6 @@ const About = ({ data }) => {
   }
 
   const { t } = useTranslation()
-  // const { languages, changeLanguage } = useI18next()
   const [current, setCurrent] = useState(0)
 
   const [dots, setDots] = useState(true)
@@ -319,7 +316,7 @@ const About = ({ data }) => {
   const [mainAnimation, setMainAnimation] = useState(false)
   const [thumbIndex, setThumbIndex] = useState(0)
   const [thumbAnimation, setThumbAnimation] = useState(false)
-  const [thumbs] = useState(
+  const [thumbs, setThumbs] = useState(
     thumbItems(items, [setThumbIndex, setThumbAnimation])
   )
 
@@ -344,6 +341,13 @@ const About = ({ data }) => {
     if (!mainAnimation) {
       setMainIndex(e.item)
     }
+  }
+
+  const [lang, setLang] = useState(i18next.language)
+
+  if (lang != i18next.language) {
+    setLang(i18next.language)
+    setThumbs(thumbItems(items, [setThumbIndex, setThumbAnimation]))
   }
 
   return (
@@ -384,14 +388,19 @@ const About = ({ data }) => {
             <img src={Arrow} alt="arrow" />
           </div>
           <AliceCarousel
+            autoPlay={true}
+            stopAutoPlayOnHover
+            autoPlayStrategy="default"
+            autoPlayInterval={7000}
+            animationDuration={1000}
+            animationType="fadeout"
+            infinite
             activeIndex={thumbIndex}
             autoWidth
             disableDotsControls={dots}
             disableButtonsControls
             items={thumbs}
-            mouseTracking={false}
             onSlideChanged={syncThumbs}
-            touchTracking={!mainAnimation}
           />
 
           <div className="btn-next" onClick={slideNext}>

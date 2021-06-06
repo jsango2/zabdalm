@@ -1,12 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
-// import {
-//   Link,
-//   Trans,
-//   useTranslation,
-//   useI18next,
-// } from "gatsby-plugin-react-i18next"
 import { useTranslation } from "react-i18next"
 import Knjiga from "../../content/assets/knjiga.png"
 import Ulomak from "../../content/assets/ulomakStamp.png"
@@ -63,7 +56,13 @@ const KnjigaWrap = styled.div`
   width: 45%;
   position: relative;
   top: 120px;
-  left: -3vw;
+  left: -1vw;
+  @media only screen and (max-width: 1052px) {
+    left: -6vw;
+    & > img{
+      transform: scale(1.3);
+    }
+  }
 
   @media only screen and (max-width: 850px) {
     display: none;

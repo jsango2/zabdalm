@@ -70,7 +70,6 @@ const Dot = styled.div`
 `
 
 const Press = ({ data }) => {
-  console.log(data.wpgraphql.pressObjave.edges)
   function PressList() {
     if (i18next.language === "hr") {
       const listItems = data.wpgraphql.pressObjave.edges.map(item => (
