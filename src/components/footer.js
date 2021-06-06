@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import FooterAnimation from "./footerAnimation"
+import { Link } from "gatsby"
 
 const Container = styled.div`
   width: 100%;
@@ -131,6 +132,8 @@ const SocialItem = styled.li`
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: #ffffff;
 `
 
 const FooterLine = styled.div`
@@ -185,26 +188,38 @@ function Footer() {
           </FooterSection>
           <FooterSection>
             <FooterSocial>
-              <SocialItem>
-                Atlas
-                <FooterLine />
-              </SocialItem>
-              <SocialItem>
-                Webshop
-                <FooterLine />
-              </SocialItem>
-              <SocialItem>
-                Blog
-                <FooterLine />
-              </SocialItem>
-              <SocialItem>
-                Instagram
-                <FooterLine />
-              </SocialItem>
-              <SocialItem>
-                Facebook
-                <FooterLine />
-              </SocialItem>
+              <Link to="/About">
+                <SocialItem>
+                  Atlas
+                  <FooterLine />
+                </SocialItem>
+              </Link>
+              <a href="https://shop.zaboravljenadalmacija.hr">
+                <SocialItem>
+                  Webshop
+                  <FooterLine />
+                </SocialItem>
+              </a>
+              <Link to="/Blog">
+                <SocialItem>
+                  Blog
+                  <FooterLine />
+                </SocialItem>
+              </Link>
+              <a href="https://www.instagram.com/zaboravljena_dalmacija">
+                {" "}
+                <SocialItem>
+                  Instagram
+                  <FooterLine />
+                </SocialItem>
+              </a>
+
+              <a href="https://www.facebook.com">
+                <SocialItem>
+                  Facebook
+                  <FooterLine />
+                </SocialItem>
+              </a>
             </FooterSocial>
           </FooterSection>
         </FooterContainer>

@@ -4,6 +4,7 @@ import Drnis from "../../content/assets/drnis.png"
 // import Val from "../../content/assets/valinstagram.svg"
 import Button from "./button"
 import { useTranslation } from "react-i18next"
+import { Link } from "gatsby"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -150,7 +151,10 @@ function InstagramFront() {
       </ButtonWrap>
 
       <ButtonWrapInvisible>
-        <Button text={t("kontaktirajteNas")} color="black" />
+        <Link to="/Kontakt">
+          {" "}
+          <Button text={t("kontaktirajteNas")} color="black" />
+        </Link>
       </ButtonWrapInvisible>
 
       <ImgWrap className="imgWrapInstagram">

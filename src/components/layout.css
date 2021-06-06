@@ -1347,7 +1347,7 @@ textarea:focus {
   right: 0%;
   /* top: 0px; */
   font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
-  background-color: #c6bcaa;
+  background-color: rgb(198 188 170 / 88%);
   /* border-bottom-left-radius: 10px; */
   /* border-bottom-right-radius: 10px; */
   max-height: 100%;

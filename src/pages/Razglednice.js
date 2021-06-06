@@ -33,7 +33,7 @@ const InfoWrap = styled.div`
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: white;
+  background-color: #4e370c;
   display: flex;
   border-radius: 50%;
   justify-content: center;
@@ -41,7 +41,7 @@ const InfoWrap = styled.div`
   right: 26px;
   top: 95px;
   z-index: 2;
-  color: #4e370c;
+  color: white;
   cursor: pointer;
   /* @media screen and (max-width: 1152px) {
     right: 26px;
@@ -50,7 +50,7 @@ const InfoWrap = styled.div`
   } */
   @media screen and (max-width: 630px) {
     right: 26px;
-    top: 95px;
+    top: 102px;
     left: unset;
   }
 `

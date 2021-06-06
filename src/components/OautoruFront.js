@@ -303,6 +303,9 @@ function OautoruFront() {
     }
   }, [])
 
+  const handleShopLink = () => {
+    window.location.href = "https://shop.zaboravljenadalmacija.hr"
+  }
   return (
     <>
       {size.width < 750 ? (
@@ -379,7 +382,7 @@ function OautoruFront() {
                 </ul>
               </TextOknjizi>
               <div style={{ width: "179px", paddingLeft: "25px" }}>
-                <ButtonWrap>
+                <ButtonWrap onClick={() => handleShopLink()}>
                   <Button
                     text={t("kupiatlaskratko")}
                     ikona={Cart}
@@ -465,12 +468,12 @@ function OautoruFront() {
                   </ul>
                 </TextOknjizi>
                 <div style={{ width: "179px", paddingLeft: "25px" }}>
-                  <ButtonWrap>
+                  <ButtonWrap onClick={() => handleShopLink()}>
                     <Button
                       text={t("kupiatlaskratko")}
                       ikona={Cart}
                       color="white"
-                    />
+                    ></Button>
                   </ButtonWrap>
                 </div>
               </DonjiDioTextWrap>

@@ -231,7 +231,9 @@ const Hero = () => {
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
             {size.width > 750 ? (
               <ButtonWrap>
-                <Button text={t("kupiAtlas")} ikona={Cart} color="white" />
+                <a href="https://shop.zaboravljenadalmacija.hr">
+                  <Button text={t("kupiAtlas")} ikona={Cart} color="white" />
+                </a>
               </ButtonWrap>
             ) : (
               <div></div>

@@ -113,7 +113,7 @@ function PartneriProjektaFront({ data }) {
           frames: [0],
         },
         {
-          visibility: [0.3, 0.8],
+          visibility: [0.1, 0.9],
           type: "seek",
           frames: [0, 152],
         },

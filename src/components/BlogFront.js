@@ -51,98 +51,49 @@ const ButtonWrap = styled.div`
 function BlogFront({ blogovi }) {
   const [t, i18n] = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
+  const [lang, setLang] = useState(i18next.language)
   const [kategorija, setKategorija] = useState("SVE")
-  const [query, setQuery] = useState([])
+  const [query, setQuery] = useState(
+    blogovi.wpgraphql.blogovi.edges.slice(0, 6)
+  )
   const size = useWindowSize()
-  const [kategorijaEng, setKategorijaEng] = useState()
+  const [kategorijaEng, setKategorijaEng] = useState("SVE")
 
-  var queryData = blogovi.wpgraphql.blogovi.edges
-  // console.log("data", data)
-  // var queryData = blogovi.wpgraphql.blogovi.edges
-  // useEffect(() => {
-  //   size.width < 750
-  //     ? setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 4))
-  //     : setQuery(blogovi.wpgraphql.blogovi.edges.slice(0, 6))
-  // }, [])
-  // useEffect(() => {
-  //   if (kategorija === "SVE") {
-  //     // setQuery(
-  //     //   queryData.filter(elem =>
-  //     //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
-  //     //   )
-  //     // )
-  //     setQuery(blogovi.wpgraphql.blogovi.edges)
-  //   } else {
-  //     var filteredData = query.filter(elem =>
-  //       elem.node.categories.edges.some(elem => elem.node.name === kategorija)
-  //     )
-  //     console.log("fd", filteredData)
-  //     setQuery(filteredData)
-  //   }
-  // }, [kategorija])
+  var queryData = blogovi.wpgraphql.blogovi.edges.slice(0, 6)
+
+  useEffect(() => {
+    setLang(i18next.language)
+  }, [i18next.language])
 
   useEffect(() => {
     if (kategorija === "STORIES FROM DALMATIAN HISTORY") {
-      setKategorijaEng("PRIČE IZ DALMATINSKE POVIJESTI")
+      setKategorija("PRIČE IZ DALMATINSKE POVIJESTI")
     }
     if (kategorija === "ANTIQUE OBJECTS FROM DALMATIA") {
-      setKategorijaEng("ANTIKNI PREDMETI IZ DALMACIJE")
+      setKategorija("ANTIKNI PREDMETI IZ DALMACIJE")
     }
     if (kategorija === "FORGOTTEN DALMATIA TODAY") {
-      setKategorijaEng("ZABORAVLJENA DALMACIJA DANAS")
+      setKategorija("ZABORAVLJENA DALMACIJA DANAS")
     }
     if (kategorija === "EVERYTHING") {
-      setKategorijaEng("SVE")
+      setKategorija("SVE")
     }
-  }, [kategorija])
+  })
 
   useEffect(() => {
-    console.log(i18next.language)
-    console.log("kategorija", kategorija)
-    console.log("kategorijaEng", kategorijaEng)
-    if (i18next.language === "hr") {
-      if (kategorija === "SVE") {
-        console.log("SVE query HR", query)
+    if (kategorija === "SVE") {
+      //   console.log("SVE query HR", query)
 
-        setQuery(blogovi.wpgraphql.blogovi.edges)
-        // setPostovi(queryData)
-        // setQuery(
-        //   queryData.filter(elem =>
-        //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
-        //   )
-        // )
-      } else {
-        var filteredData = queryData.filter(elem =>
-          elem.node.categories.edges.some(elem => elem.node.name === kategorija)
-        )
-        console.log("fd", filteredData)
-        setQuery(filteredData)
-        // setPostovi(filteredData)
-      }
-    } else {
-      if (kategorija === "EVERYTHING") {
-        console.log("SVE query ENG", query)
-        console.log("kategorijaEng", kategorijaEng)
-
-        setQuery(blogovi.wpgraphql.blogovi.edges)
-        // setPostovi(queryData)
-        // setQuery(
-        //   queryData.filter(elem =>
-        //     elem.node.categories.edges.some(elem => elem.node.name === "FEATURED")
-        //   )
-        // )
-      } else {
-        var filteredData = queryData.filter(elem =>
-          elem.node.categories.edges.some(
-            elem => elem.node.name === kategorijaEng
-          )
-        )
-        console.log("fdENG", filteredData)
-        setQuery(filteredData)
-        // setPostovi(filteredData)
-      }
+      setQuery(queryData)
     }
-  }, [kategorija, kategorijaEng])
+
+    if (kategorija !== "SVE") {
+      var filteredData = queryData.filter(elem =>
+        elem.node.categories.edges.some(elem => elem.node.name === kategorija)
+      )
+      setQuery(filteredData)
+    }
+  }, [kategorija, lang])
 
   const handleClickKategorije = () => {
     setIsOpen(true)
