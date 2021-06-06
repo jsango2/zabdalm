@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
 
-import Lottie from "lottie-react";
+import Lottie from "lottie-react"
 
-import alkar1152 from "../animations/alkar1152";
+import alkar1152 from "../animations/alkar1152"
 // import animation750 from "../animations/footer750";
 // import animation550 from "../animations/footer550";
 // import animation350 from "../animations/footer350";
 
 const AnimationWrap = styled.div`
-
+  @media (max-width: 650px) {
+    transform: scale(1.5);
+  }
   @media (max-width: 500px) {
     margin: 27vw 0 0;
   }
   @media (max-width: 400px) {
     margin: 0;
   }
-`;
+`
 
 function AlkarAnimation() {
   const interactivity = {
@@ -28,23 +30,23 @@ function AlkarAnimation() {
         frames: [0, 30],
       },
     ],
-  };
+  }
 
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
-  });
+  })
   useEffect(() => {
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
-      });
+      })
     }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    window.addEventListener("resize", handleResize)
+    handleResize()
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   function renderAnimation(width) {
     // if (width < 350) {
@@ -75,18 +77,18 @@ function AlkarAnimation() {
     //     />
     //   );
     // } else {
-      return (
-        <Lottie
-          animationData={alkar1152}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      );
+    return (
+      <Lottie
+        animationData={alkar1152}
+        interactivity={interactivity}
+        autoPlay={false}
+        loop={false}
+      />
+    )
     // }
   }
 
-  return <AnimationWrap>{renderAnimation(windowSize.width)}</AnimationWrap>;
+  return <AnimationWrap>{renderAnimation(windowSize.width)}</AnimationWrap>
 }
 
-export default AlkarAnimation;
+export default AlkarAnimation
