@@ -275,8 +275,10 @@ fieldset {
   margin-top: 2px !important;
 }
 .MuiSlider-thumb {
-  width: 4px !important;
-  margin-left: 0px !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin-left: -2px !important;
+  margin-top: -3px !important;
   border-radius: unset !important;
 }
 .otkrijiDodatak {
@@ -1123,11 +1125,12 @@ pre tt:after {
   font-size: 9px !important;
   font-weight: bolder;
   transform: translate(-10px, 9px) !important;
+  left: calc(-50% - -1px) !important;
 }
 .MuiSlider-valueLabel span:nth-child(1) {
   border-radius: 50% !important;
   background: unset;
-  color: #534227;
+  color: #7b7b7b;
   font-weight: bold;
 }
 .MuiSlider-valueLabel span {
@@ -1602,8 +1605,8 @@ textarea:focus {
     bottom: 930px;
   } */
   .MuiSlider-valueLabel {
-    margin-left: 0px;
-    font-size: 8px !important;
+    /* margin-left: 0px; */
+    /* font-size: 8px !important; */
     /* transform: translate(0px, 23px) !important; */
   }
   .mapboxgl-ctrl-top-right {

@@ -210,34 +210,35 @@ function Kontakt() {
           <WrapForm>
             <form className="formular">
               <div>
-                <label>Ime</label>
+                <label>{t("ime")}</label>
                 <br />
-                <input type="text" name="Ime" placeholder="Vaše Ime" />
+                <input type="text" name="Ime" placeholder={t("Vase ime")} />
               </div>
 
               <div>
                 <label>Email</label>
                 <br />
 
-                <input type="email" name="email" placeholder="Vaš Email" />
+                <input type="email" name="email" placeholder={t("Vas Email")} />
               </div>
               <div>
-                <label>Poruka</label>
+                <label>{t("Poruka")}</label>
                 <br />
-                <textarea type="text" name="poruka" placeholder="Vaša Poruka" />
+                <textarea
+                  type="text"
+                  name="poruka"
+                  placeholder={t("Vasa poruka")}
+                />
               </div>
               <div style={{ float: "right", marginTop: "15px" }}>
-                <button type="button">POŠALJI PORUKU</button>
+                <button type="button">{t("Posalji poruku")}</button>
               </div>
             </form>
           </WrapForm>
           <WrapText>
-            <div>Imate kod kuće stare razglednice i fotografije Dalmacije?</div>
+            <div>{t("Imate kod kuce")}</div>
 
-            <div style={{ marginTop: "30px" }}>
-              Podijelite ih s nama, a ukoliko vam ne trebaju rado ćemo ih
-              otkupiti?!{" "}
-            </div>
+            <div style={{ marginTop: "30px" }}>{t("Podijelite")}</div>
             <div
               style={{
                 fontSize: "12px",

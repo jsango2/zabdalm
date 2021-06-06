@@ -30,7 +30,7 @@ const useStyles = makeStyles({
     zIndex: "1",
     top: "-7px",
 
-    color: "#664F3E",
+    color: "#7b7b7b",
   },
 })
 

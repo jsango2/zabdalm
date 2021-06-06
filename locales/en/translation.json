@@ -22,7 +22,7 @@
   "dobroDosliNaBlog": "Welcome to the 'Forgotten Dalmatia' Blog",
   "pratiteNasNaInstagramu": "Follow us on Instagram",
   "kontaktirajteNas": "CONTACT US",
-
+  "infoblokmapa": "There are over 500 photographs of 'Forgotten Dalmatia' on this interactive map. Find the location or zoom the map and click on the photo icon to check the photo. Using the filter you can narrow your selection to only photos of certain period (1889.-1970.)",
   "igorgoles1": "Igor Goleš is a collector of rare, rarity postcards of Dalmatia, on which there are photographs as witnesses of those important details, bringing back the history of that area, frozen for a moment in time. In Goleš's collection there are postcards telling some interesting stories on Dalmatia from the end of the 19th century and the beginning of 20th, all the way to 1940, stories which are interesting in ethnographic, social, political and other ways. ",
   "igorgoles2": "When choosing the postcards which would be revealed to the public, the author chose those most rare ones, unknown to the public. That is why in the books one can experience the weddings, cultural and sports events from the beginning of the 20th century, see the views of villages and towns, beginnings of tourism in these areas, first hotels and boarding houses, inns, churches, people and customs... This series is the product of the author's 15 years of collecting and of searching for the rarest photographs of Dalmatia. ",
   "oatlasu": "About the atlas",
@@ -44,9 +44,17 @@
   "oknjizi7": "I hope that this website brings in your homes that Dalmatian feel, that seagull cry, rig whistle, the undescribable olive tree green... and in front of your eyes, the most beautiful view, the one with the stone houses and the bluest sea.",
   "oknjizi8": "Then I could truly say that my goal is completed, and forgotten Dalmatia story from its beginning won't ever be forgotten. ",
   "oknjizi9": "The author of the project Forgotten Dalmatia:",
-  "omonografiji": "About the monograph",  
+  "omonografiji": "About the monograph",
   "omonografijitekst1": "Monographs from the 'Forgotten Dalmatia' series became a must-have for the home libraries of every Dalmatian. Showing hundreds never before publicly seen photographs of small Dalmatian villages and cities from the end of 19. and the beginning of the 20. century through a collection of old romantic postcards. This work served the public to get to know Dalmatia better and see it in its untouched visuals on photographs that are over 100 years old. When choosing the postcards to share with the public, author Igor Goleš chooses the rarest and the most unknown ones and in doing so the book brings back the weddings from the beginning of the 20. century, cultural and sports events, panoramics of villages and cities, the start of tourism in these areas, first hotels and boarding houses, restaurants, churches, people, and traditions...",
   "omonografijitekst2": "This series is a product of his fifteen-year work in collecting and searching for the rarest photographs of Dalmatia. The first bibliophilic edition with 100 copies was sold out before the actual book printing, and huge public and media interest made the author release a second and a third expanded edition. Each new edition brought hundreds of new postcards in which readers find their favorite parts of Dalmatia and can relive them from a new perspective.",
   "omonografijitekst3": "About the monograph popularity from this series, and the amazing content that it provides, Croatian radio-television created sections for their shows: More, Alpe Dunav Jadran, and Klub7, and also publishers such as 'Slobodna Dalmacija', 'Jutarnji list', 'Večernji list', 'Otvoreno more', 'Yachts'. 'Jet set', and many others, especially online portals...",
-  "omonografijitekst4": "No other monograph in Croatia ever got such media interest or became a popular gift for Christmas, birthdays, weddings, graduations, business partners, tourists, distinguished delegations, or simply something that needs to be kept in the family as a pure Dalmatian souvenir. Most books reached all parts of the world - between Dalmatian descendants, and other Croatians living in different parts of the world, this book brings a breath of Dalmatia in their homes."
+  "omonografijitekst4": "No other monograph in Croatia ever got such media interest or became a popular gift for Christmas, birthdays, weddings, graduations, business partners, tourists, distinguished delegations, or simply something that needs to be kept in the family as a pure Dalmatian souvenir. Most books reached all parts of the world - between Dalmatian descendants, and other Croatians living in different parts of the world, this book brings a breath of Dalmatia in their homes.",
+  "ime": "name",
+  "Vase ime": "Your name",
+  "Vas Email": "Your email",
+  "Poruka": "Message",
+  "Vasa poruka": "Your message",
+  "Imate kod kuce": "Do you have old photos or postcards of Dalmatia?",
+  "Podijelite": "Share them with us! if you don't need them, we will buy them from you!",
+  "Posalji poruku": "Send message"
 }

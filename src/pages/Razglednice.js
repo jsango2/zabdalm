@@ -25,6 +25,7 @@ import Header from "./../components/header"
 import i18next from "i18next"
 
 import InfoBlock from "../components/InfoBlock"
+import { useOnClickOutside } from "../components/useClickOutside"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken =
   "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
@@ -591,7 +592,6 @@ function Razglednice({ data }) {
     // })
     // popup.remove()
   }
-  console.log("show", show)
   const handleChangeGodinaDelayed = (event, newValue) => {
     setValue2(newValue)
     console.log(newValue)
@@ -613,18 +613,21 @@ function Razglednice({ data }) {
   useEffect(() => {
     setInnerHeight(window.innerHeight)
   }, [size])
+  const ref = useRef()
+  useOnClickOutside(ref, () => setIsOpen(false))
   return (
     <>
       <Header></Header>
       <div className="mapWrapper">
         <InfoBlock isOpen={isOpen} />
-        <InfoWrap>
-          <GoInfo
-            onClick={() => {
-              setIsOpen(() => !isOpen)
-              // blockScroll()
-            }}
-          />
+        <InfoWrap
+          ref={ref}
+          onClick={() => {
+            setIsOpen(() => !isOpen)
+            // blockScroll()
+          }}
+        >
+          <GoInfo />
         </InfoWrap>
         {/* <SliderGodina /> */}
         {/* <div className="sidebar">

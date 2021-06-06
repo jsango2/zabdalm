@@ -27,6 +27,7 @@
   "partneriProjekta": "Partneri projekta",
   "pratiteNasNaInstagramu": "Pratite nas na instagramu",
   "odaberikategoriju": "ODABERI KATEGORIJU",
+  "infoblokmapa": "Na interaktivnoj mapi nalazi se preko 500 fotografija 'Zaboravljene Dalmacije'. Pronađite mjesto ili uvećajte mapu do željene lokacije i kliknite na foto ikonu. Upotrebom filtera godina možete odabrati razdoblje u kojem su fotografije napravljene (1889.-1970.)",
   "razglednice": "1.646 starih razglednica 300-njak dalmatinskih sela i gradova",
   "potpisnici": "Tekstove potpisuju Igor Goleš, Jakša Fiamengo, Joško Belamarić, Božo V. Žigo, Ivana Vuković, a naslovnicu i ilustracije jedan od najpoznatijih hrvatskih ilustratora i dizajnera Filipa Peraića",
   "deluxe": "De luxe izdanje od 25 primjeraka je obogaćeno originalnim crtežima dalmatinskih motiva u olovci, od najpoznatijeg i najskupljeg hrvatskog slikara današnjice Zvonimira Mihanovića.",
@@ -47,5 +48,13 @@
   "omonografijitekst1": "Monografije iz serijala ˝Zaboravljena Dalmacija˝ postale su nezaobilazan dio kućnih biblioteka svakog ˝fetivog˝ Dalmatinca. Prikazujući stotine nikada do sad publiciranih fotografija malih dalmatinskih sela i gradova s kraja 19. i početka 20. stoljeća kroz prizmu starih romantičnih razglednica. Ova djela poslužila su publici da bolje upozna Dalmaciju i doživi je u netaknutim vizurama zabilježenim na fotografijama prije više od 100 godina. Autor Igor Goleš je kod odabira razglednica koje će prikazati publici odabirao one najrjeđe i nepoznate javnosti pa tako u knjigama oživljavaju vjenčanja s početka 20. stoljeća, kulturni i sportski događaji, panorame sela i gradova, početci turizma na ovim prostorima, prvi hoteli i pansioni, gostionice, crkve, ljudi i običaji...",
   "omonografijitekst2": "Ovaj serijal je produkt njegovog petnaestogodišnjeg rada u kolekcionarstvu i traganja za najrjeđim fotografijama Dalmacije. Prvo  bibliofilsko izdanje od 100 primjeraka  bilo je  rasprodano prije samog tiska knjige, a ogroman interes javnosti i medija privukli su autora objaviti i II. pa i III. prošireno izdanje. Svaka nova edicija donijela je stotine novih razglednica u kojima čitaoci pronalaze sebi omiljene dijelove Dalmacije i mogu ih doživjeti iz nove perspektive.",
   "omonografijitekst3": "O popularnosti monografija iz ovog serijala najbolje govori podatak da je o senzacionalnom sadržaju koje one prikazuju Hrvatska radiotelevizija snimala priloge za svoje emisije: More, Alpe Dunav Jadran i Klub7, a o njima su pisali i „Slobodna Dalmacija”, „Jutarnji list”, „Večernji list”, „Otvoreno more”, „Yachts”, „Jet set” te mnogi drugi, posebice internetski portali...",
-  "omonografijitekst4": "Niti jedna druga monografija u Hrvatskoj nije doživjela toliki medijski interes ili postala tako popularan predmet darivanja za Božić, rođendane, vjenčanja, proslave diplomiranja, maturiranja, poklon poslovnim partnerima, turistima, uvaženim delegacijama ili, jednostavno, samo kao nešto što treba sačuvati u obitelji kao najdalmatinskiji suvenir. Mnoge knjige završile su i na sve strane svijeta -  među potomcima Dalmatinaca, ali i drugih Hrvata iseljenih po svijetu, kojima ova knjiga donosi dašak Dalmacije u domove."
+  "omonografijitekst4": "Niti jedna druga monografija u Hrvatskoj nije doživjela toliki medijski interes ili postala tako popularan predmet darivanja za Božić, rođendane, vjenčanja, proslave diplomiranja, maturiranja, poklon poslovnim partnerima, turistima, uvaženim delegacijama ili, jednostavno, samo kao nešto što treba sačuvati u obitelji kao najdalmatinskiji suvenir. Mnoge knjige završile su i na sve strane svijeta -  među potomcima Dalmatinaca, ali i drugih Hrvata iseljenih po svijetu, kojima ova knjiga donosi dašak Dalmacije u domove.",
+  "ime": "Ime",
+  "Vase ime": "Vaše ime",
+  "Vas Email": "Vaše Email",
+  "Poruka": "Poruka",
+  "Vasa poruka": "Vaša poruka",
+  "Imate kod kuce": "Imate kod kuće stare razglednice i fotografije Dalmacije?",
+  "Podijelite": "Podijelite ih s nama, a ukoliko vam ne trebaju rado ćemo ih otkupiti!",
+  "Posalji poruku": "Pošalji poruku"
 }

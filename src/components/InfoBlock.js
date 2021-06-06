@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { useTranslation } from "react-i18next"
 
 const Wrap = styled.div`
   position: absolute;
@@ -34,20 +35,9 @@ const Wrap = styled.div`
   }
 `
 function InfoBlock({ isOpen }) {
-  return (
-    <>
-      {isOpen ? (
-        <Wrap>
-          {" "}
-          Na mapi možete uvećati pojedinu lokaciju te klikom na ikonu kamere
-          pogledati razglednicu. Odaberite interval godina za selekciju
-          razglednica napravljenih u tom periodu.{" "}
-        </Wrap>
-      ) : (
-        <div></div>
-      )}
-    </>
-  )
+  const { t } = useTranslation()
+
+  return <>{isOpen ? <Wrap>{t("infoblokmapa")}</Wrap> : <div></div>}</>
 }
 
 export default InfoBlock
