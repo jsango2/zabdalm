@@ -596,7 +596,7 @@ center {
 .blueLink {
   /* color: white !important; */
   font-weight: 700 !important;
-  /* border-bottom: 2px solid white; */
+  border-bottom: 3px solid white;
 }
 
 legend {
@@ -1945,8 +1945,7 @@ textarea:focus {
   letter-spacing: 1px;
   text-decoration: none;
   color: white;
-  /* margin: 0 10px; */
-  width: 110px;
+  padding: 5px 11px;
   text-align: center;
   line-height: 16px;
 }

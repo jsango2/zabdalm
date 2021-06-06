@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next"
 import { Link } from "gatsby"
 import i18next from "i18next"
 import Tovar from "../../content/assets/tovar.png"
+import Close from "../../content/assets/close.png"
 
 const WrapAll = styled.div`
   /* position: fixed;
@@ -32,6 +33,12 @@ const Wrap = styled.div`
   background-color: #b0c7ce;
 `
 
+const CloseButton = styled.div`
+    position: absolute;
+    top: 10px;
+    right: 8%;
+`
+
 function MeniMobile({ handleClick, isOpen }) {
   const [current, setCurrent] = useState(1)
   // const { languages, changeLanguage } = useI18next()
@@ -50,6 +57,7 @@ function MeniMobile({ handleClick, isOpen }) {
   return (
     <>
       <div className={`${isOpen ? "dark" : null} `}>
+      <CloseButton onClick={e => handleClick()}><img src={Close} width="100%" alt="close" /></CloseButton>
         {isOpen ? (
           <div
             style={{
