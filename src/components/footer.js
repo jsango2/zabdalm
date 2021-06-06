@@ -45,6 +45,7 @@ const FooterSection = styled.div`
 `
 
 const FooterTitle = styled.h3`
+  font-family: Raleway, sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 24px;
