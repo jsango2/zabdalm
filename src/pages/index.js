@@ -16,7 +16,6 @@ import InstagramFront from "../components/InstagramFront"
 import "../../i18next"
 
 const IndexPage = ({ data }) => {
-  console.log("data", data)
   // const { t } = useTranslation()
   // const { languages, changeLanguage } = useI18next()
   // ------visibility lazy loading------------
