@@ -137,16 +137,20 @@ function InstagramFront() {
         <Linija />
       </WrapNaslov>
 
-      {/* <div
+      <div
         style={{
           height: "508px",
           width: "100%",
           backgroundColor: "grey",
           marginBottom: "63px",
         }}
-      ></div> */}
-      <div class="powr-social-feed" id="bb984902_1623063813"></div>
-      <script src="https://www.powr.io/powr.js?platform=react"></script>
+      ></div>
+      {/* <div
+        style={{ zIndex: "2", position: "relative" }}
+        class="powr-social-feed"
+        id="bb984902_1623063813"
+      ></div>
+      <script src="https://www.powr.io/powr.js?platform=react"></script> */}
       {/* <!-- LightWidget WIDGET --> */}
       {/* <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
       <iframe

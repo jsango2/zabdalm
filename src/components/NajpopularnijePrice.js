@@ -118,6 +118,12 @@ function NajpopularnijePrice({ data }) {
     console.log(typeof i18next.language)
   }, [i18next.language])
 
+  let filtrirano = data.blogovi.edges.filter(function (e) {
+    return (
+      e.node.blog_graphql.najcitanijaPrica === "Istakni kao najčitaniju priču"
+    )
+  })
+
   return (
     <Wrap>
       <div
@@ -136,7 +142,7 @@ function NajpopularnijePrice({ data }) {
       <Clanci>
         {/* {console.log("sorted", sortiranePricePoCitanosti)} */}
         {/* {result} */}
-        {data.blogovi.edges.map(clanak => (
+        {filtrirano.map(clanak => (
           <Link
             key={clanak.node.databaseId}
             style={{ textDecoration: "none", color: "black" }}
