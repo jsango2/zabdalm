@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
       <Montaza />
       <BlogFront blogovi={data} />
       <Nosnja />
-      <NajpopularnijePrice data={data.wpgraphql} />
+      <NajpopularnijePrice />
       <RazgledniceNaMapiFront />
       <OautoruFront />
       <PartneriProjektaFront data={data.wpgraphql} />
@@ -80,7 +80,6 @@ export const query = graphql`
         edges {
           node {
             blog_graphql {
-              najcitanijaPrica
               istaknutaFotografijaNaBlogu {
                 sourceUrl
               }

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react"
+import { StaticQuery, graphql } from "gatsby"
+
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import { Link } from "gatsby"
@@ -67,7 +69,7 @@ const TextClanci = styled.div`
   /* } */
 `
 
-function NajpopularnijePrice({ data }) {
+function NajpopularnijePrice() {
   const [lang, setLang] = useState(i18next.language)
   const [fireData, setFireData] = useState([])
   const [result, setResult] = useState([])
@@ -118,55 +120,95 @@ function NajpopularnijePrice({ data }) {
     console.log(typeof i18next.language)
   }, [i18next.language])
 
-  let filtrirano = data.blogovi.edges.filter(function (e) {
-    return (
-      e.node.blog_graphql.najcitanijaPrica === "Istakni kao najčitaniju priču"
-    )
-  })
-
   return (
-    <Wrap>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: "61px",
-        }}
-      >
-        <Linija />
-        <Naslov>{t("najpopularnijeprice")}</Naslov>
-        <Linija />
-      </div>
+    <StaticQuery
+      query={graphql`
+        {
+          wpgraphql {
+            blogovi {
+              edges {
+                node {
+                  blog_graphql {
+                    najcitanijaPrica
+                    istaknutaFotografijaNaBlogu {
+                      sourceUrl
+                    }
+                    naslovBlogaEng
+                    naslovBlogaHr
+                    tekstBlogaEng
+                    tekstBlogaHr
+                    tekstSponzorira
+                    tekstSponzoriraEng
+                    logoSponzora {
+                      sourceUrl
+                    }
+                  }
 
-      <Clanci>
-        {/* {console.log("sorted", sortiranePricePoCitanosti)} */}
-        {/* {result} */}
-        {filtrirano.map(clanak => (
-          <Link
-            key={clanak.node.databaseId}
-            style={{ textDecoration: "none", color: "black" }}
-            to={`/Blog/${clanak.node.slug}`}
+                  categories {
+                    edges {
+                      node {
+                        name
+                        id
+                      }
+                    }
+                  }
+                  slug
+                  databaseId
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <Wrap>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "61px",
+            }}
           >
-            <TextClanci key={clanak.node.slug}>
-              <div
-                style={{
-                  width: "5px",
-                  height: "5px",
-                  backgroundColor: "#E0E0E0",
-                  position: "absolute",
-                  left: "-13px",
-                  top: "5px",
-                }}
-              ></div>
-              {lang === "hr"
-                ? clanak.node.blog_graphql.naslovBlogaHr
-                : clanak.node.blog_graphql.naslovBlogaEng}
-            </TextClanci>
-          </Link>
-        ))}
-      </Clanci>
-    </Wrap>
+            <Linija />
+            <Naslov>{t("najpopularnijeprice")}</Naslov>
+            <Linija />
+          </div>
+
+          <Clanci>
+            {data.wpgraphql.blogovi.edges
+              .filter(
+                e =>
+                  e.node.blog_graphql.najcitanijaPrica ===
+                  "Istakni kao najčitaniju priču"
+              )
+              .map(clanak => (
+                <Link
+                  key={clanak.node.databaseId}
+                  style={{ textDecoration: "none", color: "black" }}
+                  to={`/Blog/${clanak.node.slug}`}
+                >
+                  <TextClanci key={clanak.node.slug}>
+                    <div
+                      style={{
+                        width: "5px",
+                        height: "5px",
+                        backgroundColor: "#E0E0E0",
+                        position: "absolute",
+                        left: "-13px",
+                        top: "5px",
+                      }}
+                    ></div>
+                    {lang === "hr"
+                      ? clanak.node.blog_graphql.naslovBlogaHr
+                      : clanak.node.blog_graphql.naslovBlogaEng}
+                  </TextClanci>
+                </Link>
+              ))}
+          </Clanci>
+        </Wrap>
+      )}
+    ></StaticQuery>
   )
 }
 
