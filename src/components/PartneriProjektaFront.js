@@ -67,7 +67,7 @@ const WrapNaslov = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 61px;
+  margin-bottom: 41px;
   @media only screen and (max-width: 550px) {
     margin-bottom: 15px;
   }

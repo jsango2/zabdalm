@@ -58,7 +58,7 @@ const Paragraf = styled.div`
   line-height: 27px;
   margin-bottom: 55px;
   width: 673px;
-  margin: 0 auto 61px;
+  margin: 30px auto 61px;
   text-align: center;
   @media only screen and (max-width: 750px) {
     width: 75%;
@@ -137,14 +137,32 @@ function InstagramFront() {
         <Linija />
       </WrapNaslov>
 
-      <div
+      {/* <div
         style={{
           height: "508px",
           width: "100%",
           backgroundColor: "grey",
           marginBottom: "63px",
         }}
-      ></div>
+      ></div> */}
+      {/* <div className="powr-social-feed" id="bb984902_1623063813"></div>
+      <script src="https://www.powr.io/powr.js?platform=react"></script> */}
+      {/* <!-- LightWidget WIDGET --> */}
+      <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+      <iframe
+        src="//lightwidget.com/widgets/8dccc38961de55e3bf4ad2425c73fc59.html"
+        scrolling="no"
+        allowtransparency="true"
+        class="lightwidget-widget"
+        style={{
+          width: "100%",
+          border: "0",
+          overflow: "hidden",
+          position: "relative",
+          zIndex: "200",
+        }}
+      ></iframe>
+
       <Paragraf>{t("otkupljujemo")}</Paragraf>
       <ButtonWrap>
         <Button text={t("kontaktirajteNas")} color="black" />
