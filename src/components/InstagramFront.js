@@ -145,10 +145,10 @@ function InstagramFront() {
           marginBottom: "63px",
         }}
       ></div> */}
-      {/* <div className="powr-social-feed" id="bb984902_1623063813"></div>
-      <script src="https://www.powr.io/powr.js?platform=react"></script> */}
+      <div class="powr-social-feed" id="bb984902_1623063813"></div>
+      <script src="https://www.powr.io/powr.js?platform=react"></script>
       {/* <!-- LightWidget WIDGET --> */}
-      <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+      {/* <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
       <iframe
         src="//lightwidget.com/widgets/8dccc38961de55e3bf4ad2425c73fc59.html"
         scrolling="no"
@@ -161,7 +161,7 @@ function InstagramFront() {
           position: "relative",
           zIndex: "200",
         }}
-      ></iframe>
+      ></iframe> */}
 
       <Paragraf>{t("otkupljujemo")}</Paragraf>
       <ButtonWrap>
