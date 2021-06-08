@@ -57,7 +57,7 @@ function Blog({ data }) {
   const [current, setCurrent] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(12)
+  const [postsPerPage] = useState(9)
 
   const [lang, setLang] = useState(i18next.language)
   const [kategorija, setKategorija] = useState("SVE")
@@ -107,6 +107,7 @@ function Blog({ data }) {
   const handleClick = (e, id) => {
     current === id ? setCurrent(null) : setKategorija(e.target.innerText)
     setCurrent(id)
+    setCurrentPage(1)
   }
   // console.log("kat", kategorija)
   const handleClickCloseMenu = () => {
@@ -117,6 +118,7 @@ function Blog({ data }) {
   const handleChooseMobileCategory = (e, id) => {
     current === id ? setCurrent(null) : setKategorija(e.target.innerText)
     setKategorija(e.target.innerText)
+    setCurrentPage(1)
   }
 
   // Get current posts

@@ -53,11 +53,10 @@ function BlogCard({ blogs }) {
   // const context = React.useContext(I18nextContext)
   const [lang, setLang] = useState(i18next.language)
   const [categorie, setCategorie] = useState("----")
-
   useEffect(() => {
     var cat = ""
 
-    if (blogs !== undefined) {
+    if (blogs.node.categories.edges.length !== 0) {
       // console.log(blogs.node.categories.edges[0].node.name)
 
       switch (blogs.node.categories.edges[0].node.name) {
@@ -103,9 +102,11 @@ function BlogCard({ blogs }) {
           (i18next.language === "hr" ? (
             <>
               <Kategorija>
-                {blogs.node.categories.edges[0].node.name === "ISTAKNUTA PRIČA"
-                  ? blogs.node.categories.edges[1].node.name
-                  : blogs.node.categories.edges[0].node.name}
+                {blogs.node.categories.edges.length !== 0 ? (
+                  blogs.node.categories.edges[0].node.name
+                ) : (
+                  <div>----</div>
+                )}
               </Kategorija>
               <div
                 style={{

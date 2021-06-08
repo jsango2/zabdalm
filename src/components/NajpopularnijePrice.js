@@ -130,30 +130,10 @@ function NajpopularnijePrice() {
                 node {
                   blog_graphql {
                     najcitanijaPrica
-                    istaknutaFotografijaNaBlogu {
-                      sourceUrl
-                    }
                     naslovBlogaEng
                     naslovBlogaHr
-                    tekstBlogaEng
-                    tekstBlogaHr
-                    tekstSponzorira
-                    tekstSponzoriraEng
-                    logoSponzora {
-                      sourceUrl
-                    }
-                  }
-
-                  categories {
-                    edges {
-                      node {
-                        name
-                        id
-                      }
-                    }
                   }
                   slug
-                  databaseId
                 }
               }
             }
@@ -184,7 +164,7 @@ function NajpopularnijePrice() {
               )
               .map(clanak => (
                 <Link
-                  key={clanak.node.databaseId}
+                  key={clanak.node.slug}
                   style={{ textDecoration: "none", color: "black" }}
                   to={`/Blog/${clanak.node.slug}`}
                 >

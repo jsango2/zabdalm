@@ -113,6 +113,7 @@ const Kategorija = styled.div`
   text-align: left;
 
   @media only screen and (max-width: 700px) {
+    font-size: 16px;
   }
 `
 const Crta = styled.div`
@@ -193,7 +194,7 @@ const BlogPost = ({ data }) => {
 
   useEffect(() => {
     var cat = ""
-    if (data.wpgraphql.blog.categories.edges.length !== undefined) {
+    if (data.wpgraphql.blog.categories.edges.length !== 0) {
       switch (data.wpgraphql.blog.categories.edges[0].node.name) {
         case "ZABORAVLJENA DALMACIJA DANAS":
           cat = "FORGOTTEN DALMATIA TODAY"
@@ -239,7 +240,11 @@ const BlogPost = ({ data }) => {
               </WrapSponzorHero>
               <Wrap>
                 <Kategorija>
-                  {data.wpgraphql.blog.categories.edges[0].node.name}
+                  {data.wpgraphql.blog.categories.edges.length !== 0 ? (
+                    data.wpgraphql.blog.categories.edges[0].node.name
+                  ) : (
+                    <div></div>
+                  )}
                 </Kategorija>
                 <Naslov>
                   <Crta />
