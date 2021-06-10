@@ -37,7 +37,7 @@ function PlanineAnimation() {
       {
         visibility: [0.1, 1],
         type: "seek",
-        frames: [50, 158],
+        frames: [30, 158],
       },
     ],
   }
