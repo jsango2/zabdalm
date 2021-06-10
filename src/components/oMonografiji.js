@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import Knjiga from "../../content/assets/knjiga.png"
-import Ulomak from "../../content/assets/ulomakStamp.png"
+import Ulomak from "../../content/assets/ulomakStamp.svg"
 
 const MonoDiv = styled.div`
   display: flex;
@@ -59,7 +59,7 @@ const KnjigaWrap = styled.div`
   left: -1vw;
   @media only screen and (max-width: 1052px) {
     left: -6vw;
-    & > img{
+    & > img {
       transform: scale(1.3);
     }
   }

@@ -24,6 +24,9 @@ const Wrap = styled.div`
   @media only screen and (max-width: 750px) {
     height: 478px;
   }
+  @media only screen and (max-width: 550px) {
+    height: 478px;
+  }
 `
 const WrapItems = styled.div`
   width: 879px;
@@ -147,8 +150,22 @@ const Img = styled.div`
   height: 544px;
 
   @media screen and (max-width: 750px) {
-    height: 70vh;
+    height: 478px;
   }
+  /* @media screen and (max-width: 550px) {
+    height: 76vh;
+  } */
+`
+const ImgOverflowHidden = styled.div`
+  width: 100%;
+  height: 544px;
+  overflow: hidden;
+  @media screen and (max-width: 750px) {
+    height: 478px;
+  }
+  /* @media screen and (max-width: 550px) {
+    height: 74.5vh;
+  } */
 `
 const ButtonWrap = styled.div`
   width: 390px;
@@ -203,7 +220,7 @@ const Hero = () => {
             }}
           />
         </Hamburger>{" "} */}
-        <div style={{ height: "544px", width: "100%", overflow: "hidden" }}>
+        <ImgOverflowHidden>
           <Slider
             dots={false}
             fade={true}
@@ -225,7 +242,7 @@ const Hero = () => {
               <img src={Pas} alt="pas" />
             </Img>
           </Slider>
-        </div>
+        </ImgOverflowHidden>
         <WrapItems>
           <KnjigaWrap>
             <img src={Knjiga} width="100%" alt="knjiga" />

@@ -1527,6 +1527,9 @@ textarea:focus {
 .active-slides-div {
   pointer-events: none;
 }
+.active {
+  font-weight: 600;
+}
 .slides-wrap img {
   height: 100px;
   width: auto;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import firebase from "gatsby-plugin-firebase"
+// import firebase from "gatsby-plugin-firebase"
 
 function FirebaseData() {
   const [data, setData] = useState([])

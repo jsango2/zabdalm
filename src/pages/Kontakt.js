@@ -180,44 +180,46 @@ function Kontakt() {
           }}
         ></div>
         {size.width > 550 ? (
-          <Slider
-            dots={false}
-            fade={true}
-            infinite={true}
-            speed={8000}
-            slidesToShow={1}
-            slidesToScroll={1}
-            autoplay={true}
-            cssEase="cubic-bezier(0,0,0,1.01)"
-          >
-            <Fotka>
-              <img
-                src={Brodi}
-                alt=""
-                style={{
-                  height: "100%",
-                }}
-              />
-            </Fotka>
-            <Fotka>
-              <img
-                src={HeroPhoto}
-                alt=""
-                style={{
-                  height: "100%",
-                }}
-              />
-            </Fotka>
-            <Fotka>
-              <img
-                src={Tovar}
-                alt=""
-                style={{
-                  height: "100%",
-                }}
-              />
-            </Fotka>
-          </Slider>
+          <div style={{ height: "544px", width: "100%", overflow: "hidden" }}>
+            <Slider
+              dots={false}
+              fade={true}
+              infinite={true}
+              speed={8000}
+              slidesToShow={1}
+              slidesToScroll={1}
+              autoplay={true}
+              cssEase="cubic-bezier(0,0,0,1.01)"
+            >
+              <Fotka>
+                <img
+                  src={Brodi}
+                  alt=""
+                  style={{
+                    height: "100%",
+                  }}
+                />
+              </Fotka>
+              <Fotka>
+                <img
+                  src={HeroPhoto}
+                  alt=""
+                  style={{
+                    height: "100%",
+                  }}
+                />
+              </Fotka>
+              <Fotka>
+                <img
+                  src={Tovar}
+                  alt=""
+                  style={{
+                    height: "100%",
+                  }}
+                />
+              </Fotka>
+            </Slider>
+          </div>
         ) : (
           <>
             <div
@@ -249,7 +251,7 @@ function Kontakt() {
                 <br />
                 <input
                   type="text"
-                  value={state.Ime}
+                  value={state.Ime || ""}
                   onChange={handleChange}
                   name="Ime"
                   placeholder={t("Vase ime")}
@@ -262,7 +264,7 @@ function Kontakt() {
 
                 <input
                   type="email"
-                  value={state.mail}
+                  value={state.mail || ""}
                   onChange={handleChange}
                   name="mail"
                   placeholder={t("Vas Email")}
@@ -274,7 +276,7 @@ function Kontakt() {
                 <textarea
                   type="text"
                   name="poruka"
-                  value={state.poruka}
+                  value={state.poruka || ""}
                   onChange={handleChange}
                   placeholder={t("Vasa poruka")}
                 />

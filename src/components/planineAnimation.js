@@ -9,8 +9,8 @@ import kolaz550 from "../animations/kolaz550"
 import kolaz350 from "../animations/kolaz350"
 
 const AnimationWrap = styled.div`
-position:relative;
-top: -1700px;
+  position: relative;
+  top: -1700px;
   /* position: relative;
   top: 140px;
   @media (max-width: 1500px) {
@@ -35,10 +35,10 @@ function PlanineAnimation() {
     mode: "scroll",
     actions: [
       {
-        visibility: [0, 1],
+        visibility: [0.1, 1],
         type: "seek",
-        frames: [50,158],
-      }
+        frames: [50, 158],
+      },
     ],
   }
 
@@ -87,14 +87,14 @@ function PlanineAnimation() {
     //     />
     //   )
     // } else {
-      return (
-        <Lottie
-          animationData={planine1152}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      )
+    return (
+      <Lottie
+        animationData={planine1152}
+        interactivity={interactivity}
+        autoPlay={false}
+        loop={false}
+      />
+    )
     // }
   }
 

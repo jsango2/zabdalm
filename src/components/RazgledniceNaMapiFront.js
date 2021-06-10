@@ -90,6 +90,8 @@ function RazgledniceNaMapiFront() {
           style={{
             position: "absolute",
             top: "0",
+            width: "4px",
+            maxHeight: "100px",
           }}
           animationData={animation1152}
           interactivity={interactivity}

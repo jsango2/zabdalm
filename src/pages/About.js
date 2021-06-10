@@ -18,7 +18,7 @@ import AlkarAnimation from "../components/alkarAnimation"
 import KnjigaAnimation from "../components/knjigaAnimation"
 
 import Knjiga from "../../content/assets/knjiga.png"
-import Ulomak from "../../content/assets/ulomakStamp.png"
+import Ulomak from "../../content/assets/ulomakStamp.svg"
 import Arrow from "../../content/assets/arrow.png"
 import Rope from "../../content/assets/rope.png"
 
@@ -352,14 +352,14 @@ const About = ({ data }) => {
 
   return (
     <Layout>
-      <OKnjiziIntro className="rel" id="rel"/>
+      <OKnjiziIntro className="rel" id="rel" />
 
       <KolazWrapper>
         <VojnikAnimation />
         <PlanineAnimation />
       </KolazWrapper>
 
-      <OMonografiji  />
+      <OMonografiji />
 
       <KnjigeSection>
         <Knjige750>

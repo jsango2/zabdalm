@@ -51,8 +51,8 @@ const WrapSponzorHero = styled.div`
 
     bottom: 34px;
     top: unset;
-    right: unset;
-    left: 30px;
+    /* right: unset; */
+    right: 30px;
   }
 `
 const Hero = styled.div`
