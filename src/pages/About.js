@@ -4,13 +4,6 @@ import Layout from "../components/layout"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import i18next from "i18next"
-
-// import {
-//   Link,
-//   Trans,
-//   useTranslation,
-//   useI18next,
-// } from "gatsby-plugin-react-i18next"
 import { useTranslation } from "react-i18next"
 
 import OKnjiziIntro from "../components/OKnjiziIntro"
@@ -19,6 +12,8 @@ import OMonografiji from "../components/oMonografiji"
 import Press from "../components/Press"
 
 import KolazAnimation from "../components/kolazAnimation"
+import PlanineAnimation from "../components/planineAnimation"
+import VojnikAnimation from "../components/vojnikAnimation"
 import AlkarAnimation from "../components/alkarAnimation"
 import KnjigaAnimation from "../components/knjigaAnimation"
 
@@ -31,11 +26,13 @@ import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
 import TriBlogPosta from "../components/TriBlogPosta"
 
+//#region Styled
+
 const KolazWrapper = styled.div`
-  position: relative;
-  top: -1070px;
-  margin-bottom: -1110px;
-  @media only screen and (max-width: 1152px) {
+  /* position: relative;
+  top: -1070px; */
+  margin-bottom: -1600px;
+  /* @media only screen and (max-width: 1152px) {
     top: -88vw;
     margin-bottom: -96vw;
   }
@@ -46,7 +43,7 @@ const KolazWrapper = styled.div`
   @media only screen and (max-width: 550px) {
     top: initial;
     margin: 0;
-  }
+  } */
 `
 const KnjigeSection = styled.div`
   display: none;
@@ -240,6 +237,8 @@ const Ulomak2Wrap = styled.div`
   }
 `
 
+//#endregion
+
 const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
   return items.map((item, i) => (
     <div
@@ -353,13 +352,14 @@ const About = ({ data }) => {
 
   return (
     <Layout>
-      <OKnjiziIntro />
+      <OKnjiziIntro className="rel" id="rel"/>
 
       <KolazWrapper>
-        <KolazAnimation />
+        <VojnikAnimation />
+        <PlanineAnimation />
       </KolazWrapper>
 
-      <OMonografiji />
+      <OMonografiji  />
 
       <KnjigeSection>
         <Knjige750>
