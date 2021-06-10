@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import "../../i18next"
-
+import axios from "axios"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import Brodi from "../../content/assets/brodi.png"
@@ -58,7 +58,7 @@ const WrapForm = styled.div`
   & > form {
     width: 100%;
   }
-
+  flex-direction: column;
   @media only screen and (max-width: 850px) {
     & > form {
       width: 80%;
@@ -132,8 +132,41 @@ const Fotka = styled.div`
 
 function Kontakt() {
   const size = useWindowSize()
+  const [state, setState] = useState({})
+  const [issubmiting, setIssubmiting] = useState(false)
 
   const { t } = useTranslation()
+
+  const handleChange = event => {
+    const { name, value } = event.target
+
+    setState({
+      ...state,
+      [name]: value,
+    })
+  }
+  const [result, setResult] = useState(null)
+
+  const sendEmail = event => {
+    setIssubmiting(true)
+    event.preventDefault()
+    axios
+      .post("https://zabdalmserve.herokuapp.com/send", { ...state })
+      .then(response => {
+        setResult(response.data)
+        setState({ Ime: "", mail: "", poruka: "" })
+        setTimeout(function () {
+          setIssubmiting(false)
+        }, 3000)
+      })
+      .catch(err => {
+        setResult({
+          success: false,
+          message: "Something went wrong. Try again later.",
+        })
+        console.error(err)
+      })
+  }
 
   return (
     <Layout>
@@ -210,18 +243,30 @@ function Kontakt() {
         )}
         <WrapFormAndText>
           <WrapForm>
-            <form className="formular">
+            <form className="formular" onSubmit={sendEmail}>
               <div>
                 <label>{t("ime")}</label>
                 <br />
-                <input type="text" name="Ime" placeholder={t("Vase ime")} />
+                <input
+                  type="text"
+                  value={state.Ime}
+                  onChange={handleChange}
+                  name="Ime"
+                  placeholder={t("Vase ime")}
+                />
               </div>
 
               <div>
                 <label>Email</label>
                 <br />
 
-                <input type="email" name="email" placeholder={t("Vas Email")} />
+                <input
+                  type="email"
+                  value={state.mail}
+                  onChange={handleChange}
+                  name="mail"
+                  placeholder={t("Vas Email")}
+                />
               </div>
               <div>
                 <label>{t("Poruka")}</label>
@@ -229,13 +274,35 @@ function Kontakt() {
                 <textarea
                   type="text"
                   name="poruka"
+                  value={state.poruka}
+                  onChange={handleChange}
                   placeholder={t("Vasa poruka")}
                 />
               </div>
               <div style={{ float: "right", marginTop: "15px" }}>
-                <button type="button">{t("Posalji poruku")}</button>
+                <button type="submit">{t("Posalji poruku")}</button>
               </div>
             </form>
+            {issubmiting ? (
+              <div
+                style={{
+                  color: "white",
+                  position: "relative",
+                  top: "-155px",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  backgroundColor: "#00000078",
+                  padding: "20px",
+                  textAlign: "center",
+                  borderRadius: "5px",
+                  width: "80%",
+                }}
+              >
+                Poruka poslana
+              </div>
+            ) : (
+              <div></div>
+            )}
           </WrapForm>
           <WrapText>
             <div>{t("Imate kod kuce")}</div>

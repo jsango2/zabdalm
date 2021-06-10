@@ -17,7 +17,7 @@ import { useTranslation } from "react-i18next"
 import MeniMobile from "./meniMobile"
 
 const Wrap = styled.div`
-  /* background-color: grey; */
+  background-color: rgb(28, 17, 0);
   position: relative;
   width: 100%;
   height: 544px;
@@ -203,26 +203,29 @@ const Hero = () => {
             }}
           />
         </Hamburger>{" "} */}
-        <Slider
-          dots={false}
-          fade={true}
-          infinite={true}
-          speed={8000}
-          slidesToShow={1}
-          slidesToScroll={1}
-          autoplay={true}
-          cssEase="cubic-bezier(0,0,0,1.01)"
-        >
-          <Img>
-            <img src={HeroPhoto} alt="hero" />
-          </Img>
-          <Img>
-            <img src={Brodi} alt="brod" />
-          </Img>
-          <Img>
-            <img src={Pas} alt="pas" />
-          </Img>
-        </Slider>
+        <div style={{ height: "544px", width: "100%", overflow: "hidden" }}>
+          <Slider
+            dots={false}
+            fade={true}
+            // infinite={true}
+            // speed={11000}
+            // slidesToShow={1}
+            // slidesToScroll={1}
+            autoplaySpeed={7000}
+            autoplay={true}
+            cssEase="cubic-bezier(0,0,0,1.01)"
+          >
+            <Img>
+              <img src={HeroPhoto} alt="hero" />
+            </Img>
+            <Img>
+              <img src={Brodi} alt="brod" />
+            </Img>
+            <Img>
+              <img src={Pas} alt="pas" />
+            </Img>
+          </Slider>
+        </div>
         <WrapItems>
           <KnjigaWrap>
             <img src={Knjiga} width="100%" alt="knjiga" />

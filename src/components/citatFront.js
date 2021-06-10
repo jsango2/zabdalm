@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Val from "../../content/assets/valCitat.svg"
+import Val from "../../content/assets/valCitat.png"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import Cart from "../../content/assets/cartblack.svg"
 import { useWindowSize } from "./useWindowSize"

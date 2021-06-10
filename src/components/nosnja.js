@@ -1,24 +1,50 @@
 import React from "react"
-import NarNosnja from "../../content/assets/nosnja.png"
 import styled from "styled-components"
+import Lottie from "lottie-react"
+
+import animation1152 from "./../animations/etno/etno"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
   height: 473px;
-  background-image: url(${NarNosnja});
-  background-size: cover;
-  background-position: center;
   position: relative;
-  margin: 59px 0 83px 0;
+  margin: 59px 0 2px 0;
   @media only screen and (max-width: 750px) {
-    height: 85vw;
-    max-height: 473px;
+    height: 65vw;
+    width: 140%;
+    left: -15%;
+
+    /* height: 473px; */
   }
 `
 
 function Nosnja() {
-  return <Wrap></Wrap>
+  const interactivity = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 0.0],
+        type: "stop",
+        frames: [0],
+      },
+      {
+        visibility: [0.25, 0.6],
+        type: "seek",
+        frames: [0, 152],
+      },
+    ],
+  }
+  return (
+    <Wrap>
+      <Lottie
+        animationData={animation1152}
+        interactivity={interactivity}
+        autoPlay={false}
+        loop={false}
+      />
+    </Wrap>
+  )
 }
 
 export default Nosnja

@@ -59,15 +59,14 @@ function RazgledniceNaMapiFront() {
   }, [])
   const interactivity = {
     mode: "scroll",
-
     actions: [
-      // {
-      //   visibility: [0, 0.0],
-      //   type: "stop",
-      //   frames: [92],
-      // },
       {
-        visibility: [0, 1],
+        visibility: [0, 0.0],
+        type: "stop",
+        frames: [0],
+      },
+      {
+        visibility: [0.25, 0.6],
         type: "seek",
         frames: [0, 92],
       },
