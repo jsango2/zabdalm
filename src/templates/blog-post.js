@@ -8,6 +8,8 @@ import animation1152 from "../animations/val/val2"
 import BlogCard from "../components/BlogCard"
 import BlogPostCards from "../components/BlogPostCards"
 import i18next from "i18next"
+import "../../i18next"
+
 import TriBlogPosta from "../components/TriBlogPosta"
 
 // import SEO from "../components/seo"
