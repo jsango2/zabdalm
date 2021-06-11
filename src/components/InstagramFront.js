@@ -5,6 +5,9 @@ import Drnis from "../../content/assets/drnis.png"
 import Button from "./button"
 import { useTranslation } from "react-i18next"
 import { Link } from "gatsby"
+import { useWindowSize } from "../components/useWindowSize"
+import { InstaMobile } from "./instaMobile"
+import { InstaDesktop } from "./instaDesktop"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -118,6 +121,7 @@ const Linija = styled.div`
 
 function InstagramFront() {
   const [t, i18n] = useTranslation()
+  const size = useWindowSize()
 
   const [offset, setOffset] = useState(0)
   useEffect(() => {
@@ -137,35 +141,7 @@ function InstagramFront() {
         <Linija />
       </WrapNaslov>
 
-      <div
-        style={{
-          height: "508px",
-          width: "100%",
-          backgroundColor: "grey",
-          marginBottom: "63px",
-        }}
-      ></div>
-      {/* <div
-        style={{ zIndex: "2", position: "relative" }}
-        class="powr-social-feed"
-        id="bb984902_1623063813"
-      ></div>
-      <script src="https://www.powr.io/powr.js?platform=react"></script> */}
-      {/* <!-- LightWidget WIDGET --> */}
-      {/* <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-      <iframe
-        src="//lightwidget.com/widgets/8dccc38961de55e3bf4ad2425c73fc59.html"
-        scrolling="no"
-        allowtransparency="true"
-        class="lightwidget-widget"
-        style={{
-          width: "100%",
-          border: "0",
-          overflow: "hidden",
-          position: "relative",
-          zIndex: "200",
-        }}
-      ></iframe> */}
+      {size.width < 750 ? <InstaMobile /> : <InstaDesktop />}
 
       <Paragraf>{t("otkupljujemo")}</Paragraf>
       <ButtonWrap>
@@ -188,6 +164,7 @@ function InstagramFront() {
           alt=""
         />
       </ImgWrap>
+      <script src="https://www.powr.io/powr.js?platform=html"></script>
     </Wrap>
   )
 }

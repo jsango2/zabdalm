@@ -38,6 +38,7 @@ function Nosnja() {
   return (
     <Wrap>
       <Lottie
+        style={{ textAlign: "center" }}
         animationData={animation1152}
         interactivity={interactivity}
         autoPlay={false}
