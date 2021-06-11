@@ -410,9 +410,9 @@ fieldset {
     visibility: none;
   }
 } */
-.socialFeed .powrMark {
+/* .socialFeed .powrMark {
   display: none !important;
-}
+} */
 
 .sidebar {
   opacity: 1;
