@@ -9,7 +9,7 @@ import { useWindowSize } from "../components/useWindowSize"
 import Lottie from "lottie-react"
 
 import animation1152 from "../animations/val/val2"
-import animation370 from "../animations/val/val370"
+import animation370 from "../animations/val2/val370"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -92,7 +92,16 @@ function PartneriProjektaFront({ data }) {
   const [t, i18n] = useTranslation()
   const size = useWindowSize()
   let settings = {}
-  let interactivity = {}
+  const interactivity = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0.5, 0.9],
+        type: "seek",
+        frames: [0, 152],
+      },
+    ],
+  }
   if (size.width > 750) {
     settings = {
       dots: false,
@@ -104,21 +113,6 @@ function PartneriProjektaFront({ data }) {
       autoplaySpeed: 3000,
       cssEase: "linear",
     }
-    interactivity = {
-      mode: "scroll",
-      actions: [
-        {
-          visibility: [0, 0.0],
-          type: "stop",
-          frames: [0],
-        },
-        {
-          visibility: [0.1, 0.9],
-          type: "seek",
-          frames: [0, 152],
-        },
-      ],
-    }
   } else {
     settings = {
       dots: false,
@@ -129,21 +123,6 @@ function PartneriProjektaFront({ data }) {
       speed: 3000,
       autoplaySpeed: 3000,
       cssEase: "linear",
-    }
-    interactivity = {
-      mode: "scroll",
-      actions: [
-        {
-          visibility: [0, 0.0],
-          type: "stop",
-          frames: [0],
-        },
-        {
-          visibility: [0.1, 0.8],
-          type: "seek",
-          frames: [0, 152],
-        },
-      ],
     }
   }
 
@@ -181,9 +160,9 @@ function PartneriProjektaFront({ data }) {
 
       <WrapLottie>
         <Lottie
+          autoPlay={false}
           animationData={size.width < 750 ? animation370 : animation1152}
           interactivity={interactivity}
-          autoPlay={false}
           loop={false}
         />
       </WrapLottie>

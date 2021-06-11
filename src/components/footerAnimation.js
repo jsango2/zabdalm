@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
 
-import Lottie from "lottie-react";
+import Lottie from "lottie-react"
 
-import animation1152 from "../animations/footer1152";
-import animation750 from "../animations/footer750";
-import animation550 from "../animations/footer550";
-import animation350 from "../animations/footer350";
+import animation1152 from "../animations/footer1152"
+import animation750 from "../animations/footer750"
+import animation550 from "../animations/footer550"
+import animation350 from "../animations/footer350"
 
 const AnimationWrap = styled.div`
   position: relative;
@@ -26,7 +26,7 @@ const AnimationWrap = styled.div`
   @media (max-width: 370px) {
     top: 30vw;
   }
-`;
+`
 
 function FooterAnimation() {
   const interactivity = {
@@ -38,23 +38,23 @@ function FooterAnimation() {
         frames: [0, 30],
       },
     ],
-  };
+  }
 
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
-  });
+  })
   useEffect(() => {
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
-      });
+      })
     }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    window.addEventListener("resize", handleResize)
+    handleResize()
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   function renderAnimation(width) {
     if (width < 350) {
@@ -65,7 +65,7 @@ function FooterAnimation() {
           autoPlay={false}
           loop={false}
         />
-      );
+      )
     } else if (width < 550) {
       return (
         <Lottie
@@ -74,7 +74,7 @@ function FooterAnimation() {
           autoPlay={false}
           loop={false}
         />
-      );
+      )
     } else if (width < 750) {
       return (
         <Lottie
@@ -83,7 +83,7 @@ function FooterAnimation() {
           autoPlay={false}
           loop={false}
         />
-      );
+      )
     } else {
       return (
         <Lottie
@@ -92,11 +92,11 @@ function FooterAnimation() {
           autoPlay={false}
           loop={false}
         />
-      );
+      )
     }
   }
 
-  return <AnimationWrap>{renderAnimation(windowSize.width)}</AnimationWrap>;
+  return <AnimationWrap>{renderAnimation(windowSize.width)}</AnimationWrap>
 }
 
-export default FooterAnimation;
+export default FooterAnimation

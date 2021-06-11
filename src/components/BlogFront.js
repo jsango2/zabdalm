@@ -38,6 +38,7 @@ const Linija = styled.div`
     width: 65px;
   }
 `
+
 const ButtonWrap = styled.div`
   width: 180px;
   margin: 0 auto;

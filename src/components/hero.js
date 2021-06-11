@@ -224,11 +224,11 @@ const Hero = () => {
           <Slider
             dots={false}
             fade={true}
-            // infinite={true}
-            // speed={11000}
+            infinite={true}
+            speed={6000}
             // slidesToShow={1}
             // slidesToScroll={1}
-            autoplaySpeed={7000}
+            // autoplaySpeed={8000}
             autoplay={true}
             cssEase="cubic-bezier(0,0,0,1.01)"
           >
