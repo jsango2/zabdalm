@@ -17,10 +17,13 @@ const Wrap = styled.div`
   margin-top: 200px;
   text-align: center;
   @media only screen and (max-width: 800px) {
-    height: 1250px;
+    height: 1440px;
+  }
+  @media only screen and (max-width: 620px) {
+    height: 1820px;
   }
   @media only screen and (max-width: 520px) {
-    height: 1050px;
+    height: 1777px;
   }
   @media only screen and (max-width: 370px) {
     height: 1050px;
