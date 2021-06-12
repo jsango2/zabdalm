@@ -43,7 +43,7 @@ const WrapFormAndText = styled.div`
   }
   @media only screen and (max-width: 550px) {
     flex-direction: column;
-    left: 29px;
+    left: 20px;
     width: 90vw;
   }
 `
@@ -65,8 +65,9 @@ const WrapForm = styled.div`
     }
   }
   @media only screen and (max-width: 550px) {
-    width: 80vw;
+    width: 100%;
     margin-bottom: 45px;
+    margin: 0 auto;
     & > form {
       width: 100%;
     }

@@ -25,9 +25,6 @@ const Wrap = styled.div`
   @media only screen and (max-width: 520px) {
     height: 1777px;
   }
-  @media only screen and (max-width: 370px) {
-    height: 1050px;
-  }
 `
 const Title = styled.div`
   font-family: Playfair Display;
