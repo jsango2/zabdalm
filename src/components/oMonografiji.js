@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import Knjiga from "../../content/assets/knjiga.png"
 import Ulomak from "../../content/assets/ulomakStamp.svg"
+import ulomakPdf from "../../content/assets/ulomakPdf.pdf"
 
 const MonoDiv = styled.div`
   display: flex;
@@ -95,7 +96,9 @@ const OMonografiji = () => {
       <KnjigaWrap>
         <img src={Knjiga} width="100%" alt="knjiga" />
         <UlomakWrap>
-          <img src={Ulomak} width="100%" alt="ulomak" />
+          <a href={ulomakPdf} download>
+            <img src={Ulomak} width="100%" alt="ulomak" />
+          </a>
         </UlomakWrap>
       </KnjigaWrap>
       <MonoSection>

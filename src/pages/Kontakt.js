@@ -7,6 +7,7 @@ import Brodi from "../../content/assets/brodi.png"
 import Tovar from "../../content/assets/tovarBaba.png"
 import HeroPhoto from "../../content/assets/heroPhoto.png"
 import Trogir from "../../content/assets/trogir.jpg"
+import backMobile from "../../content/assets/imageKontakt.png"
 import Etno from "../../content/assets/etno.png"
 import { graphql } from "gatsby"
 import { useTranslation } from "react-i18next"
@@ -42,6 +43,7 @@ const WrapFormAndText = styled.div`
     width: 75vw;
   }
   @media only screen and (max-width: 550px) {
+    top: 74px;
     flex-direction: column;
     left: 20px;
     width: 90vw;
@@ -89,6 +91,7 @@ const WrapText = styled.div`
     line-height: 20px;
   }
   @media only screen and (max-width: 550px) {
+    margin-top: 46px;
     width: 80vw;
     font-size: 24px;
     line-height: 30px;
@@ -239,7 +242,7 @@ function Kontakt() {
                 width: "100%",
                 height: "100%",
                 backgroundPosition: "left bottom",
-                backgroundImage: `url(${Trogir})`,
+                backgroundImage: `url(${backMobile})`,
               }}
             ></div>
           </>
@@ -259,7 +262,7 @@ function Kontakt() {
                 />
               </div>
 
-              <div>
+              <div style={{ marginTop: "5px" }}>
                 <label>Email</label>
                 <br />
 
@@ -271,7 +274,7 @@ function Kontakt() {
                   placeholder={t("Vas Email")}
                 />
               </div>
-              <div>
+              <div style={{ marginTop: "5px" }}>
                 <label>{t("Poruka")}</label>
                 <br />
                 <textarea
@@ -282,7 +285,7 @@ function Kontakt() {
                   placeholder={t("Vasa poruka")}
                 />
               </div>
-              <div style={{ float: "right", marginTop: "15px" }}>
+              <div style={{ float: "right", marginTop: "25px" }}>
                 <button type="submit">{t("Posalji poruku")}</button>
               </div>
             </form>

@@ -17,6 +17,7 @@ import PartneriProjektaFront from "../components/PartneriProjektaFront"
 import InstagramFront from "../components/InstagramFront"
 import "../../i18next"
 import Montaza3 from "../components/Montaza3"
+import StyledBackgroundSection from "./../components/oAutoruImage"
 
 const IndexPage = ({ data }) => {
   // const { t } = useTranslation()
@@ -44,17 +45,18 @@ const IndexPage = ({ data }) => {
     <Layout isOpen={isOpen}>
       {/* <SEO title="Početna" /> */}
       <Hero />
-      <Montaza />
+      {/* <Montaza />
       <Montaza1 />
-      <Montaza2 />
-      <Montaza3 />
-      <CitatFront />
+      <Montaza2 /> */}
 
+      <CitatFront />
+      <Montaza3 />
       <BlogFront blogovi={data} />
       <Nosnja />
       <NajpopularnijePrice />
       <RazgledniceNaMapiFront />
       <OautoruFront />
+
       <PartneriProjektaFront data={data.wpgraphql} />
       <InstagramFront />
     </Layout>

@@ -5,11 +5,11 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 import i18next from "i18next"
 import { useTranslation } from "react-i18next"
-
 import OKnjiziIntro from "../components/OKnjiziIntro"
 import OKnjiziBlogFront from "../components/oKnjiziBlogFront"
 import OMonografiji from "../components/oMonografiji"
 import Press from "../components/Press"
+import ulomakPdf from "../../content/assets/ulomakPdf.pdf"
 
 import KolazAnimation from "../components/kolazAnimation"
 import PlanineAnimation from "../components/planineAnimation"
@@ -413,7 +413,9 @@ const About = ({ data }) => {
       <KnjigaWrapper>
         <KnjigaAnimation />
         <Ulomak2Wrap>
-          <img src={Ulomak} width="100%" alt="ulomak" />
+          <a href={ulomakPdf} download>
+            <img src={Ulomak} width="100%" alt="ulomak" />
+          </a>
         </Ulomak2Wrap>
       </KnjigaWrapper>
 
