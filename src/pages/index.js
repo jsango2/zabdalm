@@ -6,6 +6,8 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Hero from "../components/hero"
 import CitatFront from "./../components/citatFront"
 import Montaza from "../components/Montaza"
+import Montaza1 from "../components/Montaza1"
+import Montaza2 from "../components/Montaza2"
 import BlogFront from "../components/BlogFront"
 import Nosnja from "../components/nosnja"
 import NajpopularnijePrice from "../components/NajpopularnijePrice"
@@ -49,7 +51,7 @@ const IndexPage = ({ data }) => {
       <RazgledniceNaMapiFront />
       <OautoruFront />
       <PartneriProjektaFront data={data.wpgraphql} />
-      <InstagramFront />
+      <InstagramFront /> <Montaza1 /> <Montaza2 />
     </Layout>
   )
 }
