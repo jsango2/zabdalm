@@ -35,9 +35,9 @@ function PlanineAnimation() {
     mode: "scroll",
     actions: [
       {
-        visibility: [0.1, 1],
+        visibility: [0, 1],
         type: "seek",
-        frames: [30, 158],
+        frames: [45, 158],
       },
     ],
   }

@@ -283,6 +283,7 @@ function Kontakt() {
                   value={state.poruka || ""}
                   onChange={handleChange}
                   placeholder={t("Vasa poruka")}
+                  className="kontaktArea"
                 />
               </div>
               <div style={{ float: "right", marginTop: "25px" }}>
