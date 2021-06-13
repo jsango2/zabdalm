@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Lottie from "lottie-react"
 import animation1152 from "../animations/grad/grad"
-import animation2 from "../animations/gradProba/grad2"
+import animation1 from "../animations/gradProba/grad1"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -29,7 +29,7 @@ const Wrap = styled.div`
   }
 `
 
-function Montaza() {
+function Montaza1() {
   const interactivity = {
     mode: "scroll",
     actions: [
@@ -57,7 +57,7 @@ function Montaza() {
       </Wrap> */}
       <Wrap>
         <Lottie
-          animationData={animation2}
+          animationData={animation1}
           interactivity={interactivity}
           autoPlay={false}
           loop={false}
@@ -67,4 +67,4 @@ function Montaza() {
   )
 }
 
-export default Montaza
+export default Montaza1

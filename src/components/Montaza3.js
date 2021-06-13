@@ -29,7 +29,7 @@ const Wrap = styled.div`
   }
 `
 
-function Montaza() {
+function Montaza3() {
   const interactivity = {
     mode: "scroll",
     actions: [
@@ -57,7 +57,7 @@ function Montaza() {
       </Wrap> */}
       <Wrap>
         <Lottie
-          animationData={animation2}
+          animationData={animation3}
           interactivity={interactivity}
           autoPlay={false}
           loop={false}
@@ -67,4 +67,4 @@ function Montaza() {
   )
 }
 
-export default Montaza
+export default Montaza3

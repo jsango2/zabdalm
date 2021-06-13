@@ -16,6 +16,7 @@ import OautoruFront from "../components/OautoruFront"
 import PartneriProjektaFront from "../components/PartneriProjektaFront"
 import InstagramFront from "../components/InstagramFront"
 import "../../i18next"
+import Montaza3 from "../components/Montaza3"
 
 const IndexPage = ({ data }) => {
   // const { t } = useTranslation()
@@ -43,15 +44,19 @@ const IndexPage = ({ data }) => {
     <Layout isOpen={isOpen}>
       {/* <SEO title="Početna" /> */}
       <Hero />
-      <CitatFront />
       <Montaza />
+      <Montaza1 />
+      <Montaza2 />
+      <Montaza3 />
+      <CitatFront />
+
       <BlogFront blogovi={data} />
       <Nosnja />
       <NajpopularnijePrice />
       <RazgledniceNaMapiFront />
       <OautoruFront />
       <PartneriProjektaFront data={data.wpgraphql} />
-      <InstagramFront /> <Montaza1 /> <Montaza2 />
+      <InstagramFront />
     </Layout>
   )
 }

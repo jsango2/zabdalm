@@ -6,6 +6,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import Logo from "../images/LogoTopsvg.svg"
 import styled from "styled-components"
+import Layout from "./../components/layout"
 
 const Wrap = styled.div`
   margin: 0 auto;
@@ -25,19 +26,14 @@ const Wrap = styled.div`
 const NotFoundPage = ({ data, location }) => {
   return (
     <>
-      <Header></Header>
-      <Wrap>
-        <SEO title="404: Not Found" />
-        <img
-          style={{ marginBottom: "50px" }}
-          src={Logo}
-          alt="logo"
-          width="250px"
-        />
-        <h1>404: Stranica nije pronađena</h1>
-        <p>Provjerite vaš link</p>{" "}
-      </Wrap>
-      <Footer></Footer>
+      <Layout>
+        <Wrap>
+          <SEO title="404: Not Found" />
+          <div>Zabravljena Dalmacija</div>
+          <h1>404: Stranica nije pronađena</h1>
+          <p>Provjerite vaš link</p>{" "}
+        </Wrap>
+      </Layout>
     </>
   )
 }
