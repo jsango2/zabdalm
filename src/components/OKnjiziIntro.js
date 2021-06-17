@@ -1,13 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
-
-// import {
-//   Link,
-//   Trans,
-//   useTranslation,
-//   useI18next,
-// } from "gatsby-plugin-react-i18next"
 import { useTranslation } from "react-i18next"
 
 const WrapNaslov = styled.div`
@@ -20,8 +12,6 @@ const WrapNaslov = styled.div`
   max-width: 600px;
   line-height: 103.3%;
 
-  @media only screen and (max-width: 999px) {
-  }
   @media only screen and (max-width: 750px) {
     width: 100%;
     font-size: 44px;
@@ -29,8 +19,6 @@ const WrapNaslov = styled.div`
   }
   @media only screen and (max-width: 550px) {
     font-size: 34px;
-  }
-  @media only screen and (max-width: 330px) {
   }
 `
 const IntroAbout = styled.div``
@@ -46,12 +34,6 @@ const TextContainer = styled.div`
 
   @media only screen and (max-width: 850px) {
     padding: 0 10%;
-  }
-  @media only screen and (max-width: 750px) {
-    padding: 0 48px;
-  }
-  @media only screen and (max-width: 450px) {
-    padding: 0 20px;
   }
 `
 const BreakContainer = styled.div`
