@@ -30,11 +30,10 @@ const KolazWrapper = styled.div`
   /* position: relative;
   top: -1070px; */
   margin-bottom: -1600px;
-  /* @media only screen and (max-width: 1152px) {
-    top: -88vw;
-    margin-bottom: -96vw;
+  @media only screen and (max-width: 1152px) {
+    display: none;
   }
-  @media only screen and (max-width: 750px) {
+  /*@media only screen and (max-width: 750px) {
     top: -125vw;
     margin-bottom: -130vw;
   }

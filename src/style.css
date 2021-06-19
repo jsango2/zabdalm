@@ -365,3 +365,7 @@ a:focus {
     display: none;
   }
 }
+
+.kontaktArea{
+  resize: none;
+}

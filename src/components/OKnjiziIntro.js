@@ -1,6 +1,9 @@
 import React from "react"
 import styled from "styled-components"
+<<<<<<< HEAD
 
+=======
+>>>>>>> b3bda7db3ee23380e9487626e3e54748ba87e2a4
 import { useTranslation } from "react-i18next"
 
 const WrapNaslov = styled.div`
@@ -13,8 +16,6 @@ const WrapNaslov = styled.div`
   max-width: 600px;
   line-height: 103.3%;
 
-  @media only screen and (max-width: 999px) {
-  }
   @media only screen and (max-width: 750px) {
     width: 100%;
     font-size: 44px;
@@ -22,8 +23,6 @@ const WrapNaslov = styled.div`
   }
   @media only screen and (max-width: 550px) {
     font-size: 34px;
-  }
-  @media only screen and (max-width: 330px) {
   }
 `
 const IntroAbout = styled.div``
@@ -39,12 +38,6 @@ const TextContainer = styled.div`
 
   @media only screen and (max-width: 850px) {
     padding: 0 10%;
-  }
-  @media only screen and (max-width: 750px) {
-    padding: 0 48px;
-  }
-  @media only screen and (max-width: 450px) {
-    padding: 0 20px;
   }
 `
 const BreakContainer = styled.div`

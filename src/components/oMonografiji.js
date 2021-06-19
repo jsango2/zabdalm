@@ -16,13 +16,9 @@ const MonoDiv = styled.div`
 const MonoSection = styled.div`
   width: 50%;
 
-  @media only screen and (max-width: 1152px) {
-    /* width: 45%; */
-  }
   @media only screen and (max-width: 850px) {
     max-width: 812px;
     width: 100%;
-    /* padding: 0 48px; */
     margin: 0 auto;
     padding: 0 10%;
   }
