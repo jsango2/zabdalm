@@ -6,7 +6,6 @@ import Potpis from "../../content/assets/potpis.svg"
 import Knjiga from "../../content/assets/knjiga.png"
 import Button from "./button"
 import Cart from "../../content/assets/cart.svg"
-import { graphql } from "gatsby"
 import { useWindowSize } from "../components/useWindowSize"
 
 import { useTranslation } from "gatsby-plugin-react-i18next"

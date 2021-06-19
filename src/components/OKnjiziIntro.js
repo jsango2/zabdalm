@@ -1,13 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql } from "gatsby"
 
-// import {
-//   Link,
-//   Trans,
-//   useTranslation,
-//   useI18next,
-// } from "gatsby-plugin-react-i18next"
 import { useTranslation } from "react-i18next"
 
 const WrapNaslov = styled.div`

@@ -12,16 +12,16 @@ import i18next from "i18next"
 import Tovar from "../../content/assets/tovar.png"
 import Close from "../../content/assets/close.png"
 
-const WrapAll = styled.div`
-  /* position: fixed;
-  top: 0;
-  left: 0;
+// const WrapAll = styled.div`
+//   /* position: fixed;
+//   top: 0;
+//   left: 0;
 
-  height: 100vh;
-  width: 100vw;
-  z-index: 998;
-  background-color: #0f0f0fbd; */
-`
+//   height: 100vh;
+//   width: 100vw;
+//   z-index: 998;
+//   background-color: #0f0f0fbd; */
+// `
 const Wrap = styled.div`
   position: fixed;
   top: 89%;
@@ -34,9 +34,9 @@ const Wrap = styled.div`
 `
 
 const CloseButton = styled.div`
-    position: absolute;
-    top: 10px;
-    right: 8%;
+  position: absolute;
+  top: 10px;
+  right: 8%;
 `
 
 function MeniMobile({ handleClick, isOpen }) {
@@ -57,7 +57,9 @@ function MeniMobile({ handleClick, isOpen }) {
   return (
     <>
       <div className={`${isOpen ? "dark" : null} `}>
-      <CloseButton onClick={e => handleClick()}><img src={Close} width="100%" alt="close" /></CloseButton>
+        <CloseButton onClick={e => handleClick()}>
+          <img src={Close} width="100%" alt="close" />
+        </CloseButton>
         {isOpen ? (
           <div
             style={{

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react"
 import "../../i18next"
 
 import { useTranslation } from "react-i18next"
-import { graphql } from "gatsby"
 import { GoInfo } from "react-icons/go"
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
 // import Geocoder from "react-mapbox-gl-geocoder"
@@ -60,35 +59,26 @@ const InfoWrap = styled.div`
 
 function Razglednice({ data }) {
   const { t } = useTranslation()
-  // const { languages, changeLanguage } = useI18next()
   const size = useWindowSize()
   const mapContainer = useRef()
   const [value, setValue] = useState([1889, 1970])
   const [value2, setValue2] = useState([1890, 1970])
-  // const [YearFilteredFeaturedArr, setYearFilteredFeaturedArr] = useState([])
   const [innerHeight, setInnerHeight] = useState(null)
   const [lng, setLng] = useState(16.7469)
   const [lat, setLat] = useState(42.7781)
   const [zoom, setZoom] = useState(6.03)
   const [hasPoints, setHasPoints] = useState(false)
-  // const [pages, setPages] = useState()
-  // const [airports, setAirports] = useState([])
-  // const [array, setArray] = useState([])
+
   const [item, setItem] = useState([])
-  // const [loader, setLoader] = useState(false)
   const [featuresArr, setFeaturesArr] = useState([])
   const [show, setShow] = useState(false)
   const [popupFrame, setPopupFrame] = useState(null)
   const [popupOn, setPopupOn] = useState(false)
-  // const [thumbOn, setThumbOn] = useState(false)
-  // const [flickr, setFlickr] = useState([])
+
   const [geoData, setGeoData] = useState([])
   const [geoData2, setGeoData2] = useState([])
-  // const [FlickrDataTest, setFlickrDataTest] = useState([])
   const [isOpen, setIsOpen] = useState(false)
-  // const [slike, setSlike] = useState([])
-  // const [listData, setListData] = useState([])
-  // const context = React.useContext(I18nextContext)
+
   const [lang, setLang] = useState(i18next.language)
 
   useEffect(() => {
@@ -144,7 +134,7 @@ function Razglednice({ data }) {
     var docRef = firebase
       .firestore()
       .collection("razglednice")
-      .doc("wAAHSiuZbg5A6dZ6DmuA")
+      .doc("QSIGW6ShKzXITRab8w4X")
     docRef
       .get()
       .then(doc => {
@@ -561,22 +551,22 @@ function Razglednice({ data }) {
     }
   }
 
-  function getUniqueFeatures(array, comparatorProperty) {
-    var existingFeatureKeys = {}
-    // Because features come from tiled vector data, feature geometries may be split
-    // or duplicated across tile boundaries and, as a result, features may appear
-    // multiple times in query results.
-    var uniqueFeatures = array.filter(function (el) {
-      if (existingFeatureKeys[el.properties[comparatorProperty]]) {
-        return false
-      } else {
-        existingFeatureKeys[el.properties[comparatorProperty]] = true
-        return true
-      }
-    })
+  // function getUniqueFeatures(array, comparatorProperty) {
+  //   var existingFeatureKeys = {}
+  //   // Because features come from tiled vector data, feature geometries may be split
+  //   // or duplicated across tile boundaries and, as a result, features may appear
+  //   // multiple times in query results.
+  //   var uniqueFeatures = array.filter(function (el) {
+  //     if (existingFeatureKeys[el.properties[comparatorProperty]]) {
+  //       return false
+  //     } else {
+  //       existingFeatureKeys[el.properties[comparatorProperty]] = true
+  //       return true
+  //     }
+  //   })
 
-    return uniqueFeatures
-  }
+  //   return uniqueFeatures
+  // }
   const handleThumbClickClose = item => {
     setShow(prev => !prev)
   }
@@ -602,10 +592,10 @@ function Razglednice({ data }) {
     setValue(newValue)
   }
 
-  const handleClick = () => {
-    setIsOpen(false)
-    // allowScroll()
-  }
+  // const handleClick = () => {
+  //   setIsOpen(false)
+  //   // allowScroll()
+  // }
   useEffect(() => {
     featuresArr.map(item =>
       item.properties.title_naslov ? setHasPoints(true) : setHasPoints(false)

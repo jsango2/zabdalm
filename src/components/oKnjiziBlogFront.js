@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
-import BlogCard from "./BlogCard"
-import Button from "./button"
-import { useWindowSize } from "./useWindowSize"
-import { RiArrowDropDownFill } from "react-icons/ri"
+
+// import { useWindowSize } from "./useWindowSize"
 import { useTranslation } from "react-i18next"
-import MeniMobileBlog from "./MeniMobileBlog"
 import BlogPostCards from "./BlogPostCards"
 
 const Wrap = styled.div`
@@ -37,13 +34,13 @@ const Linija = styled.div`
 `
 
 function OKnjiziBlogFront({ blogovi2 }) {
-  const [t, i18n] = useTranslation()
+  // const [t, i18n] = useTranslation()
 
-  const [current, setCurrent] = useState(0)
-  const size = useWindowSize()
-  const handleClick = (e, id) => {
-    current === id ? setCurrent(null) : setCurrent(id)
-  }
+  // const [current, setCurrent] = useState(0)
+  // const size = useWindowSize()
+  // const handleClick = (e, id) => {
+  //   current === id ? setCurrent(null) : setCurrent(id)
+  // }
 
   return (
     <>

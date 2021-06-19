@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Lottie from "lottie-react"
-import animation1152 from "../animations/grad/grad"
+// import animation1152 from "../animations/grad/grad"
 import animation3 from "../animations/gradProba/grad3"
 
 const Wrap = styled.div`

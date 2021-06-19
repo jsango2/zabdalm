@@ -17,6 +17,7 @@ const Wrap = styled.div`
   width: 342px;
   height: 323px;
   margin-bottom: 34px;
+  outline: none;
   @media only screen and (max-width: 350px) {
     min-width: 300px;
   }
@@ -96,7 +97,7 @@ function BlogCard({ blogs }) {
   // }
   return (
     <Link style={{ textDecoration: "none" }} to={`/Blog/${blogs.node.slug}`}>
-      <Wrap>
+      <Wrap className="blogCardFotoWrap">
         {blogs &&
           blogs &&
           (i18next.language === "hr" ? (
@@ -112,13 +113,22 @@ function BlogCard({ blogs }) {
                 style={{
                   width: "100%",
                   height: "233px",
-                  backgroundColor: "grey",
-                  backgroundImage: `url(${blogs.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
-                  backgroundPosition: "left",
-                  backgroundSize: "cover ",
-                  backgroundRepeat: "no-repeat",
+                  overflow: "hidden",
                 }}
-              ></div>
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "grey",
+                    backgroundImage: `url(${blogs.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
+                    backgroundPosition: "left",
+                    backgroundSize: "cover ",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  className="blogCardFoto"
+                ></div>
+              </div>
               <CardText>{blogs.node.blog_graphql.naslovBlogaHr}</CardText>
             </>
           ) : (

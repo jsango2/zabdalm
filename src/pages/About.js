@@ -6,12 +6,10 @@ import { graphql } from "gatsby"
 import i18next from "i18next"
 import { useTranslation } from "react-i18next"
 import OKnjiziIntro from "../components/OKnjiziIntro"
-import OKnjiziBlogFront from "../components/oKnjiziBlogFront"
 import OMonografiji from "../components/oMonografiji"
 import Press from "../components/Press"
 import ulomakPdf from "../../content/assets/ulomakPdf.pdf"
 
-import KolazAnimation from "../components/kolazAnimation"
 import PlanineAnimation from "../components/planineAnimation"
 import VojnikAnimation from "../components/vojnikAnimation"
 import AlkarAnimation from "../components/alkarAnimation"
@@ -254,7 +252,7 @@ const About = ({ data }) => {
   const reviews = data.wpgraphql.komentari.edges
   let items = []
 
-  if (i18next.language == "hr") {
+  if (i18next.language === "hr") {
     reviews.forEach(review => {
       items.push(
         <OthersRemark className="OthersSayItem" data-value="1">
@@ -308,9 +306,9 @@ const About = ({ data }) => {
     }
   }
 
-  const handleClick = (e, id) => {
-    current === id ? setCurrent(null) : setCurrent(id)
-  }
+  // const handleClick = (e, id) => {
+  //   current === id ? setCurrent(null) : setCurrent(id)
+  // }
 
   const [mainIndex, setMainIndex] = useState(0)
   const [mainAnimation, setMainAnimation] = useState(false)
@@ -345,7 +343,7 @@ const About = ({ data }) => {
 
   const [lang, setLang] = useState(i18next.language)
 
-  if (lang != i18next.language) {
+  if (lang !== i18next.language) {
     setLang(i18next.language)
     setThumbs(thumbItems(items, [setThumbIndex, setThumbAnimation]))
   }

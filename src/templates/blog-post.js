@@ -5,8 +5,7 @@ import Layout from "../components/layout"
 import { useTranslation } from "react-i18next"
 import Lottie from "lottie-react"
 import animation1152 from "../animations/val/val2"
-import BlogCard from "../components/BlogCard"
-import BlogPostCards from "../components/BlogPostCards"
+
 import i18next from "i18next"
 import "../../i18next"
 
@@ -207,11 +206,13 @@ const BlogPost = ({ data }) => {
         case "PRIČE IZ DALMATINSKE POVIJESTI":
           cat = "STORIES FROM DALMATIAN HISTORY"
           break
+        default:
+          console.log("default case")
       }
       setCategorie(cat)
     }
     console.log("kategorija", cat)
-  }, [i18next.language])
+  }, [])
 
   return (
     <>
@@ -328,8 +329,9 @@ const BlogPost = ({ data }) => {
                 textAlign: "center",
               }}
             >
-              {" "}
-              {data.wpgraphql.blog.blog_graphql.tekstSponzorira}
+              {lang === "hr"
+                ? data.wpgraphql.blog.blog_graphql.tekstSponzorira
+                : data.wpgraphql.blog.blog_graphql.tekstSponzoriraEng}
             </div>
           </>
         ) : (

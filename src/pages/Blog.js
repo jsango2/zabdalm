@@ -62,7 +62,7 @@ function Blog({ data }) {
   const [lang, setLang] = useState(i18next.language)
   const [kategorija, setKategorija] = useState("SVE")
   const [query, setQuery] = useState(data.wpgraphql.blogovi.edges)
-  const [kategorijaEng, setKategorijaEng] = useState("SVE")
+  // const [kategorijaEng, setKategorijaEng] = useState("SVE")
 
   var queryData = data.wpgraphql.blogovi.edges
 
@@ -83,7 +83,7 @@ function Blog({ data }) {
     if (kategorija === "EVERYTHING") {
       setKategorija("SVE")
     }
-  })
+  }, [kategorija])
 
   useEffect(() => {
     if (kategorija === "SVE") {

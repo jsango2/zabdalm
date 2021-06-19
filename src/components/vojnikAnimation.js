@@ -4,9 +4,9 @@ import styled from "styled-components"
 import Lottie from "lottie-react"
 
 import vojnik1152 from "../animations/vojnik1152"
-import kolaz750 from "../animations/kolaz750"
-import kolaz550 from "../animations/kolaz550"
-import kolaz350 from "../animations/kolaz350"
+// import kolaz750 from "../animations/kolaz750"
+// import kolaz550 from "../animations/kolaz550"
+// import kolaz350 from "../animations/kolaz350"
 
 const AnimationWrap = styled.div`
   position: relative;
@@ -87,14 +87,14 @@ function VojnikAnimation() {
     //     />
     //   )
     // } else {
-      return (
-        <Lottie
-          animationData={vojnik1152}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      )
+    return (
+      <Lottie
+        animationData={vojnik1152}
+        interactivity={interactivity}
+        autoPlay={false}
+        loop={false}
+      />
+    )
     // }
   }
 

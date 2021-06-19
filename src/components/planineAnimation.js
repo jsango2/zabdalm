@@ -4,9 +4,9 @@ import styled from "styled-components"
 import Lottie from "lottie-react"
 
 import planine1152 from "../animations/planine1152"
-import kolaz750 from "../animations/kolaz750"
-import kolaz550 from "../animations/kolaz550"
-import kolaz350 from "../animations/kolaz350"
+// import kolaz750 from "../animations/kolaz750"
+// import kolaz550 from "../animations/kolaz550"
+// import kolaz350 from "../animations/kolaz350"
 
 const AnimationWrap = styled.div`
   position: relative;

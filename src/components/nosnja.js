@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Lottie from "lottie-react"
 
 import animation1152 from "./../animations/etno/etno"
+import etnoNovo from "./../animations/etno/etnoNovo"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -39,7 +40,7 @@ function Nosnja() {
     <Wrap>
       <Lottie
         style={{ textAlign: "center" }}
-        animationData={animation1152}
+        animationData={etnoNovo}
         interactivity={interactivity}
         autoPlay={false}
         loop={false}

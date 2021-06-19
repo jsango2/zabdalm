@@ -3,7 +3,9 @@ import styled from "styled-components"
 
 import Lottie from "lottie-react"
 
-import alkar1152 from "../animations/alkar1152"
+// import alkar1152 from "../animations/alkar1152"
+// import alkar1152 from "../animations/alkar2"
+import alkarNovo2 from "../animations/alkarNovo2"
 // import animation750 from "../animations/footer750";
 // import animation550 from "../animations/footer550";
 // import animation350 from "../animations/footer350";
@@ -79,7 +81,7 @@ function AlkarAnimation() {
     // } else {
     return (
       <Lottie
-        animationData={alkar1152}
+        animationData={alkarNovo2}
         interactivity={interactivity}
         autoPlay={false}
         loop={false}

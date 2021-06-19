@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
 
-import Lottie from "lottie-react";
+import Lottie from "lottie-react"
 
-import knjiga1152 from "../animations/knjiga1152";
-import knjiga370 from "../animations/knjiga370";
+import knjiga1152 from "../animations/knjiga1152"
+import knjiga370 from "../animations/knjiga370"
 
 const AnimationWrap = styled.div`
-@media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 850px) {
     transform: scale(1.5);
   }
-`;
+`
 
 function KnjigaAnimation() {
   const interactivity = {
@@ -22,23 +22,23 @@ function KnjigaAnimation() {
         frames: [0, 152],
       },
     ],
-  };
+  }
 
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
-  });
+  })
   useEffect(() => {
     function handleResize() {
       setWindowSize({
         width: window.innerWidth,
         height: window.innerHeight,
-      });
+      })
     }
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    window.addEventListener("resize", handleResize)
+    handleResize()
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   function renderAnimation(width) {
     if (width < 370) {
@@ -49,8 +49,8 @@ function KnjigaAnimation() {
           autoPlay={false}
           loop={false}
         />
-      );
-      }else{
+      )
+    } else {
       return (
         <Lottie
           animationData={knjiga1152}
@@ -58,11 +58,11 @@ function KnjigaAnimation() {
           autoPlay={false}
           loop={false}
         />
-      );
+      )
     }
   }
 
-  return <AnimationWrap>{renderAnimation(windowSize.width)}</AnimationWrap>;
+  return <AnimationWrap>{renderAnimation(windowSize.width)}</AnimationWrap>
 }
 
-export default KnjigaAnimation;
+export default KnjigaAnimation

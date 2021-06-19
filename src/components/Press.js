@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import i18next from "i18next"
-import { useTranslation } from "react-i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}

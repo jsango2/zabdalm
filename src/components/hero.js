@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import HeroPhoto from "../../content/assets/heroPhoto.png"
 import Knjiga from "../../content/assets/knjiga.png"
@@ -9,9 +9,7 @@ import Button from "./button"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { CgMenuGridR } from "react-icons/cg"
 import { useWindowSize } from "./useWindowSize"
-import { graphql } from "gatsby"
 // import { useTranslation } from "gatsby-plugin-react-i18next"
 import { useTranslation } from "react-i18next"
 import MeniMobile from "./meniMobile"
@@ -124,27 +122,27 @@ const KnjigaWrap = styled.div`
     height: 363px;
   }
 `
-const Hamburger = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  color: black;
-  background-color: #b0c7ce;
-  position: relative;
-  width: 100%;
-  height: 55px;
-  /* top: 2px; */
-  margin-right: 30px;
-  padding-left: 48px;
-  /* display: none; */
+// const Hamburger = styled.div`
+//   display: flex;
+//   align-items: center;
+//   cursor: pointer;
+//   color: black;
+//   background-color: #b0c7ce;
+//   position: relative;
+//   width: 100%;
+//   height: 55px;
+//   /* top: 2px; */
+//   margin-right: 30px;
+//   padding-left: 48px;
+//   /* display: none; */
 
-  @media screen and (min-width: 750px) {
-    display: none;
-  }
-  @media screen and (max-width: 450px) {
-    padding-left: 20px;
-  }
-`
+//   @media screen and (min-width: 750px) {
+//     display: none;
+//   }
+//   @media screen and (max-width: 450px) {
+//     padding-left: 20px;
+//   }
+// `
 const Img = styled.div`
   width: 100%;
   height: 544px;
@@ -268,17 +266,3 @@ const Hero = () => {
 }
 
 export default Hero
-
-// {size.width > 750 ? (
-//   <ButtonWrap>
-//     <Button text={t("kupiAtlas")} ikona={Cart} color="white" />
-//   </ButtonWrap>
-// ) : (
-//   <ButtonWrap>
-//     <Button
-//       text={t("kupiatlaskratko")}
-//       ikona={Cart}
-//       color="white"
-//     />
-//   </ButtonWrap>
-// )}{" "}

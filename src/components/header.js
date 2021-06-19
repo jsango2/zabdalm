@@ -32,7 +32,7 @@ const HeaderWrap = styled.div`
     padding: 0 0; */
     width: 100%;
   }
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 820px) {
     display: none;
   }
 `
@@ -51,7 +51,7 @@ const Hamburger = styled.div`
   padding-left: 48px;
   /* display: none; */
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 820px) {
     display: none;
   }
   @media screen and (max-width: 450px) {
@@ -191,7 +191,7 @@ const Header = () => {
               style={{
                 position: "absolute",
                 top: "13px",
-                right: "43px",
+                right: "33px",
                 display: "flex",
                 cursor: "pointer",
                 fontSize: "12px",

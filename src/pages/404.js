@@ -2,9 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import Logo from "../images/LogoTopsvg.svg"
+// import Header from "../components/header"
+// import Footer from "../components/footer"
+// import Logo from "../images/LogoTopsvg.svg"
 import styled from "styled-components"
 import Layout from "./../components/layout"
 

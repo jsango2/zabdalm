@@ -85,8 +85,13 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  -webkit-tap-highlight-color: transparent;
   /* color: rgba(0, 0, 0, 0.219); */
 }
+/* a:focus {
+  outline: 0;
+  outline: none;
+} */
 
 a:hover {
   outline-width: 0;
@@ -1102,7 +1107,7 @@ pre tt:after {
   align-items: center;
   /* margin-right: 175px; */
   /* justify-content: center; */
-  width: 804px;
+  width: 860px;
   /* min-width: 804px; */
   margin: 0 auto;
   /* transition: all 0.8s ease-in-out !important; */
@@ -1469,6 +1474,13 @@ textarea:focus {
   right: 2% !important;
   /* transform: translate(50%, 10px) !important; */
 }
+.blogCardFoto {
+  transition: all 0.4s ease-in-out;
+}
+.blogCardFotoWrap:hover .blogCardFoto {
+  transform: scale(1.03);
+}
+
 .slides-wrap {
   display: flex;
   align-items: center;
@@ -1912,7 +1924,7 @@ textarea:focus {
   text-decoration: none;
   color: white;
   /* margin: 0 10px; */
-  width: 125px;
+  width: 140px;
   text-align: center;
   line-height: 16px;
 }

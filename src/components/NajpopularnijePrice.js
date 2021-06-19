@@ -71,9 +71,6 @@ const TextClanci = styled.div`
 
 function NajpopularnijePrice() {
   const [lang, setLang] = useState(i18next.language)
-  const [fireData, setFireData] = useState([])
-  const [result, setResult] = useState([])
-  const [sortiranePricePoCitanosti, setSortiranePricePoCitanosti] = useState([])
 
   const [t, i18n] = useTranslation()
 
