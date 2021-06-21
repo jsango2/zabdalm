@@ -1,9 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-<<<<<<< HEAD
-
-=======
->>>>>>> b3bda7db3ee23380e9487626e3e54748ba87e2a4
 import { useTranslation } from "react-i18next"
 
 const WrapNaslov = styled.div`

@@ -15,7 +15,7 @@ import OautoruFront from "../components/OautoruFront"
 import PartneriProjektaFront from "../components/PartneriProjektaFront"
 import InstagramFront from "../components/InstagramFront"
 import "../../i18next"
-import Montaza3 from "../components/Montaza3"
+import Montaza from "../components/Montaza"
 // import FirebaseUpload from "../components/firebaseUpload"
 
 const IndexPage = ({ data }) => {
@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
       <Montaza2 /> */}
 
       <CitatFront />
-      <Montaza3 />
+      <Montaza />
       <BlogFront blogovi={data} />
       <Nosnja />
       <NajpopularnijePrice />

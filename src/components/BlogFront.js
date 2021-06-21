@@ -16,7 +16,7 @@ const Wrap = styled.div`
   height: auto;
   min-height: 600px;
   position: relative;
-  margin: 50px 0;
+  margin: 50px 0 10px 0;
   text-align: center;
   ${"" /* @media only screen and (max-width: 76em) {
     height: 450px;

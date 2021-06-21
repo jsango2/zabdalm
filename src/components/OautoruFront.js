@@ -7,8 +7,10 @@ import Knjiga from "../../content/assets/knjiga.png"
 import Button from "./button"
 import Cart from "../../content/assets/cart.svg"
 import { useWindowSize } from "../components/useWindowSize"
-
+import Lottie from "lottie-react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
+import potpisLottie from "./../animations/potpis/potpis"
+import knjigadupla from "../animations/knjigaDUpla/knjigadupla"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -63,13 +65,13 @@ const KnjigaWrap = styled.div`
   }
   @media only screen and (max-width: 750px) {
     min-width: 345px;
-    width: 345px;
+    width: 650px;
     height: auto;
     left: 0;
   }
   @media only screen and (max-width: 550px) {
     min-width: 245px;
-    width: 245px;
+    width: 501px;
     height: auto;
     left: 0;
   }
@@ -305,6 +307,16 @@ function OautoruFront() {
   const handleShopLink = () => {
     window.location.href = "https://shop.zaboravljenadalmacija.hr"
   }
+  const interactivity = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0.25, 0.6],
+        type: "seek",
+        frames: [0, 90],
+      },
+    ],
+  }
   return (
     <>
       {size.width < 750 ? (
@@ -344,7 +356,14 @@ function OautoruFront() {
                   position: "relative",
                 }}
               >
-                <img src={Potpis} alt="signature" />
+                {/* <img src={Potpis} alt="signature" /> */}
+                <Lottie
+                  // style={{ textAlign: "center" }}
+                  animationData={potpisLottie}
+                  interactivity={interactivity}
+                  autoPlay={false}
+                  loop={false}
+                />
                 <div
                   style={{
                     fontSize: "16px",
@@ -363,7 +382,14 @@ function OautoruFront() {
           </GornjiDioWrap>
           <DonjiDioWrap>
             <KnjigaWrap>
-              <img src={Knjiga} width="100%" alt="knjiga" />
+              {/* <img src={Knjiga} width="100%" alt="knjiga" /> */}
+              <Lottie
+                // style={{ textAlign: "center" }}
+                animationData={knjigadupla}
+                interactivity={interactivity}
+                autoPlay={false}
+                loop={false}
+              />
             </KnjigaWrap>
             <DonjiDioTextWrap>
               <WrapNaslovCrtaOknjizi>
@@ -430,7 +456,14 @@ function OautoruFront() {
                     position: "relative",
                   }}
                 >
-                  <img src={Potpis} alt="signature" />
+                  {/* <img src={Potpis} alt="signature" /> */}
+                  <Lottie
+                    // style={{ textAlign: "center" }}
+                    animationData={potpisLottie}
+                    interactivity={interactivity}
+                    autoPlay={false}
+                    loop={false}
+                  />
                   <div
                     style={{
                       fontSize: "16px",

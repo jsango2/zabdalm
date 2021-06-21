@@ -8,22 +8,37 @@ const Wrap = styled.div`
   width: 100%;
   height: 527px;
   position: relative;
-  margin-top: -100px;
-  margin-bottom: 150px;
+  top: -161px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* display: flex; */
+  /* align-content: center; */
+  /* justify-content: center; */
+  /* align-items: flex-start; */
   @media only screen and (max-width: 750px) {
-    margin-top: 0px;
+    top: -161px;
     height: 450px;
     width: 129%;
     position: relative;
     left: -15%;
   }
   @media only screen and (max-width: 620px) {
+    top: -95px;
     height: 240px;
   }
   @media only screen and (max-width: 550px) {
+    top: -137px;
+
     height: 180px;
   }
-  @media only screen and (max-width: 378px) {
+  @media only screen and (max-width: 458px) {
+    top: -110px;
+
+    height: 130px;
+  }
+  @media only screen and (max-width: 368px) {
+    top: -90px;
+
     height: 130px;
   }
 `
@@ -32,11 +47,11 @@ function Montaza() {
   const interactivity = {
     mode: "scroll",
     actions: [
-      {
-        visibility: [0, 0.0],
-        type: "stop",
-        frames: [0],
-      },
+      // {
+      //   visibility: [0, 0.0],
+      //   type: "stop",
+      //   frames: [0],
+      // },
       {
         visibility: [0.25, 0.6],
         type: "seek",

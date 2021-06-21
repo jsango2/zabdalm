@@ -66,7 +66,7 @@ function Razglednice({ data }) {
   const [innerHeight, setInnerHeight] = useState(null)
   const [lng, setLng] = useState(16.7469)
   const [lat, setLat] = useState(42.7781)
-  const [zoom, setZoom] = useState(6.03)
+  const [zoom, setZoom] = useState(5.63)
   const [hasPoints, setHasPoints] = useState(false)
 
   const [item, setItem] = useState([])
@@ -487,6 +487,28 @@ function Razglednice({ data }) {
           // popup.remove();
         })
 
+        map.flyTo({
+          // These options control the ending camera position: centered at
+          // the target, at zoom level 9, and north up.
+          center: [lng, lat],
+          zoom: size.width < 750 ? 5.9 : 7.2,
+          bearing: 0,
+
+          // These options control the flight curve, making it move
+          // slowly and zoom out almost completely before starting
+          // to pan.
+          speed: 0.4, // make the flying slow
+          curve: 1, // change the speed at which it zooms out
+
+          // This can be any easing function: it takes a number between
+          // 0 and 1 and returns another number between 0 and 1.
+          easing: function (t) {
+            return 1 - Math.pow(1 - t, 5)
+          },
+
+          // this animation is considered essential with respect to prefers-reduced-motion
+          essential: true,
+        })
         // Call this function on initialization
         // passing an empty array to render an empty state
         renderListings([])

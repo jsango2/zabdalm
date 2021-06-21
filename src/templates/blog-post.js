@@ -5,13 +5,15 @@ import Layout from "../components/layout"
 import { useTranslation } from "react-i18next"
 import Lottie from "lottie-react"
 import animation1152 from "../animations/val/val2"
-
+import { useWindowSize } from "../components/useWindowSize"
 import i18next from "i18next"
 import "../../i18next"
 
 import TriBlogPosta from "../components/TriBlogPosta"
+import valBlogUze from "../animations/val/valBlogUze"
 
 // import SEO from "../components/seo"
+import valBlogSire from "./../animations/val/valBlogSire"
 
 const Wrap = styled.div`
   display: -webkit-box;
@@ -137,7 +139,7 @@ const BlogContentWrap = styled.div`
   font-size: 16px;
   position: relative;
   width: 78%;
-  margin: 126px auto 81px auto;
+  margin: 86px auto 81px auto;
   height: auto;
   & > figure > img {
     width: 54vw;
@@ -158,6 +160,9 @@ const BlogContentWrap = styled.div`
     max-height: 700px;
     min-height: 280px;
   }
+  & > p {
+    line-height: 21px;
+  }
   @media only screen and (max-width: 570px) {
     /* flex-direction: column;
     height: auto;
@@ -171,6 +176,8 @@ const BlogPost = ({ data }) => {
   const [t] = useTranslation()
   const [categorie, setCategorie] = useState("")
   const [lang, setLang] = useState(i18next.language)
+  const size = useWindowSize()
+
   // ------visibility lazy loading------------
   // --------------------------------------
 
@@ -257,7 +264,6 @@ const BlogPost = ({ data }) => {
             </Hero>
 
             <BlogContentWrap
-              //   style={{ maxWidth: "600px" }}
               dangerouslySetInnerHTML={{
                 __html: data.wpgraphql.blog.blog_graphql.tekstBlogaHr,
               }}
@@ -325,7 +331,7 @@ const BlogPost = ({ data }) => {
                 color: "#395C67",
                 maxWidth: "430px",
                 // height: "80px",
-                margin: "0 auto",
+                margin: "20px auto 30px auto",
                 textAlign: "center",
               }}
             >
@@ -340,7 +346,7 @@ const BlogPost = ({ data }) => {
 
         <div>
           <Lottie
-            animationData={animation1152}
+            animationData={size.width < 750 ? valBlogUze : valBlogSire}
             interactivity={interactivity}
             autoPlay={false}
             loop={false}

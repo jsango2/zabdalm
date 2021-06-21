@@ -8,8 +8,8 @@ import { useTranslation } from "gatsby-plugin-react-i18next"
 import { useWindowSize } from "../components/useWindowSize"
 import Lottie from "lottie-react"
 
-import animation1152 from "../animations/val/val2"
-import animation370 from "../animations/val2/val370"
+import animation1152 from "../animations/val/val"
+import animation370 from "../animations/val/val2"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -96,7 +96,7 @@ function PartneriProjektaFront({ data }) {
     mode: "scroll",
     actions: [
       {
-        visibility: [0.5, 0.9],
+        visibility: [0.2, 0.6],
         type: "seek",
         frames: [0, 152],
       },

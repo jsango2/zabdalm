@@ -10,11 +10,21 @@ const Wrap = styled.div`
   width: 100%;
   height: 473px;
   position: relative;
-  margin: 59px 0 2px 0;
+  margin: 29px 0 2px 0;
+  @media only screen and (max-width: 950px) {
+    height: 349px;
+
+    /* height: 473px; */
+  }
   @media only screen and (max-width: 750px) {
-    height: 73vw;
+    height: 500px;
     width: 180%;
     left: -15%;
+
+    /* height: 473px; */
+  }
+  @media only screen and (max-width: 500px) {
+    height: 310px;
 
     /* height: 473px; */
   }

@@ -13,6 +13,9 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useWindowSize } from "../components/useWindowSize"
+import Lottie from "lottie-react"
+import animacijaInstagram from "./../animations/instagram/instagramAnimacijaManja"
+import animacijaInstagram750 from "./../animations/instagram/instagramAnimacija750"
 
 const Wrap = styled.div`
   /* background-color: grey; */
@@ -148,7 +151,16 @@ function Kontakt() {
     })
   }
   const [result, setResult] = useState(null)
-
+  const interactivity = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 0.8],
+        type: "seek",
+        frames: [0, 129],
+      },
+    ],
+  }
   const sendEmail = event => {
     setIssubmiting(true)
     event.preventDefault()
@@ -329,6 +341,18 @@ function Kontakt() {
           <img src={Etno} alt="etno" width="100%" />
         </EtnoWrap>
       </Wrap>
+      <div style={{ height: "20px" }}></div>
+      <a href="http://www.instagram.com/zaboravljena_dalmacija">
+        <Lottie
+          style={{ textAlign: "center", position: "relative", zIndex: "3" }}
+          animationData={
+            size.width > 750 ? animacijaInstagram : animacijaInstagram750
+          }
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
+      </a>
     </Layout>
   )
 }

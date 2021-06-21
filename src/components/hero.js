@@ -13,6 +13,9 @@ import { useWindowSize } from "./useWindowSize"
 // import { useTranslation } from "gatsby-plugin-react-i18next"
 import { useTranslation } from "react-i18next"
 import MeniMobile from "./meniMobile"
+import heroLottie1152 from "./../animations/hero/HeroLottie"
+
+import Lottie from "lottie-react"
 
 const Wrap = styled.div`
   background-color: rgb(28, 17, 0);
@@ -52,7 +55,7 @@ const WrapItems = styled.div`
 const WrapText = styled.div`
   display: flex;
   flex-direction: column;
-  width: 385px;
+  width: 336px;
   @media only screen and (max-width: 750px) {
     align-items: center;
     width: 313px;
@@ -169,7 +172,7 @@ const ButtonWrap = styled.div`
   width: 390px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   @media only screen and (max-width: 750px) {
     width: 200px;
   }
@@ -185,6 +188,21 @@ const Hero = () => {
     setIsOpen(false)
     // allowScroll()
   }
+  // const interactivity = {
+  //   mode: "scroll",
+  //   actions: [
+  //     {
+  //       visibility: [0, 0.0],
+  //       type: "stop",
+  //       frames: [0],
+  //     },
+  //     {
+  //       visibility: [0.25, 0.6],
+  //       type: "seek",
+  //       frames: [0, 222],
+  //     },
+  //   ],
+  // }
 
   return (
     <>
@@ -218,7 +236,7 @@ const Hero = () => {
             }}
           />
         </Hamburger>{" "} */}
-        <ImgOverflowHidden>
+        {/* <ImgOverflowHidden>
           <Slider
             dots={false}
             fade={true}
@@ -240,7 +258,14 @@ const Hero = () => {
               <img src={Pas} alt="pas" />
             </Img>
           </Slider>
-        </ImgOverflowHidden>
+        </ImgOverflowHidden> */}
+        <Lottie
+          className="lottieHero"
+          animationData={heroLottie1152}
+          // interactivity={interactivity}
+          // autoPlay={true}
+          // loop={true}
+        />
         <WrapItems>
           <KnjigaWrap>
             <img src={Knjiga} width="100%" alt="knjiga" />
@@ -250,7 +275,7 @@ const Hero = () => {
             {size.width > 750 ? (
               <ButtonWrap>
                 <a href="https://shop.zaboravljenadalmacija.hr">
-                  <Button text={t("kupiAtlas")} ikona={Cart} color="white" />
+                  <Button text={t("kupiAtlas")} color="white" />
                 </a>
               </ButtonWrap>
             ) : (

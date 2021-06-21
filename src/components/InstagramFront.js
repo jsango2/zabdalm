@@ -8,22 +8,26 @@ import { Link } from "gatsby"
 import { useWindowSize } from "../components/useWindowSize"
 import { InstaMobile } from "./instaMobile"
 import { InstaDesktop } from "./instaDesktop"
+import Lottie from "lottie-react"
+
+import animacijaInstagram from "./../animations/instagram/instagramAnimacija"
+import animacijaInstagram750 from "./../animations/instagram/instagramAnimacija750"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
-  height: 1783px;
+  height: 1524px;
   position: relative;
   margin-top: 200px;
   text-align: center;
   @media only screen and (max-width: 800px) {
-    height: 1440px;
+    height: 1217px;
   }
   @media only screen and (max-width: 620px) {
-    height: 1820px;
+    height: 898px;
   }
   @media only screen and (max-width: 520px) {
-    height: 1777px;
+    height: 1016px;
   }
 `
 const Title = styled.div`
@@ -133,15 +137,36 @@ function InstagramFront() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
+  const interactivity = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 0.8],
+        type: "seek",
+        frames: [0, 129],
+      },
+    ],
+  }
   return (
     <Wrap>
-      <WrapNaslov>
+      {/* <WrapNaslov>
         <Linija />
         <Naslov>{t("pratiteNasNaInstagramu")}</Naslov>
         <Linija />
-      </WrapNaslov>
+      </WrapNaslov> */}
 
-      {size.width < 750 ? <InstaMobile /> : <InstaDesktop />}
+      {/* {size.width < 750 ? <InstaMobile /> : <InstaDesktop />} */}
+      <a href="http://www.instagram.com/zaboravljena_dalmacija">
+        <Lottie
+          style={{ textAlign: "center", position: "relative", zIndex: "3" }}
+          animationData={
+            size.width > 750 ? animacijaInstagram : animacijaInstagram750
+          }
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
+      </a>
 
       <Paragraf>{t("otkupljujemo")}</Paragraf>
       <ButtonWrap>
@@ -164,7 +189,6 @@ function InstagramFront() {
           alt=""
         />
       </ImgWrap>
-      <script src="https://www.powr.io/powr.js?platform=html"></script>
     </Wrap>
   )
 }

@@ -6,7 +6,7 @@ const WrapBlogovi = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-bottom: 62px;
+  margin-bottom: 32px;
   @media only screen and (max-width: 550px) {
     margin-bottom: 31px;
   }
