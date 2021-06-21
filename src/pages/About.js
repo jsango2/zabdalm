@@ -248,32 +248,32 @@ const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
 }
 
 const About = ({ data }) => {
-  const reviews = data.wpgraphql.komentari.edges
+  // const reviews = data.wpgraphql.komentari.edges
   let items = []
 
-  if (i18next.language === "hr") {
-    reviews.forEach(review => {
-      items.push(
-        <OthersRemark className="OthersSayItem" data-value="1">
-          {review.node.komentariIRecenzije.komentarRecenzijaHr}
-          <OthersBy>
-            {review.node.komentariIRecenzije.autorKomentaraHr}
-          </OthersBy>
-        </OthersRemark>
-      )
-    })
-  } else {
-    reviews.forEach(review => {
-      items.push(
-        <OthersRemark className="OthersSayItem" data-value="1">
-          {review.node.komentariIRecenzije.komentarIliRecenzijaEng}
-          <OthersBy>
-            {review.node.komentariIRecenzije.autorKomentaraEng}
-          </OthersBy>
-        </OthersRemark>
-      )
-    })
-  }
+  // if (i18next.language === "hr") {
+  //   reviews.forEach(review => {
+  //     items.push(
+  //       <OthersRemark className="OthersSayItem" data-value="1">
+  //         {review.node.komentariIRecenzije.komentarRecenzijaHr}
+  //         <OthersBy>
+  //           {review.node.komentariIRecenzije.autorKomentaraHr}
+  //         </OthersBy>
+  //       </OthersRemark>
+  //     )
+  //   })
+  // } else {
+  //   reviews.forEach(review => {
+  //     items.push(
+  //       <OthersRemark className="OthersSayItem" data-value="1">
+  //         {review.node.komentariIRecenzije.komentarIliRecenzijaEng}
+  //         <OthersBy>
+  //           {review.node.komentariIRecenzije.autorKomentaraEng}
+  //         </OthersBy>
+  //       </OthersRemark>
+  //     )
+  //   })
+  // }
 
   const { t } = useTranslation()
   const [current, setCurrent] = useState(0)
@@ -313,23 +313,23 @@ const About = ({ data }) => {
   const [mainAnimation, setMainAnimation] = useState(false)
   const [thumbIndex, setThumbIndex] = useState(0)
   const [thumbAnimation, setThumbAnimation] = useState(false)
-  const [thumbs, setThumbs] = useState(
-    thumbItems(items, [setThumbIndex, setThumbAnimation])
-  )
+  // const [thumbs, setThumbs] = useState(
+  //   thumbItems(items, [setThumbIndex, setThumbAnimation])
+  // )
 
-  const slideNext = () => {
-    if (!thumbAnimation && thumbIndex < thumbs.length - 1) {
-      setThumbAnimation(true)
-      setThumbIndex(thumbIndex + 1)
-    }
-  }
+  // const slideNext = () => {
+  //   if (!thumbAnimation && thumbIndex < thumbs.length - 1) {
+  //     setThumbAnimation(true)
+  //     setThumbIndex(thumbIndex + 1)
+  //   }
+  // }
 
-  const slidePrev = () => {
-    if (!thumbAnimation && thumbIndex > 0) {
-      setThumbAnimation(true)
-      setThumbIndex(thumbIndex - 1)
-    }
-  }
+  // const slidePrev = () => {
+  //   if (!thumbAnimation && thumbIndex > 0) {
+  //     setThumbAnimation(true)
+  //     setThumbIndex(thumbIndex - 1)
+  //   }
+  // }
 
   const syncThumbs = e => {
     setThumbIndex(e.item)
@@ -342,10 +342,10 @@ const About = ({ data }) => {
 
   const [lang, setLang] = useState(i18next.language)
 
-  if (lang !== i18next.language) {
-    setLang(i18next.language)
-    setThumbs(thumbItems(items, [setThumbIndex, setThumbAnimation]))
-  }
+  // if (lang !== i18next.language) {
+  //   setLang(i18next.language)
+  //   setThumbs(thumbItems(items, [setThumbIndex, setThumbAnimation]))
+  // }
 
   return (
     <Layout>
@@ -382,10 +382,10 @@ const About = ({ data }) => {
         </OthersTitle>
 
         <OthersSay>
-          <div className="btn-prev" onClick={slidePrev}>
+          {/* <div className="btn-prev" onClick={slidePrev}>
             <img src={Arrow} alt="arrow" />
-          </div>
-          <AliceCarousel
+          </div> */}
+          {/* <AliceCarousel
             autoPlay={true}
             stopAutoPlayOnHover
             autoPlayStrategy="default"
@@ -399,11 +399,11 @@ const About = ({ data }) => {
             disableButtonsControls
             items={thumbs}
             onSlideChanged={syncThumbs}
-          />
+          /> */}
 
-          <div className="btn-next" onClick={slideNext}>
+          {/* <div className="btn-next" onClick={slideNext}>
             <img src={Arrow} alt="arrow" />
-          </div>
+          </div> */}
         </OthersSay>
       </OthersSection>
 
@@ -416,7 +416,7 @@ const About = ({ data }) => {
         </Ulomak2Wrap>
       </KnjigaWrapper>
 
-      <Press data={data} />
+      {/* <Press data={data} /> */}
       <div
         style={{
           display: "flex",
@@ -438,33 +438,33 @@ const About = ({ data }) => {
 
 export default About
 
-export const query = graphql`
-  query {
-    wpgraphql {
-      pressObjave {
-        edges {
-          node {
-            pressObjaveWp {
-              poveznicaZaKlik
-              pressObjavaEng
-              pressObjavaHr
-            }
-            databaseId
-          }
-        }
-      }
-      komentari {
-        edges {
-          node {
-            komentariIRecenzije {
-              autorKomentaraEng
-              autorKomentaraHr
-              komentarIliRecenzijaEng
-              komentarRecenzijaHr
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query {
+//     wpgraphql {
+//       pressObjave {
+//         edges {
+//           node {
+//             pressObjaveWp {
+//               poveznicaZaKlik
+//               pressObjavaEng
+//               pressObjavaHr
+//             }
+//             databaseId
+//           }
+//         }
+//       }
+//       komentari {
+//         edges {
+//           node {
+//             komentariIRecenzije {
+//               autorKomentaraEng
+//               autorKomentaraHr
+//               komentarIliRecenzijaEng
+//               komentarRecenzijaHr
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
