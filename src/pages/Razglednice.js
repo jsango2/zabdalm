@@ -66,7 +66,7 @@ function Razglednice({ data }) {
   const [innerHeight, setInnerHeight] = useState(null)
   const [lng, setLng] = useState(16.7469)
   const [lat, setLat] = useState(42.7781)
-  const [zoom, setZoom] = useState(5.63)
+  const [zoom, setZoom] = useState(4)
   const [hasPoints, setHasPoints] = useState(false)
 
   const [item, setItem] = useState([])
@@ -497,7 +497,7 @@ function Razglednice({ data }) {
           // These options control the flight curve, making it move
           // slowly and zoom out almost completely before starting
           // to pan.
-          speed: 0.4, // make the flying slow
+          speed: 0.3, // make the flying slow
           curve: 1, // change the speed at which it zooms out
 
           // This can be any easing function: it takes a number between
