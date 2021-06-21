@@ -7,7 +7,7 @@ import i18next from "i18next"
 import { useTranslation } from "react-i18next"
 import OKnjiziIntro from "../components/OKnjiziIntro"
 import OMonografiji from "../components/oMonografiji"
-import Press from "../components/Press"
+import Press from "../components/PressProbno"
 import ulomakPdf from "../../content/assets/ulomakPdf.pdf"
 
 import PlanineAnimation from "../components/planineAnimation"
@@ -416,7 +416,7 @@ const About = ({ data }) => {
         </Ulomak2Wrap>
       </KnjigaWrapper>
 
-      {/* <Press data={data} /> */}
+      <Press />
       <div
         style={{
           display: "flex",
@@ -438,33 +438,21 @@ const About = ({ data }) => {
 
 export default About
 
-// export const query = graphql`
-//   query {
-//     wpgraphql {
-//       pressObjave {
-//         edges {
-//           node {
-//             pressObjaveWp {
-//               poveznicaZaKlik
-//               pressObjavaEng
-//               pressObjavaHr
-//             }
-//             databaseId
-//           }
-//         }
-//       }
-//       komentari {
-//         edges {
-//           node {
-//             komentariIRecenzije {
-//               autorKomentaraEng
-//               autorKomentaraHr
-//               komentarIliRecenzijaEng
-//               komentarRecenzijaHr
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query {
+    wpgraphql {
+      komentari {
+        edges {
+          node {
+            komentariIRecenzije {
+              autorKomentaraEng
+              autorKomentaraHr
+              komentarIliRecenzijaEng
+              komentarRecenzijaHr
+            }
+          }
+        }
+      }
+    }
+  }
+`
