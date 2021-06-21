@@ -336,36 +336,43 @@ a:focus {
 }
 
 /*About the book carousel controls*/
-.alice-carousel{
+.alice-carousel {
   max-width: 580px;
 }
-.btn-next,.btn-prev{
+.btn-next,
+.btn-prev {
   width: 50px;
   height: 63px;
+  margin-bottom: 40px;
 }
-.btn-next:hover,.btn-prev:hover{
+.btn-next:hover,
+.btn-prev:hover {
   cursor: pointer;
 }
-.btn-prev{
+.btn-prev {
   transform: rotate(180deg);
 }
 
 .alice-carousel__dots-item {
-  width: 10px!important;
-  height: 10px!important;
-  border-radius: 0%!important;
-  background-color: #d4d4d4!important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 0% !important;
+  background-color: #d4d4d4 !important;
 }
 .alice-carousel__dots .__active {
-  background-color: #b0c7ce!important;
+  background-color: #b0c7ce !important;
+}
+.alice-carousel__stage-item {
+  width: inherit !important;
 }
 
 @media (max-width: 950px) {
-  .btn-next,.btn-prev{
+  .btn-next,
+  .btn-prev {
     display: none;
   }
 }
 
-.kontaktArea{
+.kontaktArea {
   resize: none;
 }
