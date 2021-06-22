@@ -16,6 +16,7 @@ import { useWindowSize } from "../components/useWindowSize"
 import Lottie from "lottie-react"
 import animacijaInstagram from "./../animations/instagram/instagramAnimacijaManja"
 import animacijaInstagram750 from "./../animations/instagram/instagramAnimacija750"
+import SEO from "./../components/SEO"
 
 const Wrap = styled.div`
   /* background-color: grey; */
@@ -184,6 +185,10 @@ function Kontakt() {
 
   return (
     <Layout>
+      <SEO
+        title="Kontaktirajte nas"
+        description="Kontakt Zaboravljena Dalmacija"
+      />
       <Wrap>
         <div
           style={{

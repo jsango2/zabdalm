@@ -24,6 +24,7 @@ import { useWindowSize } from "../components/useWindowSize"
 // import FirebaseData from "../components/testGooglePhotosApi"
 import Header from "./../components/header"
 import i18next from "i18next"
+import SEO from "./../components/SEO"
 
 import InfoBlock from "../components/InfoBlock"
 import { useOnClickOutside } from "../components/useClickOutside"
@@ -134,7 +135,7 @@ function Razglednice({ data }) {
     var docRef = firebase
       .firestore()
       .collection("razglednice")
-      .doc("QSIGW6ShKzXITRab8w4X")
+      .doc("3KA58A4Bq58A35YjY64C")
     docRef
       .get()
       .then(doc => {
@@ -631,6 +632,10 @@ function Razglednice({ data }) {
   useOnClickOutside(ref, () => setIsOpen(false))
   return (
     <>
+      <SEO
+        title="Razglednice Zaboravljene Dalmacije"
+        description="Interaktivna mapa sa razglednicama iz Zaboravljene Dalmacije"
+      />
       <Header></Header>
       <div className="mapWrapper">
         <InfoBlock isOpen={isOpen} />

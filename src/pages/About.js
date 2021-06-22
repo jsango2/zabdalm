@@ -23,6 +23,7 @@ import Rope from "../../content/assets/rope.png"
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
 import TriBlogPosta from "../components/TriBlogPosta"
+import SEO from "./../components/SEO"
 
 //#region Styled
 
@@ -349,6 +350,10 @@ const About = ({ data }) => {
 
   return (
     <Layout>
+      <SEO
+        title="O Atlasu Zaboravljena Dalmacija"
+        description="Saznajte više o atlasu Zaboravljena Dalmacija"
+      />
       <OKnjiziIntro className="rel" id="rel" />
 
       <KolazWrapper>

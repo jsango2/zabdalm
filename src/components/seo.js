@@ -57,11 +57,13 @@ const SEO = ({ description, lang, meta, title, image }) => {
         },
         {
           property: `og:image`,
-          content: "https://www.go-dom.hr/seoPhoto.png",
+          content:
+            "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-200.jpg",
         },
         {
           name: " twitter: image",
-          content: "https://www.go-dom.hr/seoPhoto.png",
+          content:
+            "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-200.jpg",
         },
         {
           name: " twitter: card",

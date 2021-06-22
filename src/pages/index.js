@@ -4,9 +4,6 @@ import Layout from "../components/layout"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Hero from "../components/hero"
 import CitatFront from "./../components/citatFront"
-// import Montaza from "../components/Montaza"
-// import Montaza1 from "../components/Montaza1"
-// import Montaza2 from "../components/Montaza2"
 import BlogFront from "../components/BlogFront"
 import Nosnja from "../components/nosnja"
 import NajpopularnijePrice from "../components/NajpopularnijePrice"
@@ -16,14 +13,17 @@ import PartneriProjektaFront from "../components/PartneriProjektaFront"
 import InstagramFront from "../components/InstagramFront"
 import "../../i18next"
 import Montaza from "../components/Montaza"
+import FirebaseUpload from "../components/firebaseUpload"
 // import FirebaseUpload from "../components/firebaseUpload"
+import SEO from "./../components/SEO"
 
 const IndexPage = ({ data }) => {
   const [isOpen, setisOpen] = useState(false)
 
   return (
     <Layout isOpen={isOpen}>
-      {/* <SEO title="Početna" /> */}
+      <SEO title="Početna" />
+
       <Hero />
       {/* <Montaza />
       <Montaza1 />

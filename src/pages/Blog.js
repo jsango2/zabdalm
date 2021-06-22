@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 import BlogPostCards from "../components/BlogPostCards"
 import i18next from "i18next"
+import SEO from "./../components/SEO"
 
 const WrapHeroPhoto = styled.div`
   /* background-color: grey; */
@@ -129,6 +130,10 @@ function Blog({ data }) {
 
   return (
     <Layout>
+      <SEO
+        title="Blog Zaboravljena Dalmacija"
+        description="Priče Zaboravljene Dalmacije"
+      />
       <MeniMobileBlog
         handleClickCloseMenu={handleClickCloseMenu}
         handleChooseMobileCategory={handleChooseMobileCategory}

@@ -50,17 +50,6 @@ function FirebaseUpload() {
     console.log("geo:", geoJsonedFlickr)
     // })
     // firebase.firestore().collection("razglednice").add(geoJsonedFlickr)
-    // firebase.database
-    //   .collection("razglednice")
-    //   .add({
-    //     geoJsonedFlickr,
-    //   })
-    //   .then(docRef => {
-    //     console.log("Document written with ID: ", docRef.id)
-    //   })
-    //   .catch(error => {
-    //     console.error("Error adding document: ", error)
-    //   })
   }, [])
 
   return <div></div>

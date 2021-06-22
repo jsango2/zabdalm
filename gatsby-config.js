@@ -3,13 +3,13 @@ module.exports = {
     title: `Zaboravljena Dalmacija`,
     author: {
       name: `Sutra.hr`,
-      summary: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
+      summary: `˝Zaboravljena Dalmacija˝ priča je o tome kako je nekada bilo, približava vam fotografijom autentične vizure Dalmacije iz vremena od same pojave fotografije sredinom 19. stoljeća pa do 1970.`,
     },
-    description: `Građevinski radovi na Ugljanu i Pašmanu. Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi.`,
-    siteUrl: "https://localhost:8000/",
+    description: `˝Zaboravljena Dalmacija˝ priča je o tome kako je nekada bilo, približava vam fotografijom autentične vizure Dalmacije iz vremena od same pojave fotografije sredinom 19. stoljeća pa do 1970.`,
+    siteUrl: "https://www.zaboravljenadalmacija.hr",
     image: "/seoPhoto.png",
     keywords:
-      "Građevinski radovi, Ugljan, Pašman, Ključ u ruke, rekonstrukcija, tradicionalna gradnja, fasade i izolacije, uređenje interijera, bazenski sustavi, Građevina na otocima, Izgradnja kuća, Otočki proizvod, Izgradnja, bazen",
+      "Zaboravljena Dalmacija, razglednice, blog, atlas, povijest Dalmacije, Webshop, web trgovina",
   },
 
   plugins: [
