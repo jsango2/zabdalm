@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import FooterAnimation from "./footerAnimation"
+import MadeByAnimation from "./madeByAnimation"
 import { Link } from "gatsby"
 
 const Container = styled.div`
@@ -219,7 +220,7 @@ function Footer() {
           </FooterSection>
         </FooterContainer>
         <FooterMadeBy>
-          Copyright © 2021 All rights reserved. Web development by sutra.hr
+          <MadeByAnimation />
         </FooterMadeBy>
       </FooterWrap>
     </Container>
