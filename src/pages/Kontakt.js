@@ -16,7 +16,7 @@ import { useWindowSize } from "../components/useWindowSize"
 import Lottie from "lottie-react"
 import animacijaInstagram from "./../animations/instagram/instagramAnimacijaManja"
 import animacijaInstagram750 from "./../animations/instagram/instagramAnimacija750"
-import SEO from "./../components/SEO"
+import SEO from "../components/seo"
 
 const Wrap = styled.div`
   /* background-color: grey; */

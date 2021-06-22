@@ -24,7 +24,7 @@ import { useWindowSize } from "../components/useWindowSize"
 // import FirebaseData from "../components/testGooglePhotosApi"
 import Header from "./../components/header"
 import i18next from "i18next"
-import SEO from "./../components/SEO"
+import SEO from "../components/seo"
 
 import InfoBlock from "../components/InfoBlock"
 import { useOnClickOutside } from "../components/useClickOutside"

@@ -23,7 +23,7 @@ import Rope from "../../content/assets/rope.png"
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
 import TriBlogPosta from "../components/TriBlogPosta"
-import SEO from "./../components/SEO"
+import SEO from "../components/seo"
 
 //#region Styled
 

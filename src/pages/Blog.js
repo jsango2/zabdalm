@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 import BlogPostCards from "../components/BlogPostCards"
 import i18next from "i18next"
-import SEO from "./../components/SEO"
+import SEO from "../components/seo"
 
 const WrapHeroPhoto = styled.div`
   /* background-color: grey; */

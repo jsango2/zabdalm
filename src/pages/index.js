@@ -15,7 +15,7 @@ import "../../i18next"
 import Montaza from "../components/Montaza"
 import FirebaseUpload from "../components/firebaseUpload"
 // import FirebaseUpload from "../components/firebaseUpload"
-import SEO from "./../components/SEO"
+import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   const [isOpen, setisOpen] = useState(false)
