@@ -306,10 +306,6 @@ const About = ({ data }) => {
     }
   }
 
-  // const handleClick = (e, id) => {
-  //   current === id ? setCurrent(null) : setCurrent(id)
-  // }
-
   const [mainIndex, setMainIndex] = useState(0)
   const [mainAnimation, setMainAnimation] = useState(false)
   const [thumbIndex, setThumbIndex] = useState(0)
@@ -339,6 +335,12 @@ const About = ({ data }) => {
     if (!mainAnimation) {
       setMainIndex(e.item)
     }
+  }
+
+  const responsive = {
+    0: { items: 1 },
+    568: { items: 1 },
+    1024: { items: 1 },
   }
 
   const [lang, setLang] = useState(i18next.language)

@@ -215,12 +215,6 @@ function Footer() {
                 </SocialItem>
               </a>
 
-              <a href="https://www.facebook.com">
-                <SocialItem>
-                  Facebook
-                  <FooterLine />
-                </SocialItem>
-              </a>
             </FooterSocial>
           </FooterSection>
         </FooterContainer>

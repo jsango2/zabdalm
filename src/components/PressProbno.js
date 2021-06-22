@@ -9,11 +9,11 @@ const Wrap = styled.div`
   width: 100%;
   height: auto;
   position: relative;
-  margin: 50px 0;
+  margin: -40px 0 90px;
   text-align: center;
-  ${"" /* @media only screen and (max-width: 76em) {
-    height: 450px;
-  } */}
+  @media only screen and (max-width: 1152px) {
+    margin: 50px 0 90px;
+  }
 `
 const Naslov = styled.div`
   font-family: Playfair Display;
@@ -36,7 +36,6 @@ const PressUl = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   text-align: left;
-  margin: 55px 0 70px;
 
   @media only screen and (max-width: 1152px) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -98,7 +97,7 @@ function Press() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginBottom: "40px",
+              marginBottom: "42px",
             }}
           >
             <Linija />
