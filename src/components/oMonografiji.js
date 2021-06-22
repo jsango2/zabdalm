@@ -5,12 +5,14 @@ import Knjiga from "../../content/assets/knjiga.png"
 import Ulomak from "../../content/assets/ulomakStamp.svg"
 import ulomakPdf from "../../content/assets/ulomakPdf.pdf"
 
+import KnjigaSlideAnimation from "./knjigaSlideAnimation"
+
 const MonoDiv = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 90px;
-  @media only screen and (max-width: 850px) {
-    /* padding: 0 10%; */
+  margin-top: 0;
+  @media only screen and (max-width: 1152px) {
+    margin-top: 90px;
   }
 `
 const MonoSection = styled.div`
@@ -52,8 +54,6 @@ const MonoNaslov = styled.h2`
 const KnjigaWrap = styled.div`
   width: 45%;
   position: relative;
-  top: 120px;
-  left: -1vw;
   @media only screen and (max-width: 1052px) {
     left: -6vw;
     & > img {
@@ -90,12 +90,12 @@ const OMonografiji = () => {
   return (
     <MonoDiv>
       <KnjigaWrap>
-        <img src={Knjiga} width="100%" alt="knjiga" />
-        <UlomakWrap>
+        <KnjigaSlideAnimation />
+        {/* <UlomakWrap>
           <a href={ulomakPdf} download>
             <img src={Ulomak} width="100%" alt="ulomak" />
           </a>
-        </UlomakWrap>
+        </UlomakWrap> */}
       </KnjigaWrap>
       <MonoSection>
         <MonoNaslovSideCrta />

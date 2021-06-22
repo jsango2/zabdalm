@@ -10,8 +10,7 @@ import OMonografiji from "../components/oMonografiji"
 import Press from "../components/PressProbno"
 import ulomakPdf from "../../content/assets/ulomakPdf.pdf"
 
-import PlanineAnimation from "../components/planineAnimation"
-import VojnikAnimation from "../components/vojnikAnimation"
+import KolazAnimation from "../components/kolazAnimation"
 import AlkarAnimation from "../components/alkarAnimation"
 import KnjigaAnimation from "../components/knjigaAnimation"
 
@@ -28,20 +27,14 @@ import SEO from "../components/seo"
 //#region Styled
 
 const KolazWrapper = styled.div`
-  /* position: relative;
-  top: -1070px; */
-  margin-bottom: -1600px;
+  
   @media only screen and (max-width: 1152px) {
-    display: none;
   }
-  /*@media only screen and (max-width: 750px) {
-    top: -125vw;
-    margin-bottom: -130vw;
+  @media only screen and (max-width: 750px) {
   }
   @media only screen and (max-width: 550px) {
-    top: initial;
-    margin: 0;
-  } */
+
+  }
 `
 const KnjigeSection = styled.div`
   display: none;
@@ -233,6 +226,15 @@ const Ulomak2Wrap = styled.div`
     left: 18vw;
     top: -42vw;
   }
+  @media only screen and (max-width: 850px) {
+    left: 6vw;
+    top: -49vw;
+  }
+  @media only screen and (max-width: 550px) {
+    left: 3vw;
+    top: -57vw;
+  }
+  
 `
 
 //#endregion
@@ -337,12 +339,6 @@ const About = ({ data }) => {
     }
   }
 
-  const responsive = {
-    0: { items: 1 },
-    568: { items: 1 },
-    1024: { items: 1 },
-  }
-
   const [lang, setLang] = useState(i18next.language)
 
   if (lang !== i18next.language) {
@@ -359,8 +355,7 @@ const About = ({ data }) => {
       <OKnjiziIntro className="rel" id="rel" />
 
       <KolazWrapper>
-        <VojnikAnimation />
-        <PlanineAnimation />
+        <KolazAnimation />
       </KolazWrapper>
 
       <OMonografiji />
@@ -375,7 +370,9 @@ const About = ({ data }) => {
           </Knjiga2>
         </Knjige750>
         <UlomakKnjige>
-          <img src={Ulomak} width="100%" alt="ulomak" />
+        <a href={ulomakPdf} download>
+            <img src={Ulomak} width="100%" alt="ulomak" />
+          </a>
         </UlomakKnjige>
       </KnjigeSection>
 
