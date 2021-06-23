@@ -19,10 +19,10 @@ const Wrap = styled.div`
   margin-top: 200px;
   text-align: center;
   @media only screen and (max-width: 800px) {
-    height: 1255px;
+    height: 1334px;
   }
   @media only screen and (max-width: 620px) {
-    height: 1114px;
+    height: 1159px;
   }
   @media only screen and (max-width: 520px) {
     height: 1072px;
@@ -155,15 +155,23 @@ function InstagramFront() {
 
       {/* {size.width < 750 ? <InstaMobile /> : <InstaDesktop />} */}
       <a href="http://www.instagram.com/zaboravljena_dalmacija">
-        <Lottie
-          style={{ textAlign: "center", position: "relative", zIndex: "3" }}
-          animationData={
-            size.width > 750 ? animacijaInstagram : animacijaInstagram750
-          }
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
+        {size.width < 750 ? (
+          <Lottie
+            style={{ textAlign: "center", position: "relative", zIndex: "3" }}
+            animationData={animacijaInstagram}
+            interactivity={interactivity}
+            autoPlay={false}
+            loop={false}
+          />
+        ) : (
+          <Lottie
+            style={{ textAlign: "center", position: "relative", zIndex: "3" }}
+            animationData={animacijaInstagram750}
+            interactivity={interactivity}
+            autoPlay={false}
+            loop={false}
+          />
+        )}
       </a>
 
       <Paragraf>{t("otkupljujemo")}</Paragraf>
