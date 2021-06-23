@@ -2,13 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import FooterAnimation from "./footerAnimation"
+import MadeByAnimation from "./madeByAnimation"
 import { Link } from "gatsby"
 
 const Container = styled.div`
   width: 100%;
   max-width: 1152px;
   margin: 0 auto;
-  margin-top: -26px;
+  margin-top: -150px;
 `
 
 const FooterWrap = styled.footer`
@@ -75,6 +76,7 @@ const ContactList = styled.ul`
 
 const ContactItem = styled.li`
   margin-bottom: 0;
+  line-height: initial;
 `
 
 const FooterDescription = styled.p`
@@ -214,12 +216,11 @@ function Footer() {
                   <FooterLine />
                 </SocialItem>
               </a>
-
             </FooterSocial>
           </FooterSection>
         </FooterContainer>
         <FooterMadeBy>
-          Copyright © 2021 All rights reserved. Web development by sutra.hr
+          <MadeByAnimation />
         </FooterMadeBy>
       </FooterWrap>
     </Container>

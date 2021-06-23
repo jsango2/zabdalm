@@ -16,10 +16,9 @@ import animacijaInstagram750 from "./../animations/instagram/instagramAnimacija7
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
-  height: 1524px;
-  position: relative;
   margin-top: 200px;
   text-align: center;
+<<<<<<< HEAD
   @media only screen and (max-width: 800px) {
     height: 1217px;
   }
@@ -29,6 +28,8 @@ const Wrap = styled.div`
   @media only screen and (max-width: 520px) {
     height: 855px;
   }
+=======
+>>>>>>> 5b04970480176678ea732fe591c87209ff505ad6
 `
 const Title = styled.div`
   font-family: Playfair Display;
@@ -97,7 +98,7 @@ const ButtonWrapInvisible = styled.div`
 const ImgWrap = styled.div`
   position: relative;
   width: 100%;
-  height: 560px;
+  /* height: 560px; */
   bottom: 915px;
   /* top: -177px;
   background-image: url(${Drnis});

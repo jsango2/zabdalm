@@ -3,27 +3,29 @@ import styled from "styled-components"
 
 import Lottie from "lottie-react"
 
-import alkar750 from "../animations/alkar750"
-import alkar400 from "../animations/alkar400"
-import alkarNovo2 from "../animations/alkarNovo2"
+
+import Knjiga from "../../content/assets/knjiga.png"
+import knjigaSlide1152 from "../animations/knjigaSlide1152"
+import knjigaSlide350 from "../animations/knjigaSlide350"
+import knjiga370 from "../animations/knjiga370"
 
 const AnimationWrap = styled.div`
-  @media (max-width: 500px) {
-    margin: 27vw 0 0;
+  @media only screen and (max-width: 1152px) {
+    transform: scale(1.1);
   }
-  @media (max-width: 400px) {
-    margin: 0;
+  @media only screen and (max-width: 999px) {
+    transform: scale(1.3);
   }
 `
 
-function AlkarAnimation() {
+function KnjigaSlideAnimation() {
   const interactivity = {
     mode: "scroll",
     actions: [
       {
         visibility: [0, 1],
         type: "seek",
-        frames: [0, 153],
+        frames: [0, 91],
       },
     ],
   }
@@ -45,37 +47,28 @@ function AlkarAnimation() {
   }, [])
 
   function renderAnimation(width) {
-    if (width < 400) {
+    if (width < 350) {
       return (
         <Lottie
-          animationData={alkar400}
+          animationData={knjigaSlide350}
           interactivity={interactivity}
           autoPlay={false}
           loop={false}
         />
-      );
-  } else if (width < 750) {
-      return (
-        <Lottie
-          animationData={alkar750}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      );
+      )
     } else {
-    return (
-      <Lottie
-        animationData={alkarNovo2}
-        interactivity={interactivity}
-        autoPlay={false}
-        loop={false}
-      />
-    )
+      return (
+        <Lottie
+          animationData={knjigaSlide1152}
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
+      )
     }
   }
 
   return <AnimationWrap>{renderAnimation(windowSize.width)}</AnimationWrap>
 }
 
-export default AlkarAnimation
+export default KnjigaSlideAnimation

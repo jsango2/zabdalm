@@ -8,24 +8,31 @@ import kolaz750 from "../animations/kolaz750"
 import kolaz550 from "../animations/kolaz550"
 import kolaz350 from "../animations/kolaz350"
 
+import vojnik1152 from "../animations/vojnik1152"
+import planine1152 from "../animations/planine1152"
+
 const AnimationWrap = styled.div`
-  /* position: relative;
-  top: 140px;
-  @media (max-width: 1500px) {
-    top: 10vw;
+  position: relative;
+  margin-bottom: -1600px;
+
+  @media only screen and (max-width: 1152px) {
+    top: -138vw;
+    margin-bottom: -138vw;
   }
-  @media (max-width: 999px) {
-    top: 15vw;
+  @media only screen and (max-width: 550px) {
+    top: -9vw;
+    margin-bottom: -10vw;
   }
-  @media (max-width: 750px) {
-    top: 20vw;
-  }
-  @media (max-width: 588px) {
-    top: 25vw;
-  }
-  @media (max-width: 370px) {
-    top: 30vw;
-  } */
+  
+`
+
+const Vojnik = styled.div`
+  position: relative;
+  top: -1000px;
+`
+const Planine = styled.div`
+  position: relative;
+  top: -1700px;
 `
 
 function KolazAnimation() {
@@ -33,15 +40,40 @@ function KolazAnimation() {
     mode: "scroll",
     actions: [
       {
-        visibility: [0, 0.4],
+        visibility: [0, 1],
         type: "seek",
-        frames: [0, 70],
+        frames: [0, 153],
       },
+    ],
+  }
+  const interactivity750 = {
+    mode: "scroll",
+    actions: [
       {
-        visibility: [0.4, 1],
+        visibility: [0.3, 1],
         type: "seek",
-        frames: [70, 153],
-      }
+        frames: [0, 153],
+      },
+    ],
+  }
+  const interactivityVojnik = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 1],
+        type: "seek",
+        frames: [0, 133],
+      },
+    ],
+  }
+  const interactivityPlanine = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 1],
+        type: "seek",
+        frames: [45, 158],
+      },
     ],
   }
 
@@ -80,23 +112,35 @@ function KolazAnimation() {
           loop={false}
         />
       )
-    } else if (width < 750) {
+    } else if (width < 1152) {
       return (
         <Lottie
           animationData={kolaz750}
-          interactivity={interactivity}
+          interactivity={interactivity750}
           autoPlay={false}
           loop={false}
         />
       )
     } else {
       return (
-        <Lottie
-          animationData={kolaz1152}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
+        <>
+          <Vojnik>
+            <Lottie
+              animationData={vojnik1152}
+              interactivity={interactivityVojnik}
+              autoPlay={false}
+              loop={false}
+            />
+          </Vojnik>
+          <Planine>
+            <Lottie
+              animationData={planine1152}
+              interactivity={interactivityPlanine}
+              autoPlay={false}
+              loop={false}
+            />
+          </Planine>
+        </>
       )
     }
   }

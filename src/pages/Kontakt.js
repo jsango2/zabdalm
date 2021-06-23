@@ -364,7 +364,7 @@ function Kontakt() {
         </EtnoWrap>
       </Wrap>
       <div style={{ height: "20px" }}></div>
-      <a href="http://www.instagram.com/zaboravljena_dalmacija">
+      <a href="http://www.instagram.com/zaboravljena_dalmacija" className="kontaktIG">
         <Lottie
           style={{ textAlign: "center", position: "relative", zIndex: "3" }}
           animationData={
