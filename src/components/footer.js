@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next"
 import FooterAnimation from "./footerAnimation"
 import MadeByAnimation from "./madeByAnimation"
 import { Link } from "gatsby"
+import FooterAnimation2 from "./footerAnimation2"
 
 const Container = styled.div`
   width: 100%;
@@ -149,7 +150,7 @@ const FooterLine = styled.div`
   }
 `
 
-const FooterMadeBy = styled.p`
+const FooterMadeBy = styled.div`
   color: #fff;
   text-align: center;
   font-weight: 500;

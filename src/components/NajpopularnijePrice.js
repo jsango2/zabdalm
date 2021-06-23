@@ -114,7 +114,6 @@ function NajpopularnijePrice() {
   // }, [fireData])
   useEffect(() => {
     setLang(i18next.language)
-    console.log(typeof i18next.language)
   }, [i18next.language])
 
   return (

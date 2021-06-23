@@ -7,6 +7,7 @@ import animation1152 from "../animations/footer1152"
 import animation750 from "../animations/footer750"
 import animation550 from "../animations/footer550"
 import animation350 from "../animations/footer350"
+import { useWindowSize } from "../components/useWindowSize"
 
 const AnimationWrap = styled.div`
   position: relative;
@@ -29,6 +30,8 @@ const AnimationWrap = styled.div`
 `
 
 function FooterAnimation() {
+  const size = useWindowSize()
+
   const interactivity = {
     mode: "scroll",
     actions: [
@@ -40,24 +43,8 @@ function FooterAnimation() {
     ],
   }
 
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  })
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    }
-    window.addEventListener("resize", handleResize)
-    handleResize()
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
-  function renderAnimation(width) {
-    if (width < 350) {
+  function RenderAnimation() {
+    if (size.width < 550) {
       return (
         <Lottie
           animationData={animation350}
@@ -66,16 +53,7 @@ function FooterAnimation() {
           loop={false}
         />
       )
-    } else if (width < 550) {
-      return (
-        <Lottie
-          animationData={animation550}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      )
-    } else if (width < 750) {
+    } else if (size.width < 750) {
       return (
         <Lottie
           animationData={animation750}
@@ -96,7 +74,11 @@ function FooterAnimation() {
     }
   }
 
-  return <AnimationWrap>{renderAnimation(windowSize.width)}</AnimationWrap>
+  return (
+    <AnimationWrap>
+      <RenderAnimation />
+    </AnimationWrap>
+  )
 }
 
 export default FooterAnimation

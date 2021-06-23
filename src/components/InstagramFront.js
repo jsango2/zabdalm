@@ -19,13 +19,13 @@ const Wrap = styled.div`
   margin-top: 200px;
   text-align: center;
   @media only screen and (max-width: 800px) {
-    height: 1217px;
+    height: 1255px;
   }
   @media only screen and (max-width: 620px) {
-    height: 1022px;
+    height: 1114px;
   }
   @media only screen and (max-width: 520px) {
-    height: 855px;
+    height: 1072px;
   }
 `
 const Title = styled.div`
