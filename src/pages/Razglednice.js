@@ -135,7 +135,7 @@ function Razglednice({ data }) {
     var docRef = firebase
       .firestore()
       .collection("razglednice")
-      .doc("3DiurvWtxvd6hAYVxgoC")
+      .doc("7xOHVjpKsq6EgVpOsqVh")
     docRef
       .get()
       .then(doc => {

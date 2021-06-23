@@ -18,7 +18,6 @@ const Wrap = styled.div`
   width: 100%;
   margin-top: 200px;
   text-align: center;
-<<<<<<< HEAD
   @media only screen and (max-width: 800px) {
     height: 1217px;
   }
@@ -28,8 +27,6 @@ const Wrap = styled.div`
   @media only screen and (max-width: 520px) {
     height: 855px;
   }
-=======
->>>>>>> 5b04970480176678ea732fe591c87209ff505ad6
 `
 const Title = styled.div`
   font-family: Playfair Display;
