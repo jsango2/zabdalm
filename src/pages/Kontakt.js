@@ -17,6 +17,7 @@ import Lottie from "lottie-react"
 import animacijaInstagram from "./../animations/instagram/instagramAnimacijaManja"
 import animacijaInstagram750 from "./../animations/instagram/instagramAnimacija750"
 import SEO from "../components/seo"
+import etnoAboutUs from "../animations/etno/etnoAboutUs"
 
 const Wrap = styled.div`
   /* background-color: grey; */
@@ -110,17 +111,16 @@ const WrapText = styled.div`
 const EtnoWrap = styled.div`
   position: absolute;
 
-  width: 244px;
+  width: 317px;
 
   height: 428px;
   bottom: -58px;
   right: 28px;
 
   @media screen and (max-width: 1096px) {
-    width: 156px;
-
+    width: 225px;
     height: 272px;
-    bottom: -78px;
+    bottom: -17px;
     right: 48px;
   }
   @media screen and (max-width: 550px) {
@@ -152,6 +152,16 @@ function Kontakt() {
     })
   }
   const [result, setResult] = useState(null)
+  // const interactivityEtno = {
+  //   mode: "scroll",
+  //   actions: [
+  //     {
+  //       visibility: [0, 0.8],
+  //       type: "seek",
+  //       frames: [0, 153],
+  //     },
+  //   ],
+  // }
   const interactivity = {
     mode: "scroll",
     actions: [
@@ -343,7 +353,14 @@ function Kontakt() {
           </WrapText>
         </WrapFormAndText>
         <EtnoWrap>
-          <img src={Etno} alt="etno" width="100%" />
+          {/* <img src={Etno} alt="etno" width="100%" /> */}
+          <Lottie
+            style={{ textAlign: "center", position: "relative", zIndex: "3" }}
+            animationData={etnoAboutUs}
+            // interactivity={interactivityEtno}
+            autoPlay={true}
+            loop={false}
+          />
         </EtnoWrap>
       </Wrap>
       <div style={{ height: "20px" }}></div>

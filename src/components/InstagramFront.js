@@ -24,10 +24,10 @@ const Wrap = styled.div`
     height: 1217px;
   }
   @media only screen and (max-width: 620px) {
-    height: 898px;
+    height: 1022px;
   }
   @media only screen and (max-width: 520px) {
-    height: 1016px;
+    height: 855px;
   }
 `
 const Title = styled.div`
@@ -107,11 +107,11 @@ const ImgWrap = styled.div`
   z-index: 1;
   @media only screen and (max-width: 700px) {
     /* width: 200px; */
-    bottom: 965px;
+    bottom: 937px;
   }
   @media only screen and (max-width: 550px) {
     /* width: 200px; */
-    bottom: 897px;
+    bottom: 828px;
   }
 `
 const Linija = styled.div`

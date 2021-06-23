@@ -14,6 +14,7 @@ import valBlogUze from "../animations/val/valBlogUze"
 
 // import SEO from "../components/seo"
 import valBlogSire from "./../animations/val/valBlogSire"
+import SEO from "../components/seo"
 
 const Wrap = styled.div`
   display: -webkit-box;
@@ -224,6 +225,10 @@ const BlogPost = ({ data }) => {
   return (
     <>
       <Layout>
+        <SEO
+          title={data.wpgraphql.blog.blog_graphql.naslovBlogaHr.slice(0, 69)}
+          description={data.wpgraphql.blog.blog_graphql.naslovBlogaHr}
+        />
         {lang === "hr" ? (
           <>
             <Hero

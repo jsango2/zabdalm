@@ -13,8 +13,8 @@ import PartneriProjektaFront from "../components/PartneriProjektaFront"
 import InstagramFront from "../components/InstagramFront"
 import "../../i18next"
 import Montaza from "../components/Montaza"
-import FirebaseUpload from "../components/firebaseUpload"
 // import FirebaseUpload from "../components/firebaseUpload"
+import FirebaseUpload from "../components/firebaseUpload"
 import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
@@ -39,6 +39,7 @@ const IndexPage = ({ data }) => {
 
       <PartneriProjektaFront data={data.wpgraphql} />
       <InstagramFront />
+      {/* <FirebaseUpload /> */}
     </Layout>
   )
 }

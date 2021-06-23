@@ -10,6 +10,7 @@ import Button from "./button"
 const ButtonWrap = styled.div`
   /* height: 100px; */
   position: relative;
+  z-index: 10;
   width: 390px;
   margin: 0 auto;
   display: flex;
@@ -58,7 +59,9 @@ function CitatFront() {
     <Wrap>
       {size.width < 750 ? (
         <ButtonWrap>
-          <Button text={t("kupiatlaskratko")} ikona={Cart} color="black" />
+          <a href="http://shop.zaboravljenadalmacija.hr">
+            <Button text={t("kupiatlaskratko")} ikona={Cart} color="black" />
+          </a>
         </ButtonWrap>
       ) : (
         <div></div>

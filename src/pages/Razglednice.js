@@ -135,7 +135,7 @@ function Razglednice({ data }) {
     var docRef = firebase
       .firestore()
       .collection("razglednice")
-      .doc("3KA58A4Bq58A35YjY64C")
+      .doc("3DiurvWtxvd6hAYVxgoC")
     docRef
       .get()
       .then(doc => {
@@ -633,7 +633,7 @@ function Razglednice({ data }) {
   return (
     <>
       <SEO
-        title="Razglednice Zaboravljene Dalmacije"
+        title="Razglednice na mapi"
         description="Interaktivna mapa sa razglednicama iz Zaboravljene Dalmacije"
       />
       <Header></Header>

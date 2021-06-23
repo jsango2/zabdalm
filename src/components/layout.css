@@ -1491,7 +1491,7 @@ textarea:focus {
   position: absolute;
   width: 100%;
   direction: rtl;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #c6bcaa;
   height: 135px;
   overflow: auto;

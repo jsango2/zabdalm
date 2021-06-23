@@ -130,10 +130,7 @@ function Blog({ data }) {
 
   return (
     <Layout>
-      <SEO
-        title="Blog Zaboravljena Dalmacija"
-        description="Priče Zaboravljene Dalmacije"
-      />
+      <SEO title="Blog" description="Priče Zaboravljene Dalmacije" />
       <MeniMobileBlog
         handleClickCloseMenu={handleClickCloseMenu}
         handleChooseMobileCategory={handleChooseMobileCategory}

@@ -353,7 +353,7 @@ const About = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="O Atlasu Zaboravljena Dalmacija"
+        title="O Atlasu"
         description="Saznajte više o atlasu Zaboravljena Dalmacija"
       />
       <OKnjiziIntro className="rel" id="rel" />
