@@ -10,6 +10,7 @@ import Lottie from "lottie-react"
 
 import animation1152 from "../animations/val/val"
 import animation370 from "../animations/val/val2"
+import val999 from "../animations/val/val999"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -96,7 +97,7 @@ function PartneriProjektaFront({ data }) {
     mode: "scroll",
     actions: [
       {
-        visibility: [0.2, 0.6],
+        visibility: [0.3, 0.7],
         type: "seek",
         frames: [0, 152],
       },
@@ -138,7 +139,7 @@ function PartneriProjektaFront({ data }) {
     } else {
       return (
         <Lottie
-          animationData={animation1152}
+          animationData={val999}
           interactivity={interactivity}
           autoPlay={false}
           loop={false}

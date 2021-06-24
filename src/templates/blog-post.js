@@ -222,6 +222,28 @@ const BlogPost = ({ data }) => {
     console.log("kategorija", cat)
   }, [])
 
+  function RenderAnimation() {
+    if (size.width < 750) {
+      return (
+        <Lottie
+          animationData={valBlogUze}
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
+      )
+    } else {
+      return (
+        <Lottie
+          animationData={valBlogSire}
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
+      )
+    }
+  }
+
   return (
     <>
       <Layout>
@@ -350,12 +372,7 @@ const BlogPost = ({ data }) => {
         )}
 
         <div>
-          <Lottie
-            animationData={size.width < 750 ? valBlogUze : valBlogSire}
-            interactivity={interactivity}
-            autoPlay={false}
-            loop={false}
-          />
+          <RenderAnimation />
         </div>
         <div
           style={{
