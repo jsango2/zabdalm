@@ -125,6 +125,27 @@ function PartneriProjektaFront({ data }) {
       cssEase: "linear",
     }
   }
+  function RenderAnimation() {
+    if (size.width < 750) {
+      return (
+        <Lottie
+          animationData={animation370}
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
+      )
+    } else {
+      return (
+        <Lottie
+          animationData={animation1152}
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
+      )
+    }
+  }
 
   return (
     <Wrap>
@@ -159,12 +180,7 @@ function PartneriProjektaFront({ data }) {
       </WrapSponzori>
 
       <WrapLottie>
-        <Lottie
-          autoPlay={false}
-          animationData={size.width < 750 ? animation370 : animation1152}
-          interactivity={interactivity}
-          loop={false}
-        />
+        <RenderAnimation />
       </WrapLottie>
     </Wrap>
   )

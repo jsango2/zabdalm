@@ -152,6 +152,16 @@ function Kontakt() {
     })
   }
   const [result, setResult] = useState(null)
+  // const [interactivity, setInteractivity] = useState({
+  //   mode: "scroll",
+  //   actions: [
+  //     {
+  //       visibility: [0, 0.8],
+  //       type: "seek",
+  //       frames: [0, 129],
+  //     },
+  //   ],
+  // })
   // const interactivityEtno = {
   //   mode: "scroll",
   //   actions: [
@@ -365,24 +375,15 @@ function Kontakt() {
       </Wrap>
       <div style={{ height: "20px" }}></div>
       <a href="http://www.instagram.com/zaboravljena_dalmacija">
-        {size.width < 750 ? (
-          <Lottie
-            style={{ textAlign: "center", position: "relative", zIndex: "3" }}
-            animationData={animacijaInstagram750}
-            interactivity={interactivity}
-            autoPlay={false}
-            loop={false}
-          />
-        ) : (
-          <Lottie
-            style={{ textAlign: "center", position: "relative", zIndex: "3" }}
-            animationData={animacijaInstagram}
-            interactivity={interactivity}
-            autoPlay={false}
-            loop={false}
-          />
-        )}
+        <Lottie
+          style={{ textAlign: "center", position: "relative", zIndex: "3" }}
+          animationData={animacijaInstagram}
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
       </a>
+      <div style={{ height: "30px" }}></div>
     </Layout>
   )
 }

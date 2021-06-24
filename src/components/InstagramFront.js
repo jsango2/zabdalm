@@ -27,6 +27,9 @@ const Wrap = styled.div`
   @media only screen and (max-width: 520px) {
     height: 1072px;
   }
+  @media only screen and (max-width: 430px) {
+    height: 870px;
+  }
 `
 const Title = styled.div`
   font-family: Playfair Display;
@@ -122,6 +125,16 @@ const Linija = styled.div`
 `
 
 function InstagramFront() {
+  const interactivity = {
+    mode: "scroll",
+    actions: [
+      {
+        visibility: [0, 0.8],
+        type: "seek",
+        frames: [0, 129],
+      },
+    ],
+  }
   const [t, i18n] = useTranslation()
   const size = useWindowSize()
 
@@ -135,16 +148,7 @@ function InstagramFront() {
       window.removeEventListener("scroll", handleScroll)
     }
   }, [])
-  const interactivity = {
-    mode: "scroll",
-    actions: [
-      {
-        visibility: [0, 0.8],
-        type: "seek",
-        frames: [0, 129],
-      },
-    ],
-  }
+
   return (
     <Wrap>
       {/* <WrapNaslov>
@@ -155,23 +159,13 @@ function InstagramFront() {
 
       {/* {size.width < 750 ? <InstaMobile /> : <InstaDesktop />} */}
       <a href="http://www.instagram.com/zaboravljena_dalmacija">
-        {size.width < 750 ? (
-          <Lottie
-            style={{ textAlign: "center", position: "relative", zIndex: "3" }}
-            animationData={animacijaInstagram}
-            interactivity={interactivity}
-            autoPlay={false}
-            loop={false}
-          />
-        ) : (
-          <Lottie
-            style={{ textAlign: "center", position: "relative", zIndex: "3" }}
-            animationData={animacijaInstagram750}
-            interactivity={interactivity}
-            autoPlay={false}
-            loop={false}
-          />
-        )}
+        <Lottie
+          style={{ textAlign: "center", position: "relative", zIndex: "3" }}
+          animationData={animacijaInstagram}
+          interactivity={interactivity}
+          autoPlay={false}
+          loop={false}
+        />
       </a>
 
       <Paragraf>{t("otkupljujemo")}</Paragraf>
