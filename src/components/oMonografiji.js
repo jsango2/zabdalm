@@ -90,12 +90,9 @@ const OMonografiji = () => {
   return (
     <MonoDiv>
       <KnjigaWrap>
-        <KnjigaSlideAnimation />
-        {/* <UlomakWrap>
-          <a href={ulomakPdf} download>
-            <img src={Ulomak} width="100%" alt="ulomak" />
-          </a>
-        </UlomakWrap> */}
+        <a href={ulomakPdf} download>
+          <KnjigaSlideAnimation />
+        </a>
       </KnjigaWrap>
       <MonoSection>
         <MonoNaslovSideCrta />
