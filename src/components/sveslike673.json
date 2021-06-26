@@ -202,8 +202,8 @@
         },
         {
             "DateCreated": "1909:01:15",
-            "GPSLatitude": "42.56487778",
-            "GPSLongitude": "18.27633889",
+            "GPSLatitude": "42.581508",
+            "GPSLongitude": "18.216771",
             "Title": "Cavtat",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-137.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-137.jpg"
@@ -330,8 +330,8 @@
         },
         {
             "DateCreated": "1908:09:03",
-            "GPSLatitude": "42.64235833",
-            "GPSLongitude": "18.13043611",
+            "GPSLatitude": "42.642237",
+            "GPSLongitude": "18.113216",
             "Title": "Dubrovnik",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-091.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-091.jpg"
@@ -386,16 +386,16 @@
         },
         {
             "DateCreated": "1909:05:07 13:06:12",
-            "GPSLatitude": "42.64251389",
-            "GPSLongitude": "18.10093333",
+            "GPSLatitude": "42.642037",
+            "GPSLongitude": "18.111101",
             "Title": "Dubrovnik",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-476.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-476.jpg"
         },
         {
             "DateCreated": "1895:07:26 15:47:44",
-            "GPSLatitude": "42.64091944",
-            "GPSLongitude": "18.10210278",
+            "GPSLatitude": "42.6421111",
+            "GPSLongitude": "18.109703",
             "Title": "Dubrovnik",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-499.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-499.jpg"
@@ -410,8 +410,8 @@
         },
         {
             "DateCreated": "1908:08:22 17:32:32",
-            "GPSLatitude": "42.64179167",
-            "GPSLongitude": "18.10223056",
+            "GPSLatitude": "42.641777",
+            "GPSLongitude": "18.111167",
             "Title": "Dubrovnik",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-501.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-501.jpg"
@@ -468,7 +468,7 @@
             "DateCreated": "1912:09:03",
             "GPSLatitude": "43.961375",
             "GPSLongitude": "15.42723056",
-            "Title": "Filip Jakov",
+            "Title": "Sveti Filip i Jakov",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-048.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-048.jpg"
         },
@@ -507,7 +507,7 @@
         {
             "DateCreated": "1934:09:08 21:26:28",
             "GPSLatitude": "43.139025",
-            "GPSLongitude": "17.27876111",
+            "GPSLongitude": "16.885702",
             "Title": "Gradac",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-668.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-668.jpg"
@@ -738,8 +738,8 @@
         },
         {
             "DateCreated": "1963:05:02 14:21:01",
-            "GPSLatitude": "43.19455",
-            "GPSLongitude": "17.13440556",
+            "GPSLatitude": "43.194595",
+            "GPSLongitude": "17.137038",
             "Title": "Igrane",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-558.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-558.jpg"
@@ -930,8 +930,8 @@
         },
         {
             "DateCreated": "1935:09:19 16:51:08",
-            "GPSLatitude": "43.16241389",
-            "GPSLongitude": "16.69203333",
+            "GPSLatitude": "43.163513",
+            "GPSLongitude": "16.6955",
             "Title": "Jelsa",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-655.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-655.jpg"
@@ -1018,8 +1018,8 @@
         },
         {
             "DateCreated": "1913:04:10",
-            "GPSLatitude": "43.55039444",
-            "GPSLongitude": "16.36150556",
+            "GPSLatitude": "43.552475",
+            "GPSLongitude": "16.363003",
             "Title": "Kaštel Lukšić",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-061.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-061.jpg"
@@ -1042,8 +1042,8 @@
         },
         {
             "DateCreated": "1968:04:11",
-            "GPSLatitude": "43.55124167",
-            "GPSLongitude": "16.36093056",
+            "GPSLatitude": "43.55022",
+            "GPSLongitude": "16.365353",
             "Title": "Kaštel Lukšić",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-350.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-350.jpg"
@@ -1172,7 +1172,7 @@
             "DateCreated": "1930:05:22 18:45:37",
             "GPSLatitude": "43.63206667",
             "GPSLongitude": "16.48142222",
-            "Title": "Klis",
+            "Title": "Prugovo",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-479.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-479.jpg"
         },
@@ -1290,16 +1290,16 @@
         },
         {
             "DateCreated": "1965:05:02 14:21:10",
-            "GPSLatitude": "43.04466389",
-            "GPSLongitude": "16.08385278",
+            "GPSLatitude": "43.04486",
+            "GPSLongitude": "16.089434",
             "Title": "Komiža",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-570.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-570.jpg"
         },
         {
             "DateCreated": "1912:03:13 13:21:26",
-            "GPSLatitude": "43.04400278",
-            "GPSLongitude": "16.08579444",
+            "GPSLatitude": "43.044027",
+            "GPSLongitude": "16.087926",
             "Title": "Komiža",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-616.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-616.jpg"
@@ -1327,14 +1327,6 @@
             "Title": "Komiža ",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-154.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-154.jpg"
-        },
-        {
-            "DateCreated": "1903:05:07 13:04:07",
-            "GPSLatitude": "42.51586111",
-            "GPSLongitude": "18.37191944",
-            "Title": "Konavle",
-            "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-471.jpg",
-            "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-471.jpg"
         },
         {
             "DateCreated": "1909:07:12",
@@ -1402,24 +1394,24 @@
         },
         {
             "DateCreated": "1928:03:13 13:35:50",
-            "GPSLatitude": "42.95685556",
-            "GPSLongitude": "17.13424722",
+            "GPSLatitude": "42.957276",
+            "GPSLongitude": "17.136998",
             "Title": "Korčula",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-614.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-614.jpg"
         },
         {
             "DateCreated": "1912:01:03 15:51:04",
-            "GPSLatitude": "42.96261111",
-            "GPSLongitude": "17.13339722",
+            "GPSLatitude": "42.962397",
+            "GPSLongitude": "17.136898",
             "Title": "Korčula",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-615.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-615.jpg"
         },
         {
             "DateCreated": "1901:05:07 13:11:04",
-            "GPSLatitude": "42.96204444",
-            "GPSLongitude": "17.11715278",
+            "GPSLatitude": "42.961765",
+            "GPSLongitude": "17.127306",
             "Title": "Korčula",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-618.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-618.jpg"
@@ -1578,16 +1570,16 @@
         },
         {
             "DateCreated": "1931:05:11 17:12:16",
-            "GPSLatitude": "42.765675",
-            "GPSLongitude": "16.812625",
-            "Title": "Lastovo",
+            "GPSLatitude": "43.520807",
+            "GPSLongitude": "16.427865",
+            "Title": "Split",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-647.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-647.jpg"
         },
         {
             "DateCreated": "1907:05:26 14:32:42",
-            "GPSLatitude": "42.76703333",
-            "GPSLongitude": "16.89484167",
+            "GPSLatitude": "42.763315",
+            "GPSLongitude": "16.812074",
             "Title": "Lastovo",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-648.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-648.jpg"
@@ -1617,14 +1609,6 @@
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-004.jpg"
         },
         {
-            "DateCreated": "1910:09:03",
-            "GPSLatitude": "43.52829444",
-            "GPSLongitude": "17.02938611",
-            "Title": "Lovreć",
-            "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-109.jpg",
-            "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-109.jpg"
-        },
-        {
             "DateCreated": "1934:03:20",
             "GPSLatitude": "43.52831667",
             "GPSLongitude": "17.029375",
@@ -1650,16 +1634,16 @@
         },
         {
             "DateCreated": "1930:05:07 15:03:58",
-            "GPSLatitude": "43.29219167",
-            "GPSLongitude": "17.00244722",
+            "GPSLatitude": "43.292082",
+            "GPSLongitude": "17.016272",
             "Title": "Makarska",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-523.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-523.jpg"
         },
         {
             "DateCreated": "1930:05:07 15:04:01",
-            "GPSLatitude": "43.29576667",
-            "GPSLongitude": "17.00209444",
+            "GPSLatitude": "43.296008",
+            "GPSLongitude": "17.012476",
             "Title": "Makarska",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-535.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-535.jpg"
@@ -1730,8 +1714,8 @@
         },
         {
             "DateCreated": "1930:05:07 15:04:00",
-            "GPSLatitude": "43.29453889",
-            "GPSLongitude": "17.00211111",
+            "GPSLatitude": "43.296008",
+            "GPSLongitude": "17.013476",
             "Title": "Makarska",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-531.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-531.jpg"
@@ -1865,10 +1849,10 @@
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-496.jpg"
         },
         {
-            "DateCreated": "1933:05:02 14:21:00",
+            "DateCreated": "1963:05:02 14:21:00",
             "GPSLatitude": "43.35082778",
             "GPSLongitude": "16.462525",
-            "Title": "Milna",
+            "Title": "Bobovišća",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-556.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-556.jpg"
         },
@@ -1962,8 +1946,8 @@
         },
         {
             "DateCreated": "1964:03:31",
-            "GPSLatitude": "43.81842222",
-            "GPSLongitude": "15.59126389",
+            "GPSLatitude": "43.822555",
+            "GPSLongitude": "15.588484",
             "Title": "Murter",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-326.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-326.jpg"
@@ -2476,7 +2460,7 @@
             "DateCreated": "1966:05:02 13:16:12",
             "GPSLatitude": "43.85694444",
             "GPSLongitude": "15.50272222",
-            "Title": "Pakoštane",
+            "Title": "Vrgada",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-517.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-517.jpg"
         },
@@ -2586,9 +2570,9 @@
         },
         {
             "DateCreated": "1931:09:08 20:56:06",
-            "GPSLatitude": "43.19391111",
-            "GPSLongitude": "17.13466111",
-            "Title": "Podgora",
+            "GPSLatitude": "43.194971",
+            "GPSLongitude": "17.137081",
+            "Title": "Igrane",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-516.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-516.jpg"
         },
@@ -2850,8 +2834,8 @@
         },
         {
             "DateCreated": "1914:02:14",
-            "GPSLatitude": "43.39583389",
-            "GPSLongitude": "16.34066389",
+            "GPSLatitude": "43.395936",
+            "GPSLongitude": "16.299584",
             "Title": "Rogač",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-184.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-184.jpg"
@@ -2954,8 +2938,8 @@
         },
         {
             "DateCreated": "1963:05:02 13:16:14",
-            "GPSLatitude": "43.93748333",
-            "GPSLongitude": "15.15084722",
+            "GPSLatitude": "43.937427",
+            "GPSLongitude": "15.166508",
             "Title": "Sali",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-520.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-520.jpg"
@@ -3228,7 +3212,7 @@
             "DateCreated": "1904:07:12 18:19:26",
             "GPSLatitude": "43.70480556",
             "GPSLongitude": "15.86944167",
-            "Title": "Šibenik",
+            "Title": "Zablaće",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-463.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-463.jpg"
         },
@@ -3538,16 +3522,16 @@
         },
         {
             "DateCreated": "1934:08:02 21:37:36",
-            "GPSLatitude": "43.53615278",
-            "GPSLongitude": "16.48989444",
-            "Title": "Solin",
+            "GPSLatitude": "43.735323",
+            "GPSLongitude": "15.889406",
+            "Title": "Šibenik",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-651.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-651.jpg"
         },
         {
             "DateCreated": "1929:09:09 15:33:08",
-            "GPSLatitude": "43.53790278",
-            "GPSLongitude": "16.46737222",
+            "GPSLatitude": "43.5357755",
+            "GPSLongitude": "16.491619",
             "Title": "Solin",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-652.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-652.jpg"
@@ -3570,8 +3554,8 @@
         },
         {
             "DateCreated": "1933:09:19 16:45:12",
-            "GPSLatitude": "43.16301667",
-            "GPSLongitude": "16.69437222",
+            "GPSLatitude": "43.5405",
+            "GPSLongitude": "16.500235",
             "Title": "Split",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-654.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-654.jpg"
@@ -3666,8 +3650,8 @@
         },
         {
             "DateCreated": "1898:03:23",
-            "GPSLatitude": "43.50784167",
-            "GPSLongitude": "16.4150327",
+            "GPSLatitude": "43.503478",
+            "GPSLongitude": "16.432848",
             "Title": "Split",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-256.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-256.jpg"
@@ -4101,14 +4085,6 @@
             "GPSLatitude": "43.52561389",
             "GPSLongitude": "17.02936111",
             "Title": "Studenci",
-            "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-002.jpg",
-            "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-002.jpg"
-        },
-        {
-            "DateCreated": "1908:06:12",
-            "GPSLatitude": "43.52561389",
-            "GPSLongitude": "17.02936111",
-            "Title": "Studenci",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-107.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-107.jpg"
         },
@@ -4130,8 +4106,8 @@
         },
         {
             "DateCreated": "1914:01:21",
-            "GPSLatitude": "43.28548333",
-            "GPSLongitude": "16.87270278",
+            "GPSLatitude": "43.285811",
+            "GPSLongitude": "16.870821",
             "Title": "Sumartin",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-146.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-146.jpg"
@@ -4154,8 +4130,8 @@
         },
         {
             "DateCreated": "1932:04:05",
-            "GPSLatitude": "43.28538056",
-            "GPSLongitude": "16.87128056",
+            "GPSLatitude": "43.28562",
+            "GPSLongitude": "16.873457",
             "Title": "Sumartin",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-168.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-168.jpg"
@@ -4185,10 +4161,10 @@
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-441.jpg"
         },
         {
-            "DateCreated": "1933:01:11 15:25:06",
+            "DateCreated": "1963:01:11 15:25:06",
             "GPSLatitude": "43.37628611",
             "GPSLongitude": "16.60525833",
-            "Title": "Supetar",
+            "Title": "Splitska",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-503.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-503.jpg"
         },
@@ -4450,9 +4426,9 @@
         },
         {
             "DateCreated": "1935:05:18 10:47:42",
-            "GPSLatitude": "43.79935556",
-            "GPSLongitude": "15.64259167",
-            "Title": "Tisno",
+            "GPSLatitude": "43.384776",
+            "GPSLongitude": "16.55487",
+            "Title": "Supetar",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-657.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-657.jpg"
         },
@@ -4714,8 +4690,8 @@
         },
         {
             "DateCreated": "1933:05:02 18:05:03",
-            "GPSLatitude": "42.85",
-            "GPSLongitude": "17.15221944",
+            "GPSLatitude": "43.0000008",
+            "GPSLongitude": "17.27221944",
             "Title": "Trpanj",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-579.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-579.jpg"
@@ -4874,8 +4850,8 @@
         },
         {
             "DateCreated": "1907:03:18 17:29:44",
-            "GPSLatitude": "43.05948611",
-            "GPSLongitude": "16.1868",
+            "GPSLatitude": "43.058472",
+            "GPSLongitude": "16.198039",
             "Title": "Vis",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-478.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-478.jpg"
@@ -4946,9 +4922,9 @@
         },
         {
             "DateCreated": "1905:08:15 18:29:10",
-            "GPSLatitude": "43.06208611",
-            "GPSLongitude": "16.18860278",
-            "Title": "Vis",
+            "GPSLatitude": "43.79886",
+            "GPSLongitude": "15.64085",
+            "Title": "Tisno",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-658.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-658.jpg"
         },
@@ -5050,16 +5026,16 @@
         },
         {
             "DateCreated": "1911:05:14 15:37:16",
-            "GPSLatitude": "43.218675",
-            "GPSLongitude": "17.37638889",
+            "GPSLatitude": "43.208675",
+            "GPSLongitude": "17.36638889",
             "Title": "Vrgorac",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-662.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-662.jpg"
         },
         {
             "DateCreated": "1928:09:08 21:21:14",
-            "GPSLatitude": "43.183675",
-            "GPSLongitude": "16.68963889",
+            "GPSLatitude": "43.181283",
+            "GPSLongitude": "16.672111",
             "Title": "Vrboska",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-660.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-660.jpg"
@@ -5098,8 +5074,8 @@
         },
         {
             "DateCreated": "1905:02:19 18:00:46",
-            "GPSLatitude": "44.11645833",
-            "GPSLongitude": "15.23019444",
+            "GPSLatitude": "44.113767",
+            "GPSLongitude": "15.229468",
             "Title": "Zadar",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-461.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-461.jpg"
@@ -5114,8 +5090,8 @@
         },
         {
             "DateCreated": "1919:03:26",
-            "GPSLatitude": "44.11534444",
-            "GPSLongitude": "15.22203889",
+            "GPSLatitude": "44.116949",
+            "GPSLongitude": "15.227238",
             "Title": "Zadar",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-291.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-291.jpg"
@@ -5146,7 +5122,7 @@
         },
         {
             "DateCreated": "1914:03:01 13:19:19",
-            "GPSLatitude": "44.11737778",
+            "GPSLatitude": "44.114676",
             "GPSLongitude": "15.22191667",
             "Title": "Zadar",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-663.jpg",
@@ -5154,8 +5130,8 @@
         },
         {
             "DateCreated": "1911:01:28 15:45:00",
-            "GPSLatitude": "44.11423611",
-            "GPSLongitude": "15.22741389",
+            "GPSLatitude": "44.112522",
+            "GPSLongitude": "15.228833",
             "Title": "Zadar",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-670.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-670.jpg"
@@ -5217,14 +5193,6 @@
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-003.jpg"
         },
         {
-            "DateCreated": "1905:09:03",
-            "GPSLatitude": "43.39711111",
-            "GPSLongitude": "17.05741667",
-            "Title": "Zagvozd",
-            "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-108.jpg",
-            "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-108.jpg"
-        },
-        {
             "DateCreated": "1912:09:03",
             "GPSLatitude": "43.14094167",
             "GPSLongitude": "17.27471944",
@@ -5233,9 +5201,9 @@
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/05/200px-076.jpg"
         },
         {
-            "DateCreated": "1906:09:17 17:33:08",
-            "GPSLatitude": "43.15256111",
-            "GPSLongitude": "17.28893056",
+            "DateCreated": "1926:09:17 17:33:08",
+            "GPSLatitude": "43.14056111",
+            "GPSLongitude": "17.27493056",
             "Title": "Zaostrog",
             "Photo1000px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/1000px-669.jpg",
             "Photo200px": "http://sutrashop.com.hr/wp-content/uploads/2021/06/200px-669.jpg"
