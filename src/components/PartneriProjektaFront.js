@@ -15,21 +15,21 @@ import val999 from "../animations/val/val999"
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
-  height: 545px;
+  height: 191px;
   position: relative;
   margin: 200px 0 112px 0;
   text-align: center;
   @media only screen and (max-width: 750px) {
     margin: 100px 0 12px 0;
-    height: 610px;
+    height: 200px;
   }
   @media only screen and (max-width: 550px) {
     /* margin: 100px 0 12px 0; */
-    height: 430px;
+    height: 200px;
   }
   @media only screen and (max-width: 430px) {
     /* margin: 100px 0 12px 0; */
-    height: 300px;
+    height: 100px;
   }
 `
 const WrapSponzori = styled.div`
@@ -126,27 +126,27 @@ function PartneriProjektaFront({ data }) {
       cssEase: "linear",
     }
   }
-  function RenderAnimation() {
-    if (size.width < 750) {
-      return (
-        <Lottie
-          animationData={animation370}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      )
-    } else {
-      return (
-        <Lottie
-          animationData={val999}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      )
-    }
-  }
+  // function RenderAnimation() {
+  //   if (size.width < 750) {
+  //     return (
+  //       <Lottie
+  //         animationData={animation370}
+  //         interactivity={interactivity}
+  //         autoPlay={false}
+  //         loop={false}
+  //       />
+  //     )
+  //   } else {
+  //     return (
+  //       <Lottie
+  //         animationData={val999}
+  //         interactivity={interactivity}
+  //         autoPlay={false}
+  //         loop={false}
+  //       />
+  //     )
+  //   }
+  // }
 
   return (
     <Wrap>
@@ -179,10 +179,6 @@ function PartneriProjektaFront({ data }) {
           ))}
         </Slider>
       </WrapSponzori>
-
-      <WrapLottie>
-        <RenderAnimation />
-      </WrapLottie>
     </Wrap>
   )
 }

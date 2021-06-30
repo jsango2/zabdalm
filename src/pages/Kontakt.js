@@ -18,6 +18,7 @@ import animacijaInstagram from "./../animations/instagram/instagramAnimacijaManj
 import animacijaInstagram750 from "./../animations/instagram/instagramAnimacija750"
 import SEO from "../components/seo"
 import etnoAboutUs from "../animations/etno/etnoAboutUs"
+import heroKontakt from "../animations/hero/heroKontakt"
 
 const Wrap = styled.div`
   /* background-color: grey; */
@@ -220,7 +221,7 @@ function Kontakt() {
         ></div>
         {size.width > 550 ? (
           <div style={{ height: "544px", width: "100%", overflow: "hidden" }}>
-            <Slider
+            {/* <Slider
               dots={false}
               fade={true}
               infinite={true}
@@ -257,7 +258,14 @@ function Kontakt() {
                   }}
                 />
               </Fotka>
-            </Slider>
+            </Slider> */}
+            <Lottie
+              className="lottieKontakt"
+              animationData={heroKontakt}
+              // interactivity={interactivity}
+              // autoPlay={true}
+              // loop={true}
+            />
           </div>
         ) : (
           <>
@@ -365,7 +373,11 @@ function Kontakt() {
         <EtnoWrap>
           {/* <img src={Etno} alt="etno" width="100%" /> */}
           <Lottie
-            style={{ textAlign: "center", position: "relative", zIndex: "3" }}
+            style={{
+              textAlign: "center",
+              position: "relative",
+              zIndex: "1000000",
+            }}
             animationData={etnoAboutUs}
             // interactivity={interactivityEtno}
             autoPlay={true}
@@ -373,10 +385,14 @@ function Kontakt() {
           />
         </EtnoWrap>
       </Wrap>
-      <div style={{ height: "20px" }}></div>
+      {/* <div style={{ height: "20px" }}></div> */}
       <a href="http://www.instagram.com/zaboravljena_dalmacija">
         <Lottie
-          style={{ textAlign: "center", position: "relative", zIndex: "3" }}
+          style={{
+            textAlign: "center",
+            position: "relative",
+            zIndex: "3",
+          }}
           animationData={animacijaInstagram}
           interactivity={interactivity}
           autoPlay={false}

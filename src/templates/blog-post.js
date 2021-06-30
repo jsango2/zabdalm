@@ -3,17 +3,14 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import { useTranslation } from "react-i18next"
-import Lottie from "lottie-react"
-import animation1152 from "../animations/val/val2"
+
 import { useWindowSize } from "../components/useWindowSize"
 import i18next from "i18next"
 import "../../i18next"
 
 import TriBlogPosta from "../components/TriBlogPosta"
-import valBlogUze from "../animations/val/valBlogUze"
 
 // import SEO from "../components/seo"
-import valBlogSire from "./../animations/val/valBlogSire"
 import SEO from "../components/seo"
 
 const Wrap = styled.div`
@@ -222,28 +219,6 @@ const BlogPost = ({ data }) => {
     console.log("kategorija", cat)
   }, [])
 
-  function RenderAnimation() {
-    if (size.width < 750) {
-      return (
-        <Lottie
-          animationData={valBlogUze}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      )
-    } else {
-      return (
-        <Lottie
-          animationData={valBlogSire}
-          interactivity={interactivity}
-          autoPlay={false}
-          loop={false}
-        />
-      )
-    }
-  }
-
   return (
     <>
       <Layout>
@@ -371,9 +346,6 @@ const BlogPost = ({ data }) => {
           <div></div>
         )}
 
-        <div>
-          <RenderAnimation />
-        </div>
         <div
           style={{
             display: "flex",

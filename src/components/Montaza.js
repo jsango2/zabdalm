@@ -32,12 +32,12 @@ const Wrap = styled.div`
     height: 180px;
   }
   @media only screen and (max-width: 458px) {
-    top: -110px;
+    top: -71px;
 
     height: 130px;
   }
   @media only screen and (max-width: 368px) {
-    top: -90px;
+    top: -54px;
 
     height: 130px;
   }

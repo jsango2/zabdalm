@@ -71,9 +71,9 @@ const KnjigaWrap = styled.div`
   }
   @media only screen and (max-width: 550px) {
     min-width: 245px;
-    width: 501px;
+    width: 155vw;
     height: auto;
-    left: 0;
+    left: 13px;
   }
 `
 const KnjigaWrapZaDesktop = styled.div`

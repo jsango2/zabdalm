@@ -84,7 +84,6 @@ function Razglednice({ data }) {
 
   useEffect(() => {
     setLang(i18next.language)
-    console.log(typeof i18next.language)
   }, [i18next.language])
   // var flickrs = new Flickr("fd4a1bda8ebe5a6c92d2e206c9df0e16")
 
@@ -135,12 +134,11 @@ function Razglednice({ data }) {
     var docRef = firebase
       .firestore()
       .collection("razglednice")
-      .doc("NqvGaUO7WsimzLcSgK6Z")
+      .doc("GItujgtE1GGpJkdY55rb")
     docRef
       .get()
       .then(doc => {
         if (doc.exists) {
-          console.log("Document data:", doc.data())
           setGeoData(doc.data().geoData)
         } else {
           // doc.data() will be undefined in this case
@@ -274,7 +272,6 @@ function Razglednice({ data }) {
 
     // console.log("gefiltert XXXXXXXXXXXXXXXXX", objectFiltrirano)
     setGeoData2(objectFiltrirano)
-    console.log("test value")
     // console.log("geodatafićrs", geoData.features)
   }, [geoData, value2])
 
@@ -297,11 +294,9 @@ function Razglednice({ data }) {
 
     popup.on("open", function () {
       setPopupOn(true)
-      console.log("open")
     })
     popup.on("close", function () {
       setPopupOn(false)
-      console.log("closed")
     })
 
     // console.log(map)
@@ -450,7 +445,6 @@ function Razglednice({ data }) {
           // map.getCanvas().style.cursor = ""
           // Populate the popup and set its coordinates based on the feature.
           var coordinates = e.features[0].geometry.coordinates.slice()
-          console.log("koordinate", coordinates)
           var feature = e.features[0]
           setShow(false)
           // console.log(feature)
@@ -609,7 +603,6 @@ function Razglednice({ data }) {
   }
   const handleChangeGodinaDelayed = (event, newValue) => {
     setValue2(newValue)
-    console.log(newValue)
   }
   const handleChangeGodina = (event, newValue) => {
     setValue(newValue)

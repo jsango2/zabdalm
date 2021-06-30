@@ -18,9 +18,12 @@ const Wrap = styled.div`
   position: relative;
   margin: 50px 0 10px 0;
   text-align: center;
-  ${"" /* @media only screen and (max-width: 76em) {
-    height: 450px;
-  } */}
+  @media only screen and (max-width: 620px) {
+    margin: 90px 0 10px 0;
+  }
+  @media only screen and (max-width: 370px) {
+    margin: 90px 0 10px 0;
+  }
 `
 const Naslov = styled.div`
   font-family: Playfair Display;
