@@ -205,7 +205,9 @@ function BlogFront({ blogovi }) {
             >
               {t("odaberikategoriju")}
             </div>
-            <RiArrowDropDownFill />
+            <div style={{ fontSize: "24px" }}>
+              <RiArrowDropDownFill />
+            </div>
           </div>
         )}
         {size.width < 750 ? (

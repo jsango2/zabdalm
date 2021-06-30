@@ -118,6 +118,7 @@ module.exports = {
           `Raleway`,
           `Playfair Display\:300,400,500,700`,
           `Amiri\:400`,
+          `Roboto\:400`,
 
           // `Montserrat Alternates\:500`, // you can also specify font weights and styles
         ],

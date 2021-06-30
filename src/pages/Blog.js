@@ -220,7 +220,9 @@ function Blog({ data }) {
           >
             {t("odaberikategoriju")}
           </div>
-          <RiArrowDropDownFill />
+          <div style={{ fontSize: "24px" }}>
+            <RiArrowDropDownFill />
+          </div>
         </div>
       )}
 
