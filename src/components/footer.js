@@ -41,10 +41,9 @@ const FooterContainer = styled.div`
 
 const FooterSection = styled.div`
   width: 33%;
-
-  @media (max-width: 588px) {
+  /* @media (max-width: 588px) {
     width: 43%;
-  }
+  } */
 `
 
 const FooterTitle = styled.h3`
@@ -71,7 +70,7 @@ const ContactList = styled.ul`
 
   @media (max-width: 680px) {
     max-width: 163px;
-    font-size: 10px;
+    font-size: 12px;
   }
 `
 
@@ -95,13 +94,13 @@ const FooterDescription = styled.p`
     max-width: 192px;
   }
   @media (max-width: 680px) {
-    max-width: 163px;
-    font-size: 10px;
+    /* max-width: 163px; */
+    font-size: 12px;
   }
 `
 
 const AboutProject = styled.div`
-  @media (max-width: 588px) {
+  @media (max-width: 550px) {
     display: none;
   }
 `
@@ -113,6 +112,8 @@ const FooterSocial = styled.ul`
   margin-left: 100px;
   list-style: none;
   margin-bottom: 16px;
+  position: relative;
+    top: 45px;
 
   @media (max-width: 999px) {
     margin-left: 70px;
@@ -121,14 +122,14 @@ const FooterSocial = styled.ul`
     margin-left: 50px;
   }
   @media (max-width: 680px) {
-    margin-left: 35px;
-    font-size: 14px;
+    margin-left: 60px;
+    font-size: 16px;
     margin-bottom: 12px;
     position: relative;
     top: 40px;
   }
-  @media (max-width: 588px) {
-    top: 0;
+  @media (max-width: 550px) {
+    margin-left: -4vw;
   }
 `
 
@@ -156,7 +157,7 @@ const FooterMadeBy = styled.div`
   font-weight: 500;
   font-size: 15px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 10px;
   padding: 48px;
   max-width: 370px;
   line-height: 17px;
