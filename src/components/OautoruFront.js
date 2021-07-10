@@ -226,7 +226,7 @@ const Naslov1 = styled.div`
   /* width: 250px; */
   @media only screen and (max-width: 750px) {
     font-size: 36px;
-    width: 250px;
+    width: 274px;
   }
   @media only screen and (max-width: 350px) {
     font-size: 28px;

@@ -28,7 +28,6 @@ const IndexPage = ({ data }) => {
   const { t } = useTranslation()
 
   const [isOpen, setisOpen] = useState(false)
-  console.log(getCookieConsentValue())
   return (
     <Layout isOpen={isOpen}>
       <CookieConsent

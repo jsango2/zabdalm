@@ -84,6 +84,8 @@ const Header = () => {
   return (
     <Headroom
       disableInlineStyles
+      upTolerance={50}
+      downTolerance={50}
       onPin={() => setDisplay("animation")}
       onUnpin={() => setDisplay("")}
       style={{

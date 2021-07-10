@@ -113,7 +113,7 @@ const FooterSocial = styled.ul`
   list-style: none;
   margin-bottom: 16px;
   position: relative;
-    top: 45px;
+  top: 45px;
 
   @media (max-width: 999px) {
     margin-left: 70px;
