@@ -123,10 +123,9 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         wpgraphql {
-          blogovi {
+          blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 80) {
             edges {
               node {
-                id
                 slug
               }
             }

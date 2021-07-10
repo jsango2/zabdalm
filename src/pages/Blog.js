@@ -66,7 +66,7 @@ function Blog({ data }) {
   // const [kategorijaEng, setKategorijaEng] = useState("SVE")
 
   var queryData = data.wpgraphql.blogovi.edges
-
+  console.log(data.wpgraphql.blogovi.edges)
   useEffect(() => {
     setLang(i18next.language)
   }, [i18next.language])
@@ -242,7 +242,7 @@ export default Blog
 export const query = graphql`
   query {
     wpgraphql {
-      blogovi {
+      blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 80) {
         edges {
           node {
             blog_graphql {
