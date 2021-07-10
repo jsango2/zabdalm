@@ -15,13 +15,31 @@ import "../../i18next"
 import Montaza from "../components/Montaza"
 // import FirebaseUpload from "../components/firebaseUpload"
 import FirebaseUpload from "../components/firebaseUpload"
+import CookieConsent, {
+  Cookies,
+  getCookieConsentValue,
+} from "react-cookie-consent"
+import { useTranslation } from "react-i18next"
+
+import i18next from "i18next"
 import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
-  const [isOpen, setisOpen] = useState(false)
+  const { t } = useTranslation()
 
+  const [isOpen, setisOpen] = useState(false)
+  console.log(getCookieConsentValue())
   return (
     <Layout isOpen={isOpen}>
+      <CookieConsent
+        location="bottom"
+        cookieName="myAwesomeCookieName3"
+        expires={999}
+        overlay
+        buttonText={t("razumijem")}
+      >
+        {t("cookie")}
+      </CookieConsent>
       <SEO title="Početna" />
 
       <Hero />

@@ -129,7 +129,7 @@ function InstagramFront() {
     mode: "scroll",
     actions: [
       {
-        visibility: [0, 0.8],
+        visibility: [0.1, 0.8],
         type: "seek",
         frames: [0, 129],
       },

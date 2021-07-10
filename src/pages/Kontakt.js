@@ -221,44 +221,6 @@ function Kontakt() {
         ></div>
         {size.width > 550 ? (
           <div style={{ height: "544px", width: "100%", overflow: "hidden" }}>
-            {/* <Slider
-              dots={false}
-              fade={true}
-              infinite={true}
-              speed={8000}
-              slidesToShow={1}
-              slidesToScroll={1}
-              autoplay={true}
-              cssEase="cubic-bezier(0,0,0,1.01)"
-            >
-              <Fotka>
-                <img
-                  src={Brodi}
-                  alt=""
-                  style={{
-                    height: "100%",
-                  }}
-                />
-              </Fotka>
-              <Fotka>
-                <img
-                  src={HeroPhoto}
-                  alt=""
-                  style={{
-                    height: "100%",
-                  }}
-                />
-              </Fotka>
-              <Fotka>
-                <img
-                  src={Tovar}
-                  alt=""
-                  style={{
-                    height: "100%",
-                  }}
-                />
-              </Fotka>
-            </Slider> */}
             <Lottie
               className="lottieKontakt"
               animationData={heroKontakt}
