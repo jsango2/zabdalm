@@ -6,6 +6,7 @@ import Potpis from "../../content/assets/potpis.svg"
 import Knjiga from "../../content/assets/knjiga.png"
 import Button from "./button"
 import Cart from "../../content/assets/cart.svg"
+import { Link } from "gatsby"
 import { useWindowSize } from "../components/useWindowSize"
 import Lottie from "lottie-react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
@@ -342,7 +343,6 @@ function OautoruFront() {
                 <Crta />
                 <Naslov1>{t("oautoru")}</Naslov1>
               </WrapNaslovCrtaOautoru>
-
               <TextOautoru>
                 {t("igorgoles1")}
                 <br />
@@ -447,7 +447,19 @@ function OautoruFront() {
                   {t("igorgoles1")}
                   <br />
                   <br />
-                  {t("igorgoles2")}
+                  {t("igorgoles2")}{" "}
+                  <Link to="/About">
+                    <span
+                      style={{
+                        fontStyle: "italic",
+                        fontWeight: "bold",
+                        cursor: "pointer",
+                        color: "white",
+                      }}
+                    >
+                      {t("procitajVise")}
+                    </span>
+                  </Link>
                 </TextOautoru>
                 <div
                   style={{
