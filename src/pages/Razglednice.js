@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
+
 import "../../i18next"
 
 import { useTranslation } from "react-i18next"
@@ -29,8 +30,7 @@ import SEO from "../components/seo"
 import InfoBlock from "../components/InfoBlock"
 import { useOnClickOutside } from "../components/useClickOutside"
 mapboxgl.workerClass = MapboxWorker
-mapboxgl.accessToken =
-  "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
+mapboxgl.accessToken = process.env.GATSBY_MAPBOX_TOKEN
 
 const InfoWrap = styled.div`
   position: absolute;
@@ -134,7 +134,7 @@ function Razglednice({ data }) {
     var docRef = firebase
       .firestore()
       .collection("razglednice")
-      .doc("GWcDnmbnvqI4vgnG3Dae")
+      .doc(process.env.GATSBY_MAPBOX)
     docRef
       .get()
       .then(doc => {

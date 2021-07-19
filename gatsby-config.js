@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Zaboravljena Dalmacija`,
@@ -168,14 +172,14 @@ module.exports = {
     "gatsby-plugin-remove-serviceworker",
     // `gatsby-plugin-postcss`,
 
-    // {
-    //   resolve: "gatsby-plugin-robots-txt",
-    //   options: {
-    //     host: "https://www.go-dom.hr",
-    //     sitemap: "https://www.go-dom.hr/sitemap.xml",
-    //     policy: [{ userAgent: "*", allow: "/" }],
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.zaboravljenadalmacija.hr",
+        sitemap: "https://www.zaboravljenadalmacija.hr/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
@@ -188,7 +192,7 @@ module.exports = {
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          // "G-XFZYT9DVNK", // Google Analytics / GA
+          "G-F5XM9FSFLB", // Google Analytics / GA
           // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
           // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
@@ -230,7 +234,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
-        siteUrl: `https://localhost:8000/`,
+        siteUrl: `https://www.zaboravljenadalmacija.hr`,
       },
     },
   ],

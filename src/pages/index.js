@@ -31,10 +31,12 @@ const IndexPage = ({ data }) => {
   return (
     <Layout isOpen={isOpen}>
       <CookieConsent
+        buttonStyle={{ backgroundColor: "#27aae0", borderRadius: "3px" }}
         location="bottom"
         cookieName="myAwesomeCookieName3"
         expires={999}
         overlay
+        containerClasses="cookieContainer"
         buttonText={t("razumijem")}
       >
         {t("cookie")}
