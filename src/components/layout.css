@@ -377,6 +377,9 @@ fieldset {
 .slick-slider {
   overflow: hidden;
 }
+.slick-list {
+  z-index: 100000 !important;
+}
 
 /* .slick-slider div.slick-active img {
   animation-name: myMove;

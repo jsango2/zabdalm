@@ -18,6 +18,8 @@ import Knjiga from "../../content/assets/knjiga.png"
 import Ulomak from "../../content/assets/ulomakStamp.svg"
 import Arrow from "../../content/assets/arrow.png"
 import Rope from "../../content/assets/rope.png"
+import StickerHr from "../../content/assets/STICKER HR.svg"
+import StickerEng from "../../content/assets/STICKER ENG.svg"
 
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
@@ -27,13 +29,11 @@ import SEO from "../components/seo"
 //#region Styled
 
 const KolazWrapper = styled.div`
-  
   @media only screen and (max-width: 1152px) {
   }
   @media only screen and (max-width: 750px) {
   }
   @media only screen and (max-width: 550px) {
-
   }
 `
 const KnjigeSection = styled.div`
@@ -234,7 +234,6 @@ const Ulomak2Wrap = styled.div`
     left: 3vw;
     top: -57vw;
   }
-  
 `
 
 //#endregion
@@ -370,8 +369,12 @@ const About = ({ data }) => {
           </Knjiga2>
         </Knjige750>
         <UlomakKnjige>
-        <a href={ulomakPdf} download>
-            <img src={Ulomak} width="100%" alt="ulomak" />
+          <a href={ulomakPdf} download>
+            {i18next.language === "hr" ? (
+              <img src={StickerHr} width="100%" alt="ulomak" />
+            ) : (
+              <img src={StickerEng} width="100%" alt="ulomak" />
+            )}
           </a>
         </UlomakKnjige>
       </KnjigeSection>
@@ -381,7 +384,7 @@ const About = ({ data }) => {
       <OthersSection>
         <OthersTitle>
           <OthersLineLeft />
-          <MiddleTitle>Drugi o knjizi</MiddleTitle>
+          <MiddleTitle>{t("drugiOknjizi")}</MiddleTitle>
           <OthersLineRight />
         </OthersTitle>
 
@@ -415,7 +418,11 @@ const About = ({ data }) => {
         <KnjigaAnimation />
         <Ulomak2Wrap>
           <a href={ulomakPdf} download>
-            <img src={Ulomak} width="100%" alt="ulomak" />
+            {i18next.language === "hr" ? (
+              <img src={StickerHr} width="100%" alt="ulomak" />
+            ) : (
+              <img src={StickerEng} width="100%" alt="ulomak" />
+            )}
           </a>
         </Ulomak2Wrap>
       </KnjigaWrapper>

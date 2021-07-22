@@ -35,7 +35,6 @@ const IndexPage = ({ data }) => {
         location="bottom"
         cookieName="myAwesomeCookieName3"
         expires={999}
-        overlay
         containerClasses="cookieContainer"
         buttonText={t("razumijem")}
       >

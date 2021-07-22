@@ -328,7 +328,16 @@ function Kontakt() {
                 marginTop: "20px",
               }}
             >
-              dalmatianstory@gmail.com
+              <a
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  fontSize: "13px",
+                }}
+                href="mailto: info@zaboravljenadalmacija.hr?subject=Upit"
+              >
+                info@zaboravljenadalmacija.hr
+              </a>{" "}
             </div>
           </WrapText>
         </WrapFormAndText>

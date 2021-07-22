@@ -6,11 +6,11 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import { useWindowSize } from "../components/useWindowSize"
-import Lottie from "lottie-react"
+// import Lottie from "lottie-react"
 
-import animation1152 from "../animations/val/val"
-import animation370 from "../animations/val/val2"
-import val999 from "../animations/val/val999"
+// import animation1152 from "../animations/val/val"
+// import animation370 from "../animations/val/val2"
+// import val999 from "../animations/val/val999"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}

@@ -77,6 +77,7 @@ const ContactList = styled.ul`
 const ContactItem = styled.li`
   margin-bottom: 0;
   line-height: initial;
+  width: 183px;
 `
 
 const FooterDescription = styled.p`
@@ -180,8 +181,27 @@ function Footer() {
               <ContactItem>Croatia</ContactItem>
             </ContactList>
             <ContactList>
-              <ContactItem>Mail: dalmatian.story2020@gmail.com</ContactItem>
-              <ContactItem>Tel: +385916019277</ContactItem>
+              <ContactItem>
+                Mail:{" "}
+                <a
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                    fontSize: "13px",
+                  }}
+                  href="mailto: info@zaboravljenadalmacija.hr?subject=Upit"
+                >
+                  info@zaboravljenadalmacija.hr
+                </a>{" "}
+              </ContactItem>
+              <ContactItem>
+                <a
+                  style={{ color: "white", textDecoration: "none" }}
+                  href="tel:+385916019277"
+                >
+                  Tel: +385916019277
+                </a>{" "}
+              </ContactItem>
             </ContactList>
           </FooterSection>
           <FooterSection>

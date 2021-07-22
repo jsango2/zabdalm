@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 
 import Lottie from "lottie-react"
-
+import { useTranslation } from "react-i18next"
+import i18next from "i18next"
 
 import Knjiga from "../../content/assets/knjiga.png"
 import knjigaSlide1152 from "../animations/knjigaSlide1152"
 import knjigaSlide350 from "../animations/knjigaSlide350"
 import knjiga370 from "../animations/knjiga370"
+import knjigaSlide350Eng from "./../animations/knjigaSlide350Eng"
+import knjigaSlide1152Eng from "./../animations/knjigaSlide1152Eng"
 
 const AnimationWrap = styled.div`
   @media only screen and (max-width: 1152px) {
@@ -50,7 +53,9 @@ function KnjigaSlideAnimation() {
     if (width < 350) {
       return (
         <Lottie
-          animationData={knjigaSlide350}
+          animationData={
+            i18next.language === "hr" ? knjigaSlide350 : knjigaSlide350Eng
+          }
           interactivity={interactivity}
           autoPlay={false}
           loop={false}
@@ -59,7 +64,9 @@ function KnjigaSlideAnimation() {
     } else {
       return (
         <Lottie
-          animationData={knjigaSlide1152}
+          animationData={
+            i18next.language === "hr" ? knjigaSlide1152 : knjigaSlide1152Eng
+          }
           interactivity={interactivity}
           autoPlay={false}
           loop={false}

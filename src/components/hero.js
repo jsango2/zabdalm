@@ -16,6 +16,7 @@ import MeniMobile from "./meniMobile"
 import heroLottie1152 from "./../animations/hero/HeroLottie"
 
 import Lottie from "lottie-react"
+import animationHero from "../animations/hero/heroLottieNovo"
 
 const Wrap = styled.div`
   background-color: rgb(28, 17, 0);
@@ -261,7 +262,7 @@ const Hero = () => {
         </ImgOverflowHidden> */}
         <Lottie
           className="lottieHero"
-          animationData={heroLottie1152}
+          animationData={animationHero}
           // interactivity={interactivity}
           // autoPlay={true}
           // loop={true}
