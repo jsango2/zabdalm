@@ -28,7 +28,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const defaultTitle = title || site.siteMetadata?.title
   const keywords = site.siteMetadata?.keywords
 
   return (
