@@ -38,7 +38,7 @@
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-robots-txt": "^1.5.5",
     "gatsby-plugin-sharp": "^2.8.0",
-    "gatsby-plugin-sitemap": "^4.0.0",
+    "gatsby-plugin-sitemap": "^3.3.0",
     "gatsby-plugin-styled-components": "^4.4.0",
     "gatsby-plugin-trigger-deploy": "0.0.2",
     "gatsby-remark-copy-linked-files": "^4.1.0",
