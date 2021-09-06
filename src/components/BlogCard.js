@@ -64,8 +64,8 @@ function BlogCard({ blogs }) {
         case "ZABORAVLJENA DALMACIJA DANAS":
           cat = "FORGOTTEN DALMATIA TODAY"
           break
-        case "ANTIKNI PREDMETI IZ DALMACIJE":
-          cat = "ANTIQUE OBJECTS FROM DALMATIA"
+        case "U GOSTIMA KOD":
+          cat = "VISITING..."
           break
         case "PRIČE IZ DALMATINSKE POVIJESTI":
           cat = "STORIES FROM DALMATIAN HISTORY"

@@ -75,8 +75,8 @@ function Blog({ data }) {
     if (kategorija === "STORIES FROM DALMATIAN HISTORY") {
       setKategorija("PRIČE IZ DALMATINSKE POVIJESTI")
     }
-    if (kategorija === "ANTIQUE OBJECTS FROM DALMATIA") {
-      setKategorija("ANTIKNI PREDMETI IZ DALMACIJE")
+    if (kategorija === "VISITING...") {
+      setKategorija("U GOSTIMA KOD...")
     }
     if (kategorija === "FORGOTTEN DALMATIA TODAY") {
       setKategorija("ZABORAVLJENA DALMACIJA DANAS")
@@ -189,7 +189,7 @@ function Blog({ data }) {
               onClick={e => handleClick(e, 2)}
               style={{ cursor: "pointer", margin: "0 10px" }}
             >
-              {t("antiknipredmeti")}
+              {t("ugostimakod")}
             </div>
             <div>-</div>
             <div

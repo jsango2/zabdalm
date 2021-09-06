@@ -95,7 +95,7 @@ function MeniMobile({
             onClick={e => handleClick(e, 2)}
             style={{ cursor: "pointer", margin: "0 10px" }}
           >
-            {t("antiknipredmeti")}
+            {t("ugostimakod")}
           </div>
 
           <div

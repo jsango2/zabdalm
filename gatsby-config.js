@@ -13,7 +13,7 @@ module.exports = {
     siteUrl: "https://www.zaboravljenadalmacija.hr",
     image: "/seoPhoto.png",
     keywords:
-      "Zaboravljena Dalmacija, razglednice, blog, atlas, povijest Dalmacije, Webshop, web trgovina",
+      "Zaboravljena Dalmacija, razglednice, blog, atlas, povijest Dalmacije, Webshop, web trgovina, stare razglednice",
   },
 
   plugins: [
