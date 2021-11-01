@@ -10,6 +10,7 @@ import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"
 import styled from "styled-components"
 // import { CgMenuGridR } from "react-icons/cg"
 import firebase from "gatsby-plugin-firebase"
+import { Link } from "gatsby"
 
 import "mapbox-gl/dist/mapbox-gl.css"
 import "@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
@@ -62,8 +63,8 @@ const InfoWrap = styled.div`
 const PopupAnimacija = styled.div`
   position: absolute;
   left: 36px;
-  bottom: 175px;
-  z-index: 2;
+  top: 20px;
+  z-index: 11;
   color: #4e370c;
   font-size: 12px;
   line-height: 16px;
@@ -74,9 +75,9 @@ const PopupAnimacija = styled.div`
     left: unset;
   } */
   @media screen and (max-width: 630px) {
-    width: 88%;
+    width: 80%;
     left: 16px;
-    bottom: 85px;
+    top: 95px;
   }
 `
 const KupiPosterWrap = styled.div`
@@ -721,25 +722,29 @@ function Razglednice({ data }) {
         {lang === "hr"
           ? popupPoster &&
             brojac && (
-              <PopupAnimacija>
-                <Lottie
-                  animationData={animation1152Hr}
-                  // interactivity={interactivity}
-                  // autoPlay={true}
-                  loop={false}
-                />
-              </PopupAnimacija>
+              <Link to="/Kontakt">
+                <PopupAnimacija>
+                  <Lottie
+                    animationData={animation1152Hr}
+                    // interactivity={interactivity}
+                    // autoPlay={true}
+                    loop={false}
+                  />
+                </PopupAnimacija>
+              </Link>
             )
           : popupPoster &&
             brojac && (
-              <PopupAnimacija>
-                <Lottie
-                  animationData={animation1152En}
-                  // interactivity={interactivity}
-                  // autoPlay={true}
-                  loop={false}
-                />
-              </PopupAnimacija>
+              <Link to="/Kontakt">
+                <PopupAnimacija>
+                  <Lottie
+                    animationData={animation1152En}
+                    // interactivity={interactivity}
+                    // autoPlay={true}
+                    loop={false}
+                  />
+                </PopupAnimacija>
+              </Link>
             )}
         {/* <SliderGodina /> */}
         {/* <div className="sidebar">
