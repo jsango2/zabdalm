@@ -26,9 +26,11 @@ import { useWindowSize } from "../components/useWindowSize"
 import Header from "./../components/header"
 import i18next from "i18next"
 import SEO from "../components/seo"
-
+import Lottie from "lottie-react"
+import animation1152Hr from "../animations/popoutrazglednice/popoutrazgledniceHr"
 import InfoBlock from "../components/InfoBlock"
 import { useOnClickOutside } from "../components/useClickOutside"
+import animation1152En from "../animations/popoutrazglednice/poputrazgledniceEn"
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_TOKEN
 
@@ -57,7 +59,53 @@ const InfoWrap = styled.div`
     left: unset;
   }
 `
+const PopupAnimacija = styled.div`
+  position: absolute;
+  left: 36px;
+  bottom: 175px;
+  z-index: 2;
+  color: #4e370c;
+  font-size: 12px;
+  line-height: 16px;
+  /* cursor: pointer; */
+  /* @media screen and (max-width: 1152px) {
+    right: 26px;
+    top: 75px;
+    left: unset;
+  } */
+  @media screen and (max-width: 630px) {
+    width: 88%;
+    left: 16px;
+    bottom: 85px;
+  }
+`
+const KupiPosterWrap = styled.div`
+  position: absolute;
 
+  background-color: #ffffffac;
+  display: flex;
+  border-radius: 5px;
+  padding: 10px 12px;
+  justify-content: center;
+  align-items: center;
+  left: 26px;
+  top: 25px;
+  z-index: 2;
+  color: #4e370c;
+  font-size: 12px;
+  line-height: 16px;
+  /* cursor: pointer; */
+  /* @media screen and (max-width: 1152px) {
+    right: 26px;
+    top: 75px;
+    left: unset;
+  } */
+  @media screen and (max-width: 630px) {
+    right: 26px;
+    top: 102px;
+    left: unset;
+  }
+`
 function Razglednice({ data }) {
   const { t } = useTranslation()
   const size = useWindowSize()
@@ -75,12 +123,25 @@ function Razglednice({ data }) {
   const [show, setShow] = useState(false)
   const [popupFrame, setPopupFrame] = useState(null)
   const [popupOn, setPopupOn] = useState(false)
+  const [popupPoster, setPopupPoster] = useState(false)
+  const [brojac, setBrojac] = useState(true)
 
   const [geoData, setGeoData] = useState([])
   const [geoData2, setGeoData2] = useState([])
   const [isOpen, setIsOpen] = useState(false)
 
   const [lang, setLang] = useState(i18next.language)
+
+  const interactivity = {
+    mode: "cursor",
+    actions: [
+      {
+        visibility: [0, 1],
+        type: "play",
+        frames: [0, 153],
+      },
+    ],
+  }
 
   useEffect(() => {
     setLang(i18next.language)
@@ -423,7 +484,9 @@ function Razglednice({ data }) {
               })
             })
         })
-
+        map.on("idle", function () {
+          setPopupPoster(true)
+        })
         map.on("mouseenter", "clusters", function () {
           map.getCanvas().style.cursor = "pointer"
         })
@@ -608,6 +671,15 @@ function Razglednice({ data }) {
     setValue(newValue)
   }
 
+  useEffect(() => {
+    if (popupPoster === true) {
+      setTimeout(function () {
+        setPopupPoster(false)
+        setBrojac(false)
+      }, 10000)
+    }
+  }, [popupPoster])
+
   // const handleClick = () => {
   //   setIsOpen(false)
   //   // allowScroll()
@@ -641,6 +713,34 @@ function Razglednice({ data }) {
         >
           <GoInfo />
         </InfoWrap>
+        {/* <KupiPosterWrap>
+          Želite napraviti poster od omiljene razglednice?
+          <br />
+          Javite nam se putem info@zaboravljenadalmacija.hr
+        </KupiPosterWrap> */}
+        {lang === "hr"
+          ? popupPoster &&
+            brojac && (
+              <PopupAnimacija>
+                <Lottie
+                  animationData={animation1152Hr}
+                  // interactivity={interactivity}
+                  // autoPlay={true}
+                  loop={false}
+                />
+              </PopupAnimacija>
+            )
+          : popupPoster &&
+            brojac && (
+              <PopupAnimacija>
+                <Lottie
+                  animationData={animation1152En}
+                  // interactivity={interactivity}
+                  // autoPlay={true}
+                  loop={false}
+                />
+              </PopupAnimacija>
+            )}
         {/* <SliderGodina /> */}
         {/* <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}

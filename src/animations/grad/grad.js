@@ -3,7 +3,7 @@ const animation1152 = {
   meta: { g: "LottieFiles AE ", a: "", k: "", d: "", tc: "" },
   fr: 30,
   ip: 0,
-  op: 153,
+  op: 153, 
   w: 1152,
   h: 705,
   nm: "grad lottie 1152px",
