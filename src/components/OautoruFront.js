@@ -12,6 +12,7 @@ import Lottie from "lottie-react"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import potpisLottie from "./../animations/potpis/potpis"
 import knjigadupla from "../animations/knjigaDUpla/knjigadupla"
+import i18next from "i18next"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
@@ -306,7 +307,8 @@ function OautoruFront() {
   }, [])
 
   const handleShopLink = () => {
-    window.location.href = "https://shop.zaboravljenadalmacija.hr"
+    i18next.language === 'hr' ? window.location.href = "https://shop.zaboravljenadalmacija.hr" : window.location.href = "https://shop.zaboravljenadalmacija.hr/en/"
+    
   }
   const interactivity = {
     mode: "scroll",

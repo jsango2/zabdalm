@@ -4,8 +4,9 @@ import Val from "../../content/assets/valCitat.png"
 import { useTranslation } from "gatsby-plugin-react-i18next"
 import Cart from "../../content/assets/cartblack.svg"
 import { useWindowSize } from "./useWindowSize"
-
 import Button from "./button"
+import i18next from "i18next"
+
 
 const ButtonWrap = styled.div`
   /* height: 100px; */
@@ -59,9 +60,14 @@ function CitatFront() {
     <Wrap>
       {size.width < 750 ? (
         <ButtonWrap>
-          <a href="http://shop.zaboravljenadalmacija.hr">
-            <Button text={t("kupiatlaskratko")} ikona={Cart} color="black" />
-          </a>
+          {i18next.language === 'hr' ?  <a href="https://shop.zaboravljenadalmacija.hr">
+                  <Button text={t("kupiatlaskratko")} ikona={Cart} color="black" />
+                </a> 
+                :
+                <a href="https://shop.zaboravljenadalmacija.hr/en/">
+                  <Button text={t("kupiAtlas")} ikona={Cart} color="black" />
+                </a> 
+              }
         </ButtonWrap>
       ) : (
         <div></div>

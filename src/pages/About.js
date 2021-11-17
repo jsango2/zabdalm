@@ -356,7 +356,6 @@ const About = ({ data }) => {
       <KolazWrapper>
         <KolazAnimation />
       </KolazWrapper>
-
       <OMonografiji />
 
       <KnjigeSection>

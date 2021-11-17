@@ -5,6 +5,8 @@ import FooterAnimation from "./footerAnimation"
 import MadeByAnimation from "./madeByAnimation"
 import { Link } from "gatsby"
 import FooterAnimation2 from "./footerAnimation2"
+import i18next from "i18next"
+
 
 const Container = styled.div`
   width: 100%;
@@ -219,12 +221,21 @@ function Footer() {
                   <FooterLine />
                 </SocialItem>
               </Link>
-              <a href="https://shop.zaboravljenadalmacija.hr">
+              {i18next.language === 'hr' ?   <a href="https://shop.zaboravljenadalmacija.hr">
                 <SocialItem>
                   Webshop
                   <FooterLine />
                 </SocialItem>
               </a>
+                :
+                <a href="https://shop.zaboravljenadalmacija.hr/en/">
+                <SocialItem>
+                  Webshop
+                  <FooterLine />
+                </SocialItem>
+              </a>
+              }
+          
               <Link to="/Blog">
                 <SocialItem>
                   Blog

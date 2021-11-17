@@ -14,6 +14,7 @@ import { useWindowSize } from "./useWindowSize"
 import { useTranslation } from "react-i18next"
 import MeniMobile from "./meniMobile"
 import heroLottie1152 from "./../animations/hero/HeroLottie"
+import i18next from "i18next"
 
 import Lottie from "lottie-react"
 import animationHero from "../animations/hero/heroLottieNovo"
@@ -176,11 +177,13 @@ const ButtonWrap = styled.div`
   justify-content: flex-start;
   @media only screen and (max-width: 750px) {
     width: 200px;
-  }
+  } 
 `
 const Hero = () => {
   const [t, i18n] = useTranslation()
   // const [innerwidth, setInnerwidth] = useState(window.innerWidth)
+  const [lang, setLang] = useState(i18next.language)
+
   const [isOpen, setIsOpen] = useState(false)
 
   const size = useWindowSize()
@@ -189,83 +192,17 @@ const Hero = () => {
     setIsOpen(false)
     // allowScroll()
   }
-  // const interactivity = {
-  //   mode: "scroll",
-  //   actions: [
-  //     {
-  //       visibility: [0, 0.0],
-  //       type: "stop",
-  //       frames: [0],
-  //     },
-  //     {
-  //       visibility: [0.25, 0.6],
-  //       type: "seek",
-  //       frames: [0, 222],
-  //     },
-  //   ],
-  // }
+
 
   return (
     <>
       <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
       <Wrap className="wrapHero">
-        {/* <Hamburger
-          onClick={() => {
-            setIsOpen(() => !isOpen)
-            // blockScroll()
-          }}
-        >
-          <div
-            style={{
-              fontFamily: "Playfair Display",
-              color: "white",
-              fontWeight: "500",
-              fontSize: "24",
-            }}
-          >
-            ZaboravljenaDalmacija.hr
-          </div>
-          <CgMenuGridR
-            style={{
-              color: "white",
-              width: "28px",
-              height: "28px",
-              position: "absolute",
-              top: "15px",
-              right: "10px",
-              zIndex: "11",
-            }}
-          />
-        </Hamburger>{" "} */}
-        {/* <ImgOverflowHidden>
-          <Slider
-            dots={false}
-            fade={true}
-            infinite={true}
-            speed={6000}
-            // slidesToShow={1}
-            // slidesToScroll={1}
-            // autoplaySpeed={8000}
-            autoplay={true}
-            cssEase="cubic-bezier(0,0,0,1.01)"
-          >
-            <Img>
-              <img src={HeroPhoto} alt="hero" />
-            </Img>
-            <Img>
-              <img src={Brodi} alt="brod" />
-            </Img>
-            <Img>
-              <img src={Pas} alt="pas" />
-            </Img>
-          </Slider>
-        </ImgOverflowHidden> */}
+      
         <Lottie
           className="lottieHero"
           animationData={animationHero}
-          // interactivity={interactivity}
-          // autoPlay={true}
-          // loop={true}
+ 
         />
         <WrapItems>
           <KnjigaWrap>
@@ -273,11 +210,19 @@ const Hero = () => {
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
+          {console.log('jezik:',i18next.language)}
+
             {size.width > 750 ? (
               <ButtonWrap>
-                <a href="https://shop.zaboravljenadalmacija.hr">
+                {i18next.language === 'hr' ?  <a href="https://shop.zaboravljenadalmacija.hr">
                   <Button text={t("kupiAtlas")} color="white" />
-                </a>
+                </a> 
+                :
+                <a href="https://shop.zaboravljenadalmacija.hr/en/">
+                  <Button text={t("kupiAtlas")} color="white" />
+                </a> 
+              }
+               
               </ButtonWrap>
             ) : (
               <div></div>
