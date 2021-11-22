@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import HeroPhoto from "../../content/assets/heroPhoto.png"
 import Knjiga from "../../content/assets/knjiga.png"
+import KnjigaPopust from "../../content/assets/knjiga_popust.png"
 import Brodi from "../../content/assets/brodi.png"
 import Pas from "../../content/assets/pas.png"
 import Cart from "../../content/assets/cart.svg"
@@ -177,7 +178,7 @@ const ButtonWrap = styled.div`
   justify-content: flex-start;
   @media only screen and (max-width: 750px) {
     width: 200px;
-  } 
+  }
 `
 const Hero = () => {
   const [t, i18n] = useTranslation()
@@ -193,36 +194,29 @@ const Hero = () => {
     // allowScroll()
   }
 
-
   return (
     <>
       <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
       <Wrap className="wrapHero">
-      
-        <Lottie
-          className="lottieHero"
-          animationData={animationHero}
- 
-        />
+        <Lottie className="lottieHero" animationData={animationHero} />
         <WrapItems>
           <KnjigaWrap>
-            <img src={Knjiga} width="100%" alt="knjiga" />
+            <img src={KnjigaPopust} width="100%" alt="knjiga" />
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
-          {console.log('jezik:',i18next.language)}
-
+            {console.log("jezik:", i18next.language)}
             {size.width > 750 ? (
               <ButtonWrap>
-                {i18next.language === 'hr' ?  <a href="https://shop.zaboravljenadalmacija.hr">
-                  <Button text={t("kupiAtlas")} color="white" />
-                </a> 
-                :
-                <a href="https://shop.zaboravljenadalmacija.hr/en/">
-                  <Button text={t("kupiAtlas")} color="white" />
-                </a> 
-              }
-               
+                {i18next.language === "hr" ? (
+                  <a href="https://shop.zaboravljenadalmacija.hr">
+                    <Button text={t("kupiAtlas")} color="white" />
+                  </a>
+                ) : (
+                  <a href="https://shop.zaboravljenadalmacija.hr/en/">
+                    <Button text={t("kupiAtlas")} color="white" />
+                  </a>
+                )}
               </ButtonWrap>
             ) : (
               <div></div>
