@@ -133,14 +133,14 @@ module.exports = {
       resolve: "gatsby-plugin-firebase",
       options: {
         credentials: {
-          apiKey: "AIzaSyCYu4q30a3Fc3HulZYfxpQ7j5Q29CKwMZ4",
-          authDomain: "zaboravljena-dalmacija.firebaseapp.com",
+          apiKey: process.env.GATSBY_FIREBASE_TOKEN_APIKEY,
+          authDomain: process.env.GATSBY_FIREBASE_TOKEN_AUTHDOMAIN,
           databaseURL:
             "https://zaboravljena-dalmacija-default-rtdb.europe-west1.firebasedatabase.app",
           projectId: "zaboravljena-dalmacija",
           storageBucket: "zaboravljena-dalmacija.appspot.com",
           messagingSenderId: "258716598494",
-          appId: "1:258716598494:web:2a33f92070dd33c7ae424f",
+          appId: process.env.GATSBY_FIREBASE_TOKEN_APPID,
         },
       },
     },
