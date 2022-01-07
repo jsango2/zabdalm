@@ -165,6 +165,13 @@ const BlogContentWrap = styled.div`
   & > p {
     line-height: 21px;
   }
+  & > p > em {
+    display: flex;
+    justify-content: center;
+  }
+  & p *:last-child {
+    margin-top: 10px;
+  }
   @media only screen and (max-width: 570px) {
     /* flex-direction: column;
     height: auto;
