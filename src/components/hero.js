@@ -201,7 +201,7 @@ const Hero = () => {
         <Lottie className="lottieHero" animationData={animationHero} />
         <WrapItems>
           <KnjigaWrap>
-            <img src={KnjigaPopust} width="100%" alt="knjiga" />
+            <img src={Knjiga} width="100%" alt="knjiga" />
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
