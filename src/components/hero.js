@@ -205,7 +205,6 @@ const Hero = () => {
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
-            {console.log("jezik:", i18next.language)}
             {size.width > 750 ? (
               <ButtonWrap>
                 {i18next.language === "hr" ? (
