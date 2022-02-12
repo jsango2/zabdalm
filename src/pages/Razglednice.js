@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react"
 import "../../i18next"
 import { useTranslation } from "react-i18next"
 import { GoInfo } from "react-icons/go"
-import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
+import mapboxgl from "!mapbox-gl"
+// import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"
 import styled from "styled-components"
 import firebase from "gatsby-plugin-firebase"
@@ -21,8 +22,7 @@ import animation1152Hr from "../animations/popoutrazglednice/popoutrazgledniceHr
 import InfoBlock from "../components/InfoBlock"
 import { useOnClickOutside } from "../components/useClickOutside"
 import animation1152En from "../animations/popoutrazglednice/poputrazgledniceEn"
-mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default
-// mapboxgl.workerClass = MapboxWorker
+mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_TOKEN
 
 const InfoWrap = styled.div`
