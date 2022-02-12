@@ -164,6 +164,7 @@ function Razglednice({ data }) {
     const map = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/lovreperaic/ckmq9we780wql17njcxr5mpqk",
+      // style: "mapbox://styles/mapbox/streets-v11",
       center: [lng, lat],
       pitch: 40,
       zoom: zoom,

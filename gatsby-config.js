@@ -70,31 +70,7 @@ module.exports = {
         name: `locale`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-instagram`,
-    //   options: {
-    //     username: `@zaboravljena_dalmacija`,
-    //     access_token: "IGQVJYMk9RZAHZArREtqanNsRGpNRU5iQjEyQjRteVVhbHpqeVA5WW1ZAWjdHZA3pBOGRzQVBlQzE1Y2htVTJ0MWw4bFlOSmppa0VCalRzU29nX2NNTHlEY2xZAeVVlQk9GV3JfeFVLNmw0eGJWZAEh6WTVqdQZDZD",
-    //     instagram_id: "zaboravljena_dalmacija",
-    //     paginate: 100,
-    //     maxPosts: 1000,
-    //     hashtags: true
-    //   },
-    // },
-    // {
-    //   resolve: `gatsby-source-instagram-all`,
-    //   options: {
-    //     access_token:
-    //       "IGQVJYMk9RZAHZArREtqanNsRGpNRU5iQjEyQjRteVVhbHpqeVA5WW1ZAWjdHZA3pBOGRzQVBlQzE1Y2htVTJ0MWw4bFlOSmppa0VCalRzU29nX2NNTHlEY2xZAeVVlQk9GV3JfeFVLNmw0eGJWZAEh6WTVqdQZDZD",
-    //   },
-    // },
-    // {
-    //   resolve: `@theowenyoung/gatsby-source-instagram`,
-    //   options: {
-    //     access_token:
-    //       "EAAIdjjCauDgBALbHO04ay0lCKZASDZCFt4QY82nB1OhrGsjqOgWtQe2SZCqUV5jwXo5mhOGfQJAOwDutFnselDv1qXHqZA76h9v4kZCZBVf2MUlaBW8xckb68ewIAlRbEW2OXEmCfvpZB11746oz7287qN1qDne4PfO5FiWjP18L3AZCJQyluOfhjcBpfKEIrB4y4KInXJZAQOBLuPrRozmMJP5JFqnExFZBFD5sk59KnQH4vnp1bSypBW",
-    //   },
-    // },
+    
 
     // {
     //   resolve: `gatsby-plugin-react-i18next`,
