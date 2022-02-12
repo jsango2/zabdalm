@@ -188,13 +188,6 @@ function Razglednice({ data }) {
       setLat(map.getCenter().lat.toFixed(4))
       setZoom(map.getZoom().toFixed(2))
     })
-    map.addControl(
-      new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        countries: "hr",
-        mapboxgl: mapboxgl,
-      })
-    )
 
     // map.addControl(
     //   new MapboxGeocoder({
