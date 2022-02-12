@@ -21,7 +21,8 @@ import animation1152Hr from "../animations/popoutrazglednice/popoutrazgledniceHr
 import InfoBlock from "../components/InfoBlock"
 import { useOnClickOutside } from "../components/useClickOutside"
 import animation1152En from "../animations/popoutrazglednice/poputrazgledniceEn"
-mapboxgl.workerClass = MapboxWorker
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default
+// mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_TOKEN
 
 const InfoWrap = styled.div`
@@ -189,20 +190,20 @@ function Razglednice({ data }) {
       setZoom(map.getZoom().toFixed(2))
     })
 
-    // map.addControl(
-    //   new MapboxGeocoder({
-    //     accessToken: mapboxgl.accessToken,
-    //     countries: "hr",
-    //     zoom: 20,
-    //     marker: {
-    //       color: "#CA8A5D",
-    //     },
-    //     placeholder:
-    //       lang === "hr" ? "Unesi mjesto u Dalmaciji" : "Dalmatian location",
-    //     mapboxgl: mapboxgl,
-    //   }),
-    //   "top-right"
-    // )
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        countries: "hr",
+        zoom: 20,
+        marker: {
+          color: "#CA8A5D",
+        },
+        placeholder:
+          lang === "hr" ? "Unesi mjesto u Dalmaciji" : "Dalmatian location",
+        mapboxgl: mapboxgl,
+      }),
+      "top-right"
+    )
 
     map.on("load", function () {
       map.loadImage(camera1, function (error, image) {
