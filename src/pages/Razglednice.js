@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef } from "react"
 import "../../i18next"
 import { useTranslation } from "react-i18next"
 import { GoInfo } from "react-icons/go"
-import mapboxgl from "!mapbox-gl"
 // import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp"
+import mapboxgl from "!mapbox-gl"
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"
+import "mapbox-gl/dist/mapbox-gl.css"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css"
 import styled from "styled-components"
 import firebase from "gatsby-plugin-firebase"
 import { Link } from "gatsby"
-import "mapbox-gl/dist/mapbox-gl.css"
-import "@mapbox/mapbox-gl-geocoder/lib/mapbox-gl-geocoder.css"
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 import camera1 from "../../content/assets/camera1.png"
 import SliderGodina from "../components/SliderGodina"
 import { useWindowSize } from "../components/useWindowSize"
@@ -190,20 +190,20 @@ function Razglednice({ data }) {
       setZoom(map.getZoom().toFixed(2))
     })
 
-    // map.addControl(
-    //   new MapboxGeocoder({
-    //     accessToken: mapboxgl.accessToken,
-    //     countries: "hr",
-    //     zoom: 20,
-    //     marker: {
-    //       color: "#CA8A5D",
-    //     },
-    //     placeholder:
-    //       lang === "hr" ? "Unesi mjesto u Dalmaciji" : "Dalmatian location",
-    //     mapboxgl: mapboxgl,
-    //   }),
-    //   "top-right"
-    // )
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        countries: "hr",
+        zoom: 20,
+        marker: {
+          color: "#CA8A5D",
+        },
+        placeholder:
+          lang === "hr" ? "Unesi mjesto u Dalmaciji" : "Dalmatian location",
+        mapboxgl: mapboxgl,
+      }),
+      "top-right"
+    )
 
     map.on("load", function () {
       map.loadImage(camera1, function (error, image) {
