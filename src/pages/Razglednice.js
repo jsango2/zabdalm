@@ -190,20 +190,20 @@ function Razglednice({ data }) {
       setZoom(map.getZoom().toFixed(2))
     })
 
-    // map.addControl(
-    //   new MapboxGeocoder({
-    //     accessToken: mapboxgl.accessToken,
-    //     countries: "hr",
-    //     zoom: 20,
-    //     marker: {
-    //       color: "#CA8A5D",
-    //     },
-    //     placeholder:
-    //       lang === "hr" ? "Unesi mjesto u Dalmaciji" : "Dalmatian location",
-    //     mapboxgl: mapboxgl,
-    //   }),
-    //   "top-right"
-    // )
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        countries: "hr",
+        zoom: 20,
+        marker: {
+          color: "#CA8A5D",
+        },
+        placeholder:
+          lang === "hr" ? "Unesi mjesto u Dalmaciji" : "Dalmatian location",
+        mapboxgl: mapboxgl,
+      }),
+      "top-right"
+    )
 
     map.on("load", function () {
       map.loadImage(camera1, function (error, image) {
