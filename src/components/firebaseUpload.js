@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import firebase from "gatsby-plugin-firebase"
-import Slikejson from "./sveslike673.json"
+import Slikejson from "./sveslike1008latest.json"
 
 //FUNKCIJA ZA UPLOADANJE LOKACIJA U FIREBASE FIRESTORE. SAMO SPOJI JSON FILE SA DATUMOM, GPSOM I NAZIVOM I LINKOM NA FOTKE
 function FirebaseUpload() {
@@ -9,14 +9,14 @@ function FirebaseUpload() {
   const data = Slikejson
   console.log(data)
   useEffect(() => {
-    var ref = firebase.database().ref("/")
+    // var ref = firebase.database().ref("/")
     // var listen = ref.on("value", snapshot => {
     var listaPodataka = []
     // snapshot.forEach(snap => {
     // var key = snap.key
     //   var data = snap.val()
     // console.log(data)
-    data.exifData.forEach(snap => {
+    data.List1.forEach(snap => {
       listaPodataka.push({
         type: "Feature",
         properties: {
@@ -49,10 +49,8 @@ function FirebaseUpload() {
     }
     console.log("geo:", geoJsonedFlickr)
     // })
-    // firebase.firestore().collection("razglednice").add(geoJsonedFlickr)
+    firebase.firestore().collection("razglednice").add(geoJsonedFlickr)
   }, [])
-
-  return <div></div>
 }
 
 export default FirebaseUpload

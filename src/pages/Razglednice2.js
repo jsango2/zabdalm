@@ -14,7 +14,7 @@ import { Link } from "gatsby"
 import camera1 from "../../content/assets/camera1.png"
 import SliderGodina from "../components/SliderGodina"
 import { useWindowSize } from "../components/useWindowSize"
-import Header from "./../components/header"
+import Header from "../components/header"
 import i18next from "i18next"
 import SEO from "../components/seo"
 import Lottie from "lottie-react"
@@ -22,6 +22,9 @@ import animation1152Hr from "../animations/popoutrazglednice/popoutrazgledniceHr
 import InfoBlock from "../components/InfoBlock"
 import { useOnClickOutside } from "../components/useClickOutside"
 import animation1152En from "../animations/popoutrazglednice/poputrazgledniceEn"
+import FirebaseUpload from "../components/firebaseUpload"
+import Slikejson from "../components/sveslike1008latest.json"
+
 mapboxgl.workerClass = MapboxWorker
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_TOKEN
 
@@ -83,7 +86,7 @@ const KupiPosterWrap = styled.div`
     left: unset;
   }
 `
-function Razglednice({ data }) {
+function Razglednice2({ data }) {
   const { t } = useTranslation()
   const size = useWindowSize()
   const mapContainer = useRef()
@@ -120,6 +123,9 @@ function Razglednice({ data }) {
     ],
   }
 
+  // Odkomentiraj kad zelis uploadati novi json sa novim razglednicama pa da se jednom izvrti i digne na firestore
+  // FirebaseUpload()
+
   useEffect(() => {
     setLang(i18next.language)
   }, [i18next.language])
@@ -128,7 +134,7 @@ function Razglednice({ data }) {
     var docRef = firebase
       .firestore()
       .collection("razglednice")
-      .doc(process.env.GATSBY_MAPBOX)
+      .doc("F7uEMqt7mf9q9QhPcQFa")
     docRef
       .get()
       .then(doc => {
@@ -460,7 +466,6 @@ function Razglednice({ data }) {
           }}
         >
           <GoInfo />
-          {/* <FirebaseUpload /> */}
         </InfoWrap>
         {lang === "hr"
           ? popupPoster &&
@@ -567,4 +572,4 @@ function Razglednice({ data }) {
   )
 }
 
-export default Razglednice
+export default Razglednice2
