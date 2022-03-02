@@ -134,7 +134,7 @@ function Razglednice2({ data }) {
     var docRef = firebase
       .firestore()
       .collection("razglednice")
-      .doc("F7uEMqt7mf9q9QhPcQFa")
+      .doc("8BnsmzClrSkFIvh2e3xU")
     docRef
       .get()
       .then(doc => {
@@ -458,6 +458,11 @@ function Razglednice2({ data }) {
       <Header></Header>
       <div className="mapWrapper">
         <InfoBlock isOpen={isOpen} />
+        {/* <div>
+          Lng: {lng}
+          <br />
+          Lat: {lat}
+        </div> */}
         <InfoWrap
           ref={ref}
           onClick={() => {
