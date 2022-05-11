@@ -121,7 +121,7 @@ function NajpopularnijePrice() {
       query={graphql`
         {
           wpgraphql {
-            blogovi {
+            blogovi(first: 70) {
               edges {
                 node {
                   blog_graphql {

@@ -5,7 +5,7 @@ import Lottie from "lottie-react"
 
 import animation1152 from "../animations/footer1152"
 import animation750 from "../animations/footer750"
-import animation550 from "../animations/footer550"
+// import animation550 from "../animations/footer550"
 import animation350 from "../animations/footer350"
 import { useWindowSize } from "../components/useWindowSize"
 
