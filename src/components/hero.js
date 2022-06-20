@@ -6,6 +6,7 @@ import KnjigaPopust from "../../content/assets/Knjiga_popust.png"
 import Brodi from "../../content/assets/brodi.png"
 import Pas from "../../content/assets/pas.png"
 import Cart from "../../content/assets/cart.svg"
+import Sticker from "../../content/assets/sticker.png"
 import Button from "./button"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -53,6 +54,24 @@ const WrapItems = styled.div`
     height: 563px;
     flex-direction: column-reverse;
     align-items: center;
+  }
+`
+const WrapSticker = styled.div`
+  width: 230px;
+  height: 304px;
+  position: absolute;
+  top: 97px;
+  right: -20px;
+
+  z-index: 10;
+  @media only screen and (max-width: 999px) {
+  }
+  @media only screen and (max-width: 750px) {
+    width: 100px;
+    height: 144px;
+    top: 77px;
+
+    right: -10px;
   }
 `
 const WrapText = styled.div`
@@ -202,6 +221,11 @@ const Hero = () => {
         <WrapItems>
           <KnjigaWrap>
             <img src={Knjiga} width="100%" alt="knjiga" />
+
+            <WrapSticker>
+              {" "}
+              <img src={Sticker} width="100%" alt="sticker" />
+            </WrapSticker>
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>

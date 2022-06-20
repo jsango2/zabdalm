@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import FooterAnimation from "./footerAnimation"
 import MadeByAnimation from "./madeByAnimation"
 import { Link } from "gatsby"
-import FooterAnimation2 from "./footerAnimation2"
+// import FooterAnimation2 from "./footerAnimation2"
 import i18next from "i18next"
 
 
