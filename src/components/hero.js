@@ -222,10 +222,10 @@ const Hero = () => {
           <KnjigaWrap>
             <img src={Knjiga} width="100%" alt="knjiga" />
 
-            <WrapSticker>
+            {/* <WrapSticker>
               {" "}
               <img src={Sticker} width="100%" alt="sticker" />
-            </WrapSticker>
+            </WrapSticker> */}
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
