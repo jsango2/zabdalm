@@ -6,7 +6,7 @@ import KnjigaPopust from "../../content/assets/Knjiga_popust.png"
 import Brodi from "../../content/assets/brodi.png"
 import Pas from "../../content/assets/pas.png"
 import Cart from "../../content/assets/cart.svg"
-import Sticker from "../../content/assets/sticker.png"
+import Sticker from "../../content/assets/stickerSale2022.png"
 import Button from "./button"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -60,18 +60,18 @@ const WrapSticker = styled.div`
   width: 230px;
   height: 304px;
   position: absolute;
-  top: 97px;
-  right: -20px;
+  top: 197px;
+  right: -90px;
 
   z-index: 10;
   @media only screen and (max-width: 999px) {
   }
   @media only screen and (max-width: 750px) {
-    width: 100px;
+    width: 120px;
     height: 144px;
     top: 77px;
 
-    right: -10px;
+    right: -50px;
   }
 `
 const WrapText = styled.div`
@@ -222,10 +222,10 @@ const Hero = () => {
           <KnjigaWrap>
             <img src={Knjiga} width="100%" alt="knjiga" />
 
-            {/* <WrapSticker>
+            <WrapSticker>
               {" "}
-              <img src={Sticker} width="100%" alt="sticker" />
-            </WrapSticker> */}
+              <img src={Sticker} width="50%" alt="sticker" />
+            </WrapSticker>
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
