@@ -181,7 +181,6 @@ const BlogContentWrap = styled.div`
 `
 
 const BlogPost = ({ data }) => {
-  console.log(data)
   const [t] = useTranslation()
   const [categorie, setCategorie] = useState("")
   const [lang, setLang] = useState(i18next.language)
