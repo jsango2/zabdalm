@@ -162,6 +162,20 @@ const BlogContentWrap = styled.div`
     align-content: stretch;
     align-items: center;
   }
+  & > div > img {
+    width: 54vw;
+    max-width: 900px;
+    object-fit: contain;
+    min-width: 280px;
+    height: 35vw;
+    max-height: 700px;
+    display: flex;
+    min-height: 280px;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+  }
   & > p {
     line-height: 21px;
   }
