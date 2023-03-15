@@ -7,6 +7,8 @@ import Brodi from "../../content/assets/brodi.png"
 import Pas from "../../content/assets/pas.png"
 import Cart from "../../content/assets/cart.svg"
 import Sticker from "../../content/assets/stickerSale2022.png"
+import StickerHr from "../../content/assets/saleEurHr.svg"
+import StickerEng from "../../content/assets/saleEurEng.svg"
 import Button from "./button"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -212,7 +214,7 @@ const Hero = () => {
     setIsOpen(false)
     // allowScroll()
   }
-
+  console.log(i18next.language)
   return (
     <>
       <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
@@ -221,11 +223,15 @@ const Hero = () => {
         <WrapItems>
           <KnjigaWrap>
             <img src={Knjiga} width="100%" alt="knjiga" />
-            {/* 
+
             <WrapSticker>
               {" "}
-              <img src={Sticker} width="50%" alt="sticker" />
-            </WrapSticker> */}
+              <img
+                src={i18next.language === "hr" ? StickerHr : StickerEng}
+                width="50%"
+                alt="sticker"
+              />
+            </WrapSticker>
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
