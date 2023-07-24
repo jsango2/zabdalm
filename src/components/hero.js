@@ -76,6 +76,30 @@ const WrapSticker = styled.div`
     right: -50px;
   }
 `
+const WrapSoldOut = styled.div`
+  width: 223px;
+  height: 52px;
+  position: absolute;
+  top: 300px;
+  right: 58px;
+  transform: rotate(-12deg);
+  background-color: #b0c7ce;
+  z-index: 10;
+  display: flex;
+  color: white;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  @media only screen and (max-width: 999px) {
+  }
+  @media only screen and (max-width: 750px) {
+    width: 157px;
+    height: 51px;
+    top: 112px;
+    right: -11px;
+  }
+`
 const WrapText = styled.div`
   display: flex;
   flex-direction: column;
@@ -223,15 +247,22 @@ const Hero = () => {
         <WrapItems>
           <KnjigaWrap>
             <img src={Knjiga} width="100%" alt="knjiga" />
+            <WrapSoldOut>
+              {i18next.language === "hr" ? (
+                <div>RASPRODANO</div>
+              ) : (
+                <div>SOLD OUT</div>
+              )}
+            </WrapSoldOut>
 
-            <WrapSticker>
+            {/* <WrapSticker>
               {" "}
               <img
                 src={i18next.language === "hr" ? StickerHr : StickerEng}
                 width="50%"
                 alt="sticker"
               />
-            </WrapSticker>
+            </WrapSticker> */}
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
