@@ -123,7 +123,7 @@ const Crta = styled.div`
   background-color: white;
   /* margin-right: 58px; */
   position: absolute;
-  left: -130px;
+  left: -131px;
   top: 33px;
   @media only screen and (max-width: 900px) {
     top: 25px;
