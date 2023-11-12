@@ -270,11 +270,11 @@ const Hero = () => {
             {size.width > 750 ? (
               <ButtonWrap>
                 {i18next.language === "hr" ? (
-                  <a href="https://shop.zaboravljenadalmacija.hr">
+                  <a href="https://shop.zaboravljenadalmacija.hr/proizvod/pozdrav-iz-zaboravljene-dalmacije-2-izdanje-greeting-from-a-dalmatia-long-forgotten-2-edition/">
                     <Button text={t("kupiAtlas")} color="white" />
                   </a>
                 ) : (
-                  <a href="https://shop.zaboravljenadalmacija.hr/en/">
+                  <a href="https://shop.zaboravljenadalmacija.hr/en/proizvod/pozdrav-iz-zaboravljene-dalmacije-2-izdanje-greeting-from-a-dalmatia-long-forgotten-2-edition/">
                     <Button text={t("kupiAtlas")} color="white" />
                   </a>
                 )}
