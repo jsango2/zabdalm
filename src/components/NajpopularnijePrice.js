@@ -57,16 +57,16 @@ const Clanci = styled.div`
 const TextClanci = styled.div`
   position: relative;
   font-family: Raleway;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   width: 250px;
-  height: 58px;
+  height: 40.5px;
   text-align: left;
   line-height: 16px;
   margin: 0 15px 16px 0;
-  /* @media only screen and (max-width: 550px) {
-    width: 55px; */
-  /* } */
+  @media only screen and (max-width: 550px) {
+    height: 37px;
+  }
 `
 
 function NajpopularnijePrice() {

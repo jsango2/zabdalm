@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import HeroPhoto from "../../content/assets/heroPhoto.png"
 import Knjiga from "../../content/assets/knjiga.png"
+import KnjigaOld from "../../content/assets/knjigaOld.png"
 import KnjigaPopust from "../../content/assets/Knjiga_popust.png"
 import Brodi from "../../content/assets/brodi.png"
 import Pas from "../../content/assets/pas.png"
@@ -125,7 +126,7 @@ const WrapNaslov = styled.div`
     width: 100%;
     font-size: 44px;
     text-align: center;
-    line-height: 46px;
+    line-height: 42px;
 
     margin: 0;
   }
@@ -140,7 +141,7 @@ const WrapPodaci = styled.div`
   width: 330px;
   font-family: Raleway;
   font-size: 15px;
-  line-height: 23px;
+  line-height: 21px;
   color: white;
   padding: 25px 0 30px 0;
 
@@ -246,14 +247,14 @@ const Hero = () => {
         <Lottie className="lottieHero" animationData={animationHero} />
         <WrapItems>
           <KnjigaWrap>
-            <img src={Knjiga} width="100%" alt="knjiga" />
-            <WrapSoldOut>
+            <img src={KnjigaOld} width="100%" alt="knjiga" />
+            {/* <WrapSoldOut>
               {i18next.language === "hr" ? (
                 <div>RASPRODANO</div>
               ) : (
                 <div>SOLD OUT</div>
               )}
-            </WrapSoldOut>
+            </WrapSoldOut> */}
 
             {/* <WrapSticker>
               {" "}
