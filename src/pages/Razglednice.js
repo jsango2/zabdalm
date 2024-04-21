@@ -144,6 +144,7 @@ function Razglednice({ data }) {
       })
   }, [])
 
+  console.log(geoData)
   useEffect(() => {
     // console.log("geodata", geoData)
     if (geoData.length !== 0) {
@@ -392,7 +393,7 @@ function Razglednice({ data }) {
 
     return () => map.remove()
   }, [geoData2, lang])
-
+  console.log("GD2", geoData2)
   function renderListings(features) {
     // var empty = document.createElement('p');
     // // Clear any existing listings

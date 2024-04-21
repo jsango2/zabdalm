@@ -17,7 +17,7 @@ import MeniMobile from "./meniMobile"
 
 const HeaderWrap = styled.div`
   margin: 0 auto;
-  max-width: 1152px;
+  max-width: 100%;
   ${"" /* padding: 1.85rem 0; */}
   height: 80px;
   display: flex;
@@ -172,7 +172,13 @@ const Header = () => {
               >
                 {t("razgledniceNaMapi")}
               </Link>
-
+              <a
+                style={{ cursor: "pointer" }}
+                href="https://aukcije.zaboravljenadalmacija.hr"
+                className="LinkHeader LinkHeaderProjekti"
+              >
+                {t("aukcije")}
+              </a>
               <a
                 style={{ cursor: "pointer" }}
                 href="https://shop.zaboravljenadalmacija.hr"

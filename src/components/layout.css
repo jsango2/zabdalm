@@ -23,7 +23,7 @@ Variables
   /* FONTOVI---------------------- */
   --text-card-14-medium: "Montserrat", sans-serif;
   --text-card-14-medium: "Montserrat", sans-serif;
-  --max-width: 1152px;
+  --max-width: 1252px;
   --fixed-width: 700px;
 }
 /*
@@ -1116,7 +1116,7 @@ pre tt:after {
   align-items: center;
   /* margin-right: 175px; */
   /* justify-content: center; */
-  width: 860px;
+  width: 940px;
   /* min-width: 804px; */
   margin: 0 auto;
   /* transition: all 0.8s ease-in-out !important; */

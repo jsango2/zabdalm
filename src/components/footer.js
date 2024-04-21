@@ -7,10 +7,9 @@ import { Link } from "gatsby"
 // import FooterAnimation2 from "./footerAnimation2"
 import i18next from "i18next"
 
-
 const Container = styled.div`
   width: 100%;
-  max-width: 1152px;
+  max-width: 100%;
   margin: 0 auto;
   margin-top: -150px;
 `
@@ -18,7 +17,7 @@ const Container = styled.div`
 const FooterWrap = styled.footer`
   padding-top: 155px;
   width: 100%;
-  max-width: 1152px;
+  max-width: 100%;
   margin: 0 auto;
   background: #b0c7ce;
   color: #fff;
@@ -221,21 +220,22 @@ function Footer() {
                   <FooterLine />
                 </SocialItem>
               </Link>
-              {i18next.language === 'hr' ?   <a href="https://shop.zaboravljenadalmacija.hr">
-                <SocialItem>
-                  Webshop
-                  <FooterLine />
-                </SocialItem>
-              </a>
-                :
+              {i18next.language === "hr" ? (
+                <a href="https://shop.zaboravljenadalmacija.hr">
+                  <SocialItem>
+                    Webshop
+                    <FooterLine />
+                  </SocialItem>
+                </a>
+              ) : (
                 <a href="https://shop.zaboravljenadalmacija.hr/en/">
-                <SocialItem>
-                  Webshop
-                  <FooterLine />
-                </SocialItem>
-              </a>
-              }
-          
+                  <SocialItem>
+                    Webshop
+                    <FooterLine />
+                  </SocialItem>
+                </a>
+              )}
+
               <Link to="/Blog">
                 <SocialItem>
                   Blog

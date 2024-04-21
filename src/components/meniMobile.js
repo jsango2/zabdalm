@@ -106,7 +106,12 @@ function MeniMobile({ handleClick, isOpen }) {
             >
               {t("razgledniceNaMapi")}
             </Link>
-
+            <a
+              href="https://aukcije.zaboravljenadalmacija.hr"
+              className="LinkHeader LinkHeaderProjekti"
+            >
+              {t("aukcije")}
+            </a>
             <a
               href="https://shop.zaboravljenadalmacija.hr"
               className="LinkHeader LinkHeaderProjekti"
