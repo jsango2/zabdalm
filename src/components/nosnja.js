@@ -7,10 +7,10 @@ import etnoNovo from "./../animations/etno/etnoNovo"
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
-  width: 100%;
+  width: 1250px;
   height: 473px;
   position: relative;
-  margin: 29px 0 2px 0;
+  margin: 29px auto 2px auto;
   @media only screen and (max-width: 950px) {
     height: 349px;
 

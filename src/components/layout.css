@@ -23,7 +23,7 @@ Variables
   /* FONTOVI---------------------- */
   --text-card-14-medium: "Montserrat", sans-serif;
   --text-card-14-medium: "Montserrat", sans-serif;
-  --max-width: 1252px;
+  --max-width: 1440px;
   --fixed-width: 700px;
 }
 /*
@@ -1252,7 +1252,7 @@ pre tt:after {
 } */
 .mapWrapper {
   position: fixed;
-  width: 1152px;
+  width: 1440px;
 
   height: auto;
 }
