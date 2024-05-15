@@ -7,7 +7,6 @@ import { useWindowSize } from "./useWindowSize"
 import Button from "./button"
 import i18next from "i18next"
 
-
 const ButtonWrap = styled.div`
   /* height: 100px; */
   position: relative;
@@ -60,14 +59,15 @@ function CitatFront() {
     <Wrap>
       {size.width < 750 ? (
         <ButtonWrap>
-          {i18next.language === 'hr' ?  <a href="https://shop.zaboravljenadalmacija.hr">
-                  <Button text={t("kupiatlaskratko")} ikona={Cart} color="black" />
-                </a> 
-                :
-                <a href="https://shop.zaboravljenadalmacija.hr/en/">
-                  <Button text={t("kupiAtlas")} ikona={Cart} color="black" />
-                </a> 
-              }
+          {i18next.language === "hr" ? (
+            <a href="https://webshop.zaboravljenadalmacija.hr">
+              <Button text={t("kupiatlaskratko")} ikona={Cart} color="black" />
+            </a>
+          ) : (
+            <a href="https://webshop.zaboravljenadalmacija.hr/en/">
+              <Button text={t("kupiAtlas")} ikona={Cart} color="black" />
+            </a>
+          )}
         </ButtonWrap>
       ) : (
         <div></div>

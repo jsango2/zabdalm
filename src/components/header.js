@@ -181,7 +181,7 @@ const Header = () => {
               </a>
               <a
                 style={{ cursor: "pointer" }}
-                href="https://shop.zaboravljenadalmacija.hr"
+                href="https://webshop.zaboravljenadalmacija.hr"
                 className="LinkHeader LinkHeaderProjekti"
               >
                 WEBSHOP

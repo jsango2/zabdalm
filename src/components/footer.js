@@ -221,14 +221,14 @@ function Footer() {
                 </SocialItem>
               </Link>
               {i18next.language === "hr" ? (
-                <a href="https://shop.zaboravljenadalmacija.hr">
+                <a href="https://webshop.zaboravljenadalmacija.hr">
                   <SocialItem>
                     Webshop
                     <FooterLine />
                   </SocialItem>
                 </a>
               ) : (
-                <a href="https://shop.zaboravljenadalmacija.hr/en/">
+                <a href="https://webshop.zaboravljenadalmacija.hr/en/">
                   <SocialItem>
                     Webshop
                     <FooterLine />

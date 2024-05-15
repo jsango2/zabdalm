@@ -310,9 +310,9 @@ function OautoruFront() {
   const handleShopLink = () => {
     i18next.language === "hr"
       ? (window.location.href =
-          "https://shop.zaboravljenadalmacija.hr/proizvod/pozdrav-iz-zaboravljene-dalmacije-2-izdanje-greeting-from-a-dalmatia-long-forgotten-2-edition/")
+          "https://webshop.zaboravljenadalmacija.hr/product/zaboravljena-dalmacija-na-starim-razglednicama-2023/")
       : (window.location.href =
-          "https://shop.zaboravljenadalmacija.hr/en/proizvod/pozdrav-iz-zaboravljene-dalmacije-2-izdanje-greeting-from-a-dalmatia-long-forgotten-2-edition/")
+          "https://webshop.zaboravljenadalmacija.hr/en/product/zaboravljena-dalmacija-na-starim-razglednicama-2023/")
   }
   const interactivity = {
     mode: "scroll",
