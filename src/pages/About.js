@@ -14,7 +14,7 @@ import KolazAnimation from "../components/kolazAnimation"
 import AlkarAnimation from "../components/alkarAnimation"
 import KnjigaAnimation from "../components/knjigaAnimation"
 
-import Knjiga from "../../content/assets/knjiga.png"
+import Knjiga from "../../content/assets/knjigaOld.png"
 import Ulomak from "../../content/assets/ulomakStamp.svg"
 import Arrow from "../../content/assets/arrow.png"
 import Rope from "../../content/assets/rope.png"

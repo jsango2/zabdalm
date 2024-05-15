@@ -1,9 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 import { useTranslation } from "react-i18next"
-import Knjiga from "../../content/assets/knjiga.png"
+// import Knjiga from "../../content/assets/knjiga.png"
 import Ulomak from "../../content/assets/ulomakStamp.svg"
 import ulomakPdf from "../../content/assets/ulomakPdf.pdf"
+import Knjiga from "../../content/assets/knjigaOld.png"
 
 import KnjigaSlideAnimation from "./knjigaSlideAnimation"
 
@@ -23,6 +24,16 @@ const MonoSection = styled.div`
     width: 100%;
     margin: 0 auto;
     padding: 0 10%;
+  }
+`
+const BookImage = styled.div`
+  /* width: 50%; */
+
+  @media only screen and (max-width: 850px) {
+    /* max-width: 812px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10%; */
   }
 `
 const MonoNaslovSideCrta = styled.div`
@@ -91,7 +102,11 @@ const OMonografiji = () => {
     <MonoDiv>
       <KnjigaWrap>
         <a href={ulomakPdf} download>
-          <KnjigaSlideAnimation />
+          {/* <KnjigaSlideAnimation /> */}
+          <BookImage>
+            {" "}
+            <img src={Knjiga} width="87%" alt="knjiga" />
+          </BookImage>
         </a>
       </KnjigaWrap>
       <MonoSection>
