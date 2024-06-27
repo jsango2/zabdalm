@@ -27,7 +27,24 @@ import TriBlogPosta from "../components/TriBlogPosta"
 import SEO from "../components/seo"
 
 //#region Styled
-
+import SaleSticker from "../../content/assets/saleSticker.svg"
+const WrapSticker = styled.div`
+  width: 150px;
+  position: relative;
+  top: -560px;
+  left: 65vw;
+  @media only screen and (max-width: 850px) {
+    margin-bottom: -240px;
+  }
+  @media only screen and (max-width: 550px) {
+    left: 65vw;
+  }
+  @media only screen and (max-width: 500px) {
+    top: -357px;
+    left: 65vw;
+    /* margin-bottom: -50vw; */
+  }
+`
 const KolazWrapper = styled.div`
   @media only screen and (max-width: 1152px) {
   }
@@ -376,6 +393,10 @@ const About = ({ data }) => {
             )}
           </a>
         </UlomakKnjige>
+        <WrapSticker>
+          {" "}
+          <img src={SaleSticker} width="50%" alt="sticker" />
+        </WrapSticker>{" "}
       </KnjigeSection>
 
       <AlkarAnimation />

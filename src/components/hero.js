@@ -10,6 +10,7 @@ import Cart from "../../content/assets/cart.svg"
 import Sticker from "../../content/assets/stickerSale2022.png"
 import StickerHr from "../../content/assets/saleEurHr.svg"
 import StickerEng from "../../content/assets/saleEurEng.svg"
+import SaleSticker from "../../content/assets/saleSticker.svg"
 import Button from "./button"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -256,14 +257,14 @@ const Hero = () => {
               )}
             </WrapSoldOut> */}
 
-            {/* <WrapSticker>
+            <WrapSticker>
               {" "}
               <img
-                src={i18next.language === "hr" ? StickerHr : StickerEng}
+                src={i18next.language === "hr" ? SaleSticker : SaleSticker}
                 width="50%"
                 alt="sticker"
               />
-            </WrapSticker> */}
+            </WrapSticker>
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>

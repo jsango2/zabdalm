@@ -7,7 +7,25 @@ import ulomakPdf from "../../content/assets/ulomakPdf.pdf"
 import Knjiga from "../../content/assets/knjigaOld.png"
 
 import KnjigaSlideAnimation from "./knjigaSlideAnimation"
+import SaleSticker from "../../content/assets/saleSticker.svg"
+const WrapSticker = styled.div`
+  width: 230px;
+  height: 304px;
+  position: absolute;
+  top: 197px;
+  right: 0px;
 
+  z-index: 10;
+  @media only screen and (max-width: 999px) {
+  }
+  @media only screen and (max-width: 750px) {
+    width: 120px;
+    height: 144px;
+    top: 77px;
+
+    right: 0px;
+  }
+`
 const MonoDiv = styled.div`
   display: flex;
   align-items: center;
@@ -104,7 +122,10 @@ const OMonografiji = () => {
         <a href={ulomakPdf} download>
           {/* <KnjigaSlideAnimation /> */}
           <BookImage>
-            {" "}
+            <WrapSticker>
+              {" "}
+              <img src={SaleSticker} width="50%" alt="sticker" />
+            </WrapSticker>{" "}
             <img src={Knjiga} width="87%" alt="knjiga" />
           </BookImage>
         </a>

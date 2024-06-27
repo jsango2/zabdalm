@@ -113,7 +113,7 @@ function MeniMobile({ handleClick, isOpen }) {
               {t("aukcije")}
             </a>
             <a
-              href="https://shop.zaboravljenadalmacija.hr"
+              href="https://webshop.zaboravljenadalmacija.hr"
               className="LinkHeader LinkHeaderProjekti"
             >
               WEBSHOP
