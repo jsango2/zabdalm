@@ -66,6 +66,10 @@ const SEO = ({ description, lang, meta, title, image }) => {
             "http://sutrashop.com.hr/wp-content/uploads/2021/05/1000px-200.jpg",
         },
         {
+          name: "google-site-verification",
+          content: "yn6JHu_hOzWXUh6ReOFij4EcnB9douT7e08YMvcWCp8",
+        },
+        {
           name: " twitter: card",
           content: "summary_large_image",
         },
