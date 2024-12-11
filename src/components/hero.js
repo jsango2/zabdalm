@@ -240,7 +240,7 @@ const Hero = () => {
     setIsOpen(false)
     // allowScroll()
   }
-  console.log(i18next.language)
+
   return (
     <>
       <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />

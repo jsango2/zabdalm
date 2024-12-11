@@ -20,6 +20,8 @@ import Arrow from "../../content/assets/arrow.png"
 import Rope from "../../content/assets/rope.png"
 import StickerHr from "../../content/assets/STICKER HR.svg"
 import StickerEng from "../../content/assets/STICKER ENG.svg"
+import SaleStickerHr from "../../content/assets/saleHr.svg"
+import SaleStickerEng from "../../content/assets/saleEng.svg"
 
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
@@ -395,7 +397,11 @@ const About = ({ data }) => {
         </UlomakKnjige>
         <WrapSticker>
           {" "}
-          <img src={SaleSticker} width="50%" alt="sticker" />
+          <img
+            src={i18next.language === "hr" ? SaleStickerHr : SaleStickerEng}
+            width="50%"
+            alt="sticker"
+          />
         </WrapSticker>{" "}
       </KnjigeSection>
 

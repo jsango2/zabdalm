@@ -5,9 +5,12 @@ import { useTranslation } from "react-i18next"
 import Ulomak from "../../content/assets/ulomakStamp.svg"
 import ulomakPdf from "../../content/assets/ulomakPdf.pdf"
 import Knjiga from "../../content/assets/knjigaOld.png"
-
+import StickerHr from "../../content/assets/saleHr.svg"
+import StickerEng from "../../content/assets/saleEng.svg"
 import KnjigaSlideAnimation from "./knjigaSlideAnimation"
-import SaleSticker from "../../content/assets/saleSticker.svg"
+import SaleSticker from "../../content/assets/saleHr.svg"
+import i18next from "i18next"
+
 const WrapSticker = styled.div`
   width: 230px;
   height: 304px;
@@ -124,7 +127,11 @@ const OMonografiji = () => {
           <BookImage>
             <WrapSticker>
               {" "}
-              <img src={SaleSticker} width="50%" alt="sticker" />
+              <img
+                src={i18next.language === "hr" ? StickerHr : StickerEng}
+                width="50%"
+                alt="sticker"
+              />
             </WrapSticker>{" "}
             <img src={Knjiga} width="87%" alt="knjiga" />
           </BookImage>
