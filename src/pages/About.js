@@ -395,14 +395,14 @@ const About = ({ data }) => {
             )}
           </a>
         </UlomakKnjige>
-        <WrapSticker>
+        {/* <WrapSticker>
           {" "}
           <img
             src={i18next.language === "hr" ? SaleStickerHr : SaleStickerEng}
             width="50%"
             alt="sticker"
           />
-        </WrapSticker>{" "}
+        </WrapSticker>{" "} */}
       </KnjigeSection>
 
       <AlkarAnimation />
