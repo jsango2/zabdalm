@@ -256,7 +256,7 @@ const Hero = () => {
                 <div>SOLD OUT</div>
               )}
             </WrapSoldOut> */}
-            {/* 
+
             <WrapSticker>
               {" "}
               <img
@@ -264,7 +264,7 @@ const Hero = () => {
                 width="50%"
                 alt="sticker"
               />
-            </WrapSticker> */}
+            </WrapSticker>
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
