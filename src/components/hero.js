@@ -255,16 +255,16 @@ const Hero = () => {
               ) : (
                 <div>SOLD OUT</div>
               )}
-            </WrapSoldOut> */}
+            </WrapSoldOut>  */}
 
-            {/* <WrapSticker>
+            <WrapSticker>
               {" "}
               <img
                 src={i18next.language === "hr" ? StickerHr : StickerEng}
                 width="50%"
                 alt="sticker"
               />
-            </WrapSticker> */}
+            </WrapSticker>
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
