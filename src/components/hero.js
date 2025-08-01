@@ -10,7 +10,8 @@ import Cart from "../../content/assets/cart.svg"
 import Sticker from "../../content/assets/stickerSale2022.png"
 import StickerHr from "../../content/assets/saleHr.svg"
 import StickerEng from "../../content/assets/saleEng.svg"
-import SaleSticker from "../../content/assets/saleSticker.svg"
+import SOLDOUTENG from "../../content/assets/SOLDOUTENG.svg"
+import SOLDOUTHR from "../../content/assets/SOLDOUTHR.svg"
 import Button from "./button"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -61,21 +62,32 @@ const WrapItems = styled.div`
   }
 `
 const WrapSticker = styled.div`
-  width: 230px;
+  /* width: 230px;
   height: 304px;
   position: absolute;
   top: 197px;
   right: -90px;
 
+  z-index: 10; */
+
+  width: 82%;
+  height: 304px;
+  position: absolute;
+  top: 232px;
+  right: -13px;
   z-index: 10;
+  transform: rotate(342deg);
   @media only screen and (max-width: 999px) {
   }
   @media only screen and (max-width: 750px) {
-    width: 120px;
+    top: 100px;
+    right: -20px;
+
+    /* width: 120px;
     height: 144px;
     top: 77px;
 
-    right: -50px;
+    right: -50px; */
   }
 `
 const WrapSoldOut = styled.div`
@@ -260,8 +272,8 @@ const Hero = () => {
             <WrapSticker>
               {" "}
               <img
-                src={i18next.language === "hr" ? StickerHr : StickerEng}
-                width="50%"
+                src={i18next.language === "hr" ? SOLDOUTHR : SOLDOUTENG}
+                width="100%"
                 alt="sticker"
               />
             </WrapSticker>
