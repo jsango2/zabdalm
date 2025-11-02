@@ -528,7 +528,12 @@ center {
   left: 0;
 }
 .lottieHero {
-  min-width: 1152px;
+  position: absolute;
+  inset: 0; /* top/right/bottom/left: 0 */
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
 }
 .lottieKontakt {
   min-width: 1152px;

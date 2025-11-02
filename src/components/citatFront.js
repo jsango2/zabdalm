@@ -60,11 +60,11 @@ function CitatFront() {
       {size.width < 750 ? (
         <ButtonWrap>
           {i18next.language === "hr" ? (
-            <a href="https://webshop.zaboravljenadalmacija.hr/product/zaboravljena-dalmacija-na-starim-razglednicama-2023/">
+            <a href="https://webshop.zaboravljenadalmacija.hr/product/dalmacija-iz-arhive-jednog-kolekcionara/?v=c4cc1a1ba567">
               <Button text={t("kupiatlaskratko")} ikona={Cart} color="black" />
             </a>
           ) : (
-            <a href="https://webshop.zaboravljenadalmacija.hr/product/zaboravljena-dalmacija-na-starim-razglednicama-2023/en/">
+            <a href="https://webshop.zaboravljenadalmacija.hr/product/dalmacija-iz-arhive-jednog-kolekcionara/?v=c4cc1a1ba567">
               <Button text={t("kupiAtlas")} ikona={Cart} color="black" />
             </a>
           )}

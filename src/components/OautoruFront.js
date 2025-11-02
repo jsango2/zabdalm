@@ -310,9 +310,9 @@ function OautoruFront() {
   const handleShopLink = () => {
     i18next.language === "hr"
       ? (window.location.href =
-          "https://webshop.zaboravljenadalmacija.hr/product/zaboravljena-dalmacija-na-starim-razglednicama-2023/")
+          "https://webshop.zaboravljenadalmacija.hr/product/dalmacija-iz-arhive-jednog-kolekcionara/?v=c4cc1a1ba567")
       : (window.location.href =
-          "https://webshop.zaboravljenadalmacija.hr/en/product/zaboravljena-dalmacija-na-starim-razglednicama-2023/")
+          "https://webshop.zaboravljenadalmacija.hr/product/dalmacija-iz-arhive-jednog-kolekcionara/?v=c4cc1a1ba567")
   }
   const interactivity = {
     mode: "scroll",

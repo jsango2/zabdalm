@@ -3,6 +3,7 @@ import styled from "styled-components"
 import HeroPhoto from "../../content/assets/heroPhoto.png"
 import Knjiga from "../../content/assets/knjiga.png"
 import KnjigaOld from "../../content/assets/knjigaOld.png"
+import KnjigaArhiva from "../../content/assets/knjigaArhiva.webp"
 import KnjigaPopust from "../../content/assets/Knjiga_popust.png"
 import Brodi from "../../content/assets/brodi.png"
 import Pas from "../../content/assets/pas.png"
@@ -30,7 +31,8 @@ const Wrap = styled.div`
   background-color: rgb(28, 17, 0);
   position: relative;
   width: 100%;
-  height: 544px;
+  height: 680px;
+
   @media only screen and (max-width: 750px) {
     height: 478px;
   }
@@ -42,12 +44,14 @@ const WrapItems = styled.div`
   width: 879px;
   height: 554px;
   position: absolute;
-  top: 97px;
+  top: 220px;
   left: 166px;
   margin: 0 auto;
   display: flex;
   z-index: 10;
   @media only screen and (max-width: 999px) {
+    top: 100px;
+
     left: 68px;
     width: 760px;
   }
@@ -257,10 +261,14 @@ const Hero = () => {
     <>
       <MeniMobile handleClick={handleClickMenu} isOpen={isOpen} />
       <Wrap className="wrapHero">
-        <Lottie className="lottieHero" animationData={animationHero} />
+        <Lottie
+          className="lottieHero"
+          animationData={animationHero}
+          rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
+        />
         <WrapItems>
           <KnjigaWrap>
-            <img src={KnjigaOld} width="100%" alt="knjiga" />
+            <img src={KnjigaArhiva} width="100%" alt="knjiga" />
             {/* <WrapSoldOut>
               {i18next.language === "hr" ? (
                 <div>RASPRODANO</div>
@@ -269,25 +277,25 @@ const Hero = () => {
               )}
             </WrapSoldOut>  */}
 
-            <WrapSticker>
+            {/* <WrapSticker>
               {" "}
               <img
                 src={i18next.language === "hr" ? SOLDOUTHR : SOLDOUTENG}
                 width="100%"
                 alt="sticker"
               />
-            </WrapSticker>
+            </WrapSticker> */}
           </KnjigaWrap>
           <WrapText>
             <WrapNaslov>{t("pricaKakoJe")}</WrapNaslov>
             {size.width > 750 ? (
               <ButtonWrap>
                 {i18next.language === "hr" ? (
-                  <a href="https://webshop.zaboravljenadalmacija.hr/product/zaboravljena-dalmacija-na-starim-razglednicama-2023/">
+                  <a href="https://webshop.zaboravljenadalmacija.hr/product/dalmacija-iz-arhive-jednog-kolekcionara/?v=c4cc1a1ba567">
                     <Button text={t("kupiAtlas")} color="white" />
                   </a>
                 ) : (
-                  <a href="https://webshop.zaboravljenadalmacija.hr/en/product/zaboravljena-dalmacija-na-starim-razglednicama-2023/">
+                  <a href="https://webshop.zaboravljenadalmacija.hr/product/dalmacija-iz-arhive-jednog-kolekcionara/?v=c4cc1a1ba567">
                     <Button text={t("kupiAtlas")} color="white" />
                   </a>
                 )}
