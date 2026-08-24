@@ -25,7 +25,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "wpgraphql",
         // Url to query from
-        url: "https://cms.zaboravljenadalmacija.hr/graphql",
+        url: "https://shop.zaboravljenadalmacija.hr/graphql",
       },
     },
     {

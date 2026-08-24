@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 // import {
 //   Link,
@@ -54,7 +54,6 @@ function BlogCard({ blogs }) {
   // const context = React.useContext(I18nextContext)
   const [lang, setLang] = useState(i18next.language)
   const [categorie, setCategorie] = useState("----")
-  const dragStart = useRef(null)
   useEffect(() => {
     var cat = ""
 
@@ -97,30 +96,7 @@ function BlogCard({ blogs }) {
   //   }
   // }
   return (
-    <Link
-      style={{ textDecoration: "none" }}
-      to={`/Blog/${blogs.node.slug}`}
-      draggable={false}
-      onDragStart={e => e.preventDefault()}
-      onMouseDown={e => {
-        dragStart.current = { x: e.clientX, y: e.clientY }
-      }}
-      onTouchStart={e => {
-        const touch = e.touches[0]
-        dragStart.current = { x: touch.clientX, y: touch.clientY }
-      }}
-      onClick={e => {
-        const start = dragStart.current
-        if (!start) return
-        const touch = e.changedTouches && e.changedTouches[0]
-        const endX = touch ? touch.clientX : e.clientX
-        const endY = touch ? touch.clientY : e.clientY
-        const movedDistance = Math.hypot(endX - start.x, endY - start.y)
-        if (movedDistance > 10) {
-          e.preventDefault()
-        }
-      }}
-    >
+    <Link style={{ textDecoration: "none" }} to={`/Blog/${blogs.node.slug}`}>
       <Wrap className="blogCardFotoWrap">
         {blogs &&
           blogs &&

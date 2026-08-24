@@ -211,9 +211,9 @@ function BlogFront({ blogovi }) {
           </div>
         )}
         {size.width < 750 ? (
-          <BlogPostCards blogovi={query.slice(0, 3)} carousel />
+          <BlogPostCards blogovi={query.slice(0, 3)} />
         ) : (
-          <BlogPostCards blogovi={query.slice(0, 6)} carousel />
+          <BlogPostCards blogovi={query.slice(0, 6)} />
         )}
 
         {/* </div> */}
