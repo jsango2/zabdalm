@@ -52,6 +52,7 @@ const WrapNaslov = styled.div`
 `
 
 function Blog({ data }) {
+  console.log("Data", data)
   const { t } = useTranslation()
   // const { languages, changeLanguage } = useI18next()
   const size = useWindowSize()
