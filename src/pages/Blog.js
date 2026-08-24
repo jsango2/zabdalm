@@ -52,7 +52,6 @@ const WrapNaslov = styled.div`
 `
 
 function Blog({ data }) {
-  console.log("Data", data)
   const { t } = useTranslation()
   // const { languages, changeLanguage } = useI18next()
   const size = useWindowSize()
@@ -67,7 +66,6 @@ function Blog({ data }) {
   // const [kategorijaEng, setKategorijaEng] = useState("SVE")
 
   var queryData = data.wpgraphql.blogovi.edges
-  console.log(data.wpgraphql.blogovi.edges)
   useEffect(() => {
     setLang(i18next.language)
   }, [i18next.language])

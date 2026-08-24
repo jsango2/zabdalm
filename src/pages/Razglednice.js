@@ -144,7 +144,6 @@ function Razglednice({ data }) {
       })
   }, [])
 
-  console.log(geoData)
   useEffect(() => {
     // console.log("geodata", geoData)
     if (geoData.length !== 0) {

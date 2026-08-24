@@ -7,7 +7,6 @@ function FirebaseUpload() {
   const [geoData, setGeoData] = useState([])
 
   const data = Slikejson
-  console.log(data)
   useEffect(() => {
     // var ref = firebase.database().ref("/")
     // var listen = ref.on("value", snapshot => {
