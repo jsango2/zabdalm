@@ -11,7 +11,7 @@ const Wrap = styled.div`
   width: 100%;
   min-height: 316px;
   position: relative;
-  margin: 50px 0 55px 0;
+  margin: 25px 0 25px 0;
   text-align: center;
   ${"" /* @media only screen and (max-width: 76em) {
     height: 450px;
@@ -42,14 +42,16 @@ const Clanci = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row-reverse;
-  justify-content: space-around;
+  justify-content: center;
+  column-gap: 24px;
   width: 90%;
   margin: 0 auto;
   @media only screen and (max-width: 550px) {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    justify-content: space-around;
+    justify-content: center;
+    column-gap: 24px;
     width: 90%;
     margin: 0 auto;
   }
@@ -63,7 +65,7 @@ const TextClanci = styled.div`
   height: 40.5px;
   text-align: left;
   line-height: 16px;
-  margin: 0 15px 16px 0;
+  margin: 0 0 6px 0;
   @media only screen and (max-width: 550px) {
     height: 37px;
   }
@@ -143,7 +145,7 @@ function NajpopularnijePrice() {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              marginBottom: "61px",
+              marginBottom: "64px",
             }}
           >
             <Linija />
