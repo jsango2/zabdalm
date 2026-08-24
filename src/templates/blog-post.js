@@ -255,6 +255,11 @@ const BlogPost = ({ data }) => {
   const [categorie, setCategorie] = useState("")
   const [lang, setLang] = useState(i18next.language)
   const size = useWindowSize()
+  const blog = data && data.wpgraphql && data.wpgraphql.blog
+  const blogGraphql = blog && blog.blog_graphql
+  const seoTitleSource =
+    (blogGraphql && blogGraphql.naslovBlogaHr) || (blog && blog.title) || "Blog"
+  const seoTitle = seoTitleSource.slice(0, 69)
 
   // ------visibility lazy loading------------
   // --------------------------------------
@@ -280,8 +285,13 @@ const BlogPost = ({ data }) => {
 
   useEffect(() => {
     var cat = ""
-    if (data.wpgraphql.blog.categories.edges.length !== 0) {
-      switch (data.wpgraphql.blog.categories.edges[0].node.name) {
+    const categoryEdges =
+      blog && blog.categories && blog.categories.edges
+        ? blog.categories.edges
+        : []
+
+    if (categoryEdges.length !== 0) {
+      switch (categoryEdges[0].node.name) {
         case "ZABORAVLJENA DALMACIJA DANAS":
           cat = "FORGOTTEN DALMATIA TODAY"
           break
@@ -297,15 +307,22 @@ const BlogPost = ({ data }) => {
       setCategorie(cat)
     }
     console.log("kategorija", cat)
-  }, [])
+  }, [blog])
+
+  if (!blog || !blogGraphql) {
+    return (
+      <>
+        <Layout>
+          <SEO title={seoTitle} description={seoTitleSource} />
+        </Layout>
+      </>
+    )
+  }
 
   return (
     <>
       <Layout>
-        <SEO
-          title={data.wpgraphql.blog.blog_graphql.naslovBlogaHr.slice(0, 69)}
-          description={data.wpgraphql.blog.blog_graphql.naslovBlogaHr}
-        />
+        <SEO title={seoTitle} description={seoTitleSource} />
         {lang === "hr" ? (
           <>
             <Hero
