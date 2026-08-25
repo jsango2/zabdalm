@@ -14,12 +14,12 @@ import i18next from "i18next"
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   position: relative;
-  width: 342px;
-  height: 323px;
+  width: 100%;
+  height: auto;
   margin-bottom: 34px;
   outline: none;
-  @media only screen and (max-width: 350px) {
-    min-width: 300px;
+  @media only screen and (min-width: 751px) {
+    max-width: 342px;
   }
 `
 const Kategorija = styled.div`
@@ -136,7 +136,7 @@ function BlogCard({ blogs }) {
               <div
                 style={{
                   width: "100%",
-                  height: "233px",
+                  aspectRatio: "342 / 233",
                   overflow: "hidden",
                 }}
               >
@@ -161,7 +161,7 @@ function BlogCard({ blogs }) {
               <div
                 style={{
                   width: "100%",
-                  height: "233px",
+                  aspectRatio: "342 / 233",
                   backgroundColor: "grey",
                   backgroundImage: `url(${blogs.node.blog_graphql.istaknutaFotografijaNaBlogu.sourceUrl})`,
                   backgroundPosition: "left",

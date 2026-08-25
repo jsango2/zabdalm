@@ -242,6 +242,18 @@ const ButtonWrap = styled.div`
   @media only screen and (max-width: 750px) {
     width: 200px;
   }
+
+  & > a > div {
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  & > a:hover > div {
+    background-color: white;
+  }
+
+  & > a:hover > div > div {
+    color: rgb(28, 17, 0) !important;
+  }
 `
 const Hero = () => {
   const [t, i18n] = useTranslation()

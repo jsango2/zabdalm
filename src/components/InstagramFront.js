@@ -16,19 +16,20 @@ import animacijaInstagram750 from "./../animations/instagram/instagramAnimacija7
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
-  margin-top: 200px;
+  margin-top: 240px;
+  padding-bottom: 40px;
   text-align: center;
   @media only screen and (max-width: 800px) {
-    height: 1334px;
+    height: 1364px;
   }
   @media only screen and (max-width: 620px) {
-    height: 1159px;
+    height: 1189px;
   }
   @media only screen and (max-width: 520px) {
-    height: 1072px;
+    height: 1102px;
   }
   @media only screen and (max-width: 430px) {
-    height: 870px;
+    height: 900px;
   }
 `
 const Title = styled.div`
@@ -61,12 +62,12 @@ const WrapNaslov = styled.div`
 `
 const Paragraf = styled.div`
   font-family: Amiri;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 400;
-  line-height: 27px;
+  line-height: 30px;
   margin-bottom: 55px;
   width: 673px;
-  margin: 30px auto 61px;
+  margin: 30px auto 35px;
   text-align: center;
   @media only screen and (max-width: 750px) {
     width: 75%;
