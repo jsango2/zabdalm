@@ -28,6 +28,10 @@ const WrapCarousel = styled.div`
     -webkit-user-drag: none;
     user-select: none;
   }
+  .slick-dots {
+    position: static;
+    margin-top: 20px;
+  }
   @media only screen and (max-width: 550px) {
     margin-bottom: 31px;
   }
@@ -37,10 +41,12 @@ function BlogPostCards({ blogovi, carousel }) {
   const size = useWindowSize()
 
   if (carousel) {
-    let slidesToShow = 3
-    if (size.width <= 1000 && size.width > 700) {
+    let slidesToShow = 4
+    if (size.width <= 1200 && size.width > 800) {
+      slidesToShow = 3
+    } else if (size.width <= 800 && size.width > 500) {
       slidesToShow = 2
-    } else if (size.width <= 700) {
+    } else if (size.width <= 500) {
       slidesToShow = 1
     }
     const settings = {

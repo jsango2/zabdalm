@@ -5,17 +5,18 @@ import styled from "styled-components"
 import { useTranslation } from "react-i18next"
 import { Link } from "gatsby"
 import i18next from "i18next"
+import { useWindowSize } from "./useWindowSize"
+
+const MAX_PRICA = 12
+const MOBILE_PRIKAZ = 5
 
 const Wrap = styled.div`
   ${"" /* background-color: grey; */}
   width: 100%;
-  min-height: 316px;
+  height: auto;
   position: relative;
   margin: 25px 0 25px 0;
   text-align: center;
-  ${"" /* @media only screen and (max-width: 76em) {
-    height: 450px;
-  } */}
 `
 const Naslov = styled.div`
   font-family: Playfair Display;
@@ -38,85 +39,70 @@ const Linija = styled.div`
   }
 `
 const Clanci = styled.div`
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-  justify-content: center;
-  column-gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+  row-gap: 32px;
   width: 90%;
+  max-width: 1100px;
   margin: 0 auto;
-  @media only screen and (max-width: 550px) {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    justify-content: center;
-    column-gap: 24px;
-    width: 90%;
-    margin: 0 auto;
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
   }
+  @media only screen and (max-width: 550px) {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+`
+const Clanak = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  text-align: left;
+`
+const Slicica = styled.div`
+  flex-shrink: 0;
+  width: 84px;
+  height: 60px;
+  background-color: #e0e0e0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 `
 const TextClanci = styled.div`
   position: relative;
   font-family: Raleway;
   font-size: 14px;
   font-weight: 500;
-  width: 250px;
-  height: 40.5px;
-  text-align: left;
-  line-height: 16px;
-  margin: 0 0 6px 0;
-  @media only screen and (max-width: 550px) {
-    height: 37px;
-  }
+  line-height: 18px;
+`
+const PrikaziViseWrap = styled.div`
+  margin: 32px auto 0 auto;
+  width: 180px;
+`
+const PrikaziVise = styled.div`
+  font-family: Raleway;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 14px;
+  padding: 10px 20px;
 `
 
 function NajpopularnijePrice() {
   const [lang, setLang] = useState(i18next.language)
+  const [prikaziSve, setPrikaziSve] = useState(false)
+  const size = useWindowSize()
 
-  const [t, i18n] = useTranslation()
+  const [t] = useTranslation()
 
-  //___________________ sljedeća operacija spaja firestore brojač klikova i wpgraphql podatke u jedan array_____________
-  //____sortiraj RESULT i renderiraj za najpročitanije priče poredano po BROJ KLIKOVA-----------------
-
-  //_________________________________________________________________________________________
-
-  // useEffect(() => {
-  //   async function fetch() {
-  //     const events = await firebase.firestore().collection("broj klikova")
-  //     events.get().then(querySnapshot => {
-  //       const tempDoc = querySnapshot.docs.map(doc => {
-  //         return { slug: doc.id, ...doc.data() }
-  //       })
-  //       // console.log("firebase ", tempDoc)
-  //       setFireData(tempDoc)
-  //     })
-  //   }
-  //   fetch()
-  // }, [])
-  // console.log("firedata", fireData)
-  // useEffect(() => {
-  //   const wpData = data.blogovi.edges
-
-  //   function mergeArrayObjects(arr1, arr2) {
-  //     return arr1.map((item, i) => {
-  //       if (item.broj === arr2[i].broj) {
-  //         //merging two objects
-  //         const spojeno = Object.assign({}, item, arr2[i])
-  //         return spojeno
-  //       }
-  //     })
-  //   }
-  //   const sorted = mergeArrayObjects(fireData, wpData)
-  //     .slice()
-  //     .sort((a, b) => b.broj - a.broj)
-  //   console.log(sorted)
-  //   setResult(sorted)
-
-  // }, [fireData])
   useEffect(() => {
     setLang(i18next.language)
   }, [i18next.language])
+
+  const isMobile = size.width && size.width <= 550
 
   return (
     <StaticQuery
@@ -130,6 +116,9 @@ function NajpopularnijePrice() {
                     najcitanijaPrica
                     naslovBlogaEng
                     naslovBlogaHr
+                    istaknutaFotografijaNaBlogu {
+                      sourceUrl
+                    }
                   }
                   slug
                 }
@@ -138,54 +127,64 @@ function NajpopularnijePrice() {
           }
         }
       `}
-      render={data => (
-        <Wrap>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginBottom: "64px",
-            }}
-          >
-            <Linija />
-            <Naslov>{t("najpopularnijeprice")}</Naslov>
-            <Linija />
-          </div>
+      render={data => {
+        const svePrice = data.wpgraphql.blogovi.edges
+          .filter(
+            e =>
+              e.node.blog_graphql.najcitanijaPrica ===
+              "Istakni kao najčitaniju priču"
+          )
+          .slice(0, MAX_PRICA)
 
-          <Clanci>
-            {data.wpgraphql.blogovi.edges
-              .filter(
-                e =>
-                  e.node.blog_graphql.najcitanijaPrica ===
-                  "Istakni kao najčitaniju priču"
-              )
-              .map(clanak => (
+        const prikazanePrice =
+          isMobile && !prikaziSve ? svePrice.slice(0, MOBILE_PRIKAZ) : svePrice
+
+        return (
+          <Wrap>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginBottom: "64px",
+              }}
+            >
+              <Linija />
+              <Naslov>{t("najpopularnijeprice")}</Naslov>
+              <Linija />
+            </div>
+
+            <Clanci>
+              {prikazanePrice.map(clanak => (
                 <Link
                   key={clanak.node.slug}
                   style={{ textDecoration: "none", color: "black" }}
                   to={`/Blog/${clanak.node.slug}`}
                 >
-                  <TextClanci key={clanak.node.slug}>
-                    <div
+                  <Clanak>
+                    <Slicica
                       style={{
-                        width: "5px",
-                        height: "5px",
-                        backgroundColor: "#E0E0E0",
-                        position: "absolute",
-                        left: "-13px",
-                        top: "5px",
+                        backgroundImage: `url(${clanak.node.blog_graphql.istaknutaFotografijaNaBlogu?.sourceUrl})`,
                       }}
-                    ></div>
-                    {lang === "hr"
-                      ? clanak.node.blog_graphql.naslovBlogaHr
-                      : clanak.node.blog_graphql.naslovBlogaEng}
-                  </TextClanci>
+                    />
+                    <TextClanci>
+                      {lang === "hr"
+                        ? clanak.node.blog_graphql.naslovBlogaHr
+                        : clanak.node.blog_graphql.naslovBlogaEng}
+                    </TextClanci>
+                  </Clanak>
                 </Link>
               ))}
-          </Clanci>
-        </Wrap>
-      )}
+            </Clanci>
+
+            {isMobile && !prikaziSve && svePrice.length > MOBILE_PRIKAZ && (
+              <PrikaziViseWrap onClick={() => setPrikaziSve(true)}>
+                <PrikaziVise>{t("prikazivise")}</PrikaziVise>
+              </PrikaziViseWrap>
+            )}
+          </Wrap>
+        )
+      }}
     ></StaticQuery>
   )
 }
