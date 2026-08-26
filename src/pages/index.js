@@ -84,7 +84,7 @@ export const query = graphql`
           }
         }
       }
-      blogovi {
+      blogovi(where: { orderby: { field: DATE, order: DESC } }, first: 15) {
         edges {
           node {
             blog_graphql {

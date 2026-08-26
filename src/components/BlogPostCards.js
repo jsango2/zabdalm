@@ -7,9 +7,10 @@ import "slick-carousel/slick/slick-theme.css"
 import { useWindowSize } from "./useWindowSize"
 
 const WrapBlogovi = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 342px));
+  justify-content: center;
+  gap: 26px 24px;
   margin-bottom: 32px;
   @media only screen and (max-width: 550px) {
     margin-bottom: 31px;

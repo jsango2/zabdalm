@@ -16,7 +16,6 @@ const Wrap = styled.div`
   position: relative;
   width: 100%;
   height: auto;
-  margin-bottom: 34px;
   outline: none;
   @media only screen and (min-width: 751px) {
     max-width: 342px;
@@ -27,6 +26,7 @@ const Kategorija = styled.div`
   font-family: Amiri;
   font-size: 10px;
   color: #676767;
+  opacity: 0.8;
   text-align: left;
 
   @media only screen and (max-width: 700px) {
@@ -36,11 +36,11 @@ const Kategorija = styled.div`
 const CardText = styled.div`
   ${"" /* background-color: grey; */}
   font-family: Raleway;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 23px;
   margin-top: 12px;
   font-weight: 500;
-  color: #676767;
+  color: #000000;
   text-align: left;
 
   @media only screen and (max-width: 700px) {

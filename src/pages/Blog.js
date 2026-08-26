@@ -58,7 +58,7 @@ function Blog({ data }) {
   const [current, setCurrent] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(9)
+  const [postsPerPage] = useState(12)
 
   const [lang, setLang] = useState(i18next.language)
   const [kategorija, setKategorija] = useState("SVE")
@@ -181,14 +181,6 @@ function Blog({ data }) {
               style={{ cursor: "pointer", margin: "0 10px" }}
             >
               {t("priceizpovijesti")}
-            </div>
-            <div>-</div>
-            <div
-              className={current === 2 ? "blueLink" : ""}
-              onClick={e => handleClick(e, 2)}
-              style={{ cursor: "pointer", margin: "0 10px" }}
-            >
-              {t("ugostimakod")}
             </div>
             <div>-</div>
             <div

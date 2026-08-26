@@ -50,7 +50,7 @@ const ButtonWrap = styled.div`
 function BlogFront({ blogovi }) {
   const [t] = useTranslation()
 
-  const query = blogovi.wpgraphql.blogovi.edges.slice(0, 6)
+  const query = blogovi.wpgraphql.blogovi.edges.slice(0, 15)
 
   return (
     <>

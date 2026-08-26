@@ -91,14 +91,6 @@ function MeniMobile({
           </div>
 
           <div
-            className={current === 2 ? "blueLink" : ""}
-            onClick={e => handleClick(e, 2)}
-            style={{ cursor: "pointer", margin: "0 10px" }}
-          >
-            {t("ugostimakod")}
-          </div>
-
-          <div
             className={current === 3 ? "blueLink" : ""}
             onClick={e => handleClick(e, 3)}
             style={{ cursor: "pointer", margin: "0 10px" }}
