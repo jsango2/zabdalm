@@ -58,7 +58,7 @@ function Blog({ data }) {
   const [current, setCurrent] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-  const [postsPerPage] = useState(9)
+  const [postsPerPage] = useState(12)
 
   const [lang, setLang] = useState(i18next.language)
   const [kategorija, setKategorija] = useState("SVE")
