@@ -15,7 +15,7 @@ const Wrap = styled.div`
   width: 100%;
   height: auto;
   position: relative;
-  margin: 25px 0 25px 0;
+  margin: 25px 0 90px 0;
   text-align: center;
 `
 const Naslov = styled.div`
