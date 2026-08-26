@@ -16,7 +16,6 @@ const Wrap = styled.div`
   position: relative;
   width: 100%;
   height: auto;
-  margin-bottom: 34px;
   outline: none;
   @media only screen and (min-width: 751px) {
     max-width: 342px;
